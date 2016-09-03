@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default sidebar" role="navigation">
+ <nav class="navbar navbar-default sidebar" role="navigation">
     <div class="container-fluid">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-sidebar-navbar-collapse-1">
@@ -82,5 +82,52 @@
     </div>
   </div>
 </nav>
+<div style='margin-left:16%; width:50%;' class="tim">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Position</th>
+        <th>Team</th>
+        <th>Team_Name</th>
+        <th>Player_Name</th>
+        <th>Injury_Status</th>
+        <th>Type_Of_Injury</th>
+        <th>Games_Played</th>
+        <th>Spread</th>
+        <th>Player_Salary</th>
+        <th>Rank_Vs_Pos</th>
+        <th>Player_Rank</th>
+        <th>OU</th>
+        <th>Rating</th>
+        <th>Criteria_Score</th>
+        <th>FP</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each fantasydata}}
+      <tr>
+        <td>{{this.Week}}</td>
+        <td>{{this.Position}}</td>
+        <td>{{this.Team}}</td>
+        <td>{{this.Team_Name}}</td>
+        <td>{{this.Player_Name}}</td>
+        <td>{{this.Injury_Status}}</td>
+        <td>{{this.Type_Of_Injury}}</td>
+        <td>{{this.Games_Played}}</td>
+        <td>{{this.Spread}}</td>
+        <td>{{this.Player_Salary}}</td>
+        <td>{{this.Rank_Vs_Pos}}</td>
+        <td>{{this.Player_Rank}}</td>
+        <td>{{this.OU}}</td>
+        <td>{{this.Rating}}</td>
+        <td>{{this.Criteria_Score}}</td>
+        <td>{{this.FP}}</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+
 
 <!-- <li><a href="/NFL">NFL<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li> -->

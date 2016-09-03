@@ -160,6 +160,32 @@ var NFLData = {
 		orm.deleteFantasyDataDef('NFLDataDef', condition, function(res){
 			cb(res);
 		});
+	},
+	findOneFantasyData: function(condition, cb) {
+	  orm.findOneFantasyData('NFLDataQB', condition, function(res){
+	      cb(res);
+	  });
+  },
+	allFantasyData: function(cb) {
+		orm.allFantasyData('NFLDataQB', function(res){
+			cb(res);
+		});
+	},
+	//cols and vals are arrays
+	createFantasyData: function(cols, vals, cb) {
+		orm.createFantasyData('NFLDataQB', cols, vals, function(res){
+			cb(res);
+		});
+	},
+	updateFantasyData: function(objColVals, condition, cb) {
+		orm.updateFantasyData('NFLDataQB', objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+	deleteFantasyData: function(condition, cb){
+		orm.deleteFantasyData('NFLDataQB', condition, function(res){
+			cb(res);
+		});
 	}
 };
 
