@@ -10,7 +10,15 @@ body,html{
 .mainimage {
   padding:0;
   background: url("/images/fantasyMain.jpg") no-repeat center center fixed;
-
+  display:inline-block;;
+}
+.writing {
+  color:white;
+  font-size: 2em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .mainimage .headerimage {
   width:100%;
