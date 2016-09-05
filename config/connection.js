@@ -15,13 +15,13 @@ if (process.env.JAWSDB_URL){
 // mysql -h uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com -u bx2ajv69tsflz7fv -pbk7cnbekaw907zll wl8zg20cpj22w77k < backup.sql
 
 // mysqldump -h localhost -u root -p fantasy > backup.sql
-// var connection = mysql.createConnection({
-//   port: 3306,
-//   host: 'localhost',
-//   user: 'root',
-//   password: '',
-//   database: 'fantasy'
-// });
+var connection = mysql.createConnection({
+  port: 3306,
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'fantasy'
+});
 
 connection.connect(function(err){
   if (err) {
