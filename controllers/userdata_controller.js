@@ -32,9 +32,9 @@ router.post('/login', function(req,res){
 });
 
 router.post('/register', function(req,res){
-	var queryString = "Select * from users where email = '" + req.body.email + "'";
+	var queryString = "Select * from Users where email = '" + req.body.email + "'";
 
-	connection.query(queryString, function(err,users){
+	connection.query(queryString, function(err,Users){
 		if (err) throw err;
 		if (users.length > 0) {
 			res.send('we already have an email or username for this account');
