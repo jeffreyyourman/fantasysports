@@ -36,7 +36,7 @@ router.post('/register', function(req,res){
 
 	connection.query(queryString, function(err,Users){
 		if (err) throw err;
-		if (users.length > 0) {
+		if (Users.length > 0) {
 			res.send('we already have an email or username for this account');
 		} else {
 			bcrypt.genSalt(10, function(err,salt){
