@@ -38,7 +38,7 @@ app.use('/NFL', fantasydata_controller);
 app.use('/users', userdata_controller);
 
 
-var PORT = process.env.PORT || 3003;
+var PORT = process.env.PORT || 3002;
 
 app.listen(PORT, function() {
 	console.log("App listening on PORT: " + PORT);
