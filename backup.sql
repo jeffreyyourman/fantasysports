@@ -48,7 +48,7 @@ CREATE TABLE `NFLDataDef` (
 
 LOCK TABLES `NFLDataDef` WRITE;
 /*!40000 ALTER TABLE `NFLDataDef` DISABLE KEYS */;
-INSERT INTO `NFLDataDef` VALUES (11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10);
+INSERT INTO `NFLDataDef` VALUES (11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'Def','CIN','Cincinnati','DEFENSE',NULL,NULL,9,5,8200,11,7,48,10,9,10);
 /*!40000 ALTER TABLE `NFLDataDef` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -85,7 +85,7 @@ CREATE TABLE `NFLDataK` (
 
 LOCK TABLES `NFLDataK` WRITE;
 /*!40000 ALTER TABLE `NFLDataK` DISABLE KEYS */;
-INSERT INTO `NFLDataK` VALUES (11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10);
+INSERT INTO `NFLDataK` VALUES (11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'K','CIN','Cincinnati','Kicker',NULL,NULL,9,5,8200,11,7,48,10,9,10);
 /*!40000 ALTER TABLE `NFLDataK` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -122,7 +122,7 @@ CREATE TABLE `NFLDataQB` (
 
 LOCK TABLES `NFLDataQB` WRITE;
 /*!40000 ALTER TABLE `NFLDataQB` DISABLE KEYS */;
-INSERT INTO `NFLDataQB` VALUES (11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21),(11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21),(11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21),(11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21),(11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21),(11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21);
+INSERT INTO `NFLDataQB` VALUES (11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21),(11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21),(11,'QB','ATL','Atlanta','QuarterBack',NULL,NULL,9,-5,9100,25,11,48,10,7,21);
 /*!40000 ALTER TABLE `NFLDataQB` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `NFLDataRB` (
 
 LOCK TABLES `NFLDataRB` WRITE;
 /*!40000 ALTER TABLE `NFLDataRB` DISABLE KEYS */;
-INSERT INTO `NFLDataRB` VALUES (11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26),(11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26),(11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26),(11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26),(11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26),(11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26);
+INSERT INTO `NFLDataRB` VALUES (11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26),(11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26),(11,'RB','HOU','Houston','RunningBack','P','Knee',9,4,8900,18,30,40,8,7,26);
 /*!40000 ALTER TABLE `NFLDataRB` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -196,7 +196,7 @@ CREATE TABLE `NFLDataTE` (
 
 LOCK TABLES `NFLDataTE` WRITE;
 /*!40000 ALTER TABLE `NFLDataTE` DISABLE KEYS */;
-INSERT INTO `NFLDataTE` VALUES (11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10);
+INSERT INTO `NFLDataTE` VALUES (11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10),(11,'TE','CIN','Cincinnati','TightEnd',NULL,NULL,9,5,8200,11,7,48,10,9,10);
 /*!40000 ALTER TABLE `NFLDataTE` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,8 +233,36 @@ CREATE TABLE `NFLDataWR` (
 
 LOCK TABLES `NFLDataWR` WRITE;
 /*!40000 ALTER TABLE `NFLDataWR` DISABLE KEYS */;
-INSERT INTO `NFLDataWR` VALUES (11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13),(11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13),(11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13),(11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13),(11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13),(11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13);
+INSERT INTO `NFLDataWR` VALUES (11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13),(11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13),(11,'WR','DAL','Dallas','WideReceiver','Q','Knee',4,-2,8400,20,23,46,9,1,13);
 /*!40000 ALTER TABLE `NFLDataWR` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `Users`
+--
+
+DROP TABLE IF EXISTS `Users`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Users` (
+  `userId` int(11) NOT NULL AUTO_INCREMENT,
+  `fullname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Users`
+--
+
+LOCK TABLES `Users` WRITE;
+/*!40000 ALTER TABLE `Users` DISABLE KEYS */;
+INSERT INTO `Users` VALUES (1,'jeff','jeffreyyourman@gmail.com','jeff','$2a$10$1bNLDvC3Z1ab7wY7M2JMMOlD7O9Q1Nvw7oxiHrD28h7qNEDZspMFe','2016-09-05 02:53:22'),(2,'roni','roni.bibring@gmail.com','roni','$2a$10$ktwt1k/9H1YwBjYM5Olr4.uTas6hiAmnTKlGHXPH8CGH.SzfXYuL2','2016-09-05 02:59:02');
+/*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -246,4 +274,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-03 22:42:50
+-- Dump completed on 2016-09-05  0:54:48
