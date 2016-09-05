@@ -1,24 +1,24 @@
 var mysql = require('mysql');
 
 
-if (process.env.JAWSDB_URL){
-    connection = mysql.createConnection(process.env.JAWSDB_URL);
-} else {
-    connection = mysql.createConnection({
-        host: "uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
-        user: 'yk1rjm4o00htkeuq',
-        password: 'om9h5zgmk9nx6gps',
-        database: 'sroybkfc87fbqn7g',
-    });
-}
+// if (process.env.JAWSDB_URL){
+//     connection = mysql.createConnection(process.env.JAWSDB_URL);
+// } else {
+//     connection = mysql.createConnection({
+//         host: "uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+//         user: 'yk1rjm4o00htkeuq',
+//         password: 'om9h5zgmk9nx6gps',
+//         database: 'sroybkfc87fbqn7g',
+//     });
+// }
 
-// var connection = mysql.createConnection({
-//   port: 3306,
-//   host: 'localhost',
-//   user: 'root',
-//   password: '',
-//   database: 'fantasy'
-// });
+var connection = mysql.createConnection({
+  port: 3306,
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'fantasy'
+});
 
 connection.connect(function(err){
   if (err) {

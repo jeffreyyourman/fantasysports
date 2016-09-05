@@ -1,3 +1,17 @@
+CREATE DATABASE fantasy;
+USE fantasy
+
+CREATE TABLE Users
+(
+  userId int NOT NULL AUTO_INCREMENT,
+  fullname varchar(255) NOT NULL,
+  email varchar(255) NOT NULL,
+  username varchar(255) NOT NULL,
+  password varchar(255) NOT NULL,
+  PRIMARY KEY (userId),
+  date TIMESTAMP
+);
+
 CREATE TABLE NFLDataQB(
   Week INT,
   Position VARCHAR(255) CHARACTER SET utf8,

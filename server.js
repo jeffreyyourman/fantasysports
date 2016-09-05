@@ -27,7 +27,7 @@ app.set('view engine', 'handlebars');
 
 var routes = require('./controllers/routes.js');
 var fantasydata_controller = require('./controllers/fantasydata_controller.js');
-// var userdata_controller = require('./controllers/userdata_controller.js');
+var userdata_controller = require('./controllers/userdata_controller.js');
 
 app.use('/', routes);
 app.use('/users', routes);
@@ -35,7 +35,7 @@ app.use('/', fantasydata_controller);
 app.use('/NFL', fantasydata_controller);
 // app.use('/users', fantasydata_controller);
 // app.use('/fantasydata', userdata_controller);
-// app.use('/users', userdata_controller);
+app.use('/users', userdata_controller);
 
 
 var PORT = process.env.PORT || 3003;

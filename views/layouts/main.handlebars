@@ -15,12 +15,13 @@
     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
     <script type="text/javascript" src='/bootstrap/js/bootstrap.min.js'></script>
 
+    <link rel="stylesheet" href="/style.css">
     <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
     <!-- <script src="assets/javascript/app.js"></script> -->
   </head>
 
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
+  <nav style='margin:0;' class="navbar navbar-default">
+    <div style='padding: 0;'class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">FantasySports</a>
       </div>
@@ -30,20 +31,16 @@
         <li><a href="/NBA">NBA</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li role="presentation"><a href="/users/sign-out"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {{#unless logged_in}}
+        <li role="presentation"><a href="#" data-toggle="modal" data-target="#sign-in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        {{/unless}}
+        {{#if logged_in}}
+        <li><a href="">Welcome {{user.fullname}}</a></li>
+        <li role="presentation"><a href="/users/sign-out"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
+        {{/if}}
       </ul>
     </div>
   </nav>
-
-
-  <ul style='list-style-type:none'>
-    <h3></h3>
-  </ul>
-
-
-
-
-
 {{{ body }}}
 
 <h1></h1>
@@ -53,7 +50,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <img src="assets/img/dailygrub.png" class="img-responsive logo" style='width:80px;'>
+          <!-- <img src="assets/img/dailygrub.png" class="img-responsive logo" style='width:80px;'> -->
         </div>
         <div class="modal-body">
           <div class="row">
@@ -71,7 +68,7 @@
         </div>
       </form>
       <p class="blkText">
-        Not already on DailyGrub?
+        Not already on WeAreFantasy?
         <a href="#" id="register_btn">Register Now</a>.
       </p>
       </div>
@@ -99,7 +96,7 @@
         </div>
       </form>
       <p>
-        Already on DailyGrub?
+        Already on WeAreFantasy?
         <a href="#" id="signIn_btn">Sign In</a>.
       </p>
       </div>
