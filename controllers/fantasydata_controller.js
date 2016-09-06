@@ -19,63 +19,82 @@ router.get('/NFL', function(req,res){
   });
 });
 router.get('/NFL/QB', function(req,res){
-  fantasydata.allFantasyDataQB(function(fantasydataQB){
-    console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      fantasydataQB:fantasydataQB
-    }
-    res.render('fantasydata/fantasy_data', hbsObject);
+  fantasydata.allNFLmatchups(function(allNFLmatchups){
+    fantasydata.allFantasyDataQB(function(fantasydataQB){
+      console.log('this is fantasydasta log in all nfl fucking matchups', allNFLmatchups);
+      var hbsObject = {
+        logged_in:req.session.logged_in,
+        fantasydataQB:fantasydataQB,
+        allNFLmatchups:allNFLmatchups
+      }
+      res.render('fantasydata/fantasy_data', hbsObject);
+
+    });
   });
 });
 router.get('/NFL/RB', function(req,res){
-  fantasydata.allFantasyDataRB(function(fantasydataQB){
-    console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      fantasydataQB:fantasydataQB
-    }
-    res.render('fantasydata/fantasy_data', hbsObject);
+  fantasydata.allNFLmatchups(function(allNFLmatchups){
+    fantasydata.allFantasyDataRB(function(fantasydataQB){
+      console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
+      var hbsObject = {
+        logged_in: req.session.logged_in,
+        fantasydataQB:fantasydataQB,
+        allNFLmatchups:allNFLmatchups
+      }
+      res.render('fantasydata/fantasy_data', hbsObject);
+    });
   });
 });
 router.get('/NFL/WR', function(req,res){
-  fantasydata.allFantasyDataWR(function(fantasydataQB){
-    console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      fantasydataQB:fantasydataQB
-    }
-    res.render('fantasydata/fantasy_data', hbsObject);
-  });
+  fantasydata.allNFLmatchups(function(allNFLmatchups){
+    fantasydata.allFantasyDataWR(function(fantasydataQB){
+      console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
+      var hbsObject = {
+        logged_in: req.session.logged_in,
+        fantasydataQB:fantasydataQB,
+        allNFLmatchups:allNFLmatchups
+      }
+      res.render('fantasydata/fantasy_data', hbsObject);
+    });
+  });  
 });
 router.get('/NFL/TE', function(req,res){
-  fantasydata.allFantasyDataTE(function(fantasydataQB){
-    console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      fantasydataQB:fantasydataQB
-    }
-    res.render('fantasydata/fantasy_data', hbsObject);
+  fantasydata.allNFLmatchups(function(allNFLmatchups){
+    fantasydata.allFantasyDataTE(function(fantasydataQB){
+      console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
+      var hbsObject = {
+        logged_in: req.session.logged_in,
+        fantasydataQB:fantasydataQB,
+        allNFLmatchups:allNFLmatchups
+      }
+      res.render('fantasydata/fantasy_data', hbsObject);
+    });
   });
 });
 router.get('/NFL/K', function(req,res){
-  fantasydata.allFantasyDataK(function(fantasydataQB){
-    console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      fantasydataQB:fantasydataQB
-    }
-    res.render('fantasydata/fantasy_data', hbsObject);
+  fantasydata.allNFLmatchups(function(allNFLmatchups){
+    fantasydata.allFantasyDataK(function(fantasydataQB){
+      console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
+      var hbsObject = {
+        logged_in: req.session.logged_in,
+        fantasydataQB:fantasydataQB,
+        allNFLmatchups:allNFLmatchups
+      }
+      res.render('fantasydata/fantasy_data', hbsObject);
+    });
   });
 });
 router.get('/NFL/Def', function(req,res){
-  fantasydata.allFantasyDataDef(function(fantasydataQB){
-    console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      fantasydataQB:fantasydataQB
-    }
-    res.render('fantasydata/fantasy_data', hbsObject);
+  fantasydata.allNFLmatchups(function(allNFLmatchups){
+    fantasydata.allFantasyDataDef(function(fantasydataQB){
+      console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
+      var hbsObject = {
+        logged_in: req.session.logged_in,
+        fantasydataQB:fantasydataQB,
+        allNFLmatchups:allNFLmatchups
+      }
+      res.render('fantasydata/fantasy_data', hbsObject);
+    });
   });
 });
 
