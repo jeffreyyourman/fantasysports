@@ -11,6 +11,17 @@ CREATE TABLE Users
   PRIMARY KEY (userId),
   date TIMESTAMP
 );
+CREATE TABLE MatchupsNFL
+(
+  MatchupsNFLId int NOT NULL AUTO_INCREMENT,
+  awayteam varchar(255),
+  hometeam varchar(255),
+  weather varchar(255),
+  totalpoint int,
+  spread int,
+  PRIMARY KEY (MatchupsNFLId),
+  date TIMESTAMP
+);
 
 CREATE TABLE NFLDataQB(
   Week INT,

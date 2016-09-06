@@ -186,6 +186,32 @@ var NFLData = {
 		orm.deleteFantasyData('NFLDataQB', condition, function(res){
 			cb(res);
 		});
+	},
+	findOneNFLmatchups: function(condition, cb) {
+		orm.findOneNFLmatchups('MatchupsNFL', condition, function(res){
+				cb(res);
+		});
+	},
+	allNFLmatchups: function(cb) {
+		orm.allNFLmatchups('MatchupsNFL', function(res){
+			cb(res);
+		});
+	},
+	//cols and vals are arrays
+	createNFLmatchups: function(cols, vals, cb) {
+		orm.createNFLmatchups('MatchupsNFL', cols, vals, function(res){
+			cb(res);
+		});
+	},
+	updateNFLmatchups: function(objColVals, condition, cb) {
+		orm.updateNFLmatchups('MatchupsNFL', objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+	deleteNFLmatchups: function(condition, cb){
+		orm.deleteNFLmatchups('MatchupsNFL', condition, function(res){
+			cb(res);
+		});
 	}
 };
 

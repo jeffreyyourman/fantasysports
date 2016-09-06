@@ -1,3 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped">
+            <thead>
+              <tr>
+                <th>Away Team</th>
+                <th>Home Team</th>
+                <th>Weather</th>
+                <th>Total Points</th>
+                <th>Suggested Winner</th>
+              </tr>
+            </thead>
+            <tbody>
+            {{#each allNFLmatchups}}  
+              <tr>
+                <td>{{this.awayteam}}</td>
+                <td>{{this.hometeam}}</td>
+                <td>{{this.weather}}</td>
+                <td>{{this.totalpoint}}</td>
+                <td>Jets by {{this.spread}}</td>
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
+
+
+
+
 <div class="container ">
   <div class="row">
     <div class="panel panel-primary">

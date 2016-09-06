@@ -9,14 +9,14 @@ var fantasydata = require('../model/fantasydata.js');
 var connection = require('../config/connection.js')
 
 router.get('/NFL', function(req,res){
-  // fantasydata.allFantasyDataQB(function(fantasydataQB){
-    // console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
-    // var hbsObject = {
-      // logged_in: req.session.logged_in,
-      // fantasydataQB:fantasydataQB
-    // }
-    res.render('fantasydata/fantasy_data');
-  // });
+  fantasydata.allNFLmatchups(function(allNFLmatchups){
+    console.log('this is fantasydasta log in FDCONTROLLER', allNFLmatchups);
+    var hbsObject = {
+      logged_in: req.session.logged_in,
+      allNFLmatchups:allNFLmatchups
+    }
+    res.render('fantasydata/fantasy_data', hbsObject);
+  });
 });
 router.get('/NFL/QB', function(req,res){
   fantasydata.allFantasyDataQB(function(fantasydataQB){
