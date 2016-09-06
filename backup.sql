@@ -16,6 +16,35 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `MatchupsNFL`
+--
+
+DROP TABLE IF EXISTS `MatchupsNFL`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `MatchupsNFL` (
+  `MatchupsNFLId` int(11) NOT NULL AUTO_INCREMENT,
+  `awayteam` varchar(255) DEFAULT NULL,
+  `hometeam` varchar(255) DEFAULT NULL,
+  `weather` varchar(255) DEFAULT NULL,
+  `totalpoint` int(11) DEFAULT NULL,
+  `spread` int(11) DEFAULT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`MatchupsNFLId`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `MatchupsNFL`
+--
+
+LOCK TABLES `MatchupsNFL` WRITE;
+/*!40000 ALTER TABLE `MatchupsNFL` DISABLE KEYS */;
+INSERT INTO `MatchupsNFL` VALUES (1,'Giants','Jets','70 Partly Cloudy',50,5,'2016-09-06 00:42:21');
+/*!40000 ALTER TABLE `MatchupsNFL` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `NFLDataDef`
 --
 
@@ -252,7 +281,7 @@ CREATE TABLE `Users` (
   `password` varchar(255) NOT NULL,
   `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -261,7 +290,6 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (1,'jeff','jeffreyyourman@gmail.com','jeff','$2a$10$1bNLDvC3Z1ab7wY7M2JMMOlD7O9Q1Nvw7oxiHrD28h7qNEDZspMFe','2016-09-05 02:53:22'),(2,'roni','roni.bibring@gmail.com','roni','$2a$10$ktwt1k/9H1YwBjYM5Olr4.uTas6hiAmnTKlGHXPH8CGH.SzfXYuL2','2016-09-05 02:59:02');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -274,4 +302,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-09-05  0:54:48
+-- Dump completed on 2016-09-05 21:22:29
