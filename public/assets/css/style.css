@@ -22,14 +22,25 @@ body,html{
   padding:0;
   display:inline-block;
 }
-
+#test {
+  font-family: headerfont;
+  font-size: 36px;
+}
 .writing {
   color:white;
-  font-size: 2em;
+
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+@font-face {
+    font-family: headerfont;
+    src: url(../fonts/daggersquare/DAGGERSQUARE.otf);
+}
+
+div {
+    font-family: myFirstFont;
 }
 .mainimage .headerimage {
   width:100%;
