@@ -1,26 +1,28 @@
 body,html{
     height: 100%;
   }
-  .homePage{
-    background-color: #ffffff;
-    margin-top: 50px;
-    padding-top: 10px;
-  }
+.homePage{
+  background-color: #ffffff;
+  margin-top: 50px;
+  padding-top: 10px;
+}
 
-  .mynavbar {
-    padding:0;
-    background-color:#f0fcff;
-  }
-  .matchupdiv {
-    height: 300px;
-    overflow: scroll;
-  }
-
+.mynavbar {
+  padding:0;
+  background-color:#f0fcff;
+}
+.matchupdiv {
+  height: 300px;
+  overflow: scroll;
+}
+.list {
+  list-style-type: none;
+}
 .mainimage {
   padding:0;
-  background: url("/images/fantasyMain.jpg") no-repeat center center fixed;
   display:inline-block;
 }
+
 .writing {
   color:white;
   font-size: 2em;

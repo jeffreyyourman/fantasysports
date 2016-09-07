@@ -16,14 +16,14 @@ app.use(express.static(process.cwd() + '/public'));
 app.use(bodyParser.urlencoded({
 	extended: false
 }))
-
-//this allows me to use handlebars
+// override with POST having ?_method=DELETE
 app.use(methodOverride('_method'))
 var exphbs = require('express-handlebars');
 app.engine('handlebars', exphbs({
     defaultLayout: 'main'
 }));
 app.set('view engine', 'handlebars');
+
 
 var routes = require('./controllers/routes.js');
 var fantasydata_controller = require('./controllers/fantasydata_controller.js');
