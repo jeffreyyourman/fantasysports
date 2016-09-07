@@ -21,7 +21,7 @@
   </head>
 
   <nav style='margin:0;' class="navbar navbar-default">
-    <div style='padding: 0;'class="container-fluid">
+    <div style='backgrounddd-color:#f0fcff;'class="container-fluid mynavbar">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">FantasySports</a>
       </div>
@@ -30,15 +30,11 @@
         <li><a href="/NFL">NFL</a></li>
         <li><a href="/NBA">NBA</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {{#unless logged_in}}
-        <li role="presentation"><a href="#" data-toggle="modal" data-target="#sign-in"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-        {{/unless}}
-        {{#if logged_in}}
+      <!-- <ul class="nav navbar-nav navbar-right">
+        <li role="presentation"><a href="#" data-toggle="modal" data-target="#sign-in">Login</a></li>
         <li><a href="">Welcome {{user.fullname}}</a></li>
-        <li role="presentation"><a href="/users/sign-out"><span class="glyphicon glyphicon-log-in"></span> Log out</a></li>
-        {{/if}}
-      </ul>
+        <li role="presentation"><a href="/users/sign-out">Log out</a></li>
+      </ul> -->
     </div>
   </nav>
 {{{ body }}}

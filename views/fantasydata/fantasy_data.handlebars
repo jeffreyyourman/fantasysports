@@ -1,6 +1,26 @@
-<div class="container">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WeAreFantasy</title>
+
+      <!-- Latest compiled and minified CSS -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" media="screen" title="no title">
+  <!-- Optional theme -->
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css" media="screen" title="no title">
+  <!-- Latest compiled and minified JavaScript -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+  <script type="text/javascript" src='/bootstrap/js/bootstrap.min.js'></script>
+
+  <link rel="stylesheet" href="/style.css">
+  <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+  <!-- <script src="assets/javascript/app.js"></script> -->
+</head>
+
+<div class="container-fluid">
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 matchupdiv">
       <div class="table-responsive">
           <table class="table table-bordered table-hover table-striped">
             <thead>
@@ -13,7 +33,7 @@
               </tr>
             </thead>
             <tbody>
-            {{#each allNFLmatchups}}  
+            {{#each allNFLmatchups}}
               <tr>
                 <td>{{this.awayteam}}</td>
                 <td>{{this.hometeam}}</td>
@@ -32,102 +52,69 @@
 
 
 
-<div class="container ">
+
+
+
+
+
+
+
+<div class="container-fluid">
   <div class="row">
-    <div class="panel panel-primary">
-      <div class="panel-heading">
-          <h3 class="panel-title">
-            <div class="row">
-              <div class="col-md-2">
-                <h4><a href="/NFL/QB">Quarter Backs</a></h4>
-              </div>
-
-              <div class="col-md-2">
-                <h4><a href="/NFL/RB">Running Backs</a></h4>
-              </div>
-
-              <div class="col-md-2">
-                <h4><a href="/NFL/WR">Wide Receiver</a></h4>
-              </div>
-
-              <div class="col-md-2">
-                <h4><a href="/NFL/TE">Tight Ends</a></h4>
-              </div>
-
-              <div class="col-md-2">
-                <h4><a href="/NFL/K">Kickers</a></h4>
-              </div>
-
-              <div class="col-md-2">
-                <h4><a href="/NFL/Def">Defenses</a></h4>
-              </div>
-            </div>
-          </h3>
-      </div>
-        <div class="panel-body">
-            <div class="table-responsive">
-              <div class="row">
-                <div class="col-md-12">
-                  <div style='width:20%;'class="input-group searchbarsize">
-                    <input type="text" class="form-control" placeholder="Search Workouts..">
-                    <span class="input-group-btn">
-                      <button class="btn btn-default" type="button">
-                        <span class="glyphicon glyphicon-search"></span>
-                      </button>
-                    </span>
-                  </div>
-                  <br>
-                </div>
-              </div>
-                <table class="table table-bordered table-hover table-striped">
-                  <thead>
-                    <tr>
-                      <th>Week</th>
-                      <th>Position</th>
-                      <th>Team</th>
-                      <th>Team_Name</th>
-                      <th>Player_Name</th>
-                      <th>Injury_Status</th>
-                      <th>Type_Of_Injury</th>
-                      <th>Games_Played</th>
-                      <th>Spread</th>
-                      <th>Player_Salary</th>
-                      <th>Rank_Vs_Pos</th>
-                      <th>Player_Rank</th>
-                      <th>OU</th>
-                      <th>Rating</th>
-                      <th>Criteria_Score</th>
-                      <th>FP</th>
-                    </tr>
-                  </thead>
-              <tbody>
-                {{#each fantasydataQB}}
-                  <tr>
-                    <td>{{this.Week}}</td>
-                    <td>{{this.Position}}</td>
-                    <td>{{this.Team}}</td>
-                    <td>{{this.Team_Name}}</td>
-                    <td>{{this.Player_Name}}</td>
-                    <td>{{this.Injury_Status}}</td>
-                    <td>{{this.Type_Of_Injury}}</td>
-                    <td>{{this.Games_Played}}</td>
-                    <td>{{this.Spread}}</td>
-                    <td>{{this.Player_Salary}}</td>
-                    <td>{{this.Rank_Vs_Pos}}</td>
-                    <td>{{this.Player_Rank}}</td>
-                    <td>{{this.OU}}</td>
-                    <td>{{this.Rating}}</td>
-                    <td>{{this.Criteria_Score}}</td>
-                    <td>{{this.FP}}</td>
-                  </tr>
-                  {{/each}}
-              </tbody>
-            </table>
-          </div>
+    <div class="col-md-12">
+      <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped">
+            <thead>
+              <tr style='font-size:10px;'>
+                <th>Week</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Team_Name</th>
+                <th>Player_Name</th>
+                <th>Injury_Status</th>
+                <th>Type_Of_Injury</th>
+                <th>Games_Played</th>
+                <th>Spread</th>
+                <th>Player_Salary</th>
+                <th>Rank_Vs_Pos</th>
+                <th>Player_Rank</th>
+                <th>OU</th>
+                <th>Rating</th>
+                <th>Criteria_Score</th>
+                <th>FP</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each fantasydataQB}}
+                <tr style='font-size:10px;'>
+                  <td>{{this.Week}}</td>
+                  <td>{{this.Position}}</td>
+                  <td>{{this.Team}}</td>
+                  <td>{{this.Team_Name}}</td>
+                  <td>{{this.Player_Name}}</td>
+                  <td>{{this.Injury_Status}}</td>
+                  <td>{{this.Type_Of_Injury}}</td>
+                  <td>{{this.Games_Played}}</td>
+                  <td>{{this.Spread}}</td>
+                  <td>{{this.Player_Salary}}</td>
+                  <td>{{this.Rank_Vs_Pos}}</td>
+                  <td>{{this.Player_Rank}}</td>
+                  <td>{{this.OU}}</td>
+                  <td>{{this.Rating}}</td>
+                  <td>{{this.Criteria_Score}}</td>
+                  <td>{{this.FP}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+          </table>
         </div>
     </div>
   </div>
 </div>
+
+
+
+
 
 <!-- <li><a href="/NFL">NFL<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li> -->
 <!-- <li class="dropdown">

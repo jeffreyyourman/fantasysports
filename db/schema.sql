@@ -14,6 +14,7 @@ CREATE TABLE Users
 CREATE TABLE MatchupsNFL
 (
   MatchupsNFLId int NOT NULL AUTO_INCREMENT,
+  timeteamplay varchar(255),
   awayteam varchar(255),
   hometeam varchar(255),
   weather varchar(255),
