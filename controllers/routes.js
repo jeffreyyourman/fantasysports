@@ -8,32 +8,45 @@ var fantasydata = require('../model/fantasydata.js');
 
 var connection = require('../config/connection.js');
 
+//Database configuration
+var mongojs = require('mongojs');
+var databaseUrl = "fantasy";
+var collections = ["fantasynews"];
+var db = mongojs(databaseUrl, collections);
+db.on('error', function(err) {
+  console.log('Database Error:', err);
+});
+
+
 router.get('/', function(req, res){
 
-    request('http://www.rotoworld.com/playernews/nfl/football/', function (error, response, html) {
-    // console.log('my name is tim',html);
-      var $ = cheerio.load(html);
-      var result = [];
-      $('div#cp1_ctl00_rptBlurbs_floatingcontainer_0').each(function(i, element){
+  request('http://www.rotoworld.com/playernews/nfl/football/', function (error, response, html) {
+  // console.log('my name is tim',html);
+    var $ = cheerio.load(html);
+    var result = [];
+    $('.report').each(function(i, element){
 
-          var title = $(element).children('.report').text()
-          var description = $(element).children('.impact').text()
-          var info = $(element).children('.info').text()
-            //
-            // console.log(title);
-            // console.log(description);
-            // console.log(info);
-          result.push({
-            title:title,
-            description:description,
-            info:info
-          });
+      var title = $(this).text();
+
+      // var title = $(this).children('.report').text();
+      // var impact = $(this).children('.impact').text();
+      // var info = $(this).children('.info').text();
+      console.log(title);
+      if (title) {
+        db.fantasynews.save({
+          title:title
+        }, function(err,saved){
+          if (err) {
+            console.log(err);
+          } else {
+            console.log(saved);
+          }
         });
-      console.log(result);
+      }
     });
+  });
 
   var email = req.session.user_email;
-
   var condition = "email = '" + email + "'";
 
   user.findOneUser(condition, function(user){
