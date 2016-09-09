@@ -22,6 +22,9 @@ db.on('error', function(err) {
 
 router.get('/', function(req, res){
   var url = 'http://www.cbssports.com/fantasy/football/players/news/all/'
+  var url2 = 'http://www.cbssports.com/fantasy/football/players/news/all/2/'
+  var url3 = 'http://www.cbssports.com/fantasy/football/players/news/all/3/'
+  var url4 = 'http://www.cbssports.com/fantasy/football/players/news/all/4/'
     request(url, function (error, response, html) {
     // console.log('my name is tim',html);
       var $ = cheerio.load(html);
@@ -29,8 +32,8 @@ router.get('/', function(req, res){
       var name,time,title,injuryreport;
       var json = {playernameandteam: '', time: '', playerreport: ''};
 
-      $('div.players-annotated').each(function(i, element){
-        // $('div.latest-updates').each(function(i, element){
+      // $('div.player-news-desc').filter(function(i, element){
+        $('div.latest-updates').filter(function(i, element){
 
           var player = $(this);
           playernameandteam = player.text();
@@ -39,21 +42,26 @@ router.get('/', function(req, res){
 
           console.log('playernameandteam log', json.playernameandteam);
 
-          // var report = $(this);
+      });
+    });
+    request(url2, function (error, response, html) {
+    // console.log('my name is tim',html);
+      var $ = cheerio.load(html);
 
-          // playerreport = report.text();
+      var name,time,title,injuryreport;
+      var json = {playernameandteam: '', time: '', playerreport: ''};
 
-          // json.playerreport = playerreport;
+      // $('div.player-news-desc').filter(function(i, element){
+        $('div.latest-updates').filter(function(i, element){
 
-          // console.log('player report log',json.playerreport);
+          var player = $(this);
+          playernameandteam = player.text();
 
-        // });
+          json.playernameandteam = playernameandteam;
 
-
+          console.log('playernameandteam log', json.playernameandteam);
 
       });
-
-        // console.log('this is json object as a whole', json);
     });
 
   var email = req.session.user_email;
@@ -68,14 +76,11 @@ router.get('/', function(req, res){
     res.render('index', hbsObject)
   });
 });
-
 router.get('/sign-out', function(req,res){
   req.session.destroy(function(err){
     res.redirect('/')
   });
 });
-
-
 module.exports = router;
 
 // if (playernews) {
