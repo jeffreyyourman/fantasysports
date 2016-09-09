@@ -3,7 +3,9 @@ var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
 // var dateFormat = require('dateformat');
+// var now = new Date();
 // date: dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
+
 //models below
 var user = require('../model/userdata.js');
 var fantasydata = require('../model/fantasydata.js');
@@ -21,46 +23,73 @@ db.on('error', function(err) {
 
 
 router.get('/', function(req, res){
-  var url = 'http://www.cbssports.com/fantasy/football/players/news/all/'
-  var url2 = 'http://www.cbssports.com/fantasy/football/players/news/all/2/'
-  var url3 = 'http://www.cbssports.com/fantasy/football/players/news/all/3/'
-  var url4 = 'http://www.cbssports.com/fantasy/football/players/news/all/4/'
+  var url = 'http://www.cbssports.com/fantasy/football/players/news/all/';
+  var url2 = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
+  var url3 = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
+  var url4 = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
+
+  request(url2, function (error, response, html) {
+  // console.log('my name is tim',html);
+    var $ = cheerio.load(html);
+
+    var name,time,title,injuryreport;
+    // var json = {playernameandteam: '', time: '', playerreport: ''};
+    var json = {playernameandteam: ''};
+
+      $('div.latest-updates').filter(function(i, element){
+
+        var player = $(this);
+        playernameandteam = player.text();
+
+        json.playernameandteam = playernameandteam;
+        var jsonplayername = json.playernameandteam
+        console.log('playernameandteam log', json.playernameandteam);
+
+        if (jsonplayername) {
+          db.fantasynews.save({
+            jsonplayername:jsonplayername,
+
+
+          }, function(err,saved){
+            if (err) {
+              console.log(err);
+            } else {
+              console.log(saved);
+            }
+          });
+        }
+    });
+  });
     request(url, function (error, response, html) {
     // console.log('my name is tim',html);
       var $ = cheerio.load(html);
 
       var name,time,title,injuryreport;
-      var json = {playernameandteam: '', time: '', playerreport: ''};
+      // var json = {playernameandteam: '', time: '', playerreport: ''};
+      var json = {playernameandteam: ''};
 
-      // $('div.player-news-desc').filter(function(i, element){
         $('div.latest-updates').filter(function(i, element){
 
           var player = $(this);
           playernameandteam = player.text();
 
           json.playernameandteam = playernameandteam;
-
+          var jsonplayername = json.playernameandteam
           console.log('playernameandteam log', json.playernameandteam);
 
-      });
-    });
-    request(url2, function (error, response, html) {
-    // console.log('my name is tim',html);
-      var $ = cheerio.load(html);
+          if (jsonplayername) {
+            db.fantasynews.save({
+              jsonplayername:jsonplayername,
+              date: dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
 
-      var name,time,title,injuryreport;
-      var json = {playernameandteam: '', time: '', playerreport: ''};
-
-      // $('div.player-news-desc').filter(function(i, element){
-        $('div.latest-updates').filter(function(i, element){
-
-          var player = $(this);
-          playernameandteam = player.text();
-
-          json.playernameandteam = playernameandteam;
-
-          console.log('playernameandteam log', json.playernameandteam);
-
+            }, function(err,saved){
+              if (err) {
+                console.log(err);
+              } else {
+                console.log(saved);
+              }
+            });
+          }
       });
     });
 
@@ -76,22 +105,14 @@ router.get('/', function(req, res){
     res.render('index', hbsObject)
   });
 });
+
+
+
+
+
 router.get('/sign-out', function(req,res){
   req.session.destroy(function(err){
     res.redirect('/')
   });
 });
 module.exports = router;
-
-// if (playernews) {
-//   db.fantasynews.save({
-//     playernews:playernews,
-//
-//   }, function(err,saved){
-//     if (err) {
-//       console.log(err);
-//     } else {
-//       console.log(saved);
-//     }
-//   });
-// }
