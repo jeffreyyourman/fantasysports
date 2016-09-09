@@ -2,6 +2,8 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
+// var dateFormat = require('dateformat');
+// date: dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
 //models below
 var user = require('../model/userdata.js');
 var fantasydata = require('../model/fantasydata.js');
@@ -19,32 +21,40 @@ db.on('error', function(err) {
 
 
 router.get('/', function(req, res){
+  var url = 'http://www.cbssports.com/fantasy/football/players/news/all/'
+    request(url, function (error, response, html) {
+    // console.log('my name is tim',html);
+      var $ = cheerio.load(html);
 
-  request('http://www.rotoworld.com/playernews/nfl/football/', function (error, response, html) {
-  // console.log('my name is tim',html);
-    var $ = cheerio.load(html);
-    var result = [];
-    $('.report').each(function(i, element){
+      var name,time,title,injuryreport;
+      var json = {playernameandteam: '', time: '', playerreport: ''};
 
-      var title = $(this).text();
+      $('div.players-annotated').each(function(i, element){
+        // $('div.latest-updates').each(function(i, element){
 
-      // var title = $(this).children('.report').text();
-      // var impact = $(this).children('.impact').text();
-      // var info = $(this).children('.info').text();
-      console.log(title);
-      if (title) {
-        db.fantasynews.save({
-          title:title
-        }, function(err,saved){
-          if (err) {
-            console.log(err);
-          } else {
-            console.log(saved);
-          }
-        });
-      }
+          var player = $(this);
+          playernameandteam = player.text();
+
+          json.playernameandteam = playernameandteam;
+
+          console.log('playernameandteam log', json.playernameandteam);
+
+          // var report = $(this);
+
+          // playerreport = report.text();
+
+          // json.playerreport = playerreport;
+
+          // console.log('player report log',json.playerreport);
+
+        // });
+
+
+
+      });
+
+        // console.log('this is json object as a whole', json);
     });
-  });
 
   var email = req.session.user_email;
   var condition = "email = '" + email + "'";
@@ -67,3 +77,16 @@ router.get('/sign-out', function(req,res){
 
 
 module.exports = router;
+
+// if (playernews) {
+//   db.fantasynews.save({
+//     playernews:playernews,
+//
+//   }, function(err,saved){
+//     if (err) {
+//       console.log(err);
+//     } else {
+//       console.log(saved);
+//     }
+//   });
+// }
