@@ -53,12 +53,9 @@
     <div class="row">
       <div class="col-md-8 sportsnews">
         <h2>Fantasy Player News</h2>
-        <h4>How will the lakers do without Kobe Bryant?</h4>
-        <h4>Derrick Rose claiming super team?</h4>
-        <h4>Better Career... Brandon Ingram or Ben Simmons? Rookie class claims Brandon Ingram</h4>
-        <h4>Best Fantasy Player of the 2016-2017 Season?</h4>
-        <h4>When will we see westbrook vs durant?</h4>
-        <h4>Cavs Defend Title?</h4>
+        {{#each docs}}
+          <p>{{this.jsonplayername}}</p>
+        {{/each}}
       </div>
       <div class="col-md-4 twitterfeednews">
         <h2>Twitter Feed</h2>
