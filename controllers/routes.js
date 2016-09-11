@@ -118,16 +118,48 @@ module.exports = router;
 
 
 
-// 
-// var duplicates = [];
-//
+
+var duplicates = [];
+
 // db.fantasynews.aggregate([
 //   { $match: {
-//     name: { "$jsonplayername": '' }  // discard selection criteria
+//     name: { "$ne": '' }
 //   }},
 //   { $group: {
-//     _id: { name: "$jsonplayername"}, // can be grouped on multiple properties
-//     dups: { "$addToSet": "$jsonplayername" },
+//     _id: { name: "$jsonplayername"},
+//     dups: { "$addToSet": "$_id" },
+//     count: { "$sum": 1 }
+//   }},
+//   { $match: {
+//     count: { "$gt": 1 }
+//   }}
+// ])
+// .result
+// .forEach(function(doc) {
+//     doc.dups.shift();
+//     doc.dups.forEach( function(dupId){
+//         duplicates.push(dupId);
+//         }
+//     )
+// })
+//
+// printjson(duplicates);
+//
+// db.fantasynews.remove({_id:{$in:duplicates}})
+
+
+
+
+// ================= original for duplicates below
+// var duplicates = [];
+//
+// db.collectionName.aggregate([
+//   { $match: {
+//     name: { "$ne": '' }  // discard selection criteria
+//   }},
+//   { $group: {
+//     _id: { name: "$name"}, // can be grouped on multiple properties
+//     dups: { "$addToSet": "$_id" },
 //     count: { "$sum": 1 }
 //   }},
 //   { $match: {
@@ -148,4 +180,4 @@ module.exports = router;
 // printjson(duplicates);
 //
 // // Remove all duplicates in one go
-// db.fantasynews.remove({_id:{$in:duplicates}})
+// db.collectionName.remove({_id:{$in:duplicates}})
