@@ -30,6 +30,7 @@ router.get('/', function(req, res){
 
 
     request(url, function (error, response, html) {
+      //
     // console.log('my name is tim',html);
       var $ = cheerio.load(html);
 
@@ -95,7 +96,7 @@ router.get('/', function(req, res){
         }
     });
   });
-  
+
   var email = req.session.user_email;
   var condition = "email = '" + email + "'";
 
