@@ -56,7 +56,7 @@ router.get('/NFL/WR', function(req,res){
       }
       res.render('fantasydata/fantasy_data', hbsObject);
     });
-  });  
+  });
 });
 router.get('/NFL/TE', function(req,res){
   fantasydata.allNFLmatchups(function(allNFLmatchups){

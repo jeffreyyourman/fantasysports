@@ -47,13 +47,15 @@ router.get('/', function(req, res){
 
         if (jsonplayername) {
           db.fantasynews.save({
-            jsonplayername:jsonplayername,
+            jsonplayername:jsonplayername
 
 
           }, function(err,saved){
             if (err) {
+              console.log('timmy');
               console.log(err);
             } else {
+              console.log('jason');
               console.log(saved);
             }
           });
@@ -79,8 +81,7 @@ router.get('/', function(req, res){
 
           if (jsonplayername) {
             db.fantasynews.save({
-              jsonplayername:jsonplayername,
-              date: dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
+              jsonplayername:jsonplayername
 
             }, function(err,saved){
               if (err) {
@@ -106,13 +107,45 @@ router.get('/', function(req, res){
   });
 });
 
-
-
-
-
 router.get('/sign-out', function(req,res){
   req.session.destroy(function(err){
     res.redirect('/')
   });
 });
 module.exports = router;
+
+
+
+
+
+// 
+// var duplicates = [];
+//
+// db.fantasynews.aggregate([
+//   { $match: {
+//     name: { "$jsonplayername": '' }  // discard selection criteria
+//   }},
+//   { $group: {
+//     _id: { name: "$jsonplayername"}, // can be grouped on multiple properties
+//     dups: { "$addToSet": "$jsonplayername" },
+//     count: { "$sum": 1 }
+//   }},
+//   { $match: {
+//     count: { "$gt": 1 }    // Duplicates considered as count greater than one
+//   }}
+// ])               // You can display result until this and check duplicates
+// // If your result getting response in "result" then use else don't use ".result" in query
+// .result
+// .forEach(function(doc) {
+//     doc.dups.shift();      // First element skipped for deleting
+//     doc.dups.forEach( function(dupId){
+//         duplicates.push(dupId);   // Getting all duplicate ids
+//         }
+//     )
+// })
+//
+// // If you want to Check all "_id" which you are deleting else print statement not needed
+// printjson(duplicates);
+//
+// // Remove all duplicates in one go
+// db.fantasynews.remove({_id:{$in:duplicates}})
