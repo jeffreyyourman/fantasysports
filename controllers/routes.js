@@ -43,7 +43,7 @@ router.get('/', function(req, res){
 
         json.playernameandteam = playernameandteam;
         var jsonplayername = json.playernameandteam
-        console.log('playernameandteam log', json.playernameandteam);
+        // console.log('playernameandteam log', json.playernameandteam);
 
         if (jsonplayername) {
           db.fantasynews.save({
@@ -52,11 +52,11 @@ router.get('/', function(req, res){
 
           }, function(err,saved){
             if (err) {
-              console.log('timmy');
-              console.log(err);
+              // console.log('timmy');
+              // console.log(err);
             } else {
-              console.log('jason');
-              console.log(saved);
+              // console.log('jason');
+              // console.log(saved);
             }
           });
         }
@@ -77,7 +77,7 @@ router.get('/', function(req, res){
 
           json.playernameandteam = playernameandteam;
           var jsonplayername = json.playernameandteam
-          console.log('playernameandteam log', json.playernameandteam);
+          // console.log('playernameandteam log', json.playernameandteam);
 
           if (jsonplayername) {
             db.fantasynews.save({
@@ -85,9 +85,9 @@ router.get('/', function(req, res){
 
             }, function(err,saved){
               if (err) {
-                console.log(err);
+                // console.log(err);
               } else {
-                console.log(saved);
+                // console.log(saved);
               }
             });
           }
@@ -97,14 +97,18 @@ router.get('/', function(req, res){
   var email = req.session.user_email;
   var condition = "email = '" + email + "'";
 
-  user.findOneUser(condition, function(user){
-    console.log('this is the user logged in log', user);
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      user: user
-    }
-    res.render('index', hbsObject)
-  });
+  db.fantasynews.find({},function(err, docs){
+    console.log('this is the docs',docs);
+    user.findOneUser(condition, function(user){
+      // console.log('this is the user logged in log', user);
+      var hbsObject = {
+        logged_in: req.session.logged_in,
+        user: user,
+        docs:docs
+      }
+      res.render('index', hbsObject)
+      });
+    });
 });
 
 router.get('/sign-out', function(req,res){
