@@ -54,7 +54,8 @@
       <div class="col-md-8 sportsnews">
         <h2>Fantasy Player News</h2>
         {{#each docs}}
-          <p>{{this.jsonplayername}}</p>
+          <h3 id='playernameandteam'>{{this.playernameandteam}}</h3>
+          <hr>
         {{/each}}
       </div>
       <div class="col-md-4 twitterfeednews">
