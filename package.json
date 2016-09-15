@@ -23,6 +23,7 @@
     "mysql": "^2.11.1",
     "nodemailer": "^2.5.0",
     "nodemon": "^1.10.2",
-    "request": "^2.74.0"
+    "request": "^2.74.0",
+    "twitter": "^1.4.0"
   }
 }
