@@ -41,80 +41,148 @@
 <div class="container-fluid">
   <div class="row list">
     <div class="col-md-2">
-      <li><a href="/NFL/QB">Quarter Back</a></li>
+      <li><a id='qbLink' href="/NFL/QB">Quarter Back</a></li>
     </div>
     <div class="col-md-2">
-      <li><a href="/NFL/RB">Running Back</a></li>
+      <li><a id='rbLink' href="/NFL/RB">Running Back</a></li>
     </div>
     <div class="col-md-2">
-      <li><a href="/NFL/WR">Wide Receiver</a></li>
+      <li><a id='wrLink' href="/NFL/WR">Wide Receiver</a></li>
     </div>
     <div class="col-md-2">
-      <li><a href="/NFL/TE">Tight End</a></li>
+      <li><a id='teLink' href="/NFL/TE">Tight End</a></li>
     </div>
     <div class="col-md-2">
-      <li><a href="/NFL/K">Kicker</a></li>
+      <li><a id='kLink' href="/NFL/K">Kicker</a></li>
     </div>
     <div class="col-md-2">
-      <li><a href="/NFL/Def">Defense</a></li>
+      <li><a id='defLink' href="/NFL/Def">Defense</a></li>
     </div>
   </div>
 </div>
-<div class="container-fluid">
+
+
+<div id='quarterback' class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <div class="table-responsive">
-          <table class="table table-bordered table-hover table-striped">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table">
             <thead>
               <tr style='font-size:10px;'>
                 <th>Week</th>
+                <th>Player</th>
+                <th>Salary</th>
                 <th>Position</th>
                 <th>Team</th>
-                <th>Team_Name</th>
-                <th>Player_Name</th>
-                <th>Injury_Status</th>
-                <th>Type_Of_Injury</th>
-                <th>Games_Played</th>
-                <th>Spread</th>
-                <th>Player_Salary</th>
-                <th>Rank_Vs_Pos</th>
-                <th>Player_Rank</th>
-                <th>OU</th>
-                <th>Rating</th>
-                <th>Criteria_Score</th>
-                <th>FP</th>
+                <th>Team Name</th>
+                <th>Injury Status</th>
+                <th>Type of Injury</th>
+                <th>RvP</th>
+                <th>PR</th>
+                <th>OPP Def Rank</th>
+                <th>FPPG</th>
+                <th>Pass Attempt pg</th>
+                <th>Rush Attempt pg</th>
+                <th>TotalOpp</th>
+                <th>PPA</th>
+                <th>DOVA</th>
+                <th>Expected Wins</th>
+                <th>Path Expectation</th>
+                <th>O/U</th>
+                <th>ML</th>
+                <th>SL</th>
+                <th>Ending ML</th>
+                <th>Line Change</th>
+                <th>Sal Change</th>
+                <th>OL Rank</th>
+                <th>Prating</th>
+                <th>Criteria Score</th>
+                <th>Criteria Rank</th>
+                <th>Fantasy Points Score</th>
               </tr>
             </thead>
             <tbody>
+              {{#if fantasydataQB}}
               {{#each fantasydataQB}}
                 <tr style='font-size:10px;'>
                   <td>{{this.Week}}</td>
-                  <td>{{this.Position}}</td>
+                  <td>{{this.Player}}</td>
+                  <td>{{this.Sal}}</td>
+                  <td>{{this.POS}}</td>
                   <td>{{this.Team}}</td>
                   <td>{{this.Team_Name}}</td>
-                  <td>{{this.Player_Name}}</td>
                   <td>{{this.Injury_Status}}</td>
-                  <td>{{this.Type_Of_Injury}}</td>
-                  <td>{{this.Games_Played}}</td>
-                  <td>{{this.Spread}}</td>
-                  <td>{{this.Player_Salary}}</td>
-                  <td>{{this.Rank_Vs_Pos}}</td>
-                  <td>{{this.Player_Rank}}</td>
-                  <td>{{this.OU}}</td>
-                  <td>{{this.Rating}}</td>
-                  <td>{{this.Criteria_Score}}</td>
-                  <td>{{this.FP}}</td>
+                  <td>{{this.Type_Injury}}</td>
+                  <td>{{this.RvP}}</td>
+                  <td>{{this.PR}}</td>
+                  <td>{{this.OPP_DEF_RANK}}</td>
+                  <td>{{this.FPPG}}</td>
+                  <td>{{this.PassAttempt_Game}}</td>
+                  <td>{{this.RUSHAtt_Game}}</td>
+                  <td>{{this.TotalOpp}}</td>
+                  <td>{{this.PPA}}</td>
+                  <td>{{this.DOVA}}</td>
+                  <td>{{this.Expected_Wins}}</td>
+                  <td>{{this.Path_Expectation}}</td>
+                  <td>{{this.O_U}}</td>
+                  <td>{{this.ML}}</td>
+                  <td>{{this.SL}}</td>
+                  <td>{{this.Ending_ML}}</td>
+                  <td>{{this.Line_Change}}</td>
+                  <td>{{this.Sal_Change}}</td>
+                  <td>{{this.OL_RANK}}</td>
+                  <td>{{this.Prating}}</td>
+                  <td>{{this.CriteriaScore}}</td>
+                  <td>{{this.CritRank}}</td>
+                  <td>{{this.FPS}}</td>
                 </tr>
                 {{/each}}
+                {{/if}}
+                {{#if fantasydataRB}}
+                {{#each fantasydataRB}}
+                  <tr style='font-size:10px;'>
+                    <td>{{this.Week}}</td>
+                    <td>{{this.Player}}</td>
+                    <td>{{this.Sal}}</td>
+                    <td>{{this.POS}}</td>
+                    <td>{{this.Team}}</td>
+                    <td>{{this.Team_Name}}</td>
+                    <td>{{this.Injury_Status}}</td>
+                    <td>{{this.Type_Injury}}</td>
+                    <td>{{this.Spread}}</td>
+                    <td>{{this.RvP}}</td>
+                    <td>{{this.PR}}</td>
+                    <td>{{this.PPG}}</td>
+                    <td>{{this.RUSHAtt_Game}}</td>
+                    <td>{{this.Rec_Targ}}</td>
+                    <td>{{this.TotalOpp}}</td>
+                    <td>{{this.PPA}}</td>
+                    <td>{{this.R_DOVA}}</td>
+                    <td>{{this.Expected_Wins}}</td>
+                    <td>{{this.Path_Expectation}}</td>
+                    <td>{{this.O_U}}</td>
+                    <td>{{this.ML}}</td>
+                    <td>{{this.SL}}</td>
+                    <td>{{this.Ending_ML}}</td>
+                    <td>{{this.Line_Change}}</td>
+                    <td>{{this.Sal_Change}}</td>
+                    <td>{{this.PRating}}</td>
+                    <td>{{this.Snap_Count}}</td>
+                    <td>{{this.OFL_RATING}}</td>
+                    <td>{{this.CriteriaScore}}</td>
+                    <td>{{this.CritRank}}</td>
+                    <td>{{this.FPS}}</td>
+                  </tr>
+                  {{/each}}
+                  {{/if}}
             </tbody>
           </table>
         </div>
+      </div>
     </div>
   </div>
 </div>
-
-
-
 
 
 <!-- <li><a href="/NFL">NFL<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li> -->

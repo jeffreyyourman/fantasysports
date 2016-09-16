@@ -24,8 +24,72 @@ db.on('error', function(err) {
   console.log('Database Error:', err);
 });
 
-
 router.get('/', function(req, res){
+  var url = 'http://www.cbssports.com/fantasy/football/players/news/all/';
+  var url2 = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
+  var url3 = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
+  var url4 = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
+  request(url, function (error, response, html) {
+
+  // console.log('my name is tim',html);
+    var $ = cheerio.load(html);
+
+    var name,time,title,injuryreport;
+    // var json = {playernameandteam: '', time: '', playerreport: ''};
+    var json = {playernameandteam: ''};
+
+    $('div.player-news-desc').filter(function(i, element){
+
+      var playernameandteam = $(element).children('h4').text();
+
+      console.log('this is playername and team ', playernameandteam);
+
+        // if (playernameandteam) {
+        //   db.fantasynews.save({
+        //     playernameandteam:playernameandteam
+        //
+        //   }, function(err,saved){
+        //     if (err) {
+        //       console.log(err);
+        //     } else {
+        //       console.log(saved);
+        //     }
+        //   });
+        // }
+    });
+  });
+
+  request(url2, function (error, response, html) {
+    // console.log('my name is tim',html);
+    var $ = cheerio.load(html);
+
+    var name,time,title,injuryreport;
+    // var json = {playernameandteam: '', time: '', playerreport: ''};
+    var json = {playernameandteam: ''};
+
+    $('div.player-news-desc').filter(function(i, element){
+
+      var playernameandteam = $(element).children('h4').text()
+
+      console.log('this is playername and team ', playernameandteam);
+
+        // if (playernameandteam) {
+        //   db.fantasynews.save({
+        //     playernameandteam:playernameandteam
+        //
+        //
+        //   }, function(err,saved){
+        //     if (err) {
+        //       // console.log('timmy');
+        //       console.log(err);
+        //     } else {
+        //       // console.log('jason');
+        //       console.log(saved);
+        //     }
+        //   });
+        // }
+    });
+  });
 
 
   var email = req.session.user_email;
@@ -65,70 +129,3 @@ router.get('/sign-out', function(req,res){
   });
 });
 module.exports = router;
-
-//put code below right after the router.get('/')
-// var url = 'http://www.cbssports.com/fantasy/football/players/news/all/';
-// var url2 = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
-// var url3 = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
-// var url4 = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
-// request(url, function (error, response, html) {
-//
-// // console.log('my name is tim',html);
-//   var $ = cheerio.load(html);
-//
-//   var name,time,title,injuryreport;
-//   // var json = {playernameandteam: '', time: '', playerreport: ''};
-//   var json = {playernameandteam: ''};
-//
-//   $('div.player-news-desc').filter(function(i, element){
-//
-//     var playernameandteam = $(element).children('h4').text();
-//
-//     console.log('this is playername and team ', playernameandteam);
-//
-//       if (playernameandteam) {
-//         db.fantasynews.save({
-//           playernameandteam:playernameandteam
-//
-//         }, function(err,saved){
-//           if (err) {
-//             console.log(err);
-//           } else {
-//             console.log(saved);
-//           }
-//         });
-//       }
-//   });
-// });
-//
-// request(url2, function (error, response, html) {
-// // console.log('my name is tim',html);
-// var $ = cheerio.load(html);
-//
-// var name,time,title,injuryreport;
-// // var json = {playernameandteam: '', time: '', playerreport: ''};
-// var json = {playernameandteam: ''};
-//
-// $('div.player-news-desc').filter(function(i, element){
-//
-//   var playernameandteam = $(element).children('h4').text()
-//
-//   console.log('this is playername and team ', playernameandteam);
-//
-//     if (playernameandteam) {
-//       db.fantasynews.save({
-//         playernameandteam:playernameandteam
-//
-//
-//       }, function(err,saved){
-//         if (err) {
-//           // console.log('timmy');
-//           console.log(err);
-//         } else {
-//           // console.log('jason');
-//           console.log(saved);
-//         }
-//       });
-//     }
-// });
-// });

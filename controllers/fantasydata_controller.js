@@ -34,11 +34,11 @@ router.get('/NFL/QB', function(req,res){
 });
 router.get('/NFL/RB', function(req,res){
   fantasydata.allNFLmatchups(function(allNFLmatchups){
-    fantasydata.allFantasyDataRB(function(fantasydataQB){
+    fantasydata.allFantasyDataRB(function(fantasydataRB){
       console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
       var hbsObject = {
         logged_in: req.session.logged_in,
-        fantasydataQB:fantasydataQB,
+        fantasydataRB:fantasydataRB,
         allNFLmatchups:allNFLmatchups
       }
       res.render('fantasydata/fantasy_data', hbsObject);
@@ -47,11 +47,11 @@ router.get('/NFL/RB', function(req,res){
 });
 router.get('/NFL/WR', function(req,res){
   fantasydata.allNFLmatchups(function(allNFLmatchups){
-    fantasydata.allFantasyDataWR(function(fantasydataQB){
+    fantasydata.allFantasyDataWR(function(fantasydataWR){
       console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
       var hbsObject = {
         logged_in: req.session.logged_in,
-        fantasydataQB:fantasydataQB,
+        fantasydataWR:fantasydataWR,
         allNFLmatchups:allNFLmatchups
       }
       res.render('fantasydata/fantasy_data', hbsObject);
@@ -60,11 +60,11 @@ router.get('/NFL/WR', function(req,res){
 });
 router.get('/NFL/TE', function(req,res){
   fantasydata.allNFLmatchups(function(allNFLmatchups){
-    fantasydata.allFantasyDataTE(function(fantasydataQB){
+    fantasydata.allFantasyDataTE(function(fantasydataTE){
       console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
       var hbsObject = {
         logged_in: req.session.logged_in,
-        fantasydataQB:fantasydataQB,
+        fantasydataTE:fantasydataTE,
         allNFLmatchups:allNFLmatchups
       }
       res.render('fantasydata/fantasy_data', hbsObject);
@@ -73,11 +73,11 @@ router.get('/NFL/TE', function(req,res){
 });
 router.get('/NFL/K', function(req,res){
   fantasydata.allNFLmatchups(function(allNFLmatchups){
-    fantasydata.allFantasyDataK(function(fantasydataQB){
+    fantasydata.allFantasyDataK(function(fantasydataK){
       console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
       var hbsObject = {
         logged_in: req.session.logged_in,
-        fantasydataQB:fantasydataQB,
+        fantasydataK:fantasydataK,
         allNFLmatchups:allNFLmatchups
       }
       res.render('fantasydata/fantasy_data', hbsObject);
@@ -86,11 +86,11 @@ router.get('/NFL/K', function(req,res){
 });
 router.get('/NFL/Def', function(req,res){
   fantasydata.allNFLmatchups(function(allNFLmatchups){
-    fantasydata.allFantasyDataDef(function(fantasydataQB){
+    fantasydata.allFantasyDataDef(function(fantasydataDef){
       console.log('this is fantasydasta log in FDCONTROLLER', fantasydata);
       var hbsObject = {
         logged_in: req.session.logged_in,
-        fantasydataQB:fantasydataQB,
+        fantasydataDef:fantasydataDef,
         allNFLmatchups:allNFLmatchups
       }
       res.render('fantasydata/fantasy_data', hbsObject);
