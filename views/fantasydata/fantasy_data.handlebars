@@ -61,7 +61,7 @@
   </div>
 </div>
 
-
+{{#if fantasydataQB}}
 <div id='quarterback' class="container-fluid">
   <div class="row">
     <div class="col-md-12">
@@ -103,7 +103,7 @@
               </tr>
             </thead>
             <tbody>
-              {{#if fantasydataQB}}
+
               {{#each fantasydataQB}}
                 <tr style='font-size:10px;'>
                   <td>{{this.Week}}</td>
@@ -138,44 +138,6 @@
                   <td>{{this.FPS}}</td>
                 </tr>
                 {{/each}}
-                {{/if}}
-                {{#if fantasydataRB}}
-                {{#each fantasydataRB}}
-                  <tr style='font-size:10px;'>
-                    <td>{{this.Week}}</td>
-                    <td>{{this.Player}}</td>
-                    <td>{{this.Sal}}</td>
-                    <td>{{this.POS}}</td>
-                    <td>{{this.Team}}</td>
-                    <td>{{this.Team_Name}}</td>
-                    <td>{{this.Injury_Status}}</td>
-                    <td>{{this.Type_Injury}}</td>
-                    <td>{{this.Spread}}</td>
-                    <td>{{this.RvP}}</td>
-                    <td>{{this.PR}}</td>
-                    <td>{{this.PPG}}</td>
-                    <td>{{this.RUSHAtt_Game}}</td>
-                    <td>{{this.Rec_Targ}}</td>
-                    <td>{{this.TotalOpp}}</td>
-                    <td>{{this.PPA}}</td>
-                    <td>{{this.R_DOVA}}</td>
-                    <td>{{this.Expected_Wins}}</td>
-                    <td>{{this.Path_Expectation}}</td>
-                    <td>{{this.O_U}}</td>
-                    <td>{{this.ML}}</td>
-                    <td>{{this.SL}}</td>
-                    <td>{{this.Ending_ML}}</td>
-                    <td>{{this.Line_Change}}</td>
-                    <td>{{this.Sal_Change}}</td>
-                    <td>{{this.PRating}}</td>
-                    <td>{{this.Snap_Count}}</td>
-                    <td>{{this.OFL_RATING}}</td>
-                    <td>{{this.CriteriaScore}}</td>
-                    <td>{{this.CritRank}}</td>
-                    <td>{{this.FPS}}</td>
-                  </tr>
-                  {{/each}}
-                  {{/if}}
             </tbody>
           </table>
         </div>
@@ -183,8 +145,442 @@
     </div>
   </div>
 </div>
+{{/if}}
 
+{{#if fantasydataRB}}
+<div id='runningback' class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr style='font-size:10px;'>
+                <th>Week</th>
+                <th>Player</th>
+                <th>Salary</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Team Name</th>
+                <th>Injury Status</th>
+                <th>Type of Injury</th>
+                <th>Spread</th>
+                <th>RvP</th>
+                <th>PR</th>
+                <th>Points Per Game</th>
+                <th>Rush Attempt per game</th>
+                <th>Receiving Target</th>
+                <th>Total Opposition</th>
+                <th>PPA</th>
+                <th>R Dova</th>
+                <th>Expected Wins</th>
+                <th>Path Expectation</th>
+                <th>O/U</th>
+                <th>ML</th>
+                <th>SL</th>
+                <th>Ending ML</th>
+                <th>Line Change</th>
+                <th>Salary Change</th>
+                <th>PRating</th>
+                <th>Snap Count</th>
+                <th>OFL Rating</th>
+                <th>CriteriaScore</th>
+                <th>CritRank</th>
+                <th>FPS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each fantasydataRB}}
+                <tr style='font-size:10px;'>
+                  <td>{{this.Week}}</td>
+                  <td>{{this.Player}}</td>
+                  <td>{{this.Sal}}</td>
+                  <td>{{this.POS}}</td>
+                  <td>{{this.Team}}</td>
+                  <td>{{this.Team_Name}}</td>
+                  <td>{{this.Injury_Status}}</td>
+                  <td>{{this.Type_Injury}}</td>
+                  <td>{{this.Spread}}</td>
+                  <td>{{this.RvP}}</td>
+                  <td>{{this.PR}}</td>
+                  <td>{{this.PPG}}</td>
+                  <td>{{this.RUSHAtt_Game}}</td>
+                  <td>{{this.Rec_Targ}}</td>
+                  <td>{{this.TotalOpp}}</td>
+                  <td>{{this.PPA}}</td>
+                  <td>{{this.R_DOVA}}</td>
+                  <td>{{this.Expected_Wins}}</td>
+                  <td>{{this.Path_Expectation}}</td>
+                  <td>{{this.O_U}}</td>
+                  <td>{{this.ML}}</td>
+                  <td>{{this.SL}}</td>
+                  <td>{{this.Ending_ML}}</td>
+                  <td>{{this.Line_Change}}</td>
+                  <td>{{this.Sal_Change}}</td>
+                  <td>{{this.PRating}}</td>
+                  <td>{{this.Snap_Count}}</td>
+                  <td>{{this.OFL_RATING}}</td>
+                  <td>{{this.CriteriaScore}}</td>
+                  <td>{{this.CritRank}}</td>
+                  <td>{{this.FPS}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
 
+{{#if fantasydataWR}}
+<div id='runningback' class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr style='font-size:10px;'>
+                <th>Week</th>
+                <th>Player</th>
+                <th>Salary</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Team Name</th>
+                <th>Injury Status</th>
+                <th>Type of Injury</th>
+                <th>Spread</th>
+                <th>RvP</th>
+                <th>PR</th>
+                <th>Points Per Game</th>
+                <th>Rush Attempt per game</th>
+                <th>Receiving Target</th>
+                <th>Total Opposition</th>
+                <th>PPA</th>
+                <th>R Dova</th>
+                <th>Expected Wins</th>
+                <th>Path Expectation</th>
+                <th>O/U</th>
+                <th>ML</th>
+                <th>SL</th>
+                <th>Ending ML</th>
+                <th>Line Change</th>
+                <th>Salary Change</th>
+                <th>PRating</th>
+                <th>Snap Count</th>
+                <th>OFL Rating</th>
+                <th>CriteriaScore</th>
+                <th>CritRank</th>
+                <th>FPS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each fantasydataWR}}
+                <tr style='font-size:10px;'>
+                  <td>{{this.Week}}</td>
+                  <td>{{this.Player}}</td>
+                  <td>{{this.Sal}}</td>
+                  <td>{{this.POS}}</td>
+                  <td>{{this.Team}}</td>
+                  <td>{{this.Team_Name}}</td>
+                  <td>{{this.Injury_Status}}</td>
+                  <td>{{this.Type_Injury}}</td>
+                  <td>{{this.Spread}}</td>
+                  <td>{{this.RvP}}</td>
+                  <td>{{this.PR}}</td>
+                  <td>{{this.PPG}}</td>
+                  <td>{{this.RUSHAtt_Game}}</td>
+                  <td>{{this.Rec_Targ}}</td>
+                  <td>{{this.TotalOpp}}</td>
+                  <td>{{this.PPA}}</td>
+                  <td>{{this.R_DOVA}}</td>
+                  <td>{{this.Expected_Wins}}</td>
+                  <td>{{this.Path_Expectation}}</td>
+                  <td>{{this.O_U}}</td>
+                  <td>{{this.ML}}</td>
+                  <td>{{this.SL}}</td>
+                  <td>{{this.Ending_ML}}</td>
+                  <td>{{this.Line_Change}}</td>
+                  <td>{{this.Sal_Change}}</td>
+                  <td>{{this.PRating}}</td>
+                  <td>{{this.Snap_Count}}</td>
+                  <td>{{this.OFL_RATING}}</td>
+                  <td>{{this.CriteriaScore}}</td>
+                  <td>{{this.CritRank}}</td>
+                  <td>{{this.FPS}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+{{#if fantasydataTE}}
+<div id='runningback' class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr style='font-size:10px;'>
+                <th>Week</th>
+                <th>Player</th>
+                <th>Salary</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Team Name</th>
+                <th>Injury Status</th>
+                <th>Type of Injury</th>
+                <th>Spread</th>
+                <th>RvP</th>
+                <th>PR</th>
+                <th>Points Per Game</th>
+                <th>Rush Attempt per game</th>
+                <th>Receiving Target</th>
+                <th>Total Opposition</th>
+                <th>PPA</th>
+                <th>R Dova</th>
+                <th>Expected Wins</th>
+                <th>Path Expectation</th>
+                <th>O/U</th>
+                <th>ML</th>
+                <th>SL</th>
+                <th>Ending ML</th>
+                <th>Line Change</th>
+                <th>Salary Change</th>
+                <th>PRating</th>
+                <th>Snap Count</th>
+                <th>OFL Rating</th>
+                <th>CriteriaScore</th>
+                <th>CritRank</th>
+                <th>FPS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each fantasydataTE}}
+                <tr style='font-size:10px;'>
+                  <td>{{this.Week}}</td>
+                  <td>{{this.Player}}</td>
+                  <td>{{this.Sal}}</td>
+                  <td>{{this.POS}}</td>
+                  <td>{{this.Team}}</td>
+                  <td>{{this.Team_Name}}</td>
+                  <td>{{this.Injury_Status}}</td>
+                  <td>{{this.Type_Injury}}</td>
+                  <td>{{this.Spread}}</td>
+                  <td>{{this.RvP}}</td>
+                  <td>{{this.PR}}</td>
+                  <td>{{this.PPG}}</td>
+                  <td>{{this.RUSHAtt_Game}}</td>
+                  <td>{{this.Rec_Targ}}</td>
+                  <td>{{this.TotalOpp}}</td>
+                  <td>{{this.PPA}}</td>
+                  <td>{{this.R_DOVA}}</td>
+                  <td>{{this.Expected_Wins}}</td>
+                  <td>{{this.Path_Expectation}}</td>
+                  <td>{{this.O_U}}</td>
+                  <td>{{this.ML}}</td>
+                  <td>{{this.SL}}</td>
+                  <td>{{this.Ending_ML}}</td>
+                  <td>{{this.Line_Change}}</td>
+                  <td>{{this.Sal_Change}}</td>
+                  <td>{{this.PRating}}</td>
+                  <td>{{this.Snap_Count}}</td>
+                  <td>{{this.OFL_RATING}}</td>
+                  <td>{{this.CriteriaScore}}</td>
+                  <td>{{this.CritRank}}</td>
+                  <td>{{this.FPS}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+{{#if fantasydataK}}
+<div id='runningback' class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr style='font-size:10px;'>
+                <th>Week</th>
+                <th>Player</th>
+                <th>Salary</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Team Name</th>
+                <th>Injury Status</th>
+                <th>Type of Injury</th>
+                <th>Spread</th>
+                <th>RvP</th>
+                <th>PR</th>
+                <th>Points Per Game</th>
+                <th>Rush Attempt per game</th>
+                <th>Receiving Target</th>
+                <th>Total Opposition</th>
+                <th>PPA</th>
+                <th>R Dova</th>
+                <th>Expected Wins</th>
+                <th>Path Expectation</th>
+                <th>O/U</th>
+                <th>ML</th>
+                <th>SL</th>
+                <th>Ending ML</th>
+                <th>Line Change</th>
+                <th>Salary Change</th>
+                <th>PRating</th>
+                <th>Snap Count</th>
+                <th>OFL Rating</th>
+                <th>CriteriaScore</th>
+                <th>CritRank</th>
+                <th>FPS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each fantasydataK}}
+                <tr style='font-size:10px;'>
+                  <td>{{this.Week}}</td>
+                  <td>{{this.Player}}</td>
+                  <td>{{this.Sal}}</td>
+                  <td>{{this.POS}}</td>
+                  <td>{{this.Team}}</td>
+                  <td>{{this.Team_Name}}</td>
+                  <td>{{this.Injury_Status}}</td>
+                  <td>{{this.Type_Injury}}</td>
+                  <td>{{this.Spread}}</td>
+                  <td>{{this.RvP}}</td>
+                  <td>{{this.PR}}</td>
+                  <td>{{this.PPG}}</td>
+                  <td>{{this.RUSHAtt_Game}}</td>
+                  <td>{{this.Rec_Targ}}</td>
+                  <td>{{this.TotalOpp}}</td>
+                  <td>{{this.PPA}}</td>
+                  <td>{{this.R_DOVA}}</td>
+                  <td>{{this.Expected_Wins}}</td>
+                  <td>{{this.Path_Expectation}}</td>
+                  <td>{{this.O_U}}</td>
+                  <td>{{this.ML}}</td>
+                  <td>{{this.SL}}</td>
+                  <td>{{this.Ending_ML}}</td>
+                  <td>{{this.Line_Change}}</td>
+                  <td>{{this.Sal_Change}}</td>
+                  <td>{{this.PRating}}</td>
+                  <td>{{this.Snap_Count}}</td>
+                  <td>{{this.OFL_RATING}}</td>
+                  <td>{{this.CriteriaScore}}</td>
+                  <td>{{this.CritRank}}</td>
+                  <td>{{this.FPS}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
+
+{{#if fantasydataDef}}
+<div id='runningback' class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead>
+              <tr style='font-size:10px;'>
+                <th>Week</th>
+                <th>Player</th>
+                <th>Salary</th>
+                <th>Position</th>
+                <th>Team</th>
+                <th>Team Name</th>
+                <th>Injury Status</th>
+                <th>Type of Injury</th>
+                <th>Spread</th>
+                <th>RvP</th>
+                <th>PR</th>
+                <th>Points Per Game</th>
+                <th>Rush Attempt per game</th>
+                <th>Receiving Target</th>
+                <th>Total Opposition</th>
+                <th>PPA</th>
+                <th>R Dova</th>
+                <th>Expected Wins</th>
+                <th>Path Expectation</th>
+                <th>O/U</th>
+                <th>ML</th>
+                <th>SL</th>
+                <th>Ending ML</th>
+                <th>Line Change</th>
+                <th>Salary Change</th>
+                <th>PRating</th>
+                <th>Snap Count</th>
+                <th>OFL Rating</th>
+                <th>CriteriaScore</th>
+                <th>CritRank</th>
+                <th>FPS</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each fantasydataDef}}
+                <tr style='font-size:10px;'>
+                  <td>{{this.Week}}</td>
+                  <td>{{this.Player}}</td>
+                  <td>{{this.Sal}}</td>
+                  <td>{{this.POS}}</td>
+                  <td>{{this.Team}}</td>
+                  <td>{{this.Team_Name}}</td>
+                  <td>{{this.Injury_Status}}</td>
+                  <td>{{this.Type_Injury}}</td>
+                  <td>{{this.Spread}}</td>
+                  <td>{{this.RvP}}</td>
+                  <td>{{this.PR}}</td>
+                  <td>{{this.PPG}}</td>
+                  <td>{{this.RUSHAtt_Game}}</td>
+                  <td>{{this.Rec_Targ}}</td>
+                  <td>{{this.TotalOpp}}</td>
+                  <td>{{this.PPA}}</td>
+                  <td>{{this.R_DOVA}}</td>
+                  <td>{{this.Expected_Wins}}</td>
+                  <td>{{this.Path_Expectation}}</td>
+                  <td>{{this.O_U}}</td>
+                  <td>{{this.ML}}</td>
+                  <td>{{this.SL}}</td>
+                  <td>{{this.Ending_ML}}</td>
+                  <td>{{this.Line_Change}}</td>
+                  <td>{{this.Sal_Change}}</td>
+                  <td>{{this.PRating}}</td>
+                  <td>{{this.Snap_Count}}</td>
+                  <td>{{this.OFL_RATING}}</td>
+                  <td>{{this.CriteriaScore}}</td>
+                  <td>{{this.CritRank}}</td>
+                  <td>{{this.FPS}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{{/if}}
 <!-- <li><a href="/NFL">NFL<span style="font-size:16px;" class="pull-right hidden-xs showopacity glyphicon glyphicon-home"></span></a></li> -->
 <!-- <li class="dropdown">
   <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
