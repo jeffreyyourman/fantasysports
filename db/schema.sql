@@ -163,7 +163,7 @@ CREATE TABLE NFLDataTE(
   ,FPS              NUMERIC(3,1)
 );
 CREATE TABLE NFLDataK(
-   Week             BIT NOT NULL
+   Week             INTEGER
   ,Player           VARCHAR(18)
   ,Sal              INTEGER
   ,POS              VARCHAR(1)
