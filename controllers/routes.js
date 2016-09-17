@@ -42,8 +42,6 @@ router.get('/', function(req, res){
 
       var playernameandteam = $(element).children('h4').text();
 
-      console.log('this is playername and team ', playernameandteam);
-
         // if (playernameandteam) {
         //   db.fantasynews.save({
         //     playernameandteam:playernameandteam
@@ -70,8 +68,6 @@ router.get('/', function(req, res){
     $('div.player-news-desc').filter(function(i, element){
 
       var playernameandteam = $(element).children('h4').text()
-
-      console.log('this is playername and team ', playernameandteam);
 
         // if (playernameandteam) {
         //   db.fantasynews.save({
