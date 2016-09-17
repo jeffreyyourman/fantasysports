@@ -73,31 +73,31 @@
 
 // var duplicates = [];
 //
-// // db.fantasynews.aggregate([
-// //   { $match: {
-// //     name: { "$ne": '' }
-// //   }},
-// //   { $group: {
-// //     _id: { name: "$jsonplayername"},
-// //     dups: { "$addToSet": "$_id" },
-// //     count: { "$sum": 1 }
-// //   }},
-// //   { $match: {
-// //     count: { "$gt": 1 }
-// //   }}
-// // ])
-// // .result
-// // .forEach(function(doc) {
-// //     doc.dups.shift();
-// //     doc.dups.forEach( function(dupId){
-// //         duplicates.push(dupId);
-// //         }
-// //     )
-// // })
-// //
-// // printjson(duplicates);
-// //
-// // db.fantasynews.remove({_id:{$in:duplicates}})
+// db.fantasynews.aggregate([
+//   { $match: {
+//     name: { "$ne": '' }
+//   }},
+//   { $group: {
+//     _id: { name: "$jsonplayername"},
+//     dups: { "$addToSet": "$_id" },
+//     count: { "$sum": 1 }
+//   }},
+//   { $match: {
+//     count: { "$gt": 1 }
+//   }}
+// ])
+// .result
+// .forEach(function(doc) {
+//     doc.dups.shift();
+//     doc.dups.forEach( function(dupId){
+//         duplicates.push(dupId);
+//         }
+//     )
+// })
+//
+// printjson(duplicates);
+//
+// db.fantasynews.remove({_id:{$in:duplicates}})
 //
 //
 //

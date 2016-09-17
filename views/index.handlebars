@@ -54,17 +54,18 @@
     <div class="row">
       <div class="col-md-8 sportsnews">
         <h2>Fantasy Player News</h2>
-        {{#each docs}}
+        {{#each docnews}}
           <h3 id='playernameandteam'>{{this.playernameandteam}}</h3>
           <hr>
         {{/each}}
       </div>
       <div class="col-md-4 twitterfeednews">
-        <h2>Twitter Feed</h2>
-        <h4>Drose tweets... We have a great team why can't we be labled a super team?</h4>
-        <h4>Ronnie 2k sends out player ratings!</h4>
-        <h4>Top 10 plays of the season</h4>
-        <h4>WHO CAN KNOCK OFF THE CAVS!</h4>
+        <h2>Fantasy Twitter Feed</h2>
+        {{#each doctweets}}
+          {{#each this.fantasytweets}}
+            <h3>{{this}}</h3>
+          {{/each}}
+        {{/each}}
       </div>
     </div>
   </div>
