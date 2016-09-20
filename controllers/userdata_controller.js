@@ -19,7 +19,6 @@ router.post('/login', function(req,res){
 						req.session.logged_in = true;
 						req.session.user_id = user.userId;
 						req.session.user_email = user.email;
-						console.log('this is req.session log', req.session);
 						res.redirect('/');
 					}else{
             res.send('You put in the wrong password.')
@@ -49,9 +48,6 @@ router.post('/register', function(req,res){
 	          req.session.user_id = user.insertId; //the MySQL npm package returns the id of the record inserted with a key of insertId.
 
 	          res.redirect('/')
-						console.log(req.session);
-						console.log(req.session.logged_in);
-						console.log(req.session.username);
 					});
 				});
 			});

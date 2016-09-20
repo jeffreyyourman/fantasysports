@@ -33,8 +33,6 @@ app.use('/', routes);
 app.use('/users', routes);
 app.use('/', fantasydata_controller);
 app.use('/NFL', fantasydata_controller);
-// app.use('/users', fantasydata_controller);
-// app.use('/fantasydata', userdata_controller);
 app.use('/users', userdata_controller);
 
 

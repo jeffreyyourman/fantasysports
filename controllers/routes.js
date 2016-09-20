@@ -33,7 +33,7 @@ router.get('/', function(req, res){
   $('div.player-news-desc').filter(function(i, element){
       var playernameandteam = $(element).children('h4').text();
       fantasynews.createNews(['fantasynews'], [playernameandteam], function(fantasynews){
-        console.log(fantasynews);
+        //can log here if i like
       })
     });
   });
@@ -46,7 +46,7 @@ router.get('/', function(req, res){
   $('div.player-news-desc').filter(function(i, element){
       var playernameandteam = $(element).children('h4').text();
       fantasynews.createNews(['fantasynews'], [playernameandteam], function(fantasynews){
-        console.log(fantasynews);
+        //can log here if i like
       })
     });
   });
