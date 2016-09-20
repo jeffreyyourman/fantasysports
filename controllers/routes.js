@@ -58,11 +58,10 @@ router.get('/', function(req, res){
   //       }
   //   });
   // });
-
-
   var email = req.session.user_email;
   var condition = "email = '" + email + "'";
-    fantasynews.allNews(function(fantasynews){
+  var queryString = "SELECT COUNT(*) as repetitions, fantasynews FROM FantasyNews GROUP BY fantasynews HAVING repetitions > 1;"
+    connection.query(queryString, function(err, fantasynews){
       console.log('this is the fantasy news log', fantasynews);
       user.findOneUser(condition, function(user){
         var hbsObject = {
