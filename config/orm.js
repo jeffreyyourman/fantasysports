@@ -575,7 +575,7 @@ var orm = {
         });
     },
     allNews: function(tableInput, cb) {
-        var queryString = 'SELECT * FROM ' + tableInput + ';';
+        var queryString = 'SELECT DISTINCT fantasynews FROM ' + tableInput + ';';
         connection.query(queryString, function(err, result) {
             if (err) throw err;
             cb(result);
@@ -584,7 +584,7 @@ var orm = {
     //vals is an array of values that we want to save to cols
     //cols are the columns we want to insert the values into
     createNews: function(table, cols, vals, cb) {
-      var queryString = 'INSERT INTO ' + table;
+      var queryString = 'INSERT IGNORE INTO ' + table;
 
       queryString = queryString + ' (';
       queryString = queryString + cols.toString();

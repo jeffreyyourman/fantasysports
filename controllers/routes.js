@@ -25,7 +25,7 @@ router.get('/', function(req, res){
   var url2 = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
   var url3 = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
   var url4 = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
-  request(url, function (error, response, html) {
+  request(url4, function (error, response, html) {
     var $ = cheerio.load(html);
     var name,time,title,injuryreport;
     // var json = {playernameandteam: '', time: '', playerreport: ''};
@@ -60,8 +60,7 @@ router.get('/', function(req, res){
   // });
   var email = req.session.user_email;
   var condition = "email = '" + email + "'";
-  var queryString = "SELECT COUNT(*) as repetitions, fantasynews FROM FantasyNews GROUP BY fantasynews HAVING repetitions > 1;"
-    connection.query(queryString, function(err, fantasynews){
+    fantasynews.allNews(function(fantasynews){
       console.log('this is the fantasy news log', fantasynews);
       user.findOneUser(condition, function(user){
         var hbsObject = {
