@@ -1,4 +1,5 @@
-CREATE DATABASE fantasy;
+CREATE DATABASE fantasy DEFAULT CHARACTER SET utf8
+  DEFAULT COLLATE utf8_general_ci;
 USE fantasy
 
 CREATE TABLE Users
@@ -219,4 +220,10 @@ CREATE TABLE NFLDataDef(
   ,CriteriaScore        NUMERIC(3,1)
   ,CritRank             INTEGER
   ,FPS                  INTEGER
+);
+
+CREATE TABLE FantasyNews (
+  fantasyid int not null AUTO_INCREMENT,
+  fantasynews varchar(255) NOT NULL,
+  PRIMARY KEY (fantasyid)
 );
