@@ -226,5 +226,6 @@ CREATE TABLE NFLDataDef(
 CREATE TABLE FantasyNews (
   fantasyid int not null AUTO_INCREMENT,
   fantasynews varchar(255) NOT NULL,
+  date TIMESTAMP,
   PRIMARY KEY (fantasyid)
 );
