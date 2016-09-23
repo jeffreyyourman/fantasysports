@@ -1,3 +1,5 @@
+-- PPA = Point Per Attempt
+
 CREATE DATABASE fantasy;
 USE fantasy
 
