@@ -1,12 +1,12 @@
 var mysql = require('mysql');
-// if (process.env.JAWSDB_URL){connection = mysql.createConnection(process.env.JAWSDB_URL)} else {connection = mysql.createConnection({host: "uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",user: 'bx2ajv69tsflz7fv',password: 'bk7cnbekaw907zll',database: 'wl8zg20cpj22w77k'});}
-var connection = mysql.createConnection({
-  port: 3306,
-  host: 'localhost',
-  user: 'root',
-  password: '',
-  database: 'fantasy'
-});
+if (process.env.JAWSDB_URL){connection = mysql.createConnection(process.env.JAWSDB_URL)} else {connection = mysql.createConnection({host: "uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",user: 'bx2ajv69tsflz7fv',password: 'bk7cnbekaw907zll',database: 'wl8zg20cpj22w77k'});}
+// var connection = mysql.createConnection({
+//   port: 3306,
+//   host: 'localhost',
+//   user: 'root',
+//   password: '',
+//   database: 'fantasy'
+// });
 connection.connect(function(err){if (err) {console.error('error connecting: ' + err.stack);return;}console.log('connected as id ' + connection.threadId)});module.exports = connection;
 // heroku restart -a wearefantasy
 
