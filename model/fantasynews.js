@@ -30,6 +30,32 @@ var information = {
 		orm.deleteNews('FantasyNews', condition, function(res){
 			cb(res);
 		});
+	},
+	findOneNewsNBA: function(condition, cb) {
+		orm.findOneNewsNBA('FantasyNewsNBA', condition, function(res){
+				cb(res);
+		});
+	},
+	allNewsNBA: function(cb) {
+		orm.allNewsNBA('FantasyNewsNBA', function(res){
+			cb(res);
+		});
+	},
+	//cols and vals are arrays
+	createNewsNBA: function(cols, vals, cb) {
+		orm.createNewsNBA('FantasyNewsNBA', cols, vals, function(res){
+			cb(res);
+		});
+	},
+	updateNewsNBA: function(objColVals, condition, cb) {
+		orm.updateNewsNBA('FantasyNewsNBA', objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+	deleteNewsNBA: function(condition, cb){
+		orm.deleteNewsNBA('FantasyNewsNBA', condition, function(res){
+			cb(res);
+		});
 	}
 };
 

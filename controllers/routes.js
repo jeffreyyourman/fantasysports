@@ -13,12 +13,40 @@ var fantasynews = require('../model/fantasynews.js');
 var connection = require('../config/connection.js');
 
 router.get('/', function(req, res){
-  var url = 'http://www.cbssports.com/fantasy/football/players/news/all/';
-  var url2 = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
-  var url3 = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
-  var url4 = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
+  var urlNFL = 'http://www.cbssports.com/fantasy/football/players/news/all/';
+  var url2NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
+  var url3NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
+  var url4NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
+  var urlNBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/";
+  var url2NBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/2/";
 
-  request(url2, function (error, response, html) {
+  request(url2NBA, function (error, response, html) {
+    var $ = cheerio.load(html);
+    var name,time,title,injuryreport;
+    // var json = {playernameandteam: '', time: '', playerreport: ''};
+    var json = {playernameandteam: ''};
+  $('div.player-news-desc').filter(function(i, element){
+      var playernameandteam = $(element).children('h4').text();
+      fantasynews.createNewsNBA(['fantasynews'], [playernameandteam], function(fantasynewsnba){
+        //can log here if i like
+      })
+    });
+  });
+
+  request(urlNBA, function (error, response, html) {
+    var $ = cheerio.load(html);
+    var name,time,title,injuryreport;
+    // var json = {playernameandteam: '', time: '', playerreport: ''};
+    var json = {playernameandteam: ''};
+  $('div.player-news-desc').filter(function(i, element){
+      var playernameandteam = $(element).children('h4').text();
+      fantasynews.createNewsNBA(['fantasynews'], [playernameandteam], function(fantasynewsnba){
+        //can log here if i like
+      })
+    });
+  });
+
+  request(url2NFL, function (error, response, html) {
     var $ = cheerio.load(html);
     var name,time,title,injuryreport;
     // var json = {playernameandteam: '', time: '', playerreport: ''};
@@ -31,7 +59,7 @@ router.get('/', function(req, res){
     });
   });
 
-  request(url, function (error, response, html) {
+  request(urlNFL, function (error, response, html) {
     var $ = cheerio.load(html);
     var name,time,title,injuryreport;
     // var json = {playernameandteam: '', time: '', playerreport: ''};
@@ -46,16 +74,21 @@ router.get('/', function(req, res){
 
   var email = req.session.user_email;
   var condition = "email = '" + email + "'";
-    fantasynews.allNews(function(fantasynews){
+  fantasynews.allNewsNBA(function(fantasynewsNBA){
+    console.log('all fantasynews log for nnba',fantasynewsNBA);
+    fantasynews.allNews(function(fantasynewsNFL){
+      console.log('all fantasynews log for nfl',fantasynewsNFL);
       user.findOneUser(condition, function(user){
         var hbsObject = {
           logged_in: req.session.logged_in,
           user: user,
-          fantasynews: fantasynews
+          fantasynewsNFL: fantasynewsNFL,
+          fantasynewsNBA: fantasynewsNBA
         }
         res.render('index', hbsObject)
         });
       });
+    });
 });
 router.get('/sign-out', function(req,res){
   req.session.destroy(function(err){

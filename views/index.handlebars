@@ -29,12 +29,12 @@
           <img src="/assets/images/fantasymainimage.jpeg" alt="" />
       </div>
       <div class="col-md-7">
-        <h3>We are all about Fantasy Sports and our goal is to make you a better fantasy player. We want the fantasy sports world to stop thinking selfishly but to come together as a team and help everybody around them! This is as much of a team sport than an individual fantasy sport. We will work with you to help you maintain your goal of becoming the best fantasy sports player that you can be. We will provide you with the best and most accurate data on the internet. We want you to win money and help grow our fantasy team!</h3>
+        <h3>You've just entered the best fantasy sports website that allows you to interact with other Fantasy sports users. We also give you the ability to gather your own sports data to build your own Fanduel Lineup. Our goal is to give you the most accurate data along with the help of other fantasy sports users!</h3>
       </div>
     </div>
     <div class="row aboutus2">
       <div class="col-md-7">
-        <h3>when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate when we will operate </h3>
+      <h3>We are all about Fantasy Sports and our goal is to make you a better fantasy player. We want the fantasy sports world to stop thinking selfishly but to come together as a team and help everybody around them! This is as much of a team sport than an individual fantasy sport. We will work with you to help you maintain your goal of becoming the best fantasy sports player that you can be. We will provide you with the best and most accurate data on the internet. We want you to win money and help grow our fantasy team!</h3>
       </div>
       <div class="col-md-5">
         <img src="/assets/images/fantasymainimage.jpeg" alt="" />
@@ -51,16 +51,38 @@
   </div>
   <div class="container-fluid newscontainer">
     <div class="row">
-      <div class="col-md-8 sportsnews">
+      <div class="col-md-5">
         <h2>Fantasy Player News</h2>
-          {{#each fantasynews}}
+        <button id='FPNewsNFLButton' type="button" name="button">NFL</button>
+        <button id='FPNewsNBAButton' type="button" name="button">NBA</button>
+        <hr>
+        <br>
+        <div class="fantasynewsNFL">
+          {{#each fantasynewsNFL}}
             <h3>{{this.fantasynews}}</h3>
           {{/each}}
+        </div>
+        <div class="fantasynewsNBA">
+          {{#each fantasynewsNBA}}
+            <h3>{{this.fantasynews}}</h3>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-md-3 twitterfeednews">
+
       </div>
       <div class="col-md-4 twitterfeednews">
         <h2>Fantasy Twitter Feed</h2>
-        <a class="twitter-timeline"  href="https://twitter.com/search?q=%23nfl%20OR%20%23nba" data-widget-id="778252274892177408">Tweets about #nfl OR #nba</a>
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <button id='FTwitterNFLBUTTON' type="button" name="button">NFL</button>
+        <button id='FTwitterNBABUTTON' type="button" name="button">NBA</button>
+        <div class="twitterNFL">
+          <a class="twitter-timeline"  href="https://twitter.com/hashtag/NFL" data-widget-id="778252274892177408">#NFL Tweets</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+        <div class="twitterNBA">
+          <a class="twitter-timeline"  href="https://twitter.com/hashtag/NBA" data-widget-id="778252274892177408">#NBA Tweets</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
       </div>
     </div>
   </div>

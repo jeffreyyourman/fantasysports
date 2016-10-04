@@ -229,3 +229,9 @@ CREATE TABLE FantasyNews (
   date TIMESTAMP,
   PRIMARY KEY (fantasyid)
 );
+CREATE TABLE FantasyNewsNBA (
+  fantasyid int not null AUTO_INCREMENT,
+  fantasynews varchar(255) NOT NULL,
+  date TIMESTAMP,
+  PRIMARY KEY (fantasyid)
+);

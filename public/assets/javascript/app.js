@@ -1,7 +1,20 @@
-
-var queryURL = "https://api.twitter.com/1.1/search/tweets.json?q=%23haiku+%23poetry";
-
-$.ajax({url: queryURL, method: 'GET'})
- .done(function(response) {
-     console.log(response);
+$(document).ready(function(){
+  $('.fantasynewsNBA').hide();
+  // $('.twitterNBA').hide();
+  $('#FPNewsNBAButton').on('click', function(){
+    $('.fantasynewsNFL').hide();
+    $('.fantasynewsNBA').show();
+  });
+  $('#FPNewsNFLButton').on('click', function(){
+    $('.fantasynewsNBA').hide();
+    $('.fantasynewsNFL').show();
+  });
+  $('#FTwitterNBABUTTON').on('click', function(){
+    $('.twitterNFL').hide();
+    $('.twitterNBA').show();
+  });
+  $('#FTwitterNFLBUTTON').on('click', function(){
+    $('.twitterNBA').hide();
+    $('.twitterNFL').show();
+  });
 });

@@ -10,11 +10,14 @@ var connection = require('../config/connection.js')
 
 router.get('/NFL', function(req,res){
   fantasydata.allNFLmatchups(function(allNFLmatchups){
-    var hbsObject = {
-      logged_in: req.session.logged_in,
-      allNFLmatchups:allNFLmatchups
-    }
-    res.render('fantasydata/fantasy_data', hbsObject);
+    fantasydata.allFantasyDataQB(function(fantasydataQB){
+      var hbsObject = {
+        logged_in:req.session.logged_in,
+        fantasydataQB:fantasydataQB,
+        allNFLmatchups:allNFLmatchups
+      }
+      res.render('fantasydata/fantasy_data', hbsObject);
+    });
   });
 });
 router.get('/NFL/QB', function(req,res){

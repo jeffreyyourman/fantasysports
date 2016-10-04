@@ -1,1 +1,1 @@
-# fantasysports
+In the process of, building my own fantasy sports website to help fanduel users get accurate and reliable data. Also with the help of the social aspect of our website which allows you to chat with other users. 
