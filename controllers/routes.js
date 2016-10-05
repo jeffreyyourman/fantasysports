@@ -75,9 +75,7 @@ router.get('/', function(req, res){
   var email = req.session.user_email;
   var condition = "email = '" + email + "'";
   fantasynews.allNewsNBA(function(fantasynewsNBA){
-    console.log('all fantasynews log for nnba',fantasynewsNBA);
     fantasynews.allNews(function(fantasynewsNFL){
-      console.log('all fantasynews log for nfl',fantasynewsNFL);
       user.findOneUser(condition, function(user){
         var hbsObject = {
           logged_in: req.session.logged_in,

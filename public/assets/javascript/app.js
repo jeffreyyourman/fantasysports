@@ -17,4 +17,10 @@ $(document).ready(function(){
     $('.twitterNBA').hide();
     $('.twitterNFL').show();
   });
+  // var queryURL = "";
+  //
+  // $.ajax({url: queryURL, method: 'GET'})
+  //  .done(function(response){
+  //    console.log(response);
+  //  });
 });
