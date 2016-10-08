@@ -19,9 +19,35 @@
       <tr>
         <th>Week</th>
         <th>Player</th>
-        <th>Sal</th>
-        <th>Postion</th>
+        <th>Salary</th>
+        <th>Position</th>
         <th>Team</th>
+        <th>Team Name</th>
+        <th>ID</th>
+        <th>Injury Status</th>
+        <th>Type of injury</th>
+        <th>Ranking vs position</th>
+        <th>Player Rating</th>
+        <th>Opp Defense Ranking</th>
+        <th>FPPG</th>
+        <th>Passing Attempts per game</th>
+        <th>Rushing Attempts per game</th>
+        <th>Total Opp</th>
+        <th>Points per attemplt</th>
+        <th>Dova</th>
+        <th>Expected Wins</th>
+        <th>Path expectation</th>
+        <th>Over Under</th>
+        <th>ML</th>
+        <th>SL</th>
+        <th>Ending ML</th>
+        <th>Line Change</th>
+        <th>Sal Change</th>
+        <th>Offensive Lineman Rank</th>
+        <th>Prating</th>
+        <th>Criteria Score</th>
+        <th>Criteria Rank</th>
+        <th>Fantasy Points scored previous game</th>
       </tr>
     </thead>
   </table>
@@ -50,7 +76,34 @@ var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDQB + "/od
     { data: 'gsx$player.$t' },
     { data: 'gsx$sal.$t' },
     { data: 'gsx$pos.$t' },
-    { data: 'gsx$team.$t' }
+    { data: 'gsx$team.$t' },
+    { data: "gsx$id.$t" }
+    // { data: "gsx$injurystatus.$t" },
+    // { data: "gsx$typeinjury.$t" },
+    // { data: "gsx$rvp.$t" },
+    // { data: "gsx$pr.$t" },
+    // { data: "gsx$id.$t" },
+    // { data: "gsx$oppdefrank.$t" },
+    // { data: "gsx$fppg.$t" },
+    // { data: "gsx$id.$t" },
+    // { data: "gsx$passattemptgame.$t" },
+    // { data: "gsx$rushattgame.$t" },
+    // { data: "gsx$totalopp.$t" },
+    // { data: "gsx$ppa.$t" },
+    // { data: "gsx$dova.$t" },
+    // { data: "gsx$expectedwins.$t" },
+    // { data: "gsx$pathexpectation.$t" },
+    // { data: "gsx$OU.$t" },
+    // { data: "gsx$ML.$t" },
+    // { data: "gsx$SL.$t" },
+    // { data: "gsx$EndingML.$t" },
+    // { data: "gsx$LineChange.$t" },
+    // { data: "gsx$SalChange.$t" },
+    // { data: "gsx$OLRANK.$t" },
+    // { data: "gsx$Prating.$t" },
+    // { data: "gsx$CriteriaScore.$t" },
+    // { data: "gsx$CritRank.$t" },
+    // { data: "gsx$FPS.$t" }
         ]
       });
     });
