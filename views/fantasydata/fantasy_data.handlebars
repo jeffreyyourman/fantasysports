@@ -4,6 +4,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
       <!-- Latest compiled and minified CSS -->
 
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -11,11 +13,19 @@
   <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
 </head>
 <body>
-  <div class="results">
-  </div>
-</body>
-
-
+  <div class="container">
+  <table class="table table-hover fantasy">
+    <thead>
+      <tr>
+        <th>Week</th>
+        <th>Player</th>
+        <th>Sal</th>
+        <th>Postion</th>
+        <th>Team</th>
+      </tr>
+    </thead>
+  </table>
+</div>
 
 <script type="text/javascript">
 // ID of the Google Spreadsheet
@@ -23,18 +33,29 @@
 var spreadsheetIDQB = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
 // Make sure it is public or set to Anyone with link can view
 var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDQB + "/od6/public/values?alt=json";
-  $.getJSON(url, function(data) {
-  var entry = data.feed.entry;
 
-  $(entry).each(function(){
-
-    // Column names are name, age, etc.fdsaf
-
-      $('.results').prepend("<table><tr><th>Week</th></tr></tr><td>" + this.gsx$week.$t + "</td><tr></table>");
+  // if empty show all the appointments
+  $.get( url, function( data ) {
+    console.log(data.feed.entry);
 
 
-  });
-});
+    //display all appointments with DATA
+    $('.fantasy').DataTable( {
+
+      data: data.feed.entry,
+    "ordering": true,
+    "info":     false,
+      columns: [
+    { data: 'gsx$week.$t' },
+    { data: 'gsx$player.$t' },
+    { data: 'gsx$sal.$t' },
+    { data: 'gsx$pos.$t' },
+    { data: 'gsx$team.$t' }
+        ]
+      });
+    });
+
+
 
 //above is for qb
 // ==========
