@@ -5,6 +5,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <!-- Latest compiled and minified CSS -->
 
+  <!-- below is firebase link -->
+  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
   <link rel="stylesheet" href="/assets/css/style.css">
 
   <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
@@ -69,7 +72,16 @@
         </div>
       </div>
       <div class="col-md-3 twitterfeednews">
-
+        <div id="swapzone"><input id="username" placeholder="Name"/>
+          <button id="start">Start</button>
+        </div>
+        <div id="chat">
+          <div id="chatmessages"></div>
+          <div id="chatbar">
+            <input id="chatinput" />
+            <button id="chatsend">Send</button>
+          </div>
+        </div>
       </div>
       <div class="col-md-4 twitterfeednews">
         <h2>Fantasy Twitter Feed</h2>
@@ -95,20 +107,51 @@
   </div> -->
 
 <script type="text/javascript">
-// var spreadsheetIDQB = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
-//
-// // Make sure it is public or set to Anyone with link can view
-// var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDQB + "/od6/public/values?alt=json";
-//
-//   $.getJSON(url, function(data) {
-//
-//   var entry = data.feed.entry;
-//
-//   $(entry).each(function(){
-//     // Column names are name, age, etc.
-//     $('.results').prepend('<h2>'+this.gsx$week.$t+'</h2><p>'+this.gsx$player.$t+'</p>');
-//   });
-// });
+
+var chatData = new Firebase("https://chat4fantasy-fe073.firebaseio.com");
+
+
+
+//CHAT LISTENERS
+//Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
+$('#chatsend').click(function() {
+  if ($('#chatinput').val() !== "") {
+    var message = $('#chatinput').val();
+    chatData.push({
+      name: username,
+      message: message,
+      time: Firebase.ServerValue.TIMESTAMP,
+      idNum: playerNum
+    });
+    $('#chatinput').val("");
+  }
+});
+$('#chatinput').keypress(function(e) {
+  if (e.keyCode == 13 && $('#chatinput').val() !== "") {
+    var message = $('#chatinput').val();
+    chatData.push({
+      name: username,
+      message: message,
+      time: Firebase.ServerValue.TIMESTAMP,
+      idNum: playerNum
+    });
+    $('#chatinput').val("");
+
+  }
+});
+//Update chat on screen when new message detected - ordered by 'time' value
+chatData.orderByChild("time").on('child_added', function(snapshot) {
+
+  //if idNum is 0, then its a disconnect message and displays accordingly
+  //if not - its a user chat message
+  if (snapshot.val().idNum === 0) {
+    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ' ' + snapshot.val().message + '</p>');
+  } else {
+    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ': ' + snapshot.val().message + '</p>');
+  }
+  //keeps div scrolled to bottom on each update.
+  $('#chatmessages').scrollTop($("#chatmessages")[0].scrollHeight);
+});
 </script>
 
 </body>
