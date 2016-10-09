@@ -86,7 +86,6 @@
       <div class="col-md-4 twitterfeednews">
         <h2>Fantasy Twitter Feed</h2>
         <button id='FTwitterNFLBUTTON' type="button" name="button">NFL</button>
-        <button id='FTwitterNBABUTTON' type="button" name="button">NBA</button>
         <div class="twitterNFL">
           <a class="twitter-timeline"  href="https://twitter.com/hashtag/NFL" data-widget-id="778252274892177408">#NFL Tweets</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -94,64 +93,5 @@
       </div>
     </div>
   </div>
-
-
-
-
-  <!-- <div class="container-fluid newscontainer">
-    <div class="row">
-      <div class="col-md-12 results">
-
-      </div>
-    </div>
-  </div> -->
-
-<script type="text/javascript">
-
-var chatData = new Firebase("https://chat4fantasy-fe073.firebaseio.com");
-
-
-
-//CHAT LISTENERS
-//Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
-$('#chatsend').click(function() {
-  if ($('#chatinput').val() !== "") {
-    var message = $('#chatinput').val();
-    chatData.push({
-      name: username,
-      message: message,
-      time: Firebase.ServerValue.TIMESTAMP,
-      idNum: playerNum
-    });
-    $('#chatinput').val("");
-  }
-});
-$('#chatinput').keypress(function(e) {
-  if (e.keyCode == 13 && $('#chatinput').val() !== "") {
-    var message = $('#chatinput').val();
-    chatData.push({
-      name: username,
-      message: message,
-      time: Firebase.ServerValue.TIMESTAMP,
-      idNum: playerNum
-    });
-    $('#chatinput').val("");
-
-  }
-});
-//Update chat on screen when new message detected - ordered by 'time' value
-chatData.orderByChild("time").on('child_added', function(snapshot) {
-
-  //if idNum is 0, then its a disconnect message and displays accordingly
-  //if not - its a user chat message
-  if (snapshot.val().idNum === 0) {
-    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ' ' + snapshot.val().message + '</p>');
-  } else {
-    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ': ' + snapshot.val().message + '</p>');
-  }
-  //keeps div scrolled to bottom on each update.
-  $('#chatmessages').scrollTop($("#chatmessages")[0].scrollHeight);
-});
-</script>
-
+<script src='/assets/javascript/chatapp.js' type="text/javascript"></script>
 </body>
