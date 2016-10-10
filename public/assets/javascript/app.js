@@ -3,7 +3,7 @@ $(document).ready(function(){
     // Make sure it is public or set to Anyone with link can view
     var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDQB + "/od6/public/values?alt=json";
 
-      // if empty show all the appointments
+      // if emptdy show all the appointments
       $.get( url, function( data ) {
         //display all appointments with DATA
         $('.fantasyQB').DataTable( {
