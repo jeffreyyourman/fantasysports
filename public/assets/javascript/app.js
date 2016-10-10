@@ -37,15 +37,6 @@ $(document).ready(function(){
           });
         });
 
-
-
-
-  //above is for qb
-  // ==========
-  // below is for rb
-
-
-
     var spreadsheetIDrb = "15mSJN1WKrxFVJtIYT20sJS9mGr7f65Ow1XGLhHVuzDo";
     // Make sure it is public or set to Anyone with link can view
     var urlrb = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDrb + "/od6/public/values?alt=json";
@@ -88,22 +79,12 @@ $(document).ready(function(){
           });
         });
 
-
-
-
-  // // above is for rb
-  // // ==========
-  // // below is for wr
-  // var spreadsheetIDrb = "15mSJN1WKrxFVJtIYT20sJS9mGr7f65Ow1XGLhHVuzDo";
   var spreadsheetIDwr = "1gNVt-L_tVtvNSvoZpmocD91q7JShDjC370JqXo4E6Ko";
-  // Make sure it is public or set to Anyone with link can view
-  // var urlrb = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDrb + "/od6/public/values?alt=json";
   var urlwr = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDwr + "/od6/public/values?alt=json";
 
     // if empty show all the appointments
     $.get(urlwr , function( data ) {
 
-      //display all appointments with DATA
       $('.fantasyWR').DataTable( {
 
         data: data.feed.entry,
@@ -136,20 +117,7 @@ $(document).ready(function(){
         });
       });
 
-
-
-
-
-
-  // //============
-  // // below is for te
-  // // TE = https://docs.google.com/spreadsheets/d/1UjVGzANuKJ-_ERg8f4ixjPW6AVL9bjCcIhyq4YK-Z0k/pubhtml
-
-
-  // var spreadsheetIDwr = "1gNVt-L_tVtvNSvoZpmocD91q7JShDjC370JqXo4E6Ko";
   var spreadsheetIDte = "1UjVGzANuKJ-_ERg8f4ixjPW6AVL9bjCcIhyq4YK-Z0k";
-  // Make sure it is public or set to Anyone with link can view
-  // var urlwr = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDwr + "/od6/public/values?alt=json";
   var urlte = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDte + "/od6/public/values?alt=json";
 
     // if empty show all the appointments
@@ -190,13 +158,9 @@ $(document).ready(function(){
         });
       });
 
-
-  // var spreadsheetIDte = "1UjVGzANuKJ-_ERg8f4ixjPW6AVL9bjCcIhyq4YK-Z0k";
   var spreadsheetIDk = "1RWrzWmrAZqyLlmpqNnA8kKRk9fjFN3japYiAtztRWKs";
-  // Make sure it is public or set to Anyone with link can view
   var urlk = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDk + "/od6/public/values?alt=json";
 
-    // if empty show all the appointments
     $.get(urlk , function( data ) {
 
       //display all appointments with DATA
@@ -228,11 +192,6 @@ $(document).ready(function(){
         });
       });
 
-  // // above is for k
-  // // ===========
-  // // below is for def
-  // // Def = https://docs.google.com/spreadsheets/d/1B63c8kUsBMC3nHhIq2vErR-55b-SgiTlhGSYIA-G2X4/pubhtml
-  // if empty show all the appointments
   var spreadsheetIDdef = "1B63c8kUsBMC3nHhIq2vErR-55b-SgiTlhGSYIA-G2X4";
 
   var urldef = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDdef + "/od6/public/values?alt=json";
@@ -291,10 +250,6 @@ $(document).ready(function(){
     $('.twitterNFL').show();
   });
 
-
-
-
-
   $("#qbLink").on('click', function(){
     $('#runningback').hide();
     $('#widereceiver').hide();
@@ -311,7 +266,6 @@ $(document).ready(function(){
     $('#kicker').hide();
     $('#defense').hide();
     $('#runningback').show();
-
   });
 
   $("#wrLink").on('click', function(){
