@@ -94,7 +94,7 @@ router.get('/sign-out', function(req,res){
   });
 });
 
-router.get('/chat', function(req,res){
+router.get('/Chat', function(req,res){
   res.render('users/chat')
 });
 module.exports = router;

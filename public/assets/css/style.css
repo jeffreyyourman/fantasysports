@@ -1,15 +1,15 @@
 body,html{
     height: 100%;
+    background-color: #f0fcff;
   }
 .homePage{
-  background-color: #ffffff;
   margin-top: 50px;
   padding-top: 10px;
 }
 
 .mynavbar {
   padding:0;
-  background-color:#f0fcff;
+  background-color: #ddfaff;
 }
 .matchupdiv {
   height: 300px;
@@ -47,7 +47,7 @@ div {
   height:300px;
 }
 .newscontainer {
-  background-color:#f0fcff;
+  background-color: #f0fcff;
 }
 .aboutus1 {
   background-color:white;
@@ -58,17 +58,30 @@ div {
 .aboutus3 {
   background-color:white;
 }
-.fantasynewsNFL {
+
+.fantasynews {
   height:600px;
   overflow: hidden;
   overflow-y: scroll;
+  background-color:white;
+}
+.twitterNFL {
+  height: 600px;
+}
+.fantasynewsNFL {
+  padding:5%;
+  height:600px;
 }
 .fantasynewsNBA {
+  padding:5%;
   height:600px;
-  overflow: hidden;
-  overflow-y: scroll;
 }
 
-  .main{
-    padding: 10px 10px 0 10px;
+.main{
+  padding: 10px 10px 0 10px;
+}
+
+.footer {
+  margin-top: 100px;
+  background-color: #ddfaff;
   }

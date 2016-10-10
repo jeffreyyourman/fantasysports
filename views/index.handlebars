@@ -52,27 +52,35 @@
     <div class="row">
       <div class="col-md-5">
         <h2>Fantasy Player News</h2>
-        <button id='FPNewsNFLButton' type="button" name="button">NFL</button>
-        <button id='FPNewsNBAButton' type="button" name="button">NBA</button>
+        <button class='btn btn-primary' id='FPNewsNFLButton' type="button" name="button">NFL</button>
+        <button class='btn btn-primary' id='FPNewsNBAButton' type="button" name="button">NBA</button>
+        <br>
+        <br>
+        <div class="fantasynews">
+          <div class="fantasynewsNFL">
+            {{#each fantasynewsNFL}}
+              <h3>{{this.fantasynews}}</h3>
+              <hr>
+            {{/each}}
+          </div>
+          <div class="fantasynewsNBA">
+            {{#each fantasynewsNBA}}
+              <h3>{{this.fantasynews}}</h3>
+              <hr>
+            {{/each}}
+          </div>
+        </div>
 
-        <div class="fantasynewsNFL">
-          {{#each fantasynewsNFL}}
-            <h3>{{this.fantasynews}}</h3>
-            <hr>
-          {{/each}}
-        </div>
-        <div class="fantasynewsNBA">
-          {{#each fantasynewsNBA}}
-            <h3>{{this.fantasynews}}</h3>
-            <hr>
-          {{/each}}
-        </div>
       </div>
       <div class="col-md-4 twitterfeednews">
-          
+
       </div>
       <div class="col-md-3 twitterfeednews">
         <h2>Fantasy Twitter Feed</h2>
+        <button class='btn btn-primary' id='FPNewsNFLButton' type="button" name="button">NFL</button>
+        <button class='btn btn-primary' id='FPNewsNBAButton' type="button" name="button">NBA</button>
+        <br>
+        <br>
         <div class="twitterNFL">
           <a class="twitter-timeline"  href="https://twitter.com/hashtag/NFL" data-widget-id="778252274892177408">#NFL Tweets</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
