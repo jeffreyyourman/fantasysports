@@ -93,4 +93,8 @@ router.get('/sign-out', function(req,res){
     res.redirect('/')
   });
 });
+
+router.get('/chat', function(req,res){
+  res.render('users/chat')
+});
 module.exports = router;

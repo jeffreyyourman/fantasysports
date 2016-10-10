@@ -1,333 +1,301 @@
-var myDataRef = new Firebase('https://multi-rps.firebaseio.com/');
-var chatData = new Firebase("https://chat4fantasy-fe073.firebaseio.com");
-var playersRef = new Firebase('https://multi-rps.firebaseio.com/players');
-var currentTurnRef = new Firebase('https://multi-rps.firebaseio.com/turn');
+/**
+ * Copyright 2015 Google Inc. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+'use strict';
 
-var username = "Guest";
-var currentPlayers = null;
-var currentTurn = null;
-var playerNum = false;
-var playerOneExists = false;
-var playerTwoExists = false;
-var playerOneData = null;
-var playerTwoData = null;
+// Initializes FriendlyChat.
+function FriendlyChat() {
+  this.checkSetup();
 
-//USERNAME LISTENERS
-//Start button - takes username and tries to get user in game
-$('#start').click(function() {
-  if ($('#username').val() !== "") {
-    username = capitalize($ ('#username').val());
-    getInGame();
-  }
-});
-//listener for 'enter' in username input
-$('#username').keypress(function(e) {
-  if (e.keyCode == 13 && $('#username').val() !== "") {
-    username = capitalize($('#username').val());
-    getInGame();
-  }
-});
+  // Shortcuts to DOM Elements.
+  this.messageList = document.getElementById('messages');
+  this.messageForm = document.getElementById('message-form');
+  this.messageInput = document.getElementById('message');
+  this.submitButton = document.getElementById('submit');
+  this.submitImageButton = document.getElementById('submitImage');
+  this.imageForm = document.getElementById('image-form');
+  this.mediaCapture = document.getElementById('mediaCapture');
+  this.userPic = document.getElementById('user-pic');
+  this.userName = document.getElementById('user-name');
+  this.signInButton = document.getElementById('sign-in');
+  this.signOutButton = document.getElementById('sign-out');
+  this.signInSnackbar = document.getElementById('must-signin-snackbar');
 
-//Function to capitalize usernames
-function capitalize(name) {
-  return name.charAt(0).toUpperCase() + name.slice(1);
+  // Saves message on form submit.
+  this.messageForm.addEventListener('submit', this.saveMessage.bind(this));
+  this.signOutButton.addEventListener('click', this.signOut.bind(this));
+  this.signInButton.addEventListener('click', this.signIn.bind(this));
+
+  // Toggle for the button.
+  var buttonTogglingHandler = this.toggleButton.bind(this);
+  this.messageInput.addEventListener('keyup', buttonTogglingHandler);
+  this.messageInput.addEventListener('change', buttonTogglingHandler);
+
+  // Events for image upload.
+  this.submitImageButton.addEventListener('click', function() {
+    this.mediaCapture.click();
+  }.bind(this));
+  this.mediaCapture.addEventListener('change', this.saveImageMessage.bind(this));
+
+  this.initFirebase();
 }
 
-//CHAT LISTENERS
-//Chat send button listener, grabs input and pushes to firebase. (Firebase's push automatically creates a unique key)
-$('#chatsend').click(function() {
-  if ($('#chatinput').val() !== "") {
-    var message = $('#chatinput').val();
-    chatData.push({
-      name: username,
-      message: message,
-      time: Firebase.ServerValue.TIMESTAMP,
-      idNum: playerNum
+// Sets up shortcuts to Firebase features and initiate firebase auth.
+FriendlyChat.prototype.initFirebase = function() {
+  // Shortcuts to Firebase SDK features.
+  this.auth = firebase.auth();
+  this.database = firebase.database();
+  this.storage = firebase.storage();
+  // Initiates Firebase auth and listen to auth state changes.
+  this.auth.onAuthStateChanged(this.onAuthStateChanged.bind(this));
+};
+
+// Loads chat messages history and listens for upcoming ones.
+FriendlyChat.prototype.loadMessages = function() {
+  // Reference to the /messages/ database path.
+  this.messagesRef = this.database.ref('messages');
+  // Make sure we remove all previous listeners.
+  this.messagesRef.off();
+
+  // Loads the last 12 messages and listen for new ones.
+  var setMessage = function(data) {
+    var val = data.val();
+    this.displayMessage(data.key, val.name, val.text, val.photoUrl, val.imageUrl);
+  }.bind(this);
+  this.messagesRef.limitToLast(12).on('child_added', setMessage);
+  this.messagesRef.limitToLast(12).on('child_changed', setMessage);
+};
+
+
+// Saves a new message on the Firebase DB.
+FriendlyChat.prototype.saveMessage = function(e) {
+  e.preventDefault();
+  // Check that the user entered a message and is signed in.
+  if (this.messageInput.value && this.checkSignedInWithMessage()) {
+    var currentUser = this.auth.currentUser;
+    // Add a new message entry to the Firebase Database.
+    this.messagesRef.push({
+      name: currentUser.displayName,
+      text: this.messageInput.value,
+      photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
+    }).then(function() {
+      // Clear message text field and SEND button state.
+      FriendlyChat.resetMaterialTextfield(this.messageInput);
+      this.toggleButton();
+    }.bind(this)).catch(function(error) {
+      console.error('Error writing new message to Firebase Database', error);
     });
-    $('#chatinput').val("");
   }
-});
+};
 
-//Chatbox input listener
-$('#chatinput').keypress(function(e) {
-  if (e.keyCode == 13 && $('#chatinput').val() !== "") {
-    var message = $('#chatinput').val();
-    chatData.push({
-      name: username,
-      message: message,
-      time: Firebase.ServerValue.TIMESTAMP,
-      idNum: playerNum
+// Sets the URL of the given img element with the URL of the image stored in Firebase Storage.
+FriendlyChat.prototype.setImageUrl = function(imageUri, imgElement) {
+  // If the image is a Firebase Storage URI we fetch the URL.
+  if (imageUri.startsWith('gs://')) {
+    imgElement.src = FriendlyChat.LOADING_IMAGE_URL; // Display a loading image first.
+    this.storage.refFromURL(imageUri).getMetadata().then(function(metadata) {
+      imgElement.src = metadata.downloadURLs[0];
     });
-    $('#chatinput').val("");
-
-  }
-});
-
-
-//click event for dynamically added li elements
-$(document).on('click', 'li', function() {
-  console.log('click');
-  //grabs text from li choice
-  var clickChoice = $(this).text();
-
-  //sets the choice in the current player object in firebase
-  playerRef.child('choice').set(clickChoice);
-
-  //user has chosen, so removes choices and displays what they chose
-  $('#player' + playerNum + ' ul').empty();
-  $('#player' + playerNum + 'chosen').html(clickChoice);
-
-  //increments turn. Turn goes from:
-  //1 - player 1
-  //2 - player 2
-  //3 - determine winner
-  currentTurnRef.transaction(function(turn) {
-    return turn + 1;
-  });
-});
-
-//Update chat on screen when new message detected - ordered by 'time' value
-chatData.orderByChild("time").on('child_added', function(snapshot) {
-
-  //if idNum is 0, then its a disconnect message and displays accordingly
-  //if not - its a user chat message
-  if (snapshot.val().idNum === 0) {
-    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ' ' + snapshot.val().message + '</p>');
   } else {
-    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ': ' + snapshot.val().message + '</p>');
+    imgElement.src = imageUri;
   }
-  //keeps div scrolled to bottom on each update.
-  $('#chatmessages').scrollTop($("#chatmessages")[0].scrollHeight);
-});
+};
 
-//tracks changes in key which contains player objects
-playersRef.on('value', function(snapshot) {
-  //length of the 'players' array
-  currentPlayers = snapshot.numChildren();
+// Saves a new message containing an image URI in Firebase.
+// This first saves the image in Firebase storage.
+FriendlyChat.prototype.saveImageMessage = function(event) {
+  var file = event.target.files[0];
 
-  //check to see if players exist
-  playerOneExists = snapshot.child('1').exists();
-  playerTwoExists = snapshot.child('2').exists();
+  // Clear the selection in the file picker input.
+  this.imageForm.reset();
 
-  //player data objects
-  playerOneData = snapshot.child('1').val();
-  playerTwoData = snapshot.child('2').val();
+  // Check if the file is an image.
+  if (!file.type.match('image.*')) {
+    var data = {
+      message: 'You can only share images',
+      timeout: 2000
+    };
+    this.signInSnackbar.MaterialSnackbar.showSnackbar(data);
+    return;
+  }
+  // Check if the user is signed-in
+  if (this.checkSignedInWithMessage()) {
 
-  //If theres a player 1, fill in name and win loss data
-  if (playerOneExists) {
-    $('#player1name').text(playerOneData.name);
-    $('#player1wins').text("Wins: " + playerOneData.wins);
-    $('#player1losses').text("Losses: " + playerOneData.losses);
+    // We add a message with a loading icon that will get updated with the shared image.
+    var currentUser = this.auth.currentUser;
+    this.messagesRef.push({
+      name: currentUser.displayName,
+      imageUrl: FriendlyChat.LOADING_IMAGE_URL,
+      photoUrl: currentUser.photoURL || '/images/profile_placeholder.png'
+    }).then(function(data) {
 
-  } else {
-    //if there is no player 1, clear win/loss data and show waiting
-    $('#player1name').text("Waiting for Player 1");
-    $('#player1wins').empty();
-    $('#player1losses').empty();
+      // Upload the image to Firebase Storage.
+      this.storage.ref(currentUser.uid + '/' + Date.now() + '/' + file.name)
+          .put(file, {contentType: file.type})
+          .then(function(snapshot) {
+            // Get the file's Storage URI and update the chat message placeholder.
+            var filePath = snapshot.metadata.fullPath;
+            data.update({imageUrl: this.storage.ref(filePath).toString()});
+          }.bind(this)).catch(function(error) {
+        console.error('There was an error uploading a file to Firebase Storage:', error);
+      });
+    }.bind(this));
+  }
+};
+
+// Signs-in Friendly Chat.
+FriendlyChat.prototype.signIn = function() {
+  // Sign in Firebase using popup auth and Google as the identity provider.
+  var provider = new firebase.auth.GoogleAuthProvider();
+  this.auth.signInWithPopup(provider);
+};
+
+// Signs-out of Friendly Chat.
+FriendlyChat.prototype.signOut = function() {
+  // Sign out of Firebase.
+  this.auth.signOut();
+};
+
+// Triggers when the auth state change for instance when the user signs-in or signs-out.
+FriendlyChat.prototype.onAuthStateChanged = function(user) {
+  if (user) { // User is signed in!
+    // Get profile pic and user's name from the Firebase user object.
+    var profilePicUrl = user.photoURL; // Only change these two lines!
+    var userName = user.displayName;   // Only change these two lines!
+
+
+
+
+    // Set the user's profile pic and name.
+    this.userPic.style.backgroundImage = 'url(' + profilePicUrl + ')';
+    this.userName.textContent = userName;
+
+    // Show user's profile and sign-out button.
+    this.userName.removeAttribute('hidden');
+    this.userPic.removeAttribute('hidden');
+    this.signOutButton.removeAttribute('hidden');
+
+    // Hide sign-in button.
+    this.signInButton.setAttribute('hidden', 'true');
+
+    // We load currently existing chant messages.
+    this.loadMessages();
+  } else { // User is signed out!
+    // Hide user's profile and sign-out button.
+    this.userName.setAttribute('hidden', 'true');
+    this.userPic.setAttribute('hidden', 'true');
+    this.signOutButton.setAttribute('hidden', 'true');
+
+    // Show sign-in button.
+    this.signInButton.removeAttribute('hidden');
+  }
+};
+
+// Returns true if user is signed-in. Otherwise false and displays a message.
+FriendlyChat.prototype.checkSignedInWithMessage = function() {
+  // Return true if the user is signed in Firebase
+  if (this.auth.currentUser) {
+    return true;
   }
 
-  //if theres a player 2, fill in name and win/loss data
-  if (playerTwoExists) {
-    $('#player2name').text(playerTwoData.name);
-    $('#player2wins').text("Wins: " + playerTwoData.wins);
-    $('#player2losses').text("Losses: " + playerTwoData.losses);
-  } else {
-    //if no player 2, clear win/loss and show waiting
-    $('#player2name').text("Waiting for Player 2");
-    $('#player2wins').empty();
-    $('#player2losses').empty();
-  }
-});
-
-
-
-//Detects changes in current turn key
-currentTurnRef.on('value', function(snapshot) {
-  //gets current turn from snapshot
-  currentTurn = snapshot.val();
-
-  //dont do the following unless you're logged in
-  if (playerNum) {
-    //for turn 1
-    if (currentTurn == 1) {
-
-      //if its the current player's turn, tell them and show choices
-      if (currentTurn == playerNum) {
-        $('#currentturn').html('<h2>It\'s Your Turn!</h2>');
-        $('#player' + playerNum + ' ul').append('<li>Rock</li><li>Paper</li><li>Scissors</li>');
-      } else {
-
-        //if it isnt the current players turn, tells them theyre waiting for player one
-        $('#currentturn').html('<h2>Waiting for ' + playerOneData.name + ' to choose.</h2>');
-      }
-
-      //shows yellow border around active player
-      $('#player1').css('border', '2px solid yellow');
-      $('#player2').css('border', '1px solid black');
-    } else if (currentTurn == 2) {
-
-      //if its the current player's turn, tell them and show choices
-      if (currentTurn == playerNum) {
-        $('#currentturn').html('<h2>It\'s Your Turn!</h2>');
-        $('#player' + playerNum + ' ul').append('<li>Rock</li><li>Paper</li><li>Scissors</li>');
-      } else {
-        //if it isnt the current players turn, tells them theyre waiting for player two
-        $('#currentturn').html('<h2>Waiting for ' + playerTwoData.name + ' to choose.</h2>');
-      }
-      //shows yellow border around active player
-      $('#player2').css('border', '2px solid yellow');
-      $('#player1').css('border', '1px solid black');
-    } else if (currentTurn == 3) {
-      ///where the game win logic takes place then resets to turn 1
-      gameLogic(playerOneData.choice, playerTwoData.choice);
-
-      //reveal both player choices
-      $('#player1chosen').html(playerOneData.choice);
-      $('#player2chosen').html(playerTwoData.choice);
-
-      // reset after timeout
-      var moveOn = function() {
-        $('#player1chosen').empty();
-        $('#player2chosen').empty();
-        $('#result').empty();
-
-        //check to make sure players didnt leave before timeout
-        if (playerOneExists && playerTwoExists) {
-          currentTurnRef.set(1);
-        }
-      };
-
-      // show results for 2 seconds, then resets
-      setTimeout(moveOn, 2000);
-
-    } else {
-      // if (playerNum) {
-      //   $('#player' + playerNum + ' ul').empty();
-      // }
-      $('#player1 ul').empty();
-      $('#player2 ul').empty();
-
-      $('#currentturn').html('<h2>Waiting for another player to join.</h2>');
-      $('#player2').css('border', '1px solid black');
-      $('#player1').css('border', '1px solid black');
-    }
-  }
-});
-
-
-
-
-//When a player joins, checks to see if there are two players now. If yes, then it will start the game.
-playersRef.on('child_added', function(snapshot) {
-  if (currentPlayers == 1) {
-
-    //set turn to 1, which starts the game
-    currentTurnRef.set(1);
-  }
-});
-
-
-
-
-
-
-
-
-
-
-//Function to get in the game
-function getInGame() {
-  //For adding disconnects to the chat with a unique id (the date/time the user entered the game)
-  //Needed because Firebase's '.push()' creates its unique keys client side, so you cant '.push()' in a '.onDisconnect'
-  var chatDataDisc = new Firebase('https://multi-rps.firebaseio.com/chat/' + Date.now());
-
-  //checks for current players, if theres a player one connected, then the user becomes player 2.
-  //if there is no player one, then the user becomes player 1
-  if (currentPlayers < 2) {
-    if (playerOneExists) {
-      playerNum = 2;
-    } else {
-      playerNum = 1;
-    }
-
-    //creates key based on assigned player number
-    playerRef = new Firebase('https://multi-rps.firebaseio.com/players/' + playerNum);
-
-    //creates player object. 'choice' is unnecessary here, but I left it in to be as complete as possible
-    playerRef.set({
-      name: username,
-      wins: 0,
-      losses: 0,
-      choice: null
-    });
-
-    //on disconnect remove this user's player object
-    playerRef.onDisconnect().remove();
-
-    //if a user disconnects, set the current turn to 'null' so the game does not continue
-    currentTurnRef.onDisconnect().remove();
-
-    //send disconnect message to chat with Firebase server generated timestamp and id of '0' to denote system message
-    chatDataDisc.onDisconnect().set({
-      name: username,
-      time: Firebase.ServerValue.TIMESTAMP,
-      message: 'has disconnected.',
-      idNum: 0
-    });
-
-    //Remove name input box and show current player number.
-    $('#swapzone').html('<h2>Hi ' + username + '! You are Player ' + playerNum + '</h2>');
-
-  } else {
-    //if current players is '2', will not allow the player to join
-    alert('Sorry, Game Full! Try Again Later!');
-  }
-}
-
-
-
-//Game logic - Tried to space this out and make it more readable. Displays who won, lost, or tie game in result div.
-//Increments wins or losses accordingly.
-
-function gameLogic(player1choice, player2choice) {
-  var playerOneWon = function(){
-    $('#result').html('<h2>' + playerOneData.name + '</h2>' + '<h2>Wins!</h2>');
-
-    if(playerNum === 1){
-      playersRef.child('1').child('wins').set(playerOneData.wins + 1);
-      playersRef.child('2').child('losses').set(playerTwoData.losses + 1);
-    }
+  // Display a message to the user using a Toast.
+  var data = {
+    message: 'You must sign-in first',
+    timeout: 2000
   };
+  this.signInSnackbar.MaterialSnackbar.showSnackbar(data);
+  return false;
+};
 
-  var playerTwoWon = function(){
-    $('#result').html('<h2>' + playerTwoData.name + '</h2>' + '<h2>Wins!</h2>');
+// Resets the given MaterialTextField.
+FriendlyChat.resetMaterialTextfield = function(element) {
+  element.value = '';
+  element.parentNode.MaterialTextfield.boundUpdateClassesHandler();
+};
 
-    if(playerNum === 2){
-      playersRef.child('2').child('wins').set(playerTwoData.wins + 1);
-      playersRef.child('1').child('losses').set(playerOneData.losses + 1);
-    }
-  };
-  var tie = function(){
-    $('#result').html('<h2>Tie Game!</h2>');
-  };
+// Template for messages.
+FriendlyChat.MESSAGE_TEMPLATE =
+    '<div class="message-container">' +
+      '<div class="spacing"><div class="pic"></div></div>' +
+      '<div class="message"></div>' +
+      '<div class="name"></div>' +
+    '</div>';
 
-  if (player1choice == 'Rock' && player2choice == 'Rock') {
-    tie();
-  } else if (player1choice == 'Paper' && player2choice == 'Paper') {
-    tie();
-  } else if (player1choice == 'Scissors' && player2choice == 'Scissors') {
-    tie();
-  } else if (player1choice == 'Rock' && player2choice == 'Paper') {
-    playerTwoWon();
-  } else if (player1choice == 'Rock' && player2choice == 'Scissors') {
-    playerOneWon();
-  } else if (player1choice == 'Paper' && player2choice == 'Rock') {
-    playerOneWon();
-  } else if (player1choice == 'Paper' && player2choice == 'Scissors') {
-    playerTwoWon();
-  } else if (player1choice == 'Scissors' && player2choice == 'Rock') {
-    playerTwoWon();
-  } else if (player1choice == 'Scissors' && player2choice == 'Paper') {
-    playerOneWon();
+// A loading image URL.
+FriendlyChat.LOADING_IMAGE_URL = 'https://www.google.com/images/spin-32.gif';
+
+// Displays a Message in the UI.
+FriendlyChat.prototype.displayMessage = function(key, name, text, picUrl, imageUri) {
+  var div = document.getElementById(key);
+  // If an element for that message does not exists yet we create it.
+  if (!div) {
+    var container = document.createElement('div');
+    container.innerHTML = FriendlyChat.MESSAGE_TEMPLATE;
+    div = container.firstChild;
+    div.setAttribute('id', key);
+    this.messageList.appendChild(div);
   }
-}
+  if (picUrl) {
+    div.querySelector('.pic').style.backgroundImage = 'url(' + picUrl + ')';
+  }
+  div.querySelector('.name').textContent = name;
+  var messageElement = div.querySelector('.message');
+  if (text) { // If the message is text.
+    messageElement.textContent = text;
+    // Replace all line breaks by <br>.
+    messageElement.innerHTML = messageElement.innerHTML.replace(/\n/g, '<br>');
+  } else if (imageUri) { // If the message is an image.
+    var image = document.createElement('img');
+    image.addEventListener('load', function() {
+      this.messageList.scrollTop = this.messageList.scrollHeight;
+    }.bind(this));
+    this.setImageUrl(imageUri, image);
+    messageElement.innerHTML = '';
+    messageElement.appendChild(image);
+  }
+  // Show the card fading-in.
+  setTimeout(function() {div.classList.add('visible')}, 1);
+  this.messageList.scrollTop = this.messageList.scrollHeight;
+  this.messageInput.focus();
+};
+
+// Enables or disables the submit button depending on the values of the input
+// fields.
+FriendlyChat.prototype.toggleButton = function() {
+  if (this.messageInput.value) {
+    this.submitButton.removeAttribute('disabled');
+  } else {
+    this.submitButton.setAttribute('disabled', 'true');
+  }
+};
+
+// Checks that the Firebase SDK has been correctly setup and configured.
+FriendlyChat.prototype.checkSetup = function() {
+  if (!window.firebase || !(firebase.app instanceof Function) || !window.config) {
+    console.log('You have not configured and imported the Firebase SDK. ' +
+        'Make sure you go through the codelab setup instructions.');
+  } else if (config.storageBucket === '') {
+    console.log('Your Firebase Storage bucket has not been enabled. Sorry about that. This is ' +
+        'actually a Firebase bug that occurs rarely. ' +
+        'Please go and re-generate the Firebase initialisation snippet (step 4 of the codelab) ' +
+        'and make sure the storageBucket attribute is not empty. ' +
+        'You may also need to visit the Storage tab and paste the name of your bucket which is ' +
+        'displayed there.');
+  }
+};
+
+window.onload = function() {
+  window.friendlyChat = new FriendlyChat();
+};

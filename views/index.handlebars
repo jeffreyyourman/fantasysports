@@ -4,13 +4,9 @@
   <title>WeAreFantasy</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <!-- Latest compiled and minified CSS -->
-
-  <!-- below is firebase link -->
-  <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
-  <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
   <link rel="stylesheet" href="/assets/css/style.css">
 
-  <!-- <link rel="stylesheet" href="assets/css/style.css" /> -->
+  <script src='/assets/javascript/chatapp.js' type="text/javascript"></script>
 </head>
   <header>
     <div class="container-fluid">
@@ -58,34 +54,25 @@
         <h2>Fantasy Player News</h2>
         <button id='FPNewsNFLButton' type="button" name="button">NFL</button>
         <button id='FPNewsNBAButton' type="button" name="button">NBA</button>
-        <hr>
-        <br>
+
         <div class="fantasynewsNFL">
           {{#each fantasynewsNFL}}
             <h3>{{this.fantasynews}}</h3>
+            <hr>
           {{/each}}
         </div>
         <div class="fantasynewsNBA">
           {{#each fantasynewsNBA}}
             <h3>{{this.fantasynews}}</h3>
+            <hr>
           {{/each}}
         </div>
       </div>
-      <div class="col-md-3 twitterfeednews">
-        <div id="swapzone"><input id="username" placeholder="Name"/>
-          <button id="start">Start</button>
-        </div>
-        <div id="chat">
-          <div id="chatmessages"></div>
-          <div id="chatbar">
-            <input id="chatinput" />
-            <button id="chatsend">Send</button>
-          </div>
-        </div>
-      </div>
       <div class="col-md-4 twitterfeednews">
+          
+      </div>
+      <div class="col-md-3 twitterfeednews">
         <h2>Fantasy Twitter Feed</h2>
-        <button id='FTwitterNFLBUTTON' type="button" name="button">NFL</button>
         <div class="twitterNFL">
           <a class="twitter-timeline"  href="https://twitter.com/hashtag/NFL" data-widget-id="778252274892177408">#NFL Tweets</a>
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
@@ -93,5 +80,4 @@
       </div>
     </div>
   </div>
-<script src='/assets/javascript/chatapp.js' type="text/javascript"></script>
 </body>
