@@ -102,7 +102,6 @@ $(document).ready(function(){
 
     // if empty show all the appointments
     $.get(urlwr , function( data ) {
-      console.log(data.feed.entry);
 
       //display all appointments with DATA
       $('.fantasyWR').DataTable( {
@@ -121,18 +120,17 @@ $(document).ready(function(){
           {data: "gsx$typeinjury.$t"},
           {data: "gsx$spread.$t"},
           {data: "gsx$rvp.$t"},
-          {data: "gsx$prating.$t"},
+          {data: "gsx$pr.$t"},
           {data: "gsx$ppg.$t"},
           {data: "gsx$rushattgame.$t"},
           {data: "gsx$rectarg.$t"},
+          {data: "gsx$recs.$t"},
           {data: "gsx$totalopp.$t"},
           {data: "gsx$ppa.$t"},
           {data: "gsx$expectedwins.$t"},
-          {data: "gsx$pathexpectation.$t"},
           {data: "gsx$ou.$t"},
           {data: "gsx$salchange.$t"},
           {data: "gsx$snapcount.$t"},
-          {data: "gsx$oflrating.$t"},
           {data: "gsx$fps.$t"}
           ]
         });
@@ -174,39 +172,32 @@ $(document).ready(function(){
           {data: "gsx$injurystatus.$t"},
           {data: "gsx$typeinjury.$t"},
           {data: "gsx$spread.$t"},
+          {data: "gsx$qbscore.$t"},
           {data: "gsx$rvp.$t"},
-          {data: "gsx$prating.$t"},
+          {data: "gsx$pr.$t"},
           {data: "gsx$ppg.$t"},
           {data: "gsx$rushattgame.$t"},
           {data: "gsx$rectarg.$t"},
+          {data: "gsx$recs.$t"},
           {data: "gsx$totalopp.$t"},
           {data: "gsx$ppa.$t"},
           {data: "gsx$expectedwins.$t"},
-          {data: "gsx$pathexpectation.$t"},
           {data: "gsx$ou.$t"},
           {data: "gsx$salchange.$t"},
           {data: "gsx$snapcount.$t"},
-          {data: "gsx$oflrating.$t"},
           {data: "gsx$fps.$t"}
           ]
         });
       });
 
-  // // ===========
-  // // below is for k
-  // // K = https://docs.google.com/spreadsheets/d/1RWrzWmrAZqyLlmpqNnA8kKRk9fjFN3japYiAtztRWKs/pubhtml
-
 
   // var spreadsheetIDte = "1UjVGzANuKJ-_ERg8f4ixjPW6AVL9bjCcIhyq4YK-Z0k";
   var spreadsheetIDk = "1RWrzWmrAZqyLlmpqNnA8kKRk9fjFN3japYiAtztRWKs";
   // Make sure it is public or set to Anyone with link can view
-  // var urlwr = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDwr + "/od6/public/values?alt=json";
-  // var urlte = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDte + "/od6/public/values?alt=json";
   var urlk = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDk + "/od6/public/values?alt=json";
 
     // if empty show all the appointments
     $.get(urlk , function( data ) {
-      console.log(data.feed.entry);
 
       //display all appointments with DATA
       $('.fantasyK').DataTable( {
@@ -223,20 +214,15 @@ $(document).ready(function(){
           {data: "gsx$teamname.$t"},
           {data: "gsx$injurystatus.$t"},
           {data: "gsx$typeinjury.$t"},
-          {data: "gsx$spread.$t"},
           {data: "gsx$rvp.$t"},
-          {data: "gsx$prating.$t"},
+          {data: "gsx$pr.$t"},
           {data: "gsx$ppg.$t"},
-          {data: "gsx$rushattgame.$t"},
-          {data: "gsx$rectarg.$t"},
           {data: "gsx$totalopp.$t"},
-          {data: "gsx$ppa.$t"},
+          {data: "gsx$ppk.$t"},
           {data: "gsx$expectedwins.$t"},
           {data: "gsx$pathexpectation.$t"},
           {data: "gsx$ou.$t"},
           {data: "gsx$salchange.$t"},
-          {data: "gsx$snapcount.$t"},
-          {data: "gsx$oflrating.$t"},
           {data: "gsx$fps.$t"}
           ]
         });
@@ -251,7 +237,6 @@ $(document).ready(function(){
 
   var urldef = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDdef + "/od6/public/values?alt=json";
   $.get(urldef , function( data ) {
-    console.log(data.feed.entry);
 
     //display all appointments with DATA
     $('.fantasyDEF').DataTable( {
@@ -266,22 +251,17 @@ $(document).ready(function(){
         {data: "gsx$sal.$t"},
         {data: "gsx$pos.$t"},
         {data: "gsx$teamname.$t"},
-        {data: "gsx$injurystatus.$t"},
+        {data: "gsx$opp.$t"},
+        {data: "gsx$day.$t"},
+        {data: "gsx$oppqbinjurystatus.$t"},
         {data: "gsx$typeinjury.$t"},
-        {data: "gsx$spread.$t"},
+        {data: "gsx$opp-qbscore.$t"},
         {data: "gsx$rvp.$t"},
-        {data: "gsx$prating.$t"},
-        {data: "gsx$ppg.$t"},
-        {data: "gsx$rushattgame.$t"},
-        {data: "gsx$rectarg.$t"},
-        {data: "gsx$totalopp.$t"},
-        {data: "gsx$ppa.$t"},
+        {data: "gsx$pr.$t"},
+        {data: "gsx$yardsallowed.$t"},
         {data: "gsx$expectedwins.$t"},
-        {data: "gsx$pathexpectation.$t"},
         {data: "gsx$ou.$t"},
         {data: "gsx$salchange.$t"},
-        {data: "gsx$snapcount.$t"},
-        {data: "gsx$oflrating.$t"},
         {data: "gsx$fps.$t"}
         ]
       });
