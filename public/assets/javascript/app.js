@@ -252,7 +252,6 @@ $(document).ready(function(){
         {data: "gsx$pos.$t"},
         {data: "gsx$teamname.$t"},
         {data: "gsx$opp.$t"},
-        {data: "gsx$day.$t"},
         {data: "gsx$oppqbinjurystatus.$t"},
         {data: "gsx$typeinjury.$t"},
         {data: "gsx$opp-qbscore.$t"},
