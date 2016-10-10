@@ -9,6 +9,10 @@
   },
   "author": "",
   "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://https://github.com/jeffreyyourman/fantasysports.git"
+  },
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
