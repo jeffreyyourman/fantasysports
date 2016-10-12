@@ -549,22 +549,36 @@ CREATE TABLE NFLDataDef(
 );
 
 
-====== header below for the friendlychat navbar
+// function cheerioNBA(url) {
+//   request(url, function (error, response, html) {
+//     var $ = cheerio.load(html);
+//     var json = {playernameandteam: ''};
+//   $('div.player-news-desc').filter(function(i, element){
+//     var playernameandteam = $(element).children('h4').text();
+//
+//     // console.log(newtime, time);
+//       fantasynews.createNewsNBA(['fantasynews'], [playernameandteam], function(fantasynewsnba){
+//          // can log here if i like
+//          // delete t2 from fantasynewsnba t1 join fantasynewsnba t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);
+//       })
+//     });
+//   });
+// }
+//
+// function cheerioNFL(url) {
+//   request(url, function (error, response, html) {
+//     var $ = cheerio.load(html);
+//     var json = {playernameandteam: ''};
+//   $('div.player-news-desc').filter(function(i, element){
+//       var playernameandteam = $(element).children('h4').text();
+//       fantasynews.createNews(['fantasynews'], [playernameandteam], function(fantasynewsnba){
+//         //can log here if i like
+//       })
+//     });
+//   });
+// }
+// cheerioNBA(url2NBA);
 
-<header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
-  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-    <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-      <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
-    </div>
-    <div id="user-container">
-      <div hidden id="user-pic"></div>
-      <div hidden id="user-name"></div>
-      <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-        Sign-out
-      </button>
-      <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-        <i class="material-icons">account_circle</i>Sign-in with Google
-      </button>
-    </div>
-  </div>
-</header>
+//
+// cheerioNFL(url2NFL);
+// cheerioNFL(urlNFL);
