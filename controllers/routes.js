@@ -12,16 +12,12 @@ var connection = require('../config/connection.js');
 router.get('/', function(req, res){
   var urlNFL = 'http://www.cbssports.com/fantasy/football/players/news/all/';
   var url2NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
-  var url3NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
-  var url4NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
   var urlNBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/";
   var url2NBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/2/";
 
   function cheerioNBA(url) {
     request(url, function (error, response, html) {
       var $ = cheerio.load(html);
-      var name,time,title,injuryreport;
-      // var json = {playernameandteam: '', time: '', playerreport: ''};
       var json = {playernameandteam: ''};
     $('div.player-news-desc').filter(function(i, element){
         var playernameandteam = $(element).children('h4').text();
@@ -35,8 +31,6 @@ router.get('/', function(req, res){
   function cheerioNFL(url) {
     request(url, function (error, response, html) {
       var $ = cheerio.load(html);
-      var name,time,title,injuryreport;
-      // var json = {playernameandteam: '', time: '', playerreport: ''};
       var json = {playernameandteam: ''};
     $('div.player-news-desc').filter(function(i, element){
         var playernameandteam = $(element).children('h4').text();
@@ -52,11 +46,11 @@ router.get('/', function(req, res){
   cheerioNFL(urlNFL);
   cheerioNFL(url2NFL);
 
-  var email = req.session.user_email;
-  var condition = "email = '" + email + "'";
+  // var email = req.session.user_email;
+  // var condition = "email = '" + email + "'";
   fantasynews.allNewsNBA(function(fantasynewsNBA){
     fantasynews.allNews(function(fantasynewsNFL){
-      user.findOneUser(condition, function(user){
+      // user.findOneUser(condition, function(user){
         var hbsObject = {
           logged_in: req.session.logged_in,
           user: user,
@@ -64,7 +58,7 @@ router.get('/', function(req, res){
           fantasynewsNBA: fantasynewsNBA
         }
         res.render('index', hbsObject)
-        });
+        // });
       });
     });
 });
