@@ -81,10 +81,3 @@ router.get('/Chat', function(req,res){
   res.render('users/chat')
 });
 module.exports = router;
-
-
-
-
-// var now = new Date();
-
-//models below
