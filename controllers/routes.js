@@ -13,8 +13,8 @@ router.get('/', function(req, res){
   // var url2NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
   // var urlNBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/";
   // var url2NBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/2/";
-  var urlNFL = 'http://www.rotoworld.com/playernews/nfl/football/'
-  var urlNBA = "http://www.rotoworld.com/playernews/nba/basketball"
+  var urlNFL = 'http://www.rotoworld.com/playernews/nfl/'
+  var urlNBA = "http://www.rotoworld.com/playernews/nba/"
 
   function cheerioNBA(url) {
     request(url, function (error, response, html) {
