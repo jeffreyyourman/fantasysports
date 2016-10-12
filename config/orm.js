@@ -164,7 +164,7 @@ var orm = {
         });
     },
     allNews: function(tableInput, cb) {
-        var queryString = 'SELECT DISTINCT fantasynews FROM ' + tableInput + ';';
+        var queryString = 'SELECT * FROM ' + tableInput + ' ORDER BY fantasyinfo DESC;';
         connection.query(queryString, function(err, result) {
             if (err) throw err;
             cb(result);
@@ -224,7 +224,7 @@ var orm = {
         });
     },
     allNewsNBA: function(tableInput, cb) {
-        var queryString = 'SELECT DISTINCT fantasynews FROM ' + tableInput + ';';
+        var queryString = 'SELECT * FROM ' + tableInput + ' ORDER BY fantasyinfo DESC;';
         connection.query(queryString, function(err, result) {
             if (err) throw err;
             cb(result);

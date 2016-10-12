@@ -25,9 +25,9 @@ router.get('/', function(req, res){
       var info = $(this).nextAll('div.info').children('div.date').text();
         fantasynews.createNewsNBA(['fantasynews', 'fantasyimpact', 'fantasyinfo'], [players, impact, info], function(fantasynewsnba){
           var queryString = "delete t2 from fantasynewsnba t1 join fantasynewsnba t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
-          console.log(queryString)
+
           connection.query(queryString, function(err, deleteduplicates) {
-            console.log(fantasynewsnba);
+
           });
         })
       });
@@ -43,9 +43,9 @@ router.get('/', function(req, res){
       var info = $(this).nextAll('div.info').children('div.date').text();
         fantasynews.createNews(['fantasynews', 'fantasyimpact', 'fantasyinfo'], [players, impact, info], function(fantasynewsnba){
           var queryString = "delete t2 from fantasynews t1 join fantasynews t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
-          console.log(queryString)
+
           connection.query(queryString, function(err, deleteduplicates) {
-            console.log(fantasynewsnba);
+
           });
         })
       });

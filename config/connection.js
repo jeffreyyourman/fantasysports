@@ -18,5 +18,4 @@ connection.connect(function(err){if (err) {console.error('error connecting: ' + 
 
 // https://fantasydata.com/rss/rotoworld/?format=json
 
-// SELECT * FROM fantasynewsnba
-// ORDER BY fantasyinfo DESC;
+// SELECT * FROM fantasynewsnba ORDER BY fantasyinfo DESC;
