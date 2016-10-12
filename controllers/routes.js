@@ -24,10 +24,9 @@ router.get('/', function(req, res){
       var impact = $(this).nextAll('div.impact').text();
       var info = $(this).nextAll('div.info').children('div.date').text();
         fantasynews.createNewsNBA(['fantasynews', 'fantasyimpact', 'fantasyinfo'], [players, impact, info], function(fantasynewsnba){
-          var queryString = "delete t2 from fantasynewsnba t1 join fantasynewsnba t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
-
+          var queryString = "delete t2 from FantasyNewsNBA t1 join FantasyNewsNBA t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
           connection.query(queryString, function(err, deleteduplicates) {
-
+            console.log(deleteduplicates);
           });
         })
       });
@@ -41,11 +40,11 @@ router.get('/', function(req, res){
       var players = $(this).text();
       var impact = $(this).nextAll('div.impact').text();
       var info = $(this).nextAll('div.info').children('div.date').text();
-        fantasynews.createNews(['fantasynews', 'fantasyimpact', 'fantasyinfo'], [players, impact, info], function(fantasynewsnba){
-          var queryString = "delete t2 from fantasynews t1 join fantasynews t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
+        fantasynews.createNews(['fantasynews', 'fantasyimpact', 'fantasyinfo'], [players, impact, info], function(fantasynewsnfl){
+          var queryString = "delete t2 from FantasyNews t1 join FantasyNews t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
 
           connection.query(queryString, function(err, deleteduplicates) {
-
+            console.log(deleteduplicates);
           });
         })
       });
