@@ -2,81 +2,73 @@ var express = require('express');
 var router = express.Router();
 var request = require('request');
 var cheerio = require('cheerio');
-var Twitter = require('twitter');
-// var dateFormat = require('dateformat');
-// var now = new Date();
-// date: dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
-//models below
+var moment = require('moment');
+
 var user = require('../model/userdata.js');
 var fantasydata = require('../model/fantasydata.js');
 var fantasynews = require('../model/fantasynews.js');
 var connection = require('../config/connection.js');
 
 router.get('/', function(req, res){
-  var urlNFL = 'http://www.cbssports.com/fantasy/football/players/news/all/';
-  var url2NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/2/';
-  var url3NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/3/';
-  var url4NFL = 'http://www.cbssports.com/fantasy/football/players/news/all/4/';
-  var urlNBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/";
-  var url2NBA = "http://www.cbssports.com/fantasy/basketball/players/news/all/2/";
 
-  request(url2NBA, function (error, response, html) {
-    var $ = cheerio.load(html);
-    var name,time,title,injuryreport;
-    // var json = {playernameandteam: '', time: '', playerreport: ''};
-    var json = {playernameandteam: ''};
-  $('div.player-news-desc').filter(function(i, element){
-      var playernameandteam = $(element).children('h4').text();
-      fantasynews.createNewsNBA(['fantasynews'], [playernameandteam], function(fantasynewsnba){
-        //can log here if i like
-      })
+  var urlNFL = 'http://www.rotoworld.com/playernews/nfl/'
+  var urlNBA = "http://www.rotoworld.com/playernews/nba/"
+
+  function cheerioNBA(url) {
+
+    request(url, function (error, response, html) {
+
+      var $ = cheerio.load(html);
+
+    $('div.report').each(function(i, element){
+      var c = $(this);
+
+      var players = c.text();
+      var impact = c.nextAll('div.impact').text();
+      var info = c.nextAll('div.info').children('div.date').text();
+
+        fantasynews.createNewsNBA(['fantasynews', 'fantasyimpact', 'fantasyinfo'], [players, impact, info], function(fantasynewsnba){
+
+          var queryString = "delete t2 from FantasyNewsNBA t1 join FantasyNewsNBA t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);";
+
+          connection.query(queryString, function(err, deleteduplicates) {
+            console.log(deleteduplicates);
+          });
+        })
+      });
     });
-  });
+  }
 
-  request(urlNBA, function (error, response, html) {
+  function cheerioNFL(url) {
+
+    request(url, function (error, response, html) {
+
     var $ = cheerio.load(html);
-    var name,time,title,injuryreport;
-    // var json = {playernameandteam: '', time: '', playerreport: ''};
-    var json = {playernameandteam: ''};
-  $('div.player-news-desc').filter(function(i, element){
-      var playernameandteam = $(element).children('h4').text();
-      fantasynews.createNewsNBA(['fantasynews'], [playernameandteam], function(fantasynewsnba){
-        //can log here if i like
-      })
-    });
-  });
 
-  request(url2NFL, function (error, response, html) {
-    var $ = cheerio.load(html);
-    var name,time,title,injuryreport;
-    // var json = {playernameandteam: '', time: '', playerreport: ''};
-    var json = {playernameandteam: ''};
-  $('div.player-news-desc').filter(function(i, element){
-      var playernameandteam = $(element).children('h4').text();
-      fantasynews.createNews(['fantasynews'], [playernameandteam], function(fantasynews){
-        //can log here if i like
-      })
-    });
-  });
+    $('div.report').each(function(i, element){
+      var c = $(this)
+      var players = c.text();
+      var impact = c.nextAll('div.impact').text();
+      var info = c.nextAll('div.info').children('div.date').text();
 
-  request(urlNFL, function (error, response, html) {
-    var $ = cheerio.load(html);
-    var name,time,title,injuryreport;
-    // var json = {playernameandteam: '', time: '', playerreport: ''};
-    var json = {playernameandteam: ''};
-  $('div.player-news-desc').filter(function(i, element){
-      var playernameandteam = $(element).children('h4').text();
-      fantasynews.createNews(['fantasynews'], [playernameandteam], function(fantasynews){
-        //can log here if i like
-      })
-    });
-  });
+        fantasynews.createNews(['fantasynews', 'fantasyimpact', 'fantasyinfo'], [players, impact, info], function(fantasynewsnfl){
 
-  var email = req.session.user_email;
-  var condition = "email = '" + email + "'";
+          var queryString = "delete t2 from FantasyNews t1 join FantasyNews t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
+
+          connection.query(queryString, function(err, deleteduplicates) {
+            console.log(deleteduplicates);
+          });
+        })
+      });
+    });
+  }
+
+  cheerioNBA(urlNBA);
+  cheerioNFL(urlNFL);
+
   fantasynews.allNewsNBA(function(fantasynewsNBA){
     fantasynews.allNews(function(fantasynewsNFL){
-      user.findOneUser(condition, function(user){
+
         var hbsObject = {
           logged_in: req.session.logged_in,
           user: user,
@@ -84,17 +76,14 @@ router.get('/', function(req, res){
           fantasynewsNBA: fantasynewsNBA
         }
         res.render('index', hbsObject)
-        });
+
       });
     });
 });
-router.get('/sign-out', function(req,res){
-  req.session.destroy(function(err){
-    res.redirect('/')
-  });
-});
+
 
 router.get('/Chat', function(req,res){
   res.render('users/chat')
 });
+
 module.exports = router;

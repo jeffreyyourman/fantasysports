@@ -66,141 +66,6 @@
   </div>
 </div>
 
-{{#if fantasydataQB}}
-<div id='quarterback' class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr style='font-size:10px;'>
-                <th>Week</th>
-                <th>Player</th>
-                <th>Salary</th>
-                <th>Position</th>
-                <th>Team Name</th>
-                <th>Injury Status</th>
-                <th>Type of Injury</th>
-                <th>Rank vs Position</th>
-                <th>Player Rating</th>
-                <th>OPP Def Rank</th>
-                <th>Fantasy Points per game</th>
-                <th>Pass Attempt pg</th>
-                <th>Rush Attempt pg</th>
-                <th>TotalOpp</th>
-                <th>Points Per Attempt</th>
-                <th>Expected Wins</th>
-                <th>Over/Under</th>
-                <th>Sal Change</th>
-                <th>Offensive Lineman Rank</th>
-                <th>Fantasy Points Score</th>
-              </tr>
-            </thead>
-            <tbody>
-
-              {{#each fantasydataQB}}
-                <tr style='font-size:10px;'>
-                  <td>{{this.Week}}</td>
-                  <td>{{this.Player}}</td>
-                  <td>{{this.Sal}}</td>
-                  <td>{{this.POS}}</td>
-                  <td>{{this.Team_Name}}</td>
-                  <td>{{this.Injury_Status}}</td>
-                  <td>{{this.Type_Injury}}</td>
-                  <td>{{this.RvP}}</td>
-                  <td>{{this.PR}}</td>
-                  <td>{{this.OPP_DEF_RANK}}</td>
-                  <td>{{this.FPPG}}</td>
-                  <td>{{this.PassAttempt_Game}}</td>
-                  <td>{{this.RUSHAtt_Game}}</td>
-                  <td>{{this.TotalOpp}}</td>
-                  <td>{{this.PPA}}</td>
-                  <td>{{this.Expected_Wins}}</td>
-                  <td>{{this.O_U}}</td>
-                  <td>{{this.Sal_Change}}</td>
-                  <td>{{this.OL_RANK}}</td>
-                  <td>{{this.FPS}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{/if}}
-
-{{#if fantasydataRB}}
-<div id='runningback' class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="panel-body">
-        <div class="table-responsive">
-          <table class="table">
-            <thead>
-              <tr style='font-size:10px;'>
-                <th>Week</th>
-                <th>Player</th>
-                <th>Salary</th>
-                <th>Position</th>
-                <th>Team Name</th>
-                <th>Injury Status</th>
-                <th>Type of Injury</th>
-                <th>Spread</th>
-                <th>Rank vs Position</th>
-                <th>Player Rating</th>
-                <th>Points Per Game</th>
-                <th>Rush Attempts per game</th>
-                <th>Receiving Target</th>
-                <th>Total Opposition</th>
-                <th>Points Per Attempt</th>
-                <th>Expected Wins</th>
-                <th>Path Expectation</th>
-                <th>Over/Under</th>
-                <th>Salary Change</th>
-                <th>Snap Count</th>
-                <th>OFL Rating</th>
-                <th>Fantasy Player Score</th>
-              </tr>
-            </thead>
-            <tbody>
-              {{#each fantasydataRB}}
-                <tr style='font-size:10px;'>
-                  <td>{{this.Week}}</td>
-                  <td>{{this.Player}}</td>
-                  <td>{{this.Sal}}</td>
-                  <td>{{this.POS}}</td>
-                  <td>{{this.Team_Name}}</td>
-                  <td>{{this.Injury_Status}}</td>
-                  <td>{{this.Type_Injury}}</td>
-                  <td>{{this.Spread}}</td>
-                  <td>{{this.RvP}}</td>
-                  <td>{{this.PR}}</td>
-                  <td>{{this.PPG}}</td>
-                  <td>{{this.RUSHAtt_Game}}</td>
-                  <td>{{this.Rec_Targ}}</td>
-                  <td>{{this.TotalOpp}}</td>
-                  <td>{{this.PPA}}</td>
-                  <td>{{this.Expected_Wins}}</td>
-                  <td>{{this.Path_Expectation}}</td>
-                  <td>{{this.O_U}}</td>
-                  <td>{{this.Sal_Change}}</td>
-                  <td>{{this.Snap_Count}}</td>
-                  <td>{{this.OFL_RATING}}</td>
-                  <td>{{this.FPS}}</td>
-                </tr>
-                {{/each}}
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-{{/if}}
-
 {{#if fantasydataWR}}
 <div id='runningback' class="container-fluid">
   <div class="row">
@@ -684,22 +549,59 @@ CREATE TABLE NFLDataDef(
 );
 
 
-====== header below for the friendlychat navbar
+// function cheerioNBA(url) {
+//   request(url, function (error, response, html) {
+//     var $ = cheerio.load(html);
+//     var json = {playernameandteam: ''};
+//   $('div.player-news-desc').filter(function(i, element){
+//     var playernameandteam = $(element).children('h4').text();
+//
+//     // console.log(newtime, time);
+//       fantasynews.createNewsNBA(['fantasynews'], [playernameandteam], function(fantasynewsnba){
+//          // can log here if i like
+//          // delete t2 from fantasynewsnba t1 join fantasynewsnba t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);
+//       })
+//     });
+//   });
+// }
+//
+// function cheerioNFL(url) {
+//   request(url, function (error, response, html) {
+//     var $ = cheerio.load(html);
+//     var json = {playernameandteam: ''};
+//   $('div.player-news-desc').filter(function(i, element){
+//       var playernameandteam = $(element).children('h4').text();
+//       fantasynews.createNews(['fantasynews'], [playernameandteam], function(fantasynewsnba){
+//         //can log here if i like
+//       })
+//     });
+//   });
+// }
+// cheerioNBA(url2NBA);
 
-<header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
-  <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
-    <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
-      <h3><i class="material-icons">chat_bubble_outline</i> Friendly Chat</h3>
-    </div>
-    <div id="user-container">
-      <div hidden id="user-pic"></div>
-      <div hidden id="user-name"></div>
-      <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-        Sign-out
-      </button>
-      <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
-        <i class="material-icons">account_circle</i>Sign-in with Google
-      </button>
-    </div>
-  </div>
-</header>
+//
+// cheerioNFL(url2NFL);
+// cheerioNFL(urlNFL);
+
+
+// heroku restart -a wearefantasy .
+
+// mysql -h uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com -u bx2ajv69tsflz7fv -pbk7cnbekaw907zll wl8zg20cpj22w77k < backup.sql
+
+// mysqldump -h localhost -u root -p fantasy > backup.sql
+
+//  delete t2 from fantasynewsnba t1 join fantasynewsnba t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);
+
+// https://fantasydata.com/rss/rotoworld/?format=json
+
+// SELECT * FROM fantasynewsnba ORDER BY fantasyinfo DESC;
+
+// var email = req.session.user_email;
+// var condition = "email = '" + email + "'";
+    // user.findOneUser(condition, function(user){
+      // });
+router.get('/sign-out', function(req,res){
+req.session.destroy(function(err){
+  res.redirect('/')
+});
+});
