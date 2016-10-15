@@ -45,7 +45,6 @@ $(document).ready(function(){
 
       // if empty show all the appointments
       $.get(urlrb , function( data ) {
-        console.log(data.feed.entry);
 
         //display all appointments with DATA
         $('.fantasyRB').DataTable( {
@@ -124,7 +123,6 @@ $(document).ready(function(){
 
     // if empty show all the appointments
     $.get(urlte , function( data ) {
-      console.log(data.feed.entry);
 
       //display all appointments with DATA
       $('.fantasyTE').DataTable( {
@@ -254,6 +252,7 @@ $(document).ready(function(){
   });
 
   $("#rbLink").on('click', function(){
+
     $('#quarterback').hide();
     $('#widereceiver').hide();
     $('#tightend').hide();
