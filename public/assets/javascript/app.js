@@ -1,4 +1,5 @@
 $(document).ready(function(){
+
     var spreadsheetIDQB = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
     // Make sure it is public or set to Anyone with link can view
     var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDQB + "/od6/public/values?alt=json";
@@ -36,6 +37,7 @@ $(document).ready(function(){
             ]
           });
         });
+
 
     var spreadsheetIDrb = "15mSJN1WKrxFVJtIYT20sJS9mGr7f65Ow1XGLhHVuzDo";
     // Make sure it is public or set to Anyone with link can view
