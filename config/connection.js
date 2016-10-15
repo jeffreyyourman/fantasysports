@@ -8,3 +8,10 @@ var connection = mysql.createConnection({
   database: 'fantasy'
 });
 connection.connect(function(err){if (err) {console.error('error connecting: ' + err.stack);return;}console.log('connected as id ' + connection.threadId)});module.exports = connection;
+
+
+// heroku restart -a wearefantasy .
+
+// mysql -h uoa25ublaow4obx5.cbetxkdyhwsb.us-east-1.rds.amazonaws.com -u bx2ajv69tsflz7fv -pbk7cnbekaw907zll wl8zg20cpj22w77k < backup.sql
+
+// mysqldump -h localhost -u root -p fantasy > backup.sql
