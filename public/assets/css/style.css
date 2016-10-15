@@ -28,11 +28,9 @@ body,html{
 }
 .writing {
   color:white;
-
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
 }
 @font-face {
     font-family: headerfont;

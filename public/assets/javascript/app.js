@@ -241,14 +241,6 @@ $(document).ready(function(){
     $('.fantasynewsNBA').hide();
     $('.fantasynewsNFL').show();
   });
-  $('#FTwitterNBABUTTON').on('click', function(){
-    $('.twitterNFL').hide();
-    $('.twitterNBA').show();
-  });
-  $('#FTwitterNFLBUTTON').on('click', function(){
-    $('.twitterNBA').hide();
-    $('.twitterNFL').show();
-  });
 
   $("#qbLink").on('click', function(){
     $('#runningback').hide();

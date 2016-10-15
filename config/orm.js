@@ -232,12 +232,12 @@ var orm = {
     createNewsNBA: function(table, cols, vals, cb) {
       var queryString = 'INSERT IGNORE INTO ' + table;
 
-      queryString = queryString + ' (';
-      queryString = queryString + cols.toString();
-      queryString = queryString + ') ';
-      queryString = queryString + 'VALUES (';
-      queryString = queryString + printQuestionMarks(vals.length);
-      queryString = queryString + ') ';
+      queryString += ' (';
+      queryString += cols.toString();
+      queryString += ') ';
+      queryString += 'VALUES (';
+      queryString += printQuestionMarks(vals.length);
+      queryString += ') ';
 
       connection.query(queryString, vals, function(err, result) {
         if (err) throw err;
