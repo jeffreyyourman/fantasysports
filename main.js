@@ -3,7 +3,7 @@ const request = require('request');
 function dataTables (key,table) {
   this.key = key
   this.column = []
-  this.obj =
+  this.obj = {}
   this.table = table
   this.tableCall = function tableCall(key){
 
@@ -12,29 +12,29 @@ function dataTables (key,table) {
 
     request(url, function(err,res,body){
       var data = JSON.parse(body);
-      // this is the complete object with the data
       var mdata = data.feed.entry;
+      this1.obj = mdata
 
       var data  = data.feed.entry[1];
 
-      function turtle(data){
+      function spliceFormula(data){
         this1.column.splice(0,6);
-        console.log(this1.column);
+        console.log(this1.obj);
       }
 
-      function cb(data){
+      function pushToColumn(data){
         for (key in data){
           this1.column.push(key);
         }
-        return turtle()
+        return spliceFormula()
       };
-      cb(data)
+      pushToColumn(data)
       })
     }
 }
 
 module.exports = dataTables;
 
-var quarterback = new dataTables("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw","tablename");
+var quarterback = new dataTables("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw",".fantasyQB");
 
-quarterback.tableCall(quarterback.key);
+console.log(quarterback);
