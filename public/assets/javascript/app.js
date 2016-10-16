@@ -1,14 +1,21 @@
 $(document).ready(function(){
 
-    var spreadsheetIDQB = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
-    // Make sure it is public or set to Anyone with link can view
-    var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDQB + "/od6/public/values?alt=json";
+  // var spreadsheetIDqb = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
+  // var urlqb = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDqb + "/od6/public/values?alt=json";
+
+  // console.log('this is the quarterback ldataog',data);
 
       // if emptdy show all the appointments
-      $.get( url, function( data ) {
+      // $.get(urlqb , function( data ) {
+      $.get('/tables', function( data ) {
+        // for (var i = 0; i < data.length; i++) {
+        //   console.log(data[i]);
+        // } this doesn't work (nothing logs)
+
+        // console.log(data); // this log works but comes up empty
         //display all appointments with DATA
         $('.fantasyQB').DataTable( {
-
+          // data: data
           data: data.feed.entry,
 
         "ordering": true,

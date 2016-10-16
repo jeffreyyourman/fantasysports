@@ -13,13 +13,12 @@ function dataTables (key,table) {
     request(url, function(err,res,body){
       var data = JSON.parse(body);
       var mdata = data.feed.entry;
-      this1.obj = mdata
-
+      console.log(mdata);
       var data  = data.feed.entry[1];
 
       function spliceFormula(data){
         this1.column.splice(0,6);
-        console.log(this1.obj);
+
       }
 
       function pushToColumn(data){
@@ -32,9 +31,7 @@ function dataTables (key,table) {
       })
     }
 }
+// var quarterback = new dataTables("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw",".fantasyQB");
+// quarterback.tableCall("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw")
 
 module.exports = dataTables;
-
-var quarterback = new dataTables("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw",".fantasyQB");
-
-console.log(quarterback);

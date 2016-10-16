@@ -33,7 +33,7 @@ router.get('/', function(req, res){
           var queryString = "delete t2 from FantasyNewsNBA t1 join FantasyNewsNBA t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);";
 
           connection.query(queryString, function(err, deleteduplicates) {
-            console.log(deleteduplicates);
+            // console.log(deleteduplicates);
           });
         })
       });
@@ -57,7 +57,7 @@ router.get('/', function(req, res){
           var queryString = "delete t2 from FantasyNews t1 join FantasyNews t2 on (t2.fantasynews = t1.fantasynews and t2.fantasyid > t1.fantasyid);"
 
           connection.query(queryString, function(err, deleteduplicates) {
-            console.log(deleteduplicates);
+            // console.log(deleteduplicates);
           });
         })
       });
