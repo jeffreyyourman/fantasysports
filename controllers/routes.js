@@ -4,6 +4,7 @@ var request = require('request');
 var cheerio = require('cheerio');
 var moment = require('moment');
 
+
 var user = require('../model/userdata.js');
 var fantasydata = require('../model/fantasydata.js');
 var fantasynews = require('../model/fantasynews.js');
