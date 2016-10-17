@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
-  // var spreadsheetIDqb = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
-  // var urlqb = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDqb + "/od6/public/values?alt=json";
+  var spreadsheetIDqb = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
+  var urlqb = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDqb + "/od6/public/values?alt=json";
 
   // console.log('this is the quarterback ldataog',data);
 
       // if emptdy show all the appointments
-      // $.get(urlqb , function( data ) {
-      $.get('/tables', function( data ) {
+      $.get(urlqb , function( data ) {
+      // $.get('/tables', function( data ) {
         // for (var i = 0; i < data.length; i++) {
         //   console.log(data[i]);
         // } this doesn't work (nothing logs)
@@ -15,11 +15,15 @@ $(document).ready(function(){
         // console.log(data); // this log works but comes up empty
         //display all appointments with DATA
         $('.fantasyQB').DataTable( {
-          // data: data
           data: data.feed.entry,
 
-        "ordering": true,
-        "info":     false,
+          "dom": '<"top"i>rt<"bottom"flp><"clear">',
+
+
+          "ordering": true,
+          "info":     false,
+          "bLengthChange": false,
+
           columns: [
         { data: 'gsx$week.$t' },
         { data: 'gsx$player.$t' },
@@ -58,8 +62,13 @@ $(document).ready(function(){
 
           data: data.feed.entry,
 
-        "ordering": true,
-        "info":     false,
+          "dom": '<"top"i>rt<"bottom"flp><"clear">',
+
+
+          "ordering": true,
+          "info":     false,
+          "bLengthChange": false,
+
           columns: [
             {data: "gsx$week.$t"},
             {data: "gsx$player.$t"},
@@ -97,8 +106,13 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-      "ordering": true,
-      "info":     false,
+        "dom": '<"top"i>rt<"bottom"flp><"clear">',
+
+
+        "ordering": true,
+        "info":     false,
+        "bLengthChange": false,
+
         columns: [
           {data: "gsx$week.$t"},
           {data: "gsx$player.$t"},
@@ -136,8 +150,13 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-      "ordering": true,
-      "info":     false,
+        "dom": '<"top"i>rt<"bottom"flp><"clear">',
+
+
+        "ordering": true,
+        "info":     false,
+        "bLengthChange": false,
+
         columns: [
           {data: "gsx$week.$t"},
           {data: "gsx$player.$t"},
@@ -175,8 +194,13 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-      "ordering": true,
-      "info":     false,
+        "dom": '<"top"i>rt<"bottom"flp><"clear">',
+
+
+        "ordering": true,
+        "info":     false,
+        "bLengthChange": false,
+
         columns: [
           {data: "gsx$week.$t"},
           {data: "gsx$player.$t"},
@@ -209,8 +233,13 @@ $(document).ready(function(){
 
       data: data.feed.entry,
 
-    "ordering": true,
-    "info":     false,
+      "dom": '<"top"i>rt<"bottom"flp><"clear">',
+
+
+      "ordering": true,
+      "info":     false,
+      "bLengthChange": false,
+      
       columns: [
         {data: "gsx$week.$t"},
         {data: "gsx$player.$t"},

@@ -3,26 +3,49 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
 
       <!-- Latest compiled and minified CSS -->
-
   <link rel="stylesheet" href="/assets/css/style.css">
 
   <style media="screen">
 
+  /*th {
+    margin: 0;
+    padding: 0;
+  }*/
   td {
     border: 1px solid black;
+    background-color:white;
   }
 
-  /*td {
-    background-color:#FF0000;
-  }*/
   </style>
 
 </head>
 <body>
-  <div class="container-fluid">
+
+  <div class="container-fluid NFLTeamTable">
+    <div class="row">
+      <div style='font-size:24px;' class="col-md-8">
+        <p>Jets are solid pick Jets are solid pick Jets are solid pick</p>
+        <p>Palmer will kill it Palmer will kill it Palmer will kill it </p>
+        <p>Brady Repeat? Brady Repeat? Brady Repeat?</p>
+        <p>Westbrook Trip dub alert? Westbrook Trip dub alert?</p>
+        <p>KD a bitch? yes. KD a bitch? yes. KD a bitch? yes.</p>
+        <p>Lebron a bitch? also yes. Lebron a bitch? also yes. Lebron a bitch? also yes.</p>
+      </div>
+      <div style='font-size:24px;' class="col-md-4">
+        <p>Jets are solid pick</p>
+        <p>Palmer will kill it </p>
+        <p>Brady Repeat?</p>
+        <p>Westbrook Trip dub alert?</p>
+        <p>KD a bitch? yes.</p>
+        <p>Lebron a bitch? also yes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id='quarterback' class="container-fluid NFLtables">
     <div class="row list">
       <div class="col-md-2">
         <li><a id='qbLink' href="#">Quarter Back</a></li>
@@ -43,37 +66,33 @@
         <li><a id='defLink' href='#'>Defense</a></li>
       </div>
     </div>
-  </div>
-
-
-  <div id='quarterback' class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel-body">
+        <div class="panel-body beforeResponsive">
           <div class="table-responsive">
-            <table class="table table table-hover fantasyQB">
+            <table class="table table-hover fantasyQB">
               <thead>
                 <tr style='font-size: 16px;'>
                   <th>Week</th>
                   <th>Player</th>
                   <th>Salary</th>
                   <th>Position</th>
-                  <th>Team Name</th>
-                  <th>Injury Status</th>
-                  <th>Type of injury</th>
-                  <th>Ranking vs position</th>
-                  <th>Player Rating</th>
-                  <th>Opp Defense Ranking</th>
-                  <th>Fantasy Points per Game</th>
-                  <th>Passing Attempts per game</th>
-                  <th>Rushing Attempts per game</th>
-                  <th>Total Opportunities</th>
-                  <th>Points per Attempt</th>
-                  <th>Expected Wins</th>
-                  <th>Over Under</th>
-                  <th>Sal Change</th>
-                  <th>Offensive Lineman Rank</th>
-                  <th>Fantasy Points scored previous game</th>
+                  <th>TeamName</th>
+                  <th>InjuryStatus</th>
+                  <th>TypeInjury</th>
+                  <th>RvP</th>
+                  <th>PlayerRating</th>
+                  <th>OppDefRanking</th>
+                  <th>FPPG</th>
+                  <th>PassingAttempts</th>
+                  <th>RushingAttempts</th>
+                  <th>TotalOpportunities</th>
+                  <th>PPA</th>
+                  <th>ExpectedWins</th>
+                  <th>O/U</th>
+                  <th>SalChange</th>
+                  <th>OffensiveLinemanRank</th>
+                  <th>FPPGLast</th>
                 </tr>
               </thead>
             </table>
@@ -82,11 +101,11 @@
       </div>
     </div>
   </div>
-<!--
-  <div id='runningback' class="container-fluid">
+
+  <div id='runningback' class="container-fluid NFLtables">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel-body">
+        <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <table class="table table table-hover fantasyRB">
               <thead>
@@ -122,10 +141,10 @@
     </div>
   </div>
 
-  <div id='widereceiver' class="container-fluid">
+  <div id='widereceiver' class="container-fluid NFLtables">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel-body">
+        <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <table class="table table table-hover fantasyWR">
               <thead>
@@ -160,10 +179,10 @@
     </div>
   </div>
 
-  <div id='tightend' class="container-fluid">
+  <div id='tightend' class="container-fluid NFLtables">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel-body">
+        <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <table class="table table table-hover fantasyTE">
               <thead>
@@ -200,10 +219,10 @@
     </div>
   </div>
 
-  <div id='kicker' class="container-fluid">
+  <div id='kicker' class="container-fluid NFLtables">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel-body">
+        <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <table class="table table table-hover fantasyK">
               <thead>
@@ -234,10 +253,10 @@
     </div>
   </div>
 
-  <div id='defense' class="container-fluid">
+  <div id='defense' class="container-fluid NFLtables">
     <div class="row">
       <div class="col-md-12">
-        <div class="panel-body">
+        <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <table class="table table table-hover fantasyDEF">
               <thead>
@@ -265,4 +284,29 @@
         </div>
       </div>
     </div>
-  </div> -->
+  </div>
+
+
+  <script type="text/javascript">
+
+  </script>
+  <!-- <th>Week</th>
+  <th>Player</th>
+  <th>Salary</th>
+  <th>Position</th>
+  <th>Team Name</th>
+  <th>Injury Status</th>
+  <th>Type Injury</th>
+  <th>Ranking vs position</th>
+  <th>Player Rating</th>
+  <th>Opp Defense Ranking</th>
+  <th>Fantasy Points per Game</th>
+  <th>Passing Attempts per game</th>
+  <th>Rushing Attempts per game</th>
+  <th>Total Opportunities</th>
+  <th>Points per Attempt</th>
+  <th>Expected Wins</th>
+  <th>Over Under</th>
+  <th>Sal Change</th>
+  <th>Offensive Lineman Rank</th>
+  <th>Fantasy Points scored previous game</th> -->

@@ -79,6 +79,10 @@ div {
   padding: 10px 10px 0 10px;
 }
 
+.beforeResponsive {
+  padding:0;
+}
+
 .footer {
   margin-top: 100px;
   background-color: #ddfaff;
