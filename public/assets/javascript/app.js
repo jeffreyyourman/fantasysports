@@ -239,7 +239,7 @@ $(document).ready(function(){
       "ordering": true,
       "info":     false,
       "bLengthChange": false,
-      
+
       columns: [
         {data: "gsx$week.$t"},
         {data: "gsx$player.$t"},
@@ -263,11 +263,18 @@ $(document).ready(function(){
 
 
   $('.fantasynewsNBA').hide();
-  $('#widereceiver').hide();
-  $('#tightend').hide();
-  $('#defense').hide();
-  $('#runningback').hide();
-  $('#kicker').hide();
+  var qbfantasy = $('.qbfantasy');
+  var rbfantasy = $('.rbfantasy');
+  var wrfantasy = $('.wrfantasy');
+  var tefantasy = $('.tefantasy');
+  var kfantasy = $('.kfantasy');
+  var deffantasy = $('.deffantasy');
+
+  rbfantasy.hide();
+  wrfantasy.hide();
+  tefantasy.hide();
+  kfantasy.hide();
+  deffantasy.hide();
 
   $('#FPNewsNBAButton').on('click', function(){
     $('.fantasynewsNFL').hide();
@@ -278,60 +285,64 @@ $(document).ready(function(){
     $('.fantasynewsNFL').show();
   });
 
-  $("#qbLink").on('click', function(){
-    $('#runningback').hide();
-    $('#widereceiver').hide();
-    $('#tightend').hide();
-    $('#kicker').hide();
-    $('#defense').hide();
-    $('#quarterback').show();
+  $("#qbLink").on('click', function(e){
+    e.preventDefault();
+    rbfantasy.hide();
+    wrfantasy.hide();
+    tefantasy.hide();
+    kfantasy.hide();
+    deffantasy.hide();
+    qbfantasy.show();
   });
 
-  $("#rbLink").on('click', function(){
-
-    $('#quarterback').hide();
-    $('#widereceiver').hide();
-    $('#tightend').hide();
-    $('#kicker').hide();
-    $('#defense').hide();
-    $('#runningback').show();
+  $("#rbLink").on('click', function(e){
+    e.preventDefault();
+    qbfantasy.hide();
+    wrfantasy.hide();
+    tefantasy.hide();
+    kfantasy.hide();
+    deffantasy.hide();
+    rbfantasy.show();
   });
 
-  $("#wrLink").on('click', function(){
-    $('#quarterback').hide();
-    $('#tightend').hide();
-    $('#kicker').hide();
-    $('#defense').hide();
-    $('#runningback').hide();
-    $('#widereceiver').show();
+  $("#wrLink").on('click', function(e){
+    e.preventDefault();
+    qbfantasy.hide();
+    rbfantasy.hide();
+    tefantasy.hide();
+    kfantasy.hide();
+    deffantasy.hide();
+    wrfantasy.show();
   });
 
-  $("#teLink").on('click', function(){
-    $('#quarterback').hide();
-    $('#widereceiver').hide();
-    $('#kicker').hide();
-    $('#defense').hide();
-    $('#runningback').hide();
-    $('#tightend').show();
-
+  $("#teLink").on('click', function(e){
+    e.preventDefault();
+    qbfantasy.hide();
+    wrfantasy.hide();
+    rbfantasy.hide();
+    kfantasy.hide();
+    deffantasy.hide();
+    tefantasy.show();
   });
 
-  $("#kLink").on('click', function(){
-    $('#quarterback').hide();
-    $('#widereceiver').hide();
-    $('#tightend').hide();
-    $('#defense').hide();
-    $('#runningback').hide();
-    $('#kicker').show();
+  $("#kLink").on('click', function(e){
+    e.preventDefault();
+    qbfantasy.hide();
+    wrfantasy.hide();
+    tefantasy.hide();
+    rbfantasy.hide();
+    deffantasy.hide();
+    kfantasy.show();
   });
 
-  $("#defLink").on('click', function(){
-    $('#quarterback').hide();
-    $('#widereceiver').hide();
-    $('#tightend').hide();
-    $('#kicker').hide();
-    $('#runningback').hide();
-    $('#defense').show();
+  $("#defLink").on('click', function(e){
+    e.preventDefault();
+    qbfantasy.hide();
+    wrfantasy.hide();
+    tefantasy.hide();
+    kfantasy.hide();
+    rbfantasy.hide();
+    deffantasy.show();
   });
 
 });
