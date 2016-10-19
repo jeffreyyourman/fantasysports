@@ -7,10 +7,9 @@ function dataTables (key,table) {
   this.table = table
   this.displayData = function(){
     db = {column: this.column, db:this.obj,table:this.table }
-    console.log("hi");
     return db
   }
-  this.tableCall = function(){
+  this.tableCall = function(cb){
 
   var this1 = this
   var url =  "https://spreadsheets.google.com/feeds/list/" + this.key + "/od6/public/values?alt=json";
@@ -24,8 +23,7 @@ function dataTables (key,table) {
 
       function spliceFormula(){
         this1.column.splice(0,6);
-        console.log("runnning");
-        return this1.displayData();
+        return cb;
       }
       function pushToColumn(data){
         for (key in data){
