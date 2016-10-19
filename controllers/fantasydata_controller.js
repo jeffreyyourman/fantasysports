@@ -12,11 +12,11 @@ var connection = require('../config/connection.js');
 
 router.get('/tables', function(req,res){
 
-      var quarterback = new dataTables("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw",".fantasyQB");
-      // quarterback.tableCall("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw");
-      //tried with and without tablecall
+var quarterback = new dataTables("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw", ".fantasyQB");
 
-      res.json(quarterback);
+    quarterback.tableCall()
+
+        res.json({hi:"yrd"})
 });
 
 router.get('/NFL', function(req,res){

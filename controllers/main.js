@@ -5,29 +5,33 @@ function dataTables (key,table) {
   this.column = []
   this.obj = {}
   this.table = table
-  this.tableCall = function tableCall(key){
+  this.displayData = function(){
+    db = {column: this.column, db:this.obj,table:this.table }
+    return db
+  }
+  this.tableCall = function(){
 
   var this1 = this
-  var url =  "https://spreadsheets.google.com/feeds/list/" + key + "/od6/public/values?alt=json";
+  var url =  "https://spreadsheets.google.com/feeds/list/" + this.key + "/od6/public/values?alt=json";
 
     request(url, function(err,res,body){
+      if (err) throw err;
+
       var data = JSON.parse(body);
-      var mdata = data.feed.entry;
-      console.log(mdata);
+      this1.obj = data.feed.entry;
       var data  = data.feed.entry[1];
 
-      function spliceFormula(data){
+      function spliceFormula(){
         this1.column.splice(0,6);
-
+        return this1.displayData();
       }
-
       function pushToColumn(data){
         for (key in data){
           this1.column.push(key);
         }
         return spliceFormula()
       };
-      pushToColumn(data)
+      pushToColumn(data);
       })
     }
 }
