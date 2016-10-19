@@ -7,6 +7,7 @@ function dataTables (key,table) {
   this.table = table
   this.displayData = function(){
     db = {column: this.column, db:this.obj,table:this.table }
+    console.log("hi");
     return db
   }
   this.tableCall = function(){
@@ -23,6 +24,7 @@ function dataTables (key,table) {
 
       function spliceFormula(){
         this1.column.splice(0,6);
+        console.log("runnning");
         return this1.displayData();
       }
       function pushToColumn(data){

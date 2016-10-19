@@ -14,9 +14,14 @@ router.get('/tables', function(req,res){
 
 var quarterback = new dataTables("1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw", ".fantasyQB");
 
-    quarterback.tableCall()
+  quarterback.tableCall()
 
-        res.json({hi:"yrd"})
+  setTimeout(function(){
+    y = quarterback.displayData()
+    res.json(y)
+  },1000)
+
+
 });
 
 router.get('/NFL', function(req,res){
