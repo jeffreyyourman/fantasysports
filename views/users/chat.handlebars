@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.css">
   <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
   <style media="screen">
@@ -22,18 +21,19 @@
     color:black;
   }
 
+
   </style>
 
 
 </head>
 <body>
 
-  <div class="container-fluid">
+  <div style='margin-top:5%;' class="container-fluid">
     <div class="row">
       <div class="col-md-4">
         <div id="sizer">
           <div id="swapzone"><input id="username" placeholder="Name"/>
-            <button id="start">Start</button>
+            <button sstyle='background-color:green' id='start' type="button" class="btn btn-default">Send</button>
           </div>
           <br>
           <br>
@@ -43,7 +43,7 @@
             <div id="chatmessages"></div>
             <div id="chatbar">
               <input id="chatinput" />
-              <button id="chatsend">Send</button>
+              <button sstyle='background-color:green' id='chatsend' type="button" class="btn btn-default">Send</button>
             </div>
           </div>
         </div>
@@ -298,8 +298,8 @@
 
       //creates key based on assigned player number
       playerRef = new Firebase('https://worldclassbettinghelp.firebaseio.com/players' + playerNum);
-      
-      
+
+
 
       //creates player object. 'choice' is unnecessary here, but I left it in to be as complete as possible
       playerRef.set({
