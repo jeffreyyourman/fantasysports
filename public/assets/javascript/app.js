@@ -7,6 +7,8 @@ $(document).ready(function(){
 
       // if emptdy show all the appointments
       $.get(urlqb , function( data ) {
+      // $.get('/tables' , function( data ) {
+        // console.log('this si data', data);
       // $.get('/tables', function( data ) {
         // for (var i = 0; i < data.length; i++) {
         //   console.log(data[i]);
