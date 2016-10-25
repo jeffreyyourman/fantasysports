@@ -3,7 +3,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
-  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
+
 
       <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
@@ -15,6 +16,14 @@
     background-color:white;
   }
 
+  .highlight {
+          font-weight: bold;
+          color: blue;
+      }
+  td.highlight {
+          font-weight: bold;
+          color: blue;
+      }
   </style>
 
 </head>
@@ -282,7 +291,14 @@
   </div>
 
   <script type="text/javascript">
-
+  // $('.fantasyQB').DataTable( {
+  //     "createdRow": function ( row, data, index ) {
+  //         if ( data[7].replace(/[\$,]/g, '') * 1 > 10 ) {
+  //             $('td', row).eq(7).addClass('highlight');
+  //         }
+  //     }
+  //   });
+  // });
   </script>
   <!-- <th>Week</th>
   <th>Player</th>

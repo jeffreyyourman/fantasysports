@@ -3,30 +3,69 @@
   .sportfantasynews {
     overflow:auto;
     background-color: #FFFCF7;
+    height:575px;
+  }
+  .sportfantasynewsdum {
+    overflow:auto;
+    background-color: #FFFCF7;
     height:500px;
   }
+
 
   </style>
 </head>
 <br>
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    <div class="sportfantasynewsdum">
+      <div class="col-md-6">
+        <div class="nbafantasynewsdum">
+          {{#each fantasynewsNBA}}
+            <p>{{{this.fantasyinfo}}}</p>
+            <hr>
+          {{/each}}
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="nflfantasynewsdum">
+          {{#each fantasynewsNFL}}
+            <p>{{{this.fantasyinfo}}}</p>
+            <hr>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-5">
       <button class='shownba' type="button" name="button">NBA</button>
       <button class='shownfl' type="button" name="button">NFL</button>
       <div class="sportfantasynews">
         <div class="nbafantasynews">
           {{#each fantasynewsNBA}}
-            <h3>{{{this.fantasynews}}}</h3>
+            <h5>{{{this.fantasynews}}}</h5>
             <p>{{{this.fantasyinfo}}}</p>
+            <hr>
           {{/each}}
         </div>
         <div class="nflfantasynews">
           {{#each fantasynewsNFL}}
-            <h3>{{{this.fantasynews}}}</h3>
+            <h5>{{{this.fantasynews}}}</h5>
             <p>{{{this.fantasyinfo}}}</p>
+            <hr>
           {{/each}}
         </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-3">
+      <div class="twitterfeed">
+        <a class="twitter-timeline"  href="https://twitter.com/hashtag/NFL" data-widget-id="778252274892177408">#NFL Tweets</a>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
       </div>
     </div>
   </div>
