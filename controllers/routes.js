@@ -11,7 +11,17 @@ var fantasynews = require('../model/fantasynews.js');
 var connection = require('../config/connection.js');
 
 router.get('/', function(req, res){
+  // var hbsObject = {
+  //   logged_in: req.session.logged_in,
+  //   user: user,
+  //   fantasynewsNFL: fantasynewsNFL,
+  //   fantasynewsNBA: fantasynewsNBA
+  // }
+  res.render('index');
+});
 
+
+router.get('/Chat', function(req,res){
   var urlNFL = 'http://www.rotoworld.com/playernews/nfl/'
   var urlNBA = "http://www.rotoworld.com/playernews/nba/"
 
@@ -69,22 +79,17 @@ router.get('/', function(req, res){
 
   fantasynews.allNewsNBA(function(fantasynewsNBA){
     fantasynews.allNews(function(fantasynewsNFL){
-
+      console.log(fantasynewsNBA);
         var hbsObject = {
           logged_in: req.session.logged_in,
           user: user,
           fantasynewsNFL: fantasynewsNFL,
           fantasynewsNBA: fantasynewsNBA
         }
-        res.render('index', hbsObject)
+        res.render('users/chat', hbsObject)
 
       });
     });
-});
-
-
-router.get('/Chat', function(req,res){
-  res.render('users/chat')
 });
 
 module.exports = router;

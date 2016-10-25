@@ -1,77 +1,47 @@
 <head>
-  <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-
   <style media="screen">
-  #chatmessages{
+  .sportfantasynews {
     overflow:auto;
     background-color: #FFFCF7;
-    height:300px;
+    height:500px;
   }
 
-
-  .player1{
-    color: #419D78;
-
-  }
-
-  .player0{
-    background-color: lightgrey;
-    color:black;
-  }
-
-  .chatdiv {
-    bottom: 0;
-    position: fixed;
-  }
-
-  .chatdivshow {
-    /*margin: 0 auto;
-    text-align: center;*/
-    overflow:auto;
-    background-color: #FFFCF7;
-    width:250px;
-    height:520px;
-    position: fixed;
-    bottom: 0px;
-  }
-
-
-  .stickbutton {
-    text-align: center;
-  }
   </style>
 </head>
-
-<div class="chatdiv">
-  <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default chatbutton">Chat</button>
-</div>
-
-
-<div class="chatdivshow">
-  <div id="sizer">
-    <div id="swapzone"><input id="username" placeholder="Name"/>
-      <button sstyle='background-color:green' id='start' type="button" class="btn btn-default">Enter Chat</button>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <button class='shownba' type="button" name="button">NBA</button>
+      <button class='shownfl' type="button" name="button">NFL</button>
+      <div class="sportfantasynews">
+        <div class="nbafantasynews">
+          {{#each fantasynewsNBA}}
+            <h3>{{{this.fantasynews}}}</h3>
+            <p>{{{this.fantasyinfo}}}</p>
+          {{/each}}
+        </div>
+        <div class="nflfantasynews">
+          {{#each fantasynewsNFL}}
+            <h3>{{{this.fantasynews}}}</h3>
+            <p>{{{this.fantasyinfo}}}</p>
+          {{/each}}
+        </div>
+      </div>
     </div>
   </div>
-  <div id="chatmessages"></div>
-  <br>
-  <div id="chatbar">
-    <input placeholder="Start Typing" id="chatinput" />
-    <button style='text-align:center;' id='chatsend' type="button" class="btn btn-default">Send</button>
-    <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default closechat">Close Chat</button>
-  </div>
 </div>
 
-  <script type="text/javascript">
-    $('.chatdivshow').hide();
-    $('.chatbutton').on('click', function(){
-      $('.chatdiv').hide();
-      $('.chatdivshow').show();
-    });
 
-    $('.closechat').on('click', function(){
-      $(".chatdivshow").hide();
-      $('.chatdiv').show();
+  <script type="text/javascript">
+    $('.nflfantasynews').hide();
+    $('.shownba').on('click', function(){
+      $('.nflfantasynews').hide();
+      $('.nbafantasynews').show();
+    });
+    $('.shownfl').on('click', function(){
+      $('.nbafantasynews').hide();
+      $('.nflfantasynews').show();
     });
   </script>
   <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>

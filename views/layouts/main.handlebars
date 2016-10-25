@@ -2,7 +2,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
   <!-- CSS  -->
-
+      <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
       <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" media="screen" title="no title"> -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
       <!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" media="screen" title="no title"> -->
@@ -17,7 +17,45 @@
       <link href="/assets/cssM/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
       <link href="/assets/cssM/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
+<style media="screen">
+#chatmessages{
+  overflow:auto;
+  background-color: #FFFCF7;
+  height:300px;
+}
 
+
+.player1{
+  color: #419D78;
+
+}
+
+.player0{
+  background-color: lightgrey;
+  color:black;
+}
+
+.chatdiv {
+  bottom: 0;
+  position: fixed;
+}
+
+.chatdivshow {
+  /*margin: 0 auto;
+  text-align: center;*/
+  overflow:auto;
+  background-color: #FFFCF7;
+  width:250px;
+  height:520px;
+  position: fixed;
+  bottom: 0px;
+}
+
+
+.stickbutton {
+  text-align: center;
+}
+</style>
 
 </head>
 <body>
@@ -42,6 +80,26 @@
   </nav>
 
 {{{ body }}}
+
+<div class="chatdiv">
+  <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default chatbutton">Chat</button>
+</div>
+
+
+<div class="chatdivshow">
+  <div id="sizer">
+    <div id="swapzone"><input id="username" placeholder="Name"/>
+      <button sstyle='background-color:green' id='start' type="button" class="btn btn-default">Enter Chat</button>
+    </div>
+  </div>
+  <div id="chatmessages"></div>
+  <br>
+  <div id="chatbar">
+    <input placeholder="Start Typing" id="chatinput" />
+    <button style='text-align:center;' id='chatsend' type="button" class="btn btn-default">Send</button>
+    <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default closechat">Close Chat</button>
+  </div>
+</div>
 <!--
   <footer class="page-footer teal">
     <div class="container">
@@ -75,6 +133,16 @@
   </footer> -->
 
   <script type="text/javascript">
+    $('.chatdivshow').hide();
+    $('.chatbutton').on('click', function(){
+      $('.chatdiv').hide();
+      $('.chatdivshow').show();
+    });
+
+    $('.closechat').on('click', function(){
+      $(".chatdivshow").hide();
+      $('.chatdiv').show();
+    });
   </script>
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
