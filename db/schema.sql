@@ -30,3 +30,11 @@ CREATE TABLE FantasyNewsNBA (
   date TIMESTAMP,
   PRIMARY KEY (fantasyid)
 );
+
+CREATE TABLE PlayersNBA (
+  nbaplayersid int not null AUTO_INCREMENT,
+  nbaplayers varchar(255) NOT NULL,
+  date TIMESTAMP,
+  PRIMARY KEY (nbaplayersid)
+);
+-- SELECT * FROM fantasynewstest ORDER BY Month(fantasyinfo) desc, DAYOFMONTH(date);

@@ -25,7 +25,7 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 
-var routes = require('./controllers/routes.js');
+var routes = require('./controllers/main_routes.js');
 var fantasydata_controller = require('./controllers/fantasydata_controller.js');
 var userdata_controller = require('./controllers/userdata_controller.js');
 

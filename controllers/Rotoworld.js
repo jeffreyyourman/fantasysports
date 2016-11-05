@@ -1,33 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var request = require('request');
+var request = require("request");
 var cheerio = require('cheerio');
-var moment = require('moment');
 
-
-var user = require('../model/userdata.js');
-var fantasydata = require('../model/fantasydata.js');
-var fantasynews = require('../model/fantasynews.js');
-var connection = require('../config/connection.js');
-
-router.get('/', function(req, res){
-  // var hbsObject = {
-  //   logged_in: req.session.logged_in,
-  //   user: user,
-  //   fantasynewsNFL: fantasynewsNFL,
-  //   fantasynewsNBA: fantasynewsNBA
-  // }
-  res.render('index');
-});
-
-
-router.get('/Chat', function(req,res){
+function Rotoworld () {
   var urlNFL = 'http://www.rotoworld.com/playernews/nfl/'
   var urlNBA = "http://www.rotoworld.com/playernews/nba/"
 
-  function cheerioNBA(url) {
 
-    request(url, function (error, response, html) {
+    request(urlNBA, function (error, response, html) {
 
       var $ = cheerio.load(html);
 
@@ -48,11 +27,9 @@ router.get('/Chat', function(req,res){
         })
       });
     });
-  }
 
-  function cheerioNFL(url) {
 
-    request(url, function (error, response, html) {
+    request(urlNFL, function (error, response, html) {
 
     var $ = cheerio.load(html);
 
@@ -72,24 +49,7 @@ router.get('/Chat', function(req,res){
         })
       });
     });
-  }
+}
 
-  cheerioNBA(urlNBA);
-  cheerioNFL(urlNFL);
 
-  fantasynews.allNewsNBA(function(fantasynewsNBA){
-    fantasynews.allNews(function(fantasynewsNFL){
-      console.log(fantasynewsNBA);
-        var hbsObject = {
-          logged_in: req.session.logged_in,
-          user: user,
-          fantasynewsNFL: fantasynewsNFL,
-          fantasynewsNBA: fantasynewsNBA
-        }
-        res.render('users/chat', hbsObject)
-
-      });
-    });
-});
-
-module.exports = router;
+module.exports = Rotoworld;

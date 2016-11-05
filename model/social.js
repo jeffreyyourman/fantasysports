@@ -56,6 +56,32 @@ var information = {
 		orm.deleteNewsNBA('FantasyNewsNBA', condition, function(res){
 			cb(res);
 		});
+	},
+	findOneFanduelPlayersNBA: function(condition, cb) {
+		orm.findOneFanduelPlayersNBA('PlayersNBA', condition, function(res){
+				cb(res);
+		});
+	},
+	allFanduelPlayersNBA: function(cb) {
+		orm.allFanduelPlayersNBA('PlayersNBA', function(res){
+			cb(res);
+		});
+	},
+	//cols and vals are arrays
+	createFanduelPlayersNBA: function(cols, vals, cb) {
+		orm.createFanduelPlayersNBA('PlayersNBA', cols, vals, function(res){
+			cb(res);
+		});
+	},
+	updateFanduelPlayersNBA: function(objColVals, condition, cb) {
+		orm.updateFanduelPlayersNBA('PlayersNBA', objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+	deleteFanduelPlayersNBA: function(condition, cb){
+		orm.deleteFanduelPlayersNBA('PlayersNBA', condition, function(res){
+			cb(res);
+		});
 	}
 };
 

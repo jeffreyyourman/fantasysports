@@ -63,7 +63,7 @@ $(document).ready(function(){
                   $(td).css('background-color', 'red')
                 }
               }
-            } ]
+            }]
           });
           // $('.fantasyQB').DataTable({
           //   "createdRow": function ( row, data, index ) {
@@ -376,5 +376,4 @@ $(document).ready(function(){
     rbfantasy.hide();
     deffantasy.show();
   });
-
 });

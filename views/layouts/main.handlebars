@@ -34,10 +34,24 @@
   background-color: lightgrey;
   color:black;
 }
-
+.buttondiv {
+  position:absolute:
+  bottom:0;
+}
 .chatdiv {
   bottom: 0;
   position: fixed;
+}
+.fantasynewsdiv {
+  /*bottom: 0;
+  left:45%;
+  position: fixed;*/
+}
+
+.twitterdiv {
+  /*bottom: 0;
+  left:70%;
+  position: fixed;*/
 }
 
 .chatdivshow {
@@ -64,16 +78,17 @@
       <a id="logo-container" href="/" class="brand-logo">WeAreFantasy</a>
       <ul class="right hide-on-med-and-down">
         <li><a href="/">Home</a></li>
+        <li><a href="/Profile">Profile</a></li>
         <li><a href="/NFL">NFL</a></li>
         <li><a href="/NBA">NBA</a></li>
-        <li><a href="/Chat">Chat</a></li>
+        <li><a href="/AllFantasy">All Fantasy</a></li>
       </ul>
 
       <ul id="nav-mobile" class="side-nav">
         <li><a href="/">Home</a></li>
         <li><a href="/NFL">NFL</a></li>
         <li><a href="/NBA">NBA</a></li>
-        <li><a href="/Chat">Chat</a></li>
+        <li><a href="/AllFantasy">AllFantasy</a></li>
       </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
@@ -81,8 +96,11 @@
 
 {{{ body }}}
 
-<div class="chatdiv">
-  <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default chatbutton">Chat</button>
+<div class="buttondiv">
+
+  <div class="chatdiv">
+    <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default chatbutton">Chat</button>
+  </div>
 </div>
 
 
@@ -145,6 +163,7 @@
     });
   </script>
   <!--  Scripts-->
+  <script src='/assets/javascript/chatapp.js'></script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
   <script src="/assets/javascript/app.js"></script>

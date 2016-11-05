@@ -5,7 +5,13 @@
     background-color: #FFFCF7;
     height:575px;
   }
-  .sportfantasynewsdum {
+  .nbafantasynewsdum {
+    overflow:auto;
+    background-color: #FFFCF7;
+    height:500px;
+  }
+
+  .nbaplayers {
     overflow:auto;
     background-color: #FFFCF7;
     height:500px;
@@ -19,25 +25,18 @@
   <div class="row">
     <div class="sportfantasynewsdum">
       <div class="col-md-6">
-        <div class="nbafantasynewsdum">
-          {{#each fantasynewsNBA}}
-            <p>{{{this.fantasyinfo}}}</p>
-            <hr>
-          {{/each}}
+        <button class='shownbaplayers' type="button" name="button">show nba players</button>
+        <div class="nbaplayers">
+
         </div>
       </div>
       <div class="col-md-6">
-        <div class="nflfantasynewsdum">
-          {{#each fantasynewsNFL}}
-            <p>{{{this.fantasyinfo}}}</p>
-            <hr>
-          {{/each}}
-        </div>
+
       </div>
     </div>
   </div>
 </div>
-<div class="container-fluid">
+<!-- <div class="container-fluid">
   <div class="row">
     <div class="col-md-5">
       <button class='shownba' type="button" name="button">NBA</button>
@@ -69,7 +68,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 
   <script type="text/javascript">
