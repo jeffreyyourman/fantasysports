@@ -13,12 +13,12 @@ $(document).ready(function(){
 
           data: data.feed.entry,
 
-          "dom": '<"top"i>rt<"bottom"flp><"clear">',
-
+          "dom": '<"pull-left"f><"pull-right"l>tip',
 
           "ordering": true,
           "info":     false,
-          "bLengthChange": false,
+          "bLengthChange": true,
+
           columns: [
         { data: 'gsx$week.$t' },
         { data: 'gsx$player.$t' },
@@ -67,12 +67,11 @@ $(document).ready(function(){
 
           data: data.feed.entry,
 
-          "dom": '<"top"i>rt<"bottom"flp><"clear">',
-
+          "dom": '<"pull-left"f><"pull-right"l>tip',
 
           "ordering": true,
           "info":     false,
-          "bLengthChange": false,
+          "bLengthChange": true,
 
           columns: [
             {data: "gsx$week.$t"},
@@ -110,12 +109,11 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-        "dom": '<"top"i>rt<"bottom"flp><"clear">',
-
+        "dom": '<"pull-left"f><"pull-right"l>tip',
 
         "ordering": true,
         "info":     false,
-        "bLengthChange": false,
+        "bLengthChange": true,
 
         columns: [
           {data: "gsx$week.$t"},
@@ -154,12 +152,11 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-        "dom": '<"top"i>rt<"bottom"flp><"clear">',
-
+        "dom": '<"pull-left"f><"pull-right"l>tip',
 
         "ordering": true,
         "info":     false,
-        "bLengthChange": false,
+        "bLengthChange": true,
 
         columns: [
           {data: "gsx$week.$t"},
@@ -198,12 +195,11 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-        "dom": '<"top"i>rt<"bottom"flp><"clear">',
-
+        "dom": '<"pull-left"f><"pull-right"l>tip',
 
         "ordering": true,
         "info":     false,
-        "bLengthChange": false,
+        "bLengthChange": true,
 
         columns: [
           {data: "gsx$week.$t"},
@@ -236,12 +232,11 @@ $(document).ready(function(){
 
       data: data.feed.entry,
 
-      "dom": '<"top"i>rt<"bottom"flp><"clear">',
-
+      "dom": '<"pull-left"f><"pull-right"l>tip',
 
       "ordering": true,
       "info":     false,
-      "bLengthChange": false,
+      "bLengthChange": true,
 
       columns: [
         {data: "gsx$week.$t"},
@@ -275,8 +270,7 @@ $(document).ready(function(){
           $('.tableNbaFantasy').DataTable({
 
             data: data.feed.entry,
-
-            "dom": '<"top"i>rt<"bottom"flp><"clear">',
+            "dom": '<"pull-left"f><"pull-right"l>tip',
 
             "ordering": true,
             "info":     false,

@@ -1,23 +1,12 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!doctype html>
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!doctype html>
 <html>
     <head>
     <title>Play Off A sports Category Flat Bootstarp Resposive Website Template | Home :: w3layouts</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for         Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+        <meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" media="screen" title="no title">
+        <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
         <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
         <!--bootstrap-file-->
         <link href="/assets/Themecss/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -29,6 +18,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <!--js-->
         <script src="/assets/ThemeJS/jquery.min.js"></script>
         <script src="/assets/ThemeJS/responsiveslides.min.js"></script>
+        <style media="screen">
+            #chatmessages{
+                overflow:auto;
+                background-color: #021A3A;
+                height:300px;
+            }
+
+
+            .player1{
+                color: #edb82a;
+            }
+
+            .playerfalse {
+                color:pink;
+            }
+
+            .player0{
+                background-color: lightgrey;
+                color:#edb82a;
+            }
+            .chatdiv {
+                bottom: 0;
+                position: fixed;
+                right:10%;
+            }
+
+            .chatdivshow {
+                right:10%;
+                overflow:auto;
+                background-color: #021A3A;
+                width:250px;
+                position: fixed;
+                bottom: 0px;
+            }
+
+            .closechat {
+                margin-left: 90%;
+                font-size: 18px;
+                background-color: #021A3A;
+                border-color: none;
+            }
+            .stickbutton {
+                text-align: center;
+        }
+        </style>
     </head>
     <body>
         <div class="header" id="home">
@@ -40,7 +74,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <nav class="navbar navbar-default bg">
                         <!-- Brand and toggle get grouped for better mobile display -->
                           <div class="logo">
-                              <a href="index.html">Play-<span>Offs</span></a>
+                              <a href="/">Play-<span>Offs</span></a>
                         </div>
                         <div class="navbar-header">
                           <button type="button" class="navbar-toggle collapsed mod" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -54,8 +88,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <div class="collapse navbar-collapse bod" id="bs-example-navbar-collapse-1">
                           <ul class="nav navbar-nav navbar-right navigate">
                             <li><a href="#about" class="scroll">ABOUT</a></li>
-                            <li><a href="#services">NBA</a></li>
-                            <li><a href="#projects">NFL</a></li>
+                            <li><a href="/NBA">NBA</a></li>
+                            <li><a href="/NFL">NFL</a></li>
                           </ul>
                         </div><!-- /.navbar-collapse -->
                           <div class="clearfix"></div>
@@ -75,7 +109,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="clear"></div>
             </div>
          </div>
-            
+
         </div>
         {{{ body }}}
 
@@ -88,8 +122,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         <div class="chatdivshow">
           <div id="sizer">
+              <a class='closechat' href="#">X</a>
+            <br>
             <div id="swapzone"><input id="username" placeholder="Name"/>
-              <button sstyle='background-color:green' id='start' type="button" class="btn btn-default">Enter Chat</button>
+
+            <button id='start' type="button" class="btn btn-default">Enter Chat</button>
+
             </div>
           </div>
           <div id="chatmessages"></div>
@@ -97,7 +135,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
           <div id="chatbar">
             <input placeholder="Start Typing" id="chatinput" />
             <button style='text-align:center;' id='chatsend' type="button" class="btn btn-default">Send</button>
-            <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default closechat">Close Chat</button>
           </div>
         </div>
 
@@ -116,9 +153,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             $('.chatdiv').show();
           });
         </script>
-        <!-- <script src='/assets/javascript/chatapp.js'></script>
+        <script src='/assets/javascript/chatapp.js'></script>
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
-        <script src="/assets/javascript/app.js"></script> -->
+        <script src="/assets/javascript/app.js"></script>
+        <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
     </body>
 </html>
