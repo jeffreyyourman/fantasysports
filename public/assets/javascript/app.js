@@ -261,16 +261,15 @@ $(document).ready(function(){
     var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
     var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
 
-    // console.log('this is the quarterback ldataog',data);
 
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
-          console.log(data);
           //display all appointments with DATA
           $('.tableNbaFantasy').DataTable({
 
             data: data.feed.entry,
             "dom": '<"pull-left"f><"pull-right"l>tip',
+            "order": [[ 9, "desc" ]],
 
             "ordering": true,
             "info":     false,
@@ -308,22 +307,38 @@ $(document).ready(function(){
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$delete.$t' }
         ],
-              "columnDefs": [ {
-                "targets": 9,
-                "createdCell": function (td, cellData, rowData, row, col) {
-                  if ( cellData >= 31 ) {
-                    $(td).css('background-color', 'lightgreen')
-                  } else if ((cellData >= 24) && (cellData <= 31.9)) {
-                    $(td).css('background-color', 'yellow')
-                  } else if ((cellData >= 17) && (cellData <= 23.9)) {
-                    $(td).css('background-color', 'orange')
-                  } else if ((cellData >= 0.1) && (cellData <= 16.9) || (cellData = '-')) {
-                    $(td).css('background-color', 'red')
-                  }
-                }
-              }]
-            });
-          });
+        "columnDefs": [
+          { // Date columns
+            "targets": 9,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= 31 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= 24) && (cellData <= 31.9)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= 17) && (cellData <= 23.9)) {
+                $(td).css('background-color', 'orange')
+              } else if ((cellData >= 0.1) && (cellData <= 16.9) || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          {
+            targets: 11,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= "35.00%" ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= "24.00%") && (cellData <= "34.99%")) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= "16.00%") && (cellData <= "23.99%")) {
+                $(td).css('background-color', 'orange')
+              } else if (cellData <= "15.99%") {
+                $(td).css('background-color', 'red')
+              }
+            }
+          }
+        ]
+      });
+    });
 
 
 
