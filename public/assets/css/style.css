@@ -2,70 +2,46 @@ body,html{
     height: 100%;
     background-color: #f0fcff;
   }
-.homePage{
-  margin-top: 50px;
-  padding-top: 10px;
-}
-
-.mynavbar {
-  padding:0;
-  background-color: #ddfaff;
-}
-
-.list {
-  list-style-type: none;
-}
-
-@font-face {
-    font-family: headerfont;
-    src: url(../fonts/daggersquare/DAGGERSQUARE.otf);
-}
-
-div {
-    font-family: myFirstFont;
-}
-
-
-.newscontainer {
-  background-color: #f0fcff;
-}
-.aboutus1 {
-  background-color:white;
-}
-.aboutus2 {
-  background-color:#f0fcff;
-}
-.aboutus3 {
-  background-color:white;
-}
-
-.fantasynews {
-  height:600px;
-  overflow: hidden;
-  overflow-y: scroll;
-  background-color:white;
-}
-.twitterNFL {
-  height: 600px;
-}
-.fantasynewsNFL {
-  padding:5%;
-  height:600px;
-}
-.fantasynewsNBA {
-  padding:5%;
-  height:600px;
-}
-
-.main{
-  padding: 10px 10px 0 10px;
-}
-
-.beforeResponsive {
-  padding:0;
-}
-
-.footer {
-  margin-top: 100px;
-  background-color: #ddfaff;
+  #chatmessages{
+      overflow:auto;
+      background-color: #021A3A;
+      height:300px;
   }
+
+
+  .player1{
+      color: #edb82a;
+  }
+
+  .playerfalse {
+      color:pink;
+  }
+
+  .player0{
+      background-color: lightgrey;
+      color:#edb82a;
+  }
+  .chatdiv {
+      bottom: 0;
+      position: fixed;
+      right:10%;
+  }
+
+  .chatdivshow {
+      right:10%;
+      overflow:auto;
+      background-color: #021A3A;
+      width:250px;
+      position: fixed;
+      bottom: 0px;
+  }
+
+  .closechat {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: #021A3A;
+      border-color: none;
+  }
+  .stickbutton {
+      text-align: center;
+}
