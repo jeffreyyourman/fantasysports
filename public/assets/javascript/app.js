@@ -308,18 +308,20 @@ $(document).ready(function(){
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$delete.$t' }
         ],
-              // "columnDefs": [ {
-              //   "targets": 7,
-              //   "createdCell": function (td, cellData, rowData, row, col) {
-              //     if ( cellData >= 20 ) {
-              //       $(td).css('background-color', 'lightgreen')
-              //     } else if ((cellData >= 10) && (cellData <= 19)) {
-              //       $(td).css('background-color', 'orange')
-              //     } else if ((cellData) >= 0 && (cellData <= 9)) {
-              //       $(td).css('background-color', 'red')
-              //     }
-              //   }
-              // }]
+              "columnDefs": [ {
+                "targets": 9,
+                "createdCell": function (td, cellData, rowData, row, col) {
+                  if ( cellData >= 31 ) {
+                    $(td).css('background-color', 'lightgreen')
+                  } else if ((cellData >= 24) && (cellData <= 31.9)) {
+                    $(td).css('background-color', 'yellow')
+                  } else if ((cellData >= 17) && (cellData <= 23.9)) {
+                    $(td).css('background-color', 'orange')
+                  } else if ((cellData >= 0.1) && (cellData <= 16.9) || (cellData = '-')) {
+                    $(td).css('background-color', 'red')
+                  }
+                }
+              }]
             });
           });
 
