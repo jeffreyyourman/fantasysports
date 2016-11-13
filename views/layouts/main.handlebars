@@ -18,7 +18,13 @@
         <!--js-->
         <script src="/assets/ThemeJS/jquery.min.js"></script>
         <script src="/assets/ThemeJS/responsiveslides.min.js"></script>
-
+        <style media="screen">
+        table.dataTable thead .sorting,
+        table.dataTable thead .sorting_asc,
+        table.dataTable thead .sorting_desc {
+            background : none;
+        }
+                </style>
     </head>
     <body>
         <div class="header" id="home">
@@ -71,7 +77,7 @@
 
         <div class="buttondiv">
           <div class="chatdiv">
-            <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default chatbutton">Chat</button>
+            <button style='text-align:center;' type="button" class="btn btn-default chatbutton">Chat</button>
           </div>
         </div>
 
@@ -80,7 +86,7 @@
           <div id="sizer">
               <a class='closechat' href="#">X</a>
             <br>
-            <div id="swapzone"><input id="username" placeholder="Name"/>
+            <div style='color:#edb82a;' id="swapzone"><input id="username" placeholder="Name"/>
 
             <button id='start' type="button" class="btn btn-default">Enter Chat</button>
 
