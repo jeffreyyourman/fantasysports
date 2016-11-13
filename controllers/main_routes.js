@@ -41,7 +41,14 @@ router.get('/NFL', function (req,res){
       var hbsObject = {
         logged_in:req.session.logged_in,
       }
-      res.render('fantasydata/fantasy_data', hbsObject);
+      res.render('fantasydata/NFLfantasy_data', hbsObject);
+});
+
+router.get('/NBA', function (req,res){
+      var hbsObject = {
+        logged_in:req.session.logged_in,
+      }
+      res.render('fantasydata/NBAfantasy_data', hbsObject);
 });
 
 

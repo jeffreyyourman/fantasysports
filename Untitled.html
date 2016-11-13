@@ -19,3 +19,168 @@ on the social chat page...
   - if monday to thursday slate end on thursday at 3am.
   - if main slate end at sunday (monday night at 3am)
   - the other if statement will be for football which at 3am on every
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+    <!-- CSS  -->
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" media="screen" title="no title">
+        <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.css" media="screen" title="no title"> -->
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap-theme.min.css" media="screen" title="no title"> -->
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- <script type="text/javascript" src='/bootstrap/js/bootstrap.min.js'></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="/assets/cssM/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link href="/assets/cssM/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
+  <style media="screen">
+  #chatmessages{
+    overflow:auto;
+    background-color: #FFFCF7;
+    height:300px;
+  }
+
+
+  .player1{
+    color: #419D78;
+
+  }
+
+  .player0{
+    background-color: lightgrey;
+    color:black;
+  }
+  .chatdiv {
+    bottom: 0;
+    position: fixed;
+    right:10%;
+  }
+
+  .chatdivshow {
+    /*margin: 0 auto;
+    text-align: center;*/
+    right:10%;
+    overflow:auto;
+    background-color: #FFFCF7;
+    width:250px;
+    height:520px;
+    position: fixed;
+    bottom: 0px;
+  }
+
+
+  .stickbutton {
+    text-align: center;
+  }
+  </style>
+
+  </head>
+  <body>
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo">WeAreFantasy</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="/">Home</a></li>
+          <!-- <li><a href="/Profile">Profile</a></li> -->
+          <li><a href="/NFL">NFL</a></li>
+          <li><a href="/NBA">NBA</a></li>
+          <!-- <li><a href="/AllFantasy">All Fantasy</a></li> -->
+        </ul>
+
+        <ul id="nav-mobile" class="side-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/NFL">NFL</a></li>
+          <li><a href="/NBA">NBA</a></li>
+          <!-- <li><a href="/AllFantasy">AllFantasy</a></li> -->
+        </ul>
+        <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+      </div>
+    </nav>
+
+  {{{ body }}}
+
+  <div class="buttondiv">
+
+    <div class="chatdiv">
+      <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default chatbutton">Chat</button>
+    </div>
+  </div>
+
+
+  <div class="chatdivshow">
+    <div id="sizer">
+      <div id="swapzone"><input id="username" placeholder="Name"/>
+        <button sstyle='background-color:green' id='start' type="button" class="btn btn-default">Enter Chat</button>
+      </div>
+    </div>
+    <div id="chatmessages"></div>
+    <br>
+    <div id="chatbar">
+      <input placeholder="Start Typing" id="chatinput" />
+      <button style='text-align:center;' id='chatsend' type="button" class="btn btn-default">Send</button>
+      <button style='text-align:center;' iid='chatsend' type="button" class="btn btn-default closechat">Close Chat</button>
+    </div>
+  </div>
+  <!--
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Company Bio</h5>
+            <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Sports</h5>
+            <ul>
+              <li><a class="white-text" href="/NBA">NBA</a></li>
+              <li><a class="white-text" href="/NFL">NFL</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s12">
+            <h5 class="white-text">Social</h5>
+            <ul>
+              <li><a class="white-text" href="/Chat">Chat and keep track of players!</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container">
+        Made by <a class="brown-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+        </div>
+      </div>
+    </footer> -->
+
+    <script type="text/javascript">
+      $('.chatdivshow').hide();
+      $('.chatbutton').on('click', function(){
+        $('.chatdiv').hide();
+        $('.chatdivshow').show();
+      });
+
+      $('.closechat').on('click', function(){
+        $(".chatdivshow").hide();
+        $('.chatdiv').show();
+      });
+    </script>
+    <!--  Scripts-->
+    <script src='/assets/javascript/chatapp.js'></script>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+    <script src="/assets/javascript/app.js"></script>
+
+    <script src="/assets/jsM/materialize.js"></script>
+    <script src="/assets/jsM/init.js"></script>
+
+    <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+
+  </body>
