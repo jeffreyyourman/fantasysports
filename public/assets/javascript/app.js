@@ -41,18 +41,34 @@ $(document).ready(function(){
         { data: 'gsx$olrank.$t' },
         { data: 'gsx$fps.$t' }
       ],
-            "columnDefs": [ {
-              "targets": 7,
-              "createdCell": function (td, cellData, rowData, row, col) {
-                if ( cellData >= 20 ) {
-                  $(td).css('background-color', 'lightgreen')
-                } else if ((cellData >= 10) && (cellData <= 19)) {
-                  $(td).css('background-color', 'orange')
-                } else if ((cellData) >= 0 && (cellData <= 9)) {
-                  $(td).css('background-color', 'red')
+            "columnDefs": [
+              { // Date columns
+                "targets": 7,
+                "createdCell": function (td, cellData, rowData, row, col) {
+                  if ( cellData >= 20 ) {
+                    $(td).css('background-color', 'lightgreen')
+                  } else if ((cellData >= 10) && (cellData <= 19)) {
+                    $(td).css('background-color', 'orange')
+                  } else if ((cellData) >= 0 && (cellData <= 9)) {
+                    $(td).css('background-color', 'red')
+                  }
+                }
+              },
+              {
+                targets: 11,
+                "createdCell": function (td, cellData, rowData, row, col) {
+                  // if ( cellData >= "35.00%" ) {
+                  //   $(td).css('background-color', 'lightgreen')
+                  // } else if ((cellData >= "24.00%") && (cellData <= "34.99%")) {
+                  //   $(td).css('background-color', 'yellow')
+                  // } else if ((cellData >= "16.00%") && (cellData <= "23.99%")) {
+                  //   $(td).css('background-color', 'orange')
+                  // } else if (cellData <= "15.99%") {
+                  //   $(td).css('background-color', 'red')
+                  // }
                 }
               }
-            }]
+            ]
           });
         });
     var spreadsheetIDrb = "15mSJN1WKrxFVJtIYT20sJS9mGr7f65Ow1XGLhHVuzDo";
