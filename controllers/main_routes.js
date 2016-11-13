@@ -9,10 +9,10 @@ var social = require('../model/social.js');
 var connection = require('../config/connection.js');
 
 var RotoWorld = require('./Rotoworld.js');
-
 //fantasydata = fantasytables
 // fantasynews = social
 router.get('/', function(req, res){
+
   // var hbsObject = {
   //   logged_in: req.session.logged_in,
   //   user: user
@@ -24,25 +24,6 @@ router.get('/AllFantasy', function(req,res){
 
   social.allNewsNBA(function(fantasynewsNBA){
     social.allNews(function(fantasynewsNFL){
-
-      var urlplayers = 'https://www.numberfire.com/nba/daily-fantasy/daily-basketball-projections';
-
-        request(urlplayers, function (error, response, html) {
-
-          var $ = cheerio.load(html);
-
-          $('a.full').each(function(i, element){
-            var c = $(this);
-
-            var players = c.text();
-            console.log(players);
-
-            social.createFanduelPlayersNBA(['nbaplayers'], [players], function(fanduelnbaplayers){
-              console.log(fanduelnbaplayers);
-            })
-          // '<input type="radio" name="question' + '-' + i + '" value="' + questions[i].answers[j] + '">' + questions[i].answers[j])
-          });
-        });
 
         var hbsObject = {
           logged_in: req.session.logged_in,
