@@ -48,7 +48,7 @@ $(document).ready(function(){
                   if ( cellData >= 20 ) {
                     $(td).css('background-color', 'lightgreen')
                   } else if ((cellData >= 10) && (cellData <= 19)) {
-                    $(td).css('background-color', 'orange')
+                    $(td).css('background-color', '#FFBD00')
                   } else if ((cellData) >= 0 && (cellData <= 9)) {
                     $(td).css('background-color', 'red')
                   }
@@ -62,7 +62,7 @@ $(document).ready(function(){
                   // } else if ((cellData >= "24.00%") && (cellData <= "34.99%")) {
                   //   $(td).css('background-color', 'yellow')
                   // } else if ((cellData >= "16.00%") && (cellData <= "23.99%")) {
-                  //   $(td).css('background-color', 'orange')
+                  //   $(td).css('background-color', '#FFBD00')
                   // } else if (cellData <= "15.99%") {
                   //   $(td).css('background-color', 'red')
                   // }
@@ -281,7 +281,7 @@ $(document).ready(function(){
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
           //display all appointments with DATA
-          $('.tableNbaFantasy').DataTable({
+        $('.tableNbaFantasy').DataTable({
 
             data: data.feed.entry,
             "dom": '<"pull-left"f><"pull-right"l>tip',
@@ -306,24 +306,34 @@ $(document).ready(function(){
               { data: 'gsx$ppgl10.$t' },
               { data: 'gsx$ppm.$t' },
               { data: 'gsx$ovp.$t' },
-              { data: 'gsx$gladjust.$t' },
-              { data: 'gsx$totaladjust.$t' },
               { data: 'gsx$projscore.$t' },
               { data: 'gsx$gameline.$t' },
               { data: 'gsx$projectedpts.$t' },
               { data: 'gsx$value.$t' },
               { data: 'gsx$ownership.$t' },
-              { data: 'gsx$pathcompare.$t' },
               { data: 'gsx$expectedvalue.$t' },
               { data: 'gsx$netvalue.$t' },
               { data: 'gsx$gamesplayed.$t' },
-              { data: 'gsx$salaryadjust.$t' },
               { data: 'gsx$recpr.$t' },
               { data: 'gsx$score.$t' },
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$delete.$t' }
         ],
         "columnDefs": [
+          { // Date columns
+            "targets": 8,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= "31:00:00" ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= "24:00:00") && (cellData <= "31:99:00")) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= "17:00:00") && (cellData <= "23:99:00")) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((cellData >= "0:10:00") && (cellData <= "16:99:00") || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
           { // Date columns
             "targets": 9,
             "createdCell": function (td, cellData, rowData, row, col) {
@@ -332,7 +342,7 @@ $(document).ready(function(){
               } else if ((cellData >= 24) && (cellData <= 31.9)) {
                 $(td).css('background-color', 'yellow')
               } else if ((cellData >= 17) && (cellData <= 23.9)) {
-                $(td).css('background-color', 'orange')
+                $(td).css('background-color', '#FFBD00')
               } else if ((cellData >= 0.1) && (cellData <= 16.9) || (cellData = '-')) {
                 $(td).css('background-color', 'red')
               }
@@ -346,8 +356,108 @@ $(document).ready(function(){
               } else if ((cellData >= "24.00%") && (cellData <= "34.99%")) {
                 $(td).css('background-color', 'yellow')
               } else if ((cellData >= "16.00%") && (cellData <= "23.99%")) {
-                $(td).css('background-color', 'orange')
+                $(td).css('background-color', '#FFBD00')
               } else if (cellData <= "15.99%") {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns
+            "targets": 13,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= 1.3 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= 1.00) && (cellData <= 1.29)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= .85) && (cellData <= .999)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((cellData >= 0) && (cellData <= .849) || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns
+            "targets": 14,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= 1.1 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= .97) && (cellData <= 1.09)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= .89) && (cellData <= .969)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((cellData >= 0) && (cellData <= .889) || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns
+            "targets": 15,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= 108 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= 100) && (cellData <= 107.9)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= 92) && (cellData <= 99.9)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((cellData >= 0) && (cellData <= 91.9) || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns FF8700
+            "targets": 16,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= 212 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= 206) && (cellData <= 211.99)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= 200) && (cellData <= 205.99)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((cellData >= 195) && (cellData <= 199.99)) {
+                $(td).css('background-color', '#FF8700')
+              } else if ((cellData >= 0) && (cellData <= 194.99) || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns FF8700
+            "targets": 18,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= 5.00 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= 4.5) && (cellData <= 4.99)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= 4.0) && (cellData <= 4.499)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
+                $(td).css('background-color', '#FF8700')
+              } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          // { // Date columns FF8700
+          //   "targets": 29,
+          //   "createdCell": function (td, cellData, rowData, row, col) {
+          //     if ( cellData >= 40 ) {
+          //       $(td).css('background-color', 'lightgreen')
+          //     } else if ((cellData >= 35) && (cellData <= 39.999)) {
+          //       $(td).css('background-color', 'yellow')
+          //     } else if ((cellData >= 30.0) && (cellData <= 34.499)) {
+          //       $(td).css('background-color', '#FFBD00')
+          //     } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
+          //       $(td).css('background-color', '#FF8700')
+          //     } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
+          //       $(td).css('background-color', 'red')
+          //     }
+          //   }
+          // }, //ex: (11000 * 5) / 1000
+          { // Date columns FF8700
+            "targets": 26,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData == "KEEP" ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if (cellData == "DELETE") {
                 $(td).css('background-color', 'red')
               }
             }
@@ -355,8 +465,6 @@ $(document).ready(function(){
         ]
       });
     });
-
-
 
 
   $('.fantasynewsNBA').hide();

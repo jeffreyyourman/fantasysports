@@ -19,12 +19,19 @@
         <script src="/assets/ThemeJS/jquery.min.js"></script>
         <script src="/assets/ThemeJS/responsiveslides.min.js"></script>
         <style media="screen">
-        table.dataTable thead .sorting,
-        table.dataTable thead .sorting_asc,
-        table.dataTable thead .sorting_desc {
-            background : none;
-        }
-                </style>
+            table.dataTable thead .sorting,
+            table.dataTable thead .sorting_asc,
+            table.dataTable thead .sorting_desc {
+                background : none;
+            }
+
+            li {
+                list-style: none;
+            }
+            .swapzone {
+                color:#edb82a;
+            }
+        </style>
     </head>
     <body>
         <div class="header" id="home">
@@ -86,10 +93,8 @@
           <div id="sizer">
               <a class='closechat' href="#">X</a>
             <br>
-            <div style='color:#edb82a;' id="swapzone"><input id="username" placeholder="Name"/>
-
+            <div id="swapzone"><input id="username" placeholder="Name"/>
             <button id='start' type="button" class="btn btn-default">Enter Chat</button>
-
             </div>
           </div>
           <div id="chatmessages"></div>
