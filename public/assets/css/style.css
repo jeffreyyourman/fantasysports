@@ -39,10 +39,12 @@ body,html{
 
   #chatbar {
     margin-left: 5%;
+    margin-bottom:5%;
   }
 
   #chatinput {
     border-radius: 8px;
+    height:35px;
   }
   #chatsend {
     border-radius:8px;
