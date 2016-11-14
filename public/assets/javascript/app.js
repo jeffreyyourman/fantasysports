@@ -429,39 +429,22 @@ $(document).ready(function(){
               }
             }
           },
-          // { // Date columns FF8700
-          //   "targets": 18,
-          //   "createdCell": function (td, cellData, rowData, row, col) {
-          //     if ( cellData >= 5.00 ) {
-          //       $(td).css('background-color', 'lightgreen')
-          //     } else if ((cellData >= 4.5) && (cellData <= 4.99)) {
-          //       $(td).css('background-color', 'yellow')
-          //     } else if ((cellData >= 4.0) && (cellData <= 4.499)) {
-          //       $(td).css('background-color', '#FFBD00')
-          //     } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
-          //       $(td).css('background-color', '#FF8700')
-          //     } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
-          //       $(td).css('background-color', 'red')
-          //     }
-          //   }
-          // },
-          // { // Date columns FF8700
-          //   "targets": 29,
-          //   "createdCell": function (td, cellData, rowData, row, col) {
-          //     if ( cellData >= 40 ) {
-          //       $(td).css('background-color', 'lightgreen')
-          //     } else if ((cellData >= 35) && (cellData <= 39.999)) {
-          //       $(td).css('background-color', 'yellow')
-          //     } else if ((cellData >= 30.0) && (cellData <= 34.499)) {
-          //       $(td).css('background-color', '#FFBD00')
-          //     } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
-          //       $(td).css('background-color', '#FF8700')
-          //     } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
-          //       $(td).css('background-color', 'red')
-          //     }
-          //   }
-          // }, //ex: (11000 * 5) / 1000
-
+          { // Date columns FF8700
+            "targets": 18,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ( cellData >= 5.00 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((cellData >= 4.5) && (cellData <= 4.99)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((cellData >= 4.0) && (cellData <= 4.499)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
+                $(td).css('background-color', '#FF8700')
+              } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
           { // Date columns FF8700
             "targets": 26,
             "createdCell": function (td, cellData, rowData, row, col) {
@@ -475,6 +458,13 @@ $(document).ready(function(){
         ]
     });
   });
+
+// Player rank is a players rank and rvp is the opponents rank at that pos
+
+ // what's the diff between value and expected value?
+
+ // Value based in projections and value based on previous games
+
 
 
 
