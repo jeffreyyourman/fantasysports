@@ -242,7 +242,6 @@ $(document).ready(function(){
 
   var urldef = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDdef + "/od6/public/values?alt=json";
   $.get(urldef , function( data ) {
-
     //display all appointments with DATA
     $('.fantasyDEF').DataTable( {
 
@@ -280,6 +279,13 @@ $(document).ready(function(){
 
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
+
+        //   $(".tableNbaFantasy").dataTable().fnDestroy();
+        //
+        //   $('.tableNbaFantasy').DataTable( {
+
+        // });
+
           //display all appointments with DATA
         $('.tableNbaFantasy').DataTable({
 
@@ -319,6 +325,9 @@ $(document).ready(function(){
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$delete.$t' }
         ],
+        "createdRow": function( row, data, dataIndex ) {
+          console.log(data.gsx$salary.$t);
+        },
         "columnDefs": [
           { // Date columns
             "targets": 8,
@@ -420,22 +429,22 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns FF8700
-            "targets": 18,
-            "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= 5.00 ) {
-                $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= 4.5) && (cellData <= 4.99)) {
-                $(td).css('background-color', 'yellow')
-              } else if ((cellData >= 4.0) && (cellData <= 4.499)) {
-                $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
-                $(td).css('background-color', '#FF8700')
-              } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
-                $(td).css('background-color', 'red')
-              }
-            }
-          },
+          // { // Date columns FF8700
+          //   "targets": 18,
+          //   "createdCell": function (td, cellData, rowData, row, col) {
+          //     if ( cellData >= 5.00 ) {
+          //       $(td).css('background-color', 'lightgreen')
+          //     } else if ((cellData >= 4.5) && (cellData <= 4.99)) {
+          //       $(td).css('background-color', 'yellow')
+          //     } else if ((cellData >= 4.0) && (cellData <= 4.499)) {
+          //       $(td).css('background-color', '#FFBD00')
+          //     } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
+          //       $(td).css('background-color', '#FF8700')
+          //     } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
+          //       $(td).css('background-color', 'red')
+          //     }
+          //   }
+          // },
           // { // Date columns FF8700
           //   "targets": 29,
           //   "createdCell": function (td, cellData, rowData, row, col) {
@@ -452,6 +461,7 @@ $(document).ready(function(){
           //     }
           //   }
           // }, //ex: (11000 * 5) / 1000
+
           { // Date columns FF8700
             "targets": 26,
             "createdCell": function (td, cellData, rowData, row, col) {
@@ -463,8 +473,10 @@ $(document).ready(function(){
             }
           }
         ]
-      });
     });
+  });
+
+
 
 
   $('.fantasynewsNBA').hide();

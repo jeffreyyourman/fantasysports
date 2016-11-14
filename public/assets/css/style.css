@@ -6,6 +6,7 @@ body,html{
       overflow:auto;
       background-color: #021A3A;
       height:300px;
+      margin-left: 5%;
   }
 
 
@@ -14,7 +15,7 @@ body,html{
   }
 
   .playerfalse {
-      color:pink;
+      color:#edb82a;
   }
 
   .player0{
@@ -36,10 +37,22 @@ body,html{
       bottom: 0px;
   }
 
+  #chatbar {
+    margin-left: 5%;
+  }
+
+  #chatinput {
+    border-radius: 8px;
+  }
+  #chatsend {
+    border-radius:8px;
+  }
+
   .closechat {
       margin-left: 90%;
       font-size: 18px;
       background-color: #021A3A;
+      color:white;
       border-color: none;
   }
   .stickbutton {
