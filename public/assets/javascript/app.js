@@ -531,24 +531,23 @@ $(document).ready(function(){
     });
   });
 
-// Player rank is a players rank and rvp is the opponents rank at that pos
+// Player rank is a players rank (lower better ) and rvp is the opponents rank at that pos (higher better)
 
  // what's the diff between value and expected value?
 
- // Value based in projections and value based on previous games
+ // Value based in projections and expexted value based on previous games
 
  // PtsVPos it's better to be high or low? High
 
- // what's recpre?
- //
- // Recent performance  lol
- // I took it out bc early on it was fucking the pics up. Now I think it's back to being reliable
- // based on what? cus i see low numbers and negatives lol
- // what is it measuring
- // and oh ok i got you
- //
- // Their last game compared to their average
- // So if Big Ben averages 20 pts but hit 11 he needs like 30 pts to come back to average
+ // what's recpre = Recent performance (Their last game compared to their average) = So if Big Ben averages 20 pts but hit 11 he needs like 30 pts to come back to average
+
+
+
+
+ // diff between player rank and rating?
+ // Rating is just the number but rank is how they rank against other guys
+
+// For the ranks, lower is better
 
 
   $('.fantasynewsNBA').hide();
