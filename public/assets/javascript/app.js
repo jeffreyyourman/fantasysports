@@ -8,6 +8,7 @@ $(document).ready(function(){
 
       // if emptdy show all the appointments
       $.get(urlqb , function( data ) {
+
         //display all appointments with DATA
         $('.fantasyQB').DataTable({
 
@@ -20,26 +21,38 @@ $(document).ready(function(){
           "bLengthChange": true,
 
           columns: [
-        { data: 'gsx$week.$t' },
-        { data: 'gsx$player.$t' },
-        { data: 'gsx$sal.$t' },
-        { data: 'gsx$pos.$t' },
-        { data: 'gsx$teamname.$t' },
-        { data: 'gsx$injurystatus.$t' },
-        { data: 'gsx$typeinjury.$t' },
-        { data: 'gsx$rvp.$t' },
-        { data: 'gsx$pr.$t' },
-        { data: 'gsx$fppg.$t' },
-        { data: 'gsx$oppdefrank.$t' },
-        { data: 'gsx$passattemptgame.$t' },
-        { data: 'gsx$rushattgame.$t' },
-        { data: 'gsx$totalopp.$t' },
-        { data: 'gsx$ppa.$t' },
-        { data: 'gsx$expectedwins.$t' },
-        { data: 'gsx$ou.$t' },
-        { data: 'gsx$salchange.$t' },
-        { data: 'gsx$olrank.$t' },
-        { data: 'gsx$fps.$t' }
+            { data : 'gsx$week.$t' },
+            { data : 'gsx$player.$t' },
+            { data : 'gsx$sal.$t' },
+            { data : 'gsx$pos.$t' },
+            { data : 'gsx$team.$t' },
+            { data : 'gsx$teamname.$t' },
+            { data : 'gsx$id.$t' },
+            { data : 'gsx$injurystatus.$t' },
+            { data : 'gsx$typeinjury.$t' },
+            { data : 'gsx$rvp.$t' },
+            { data : 'gsx$playerrank.$t' },
+            { data : 'gsx$oppdefrank.$t' },
+            { data : 'gsx$fppg.$t' },
+            { data : 'gsx$passattemptgame.$t' },
+            { data : 'gsx$rushattgame.$t' },
+            { data : 'gsx$totalopp.$t' },
+            { data : 'gsx$ppa.$t' },
+            { data : 'gsx$dova.$t' },
+            { data : 'gsx$expectedwins.$t' },
+            { data : 'gsx$pathexpectation.$t' },
+            { data : 'gsx$ou.$t' },
+            { data : 'gsx$ml.$t' },
+            { data : 'gsx$sl.$t' },
+            { data : 'gsx$endingml.$t' },
+            { data : 'gsx$linechange.$t' },
+            { data : 'gsx$salchange.$t' },
+            { data : 'gsx$olscore.$t' },
+            { data : 'gsx$playerrating.$t' },
+            { data : 'gsx$criteriascore.$t' },
+            { data : 'gsx$critrank.$t' },
+            { data : 'gsx$recpre.$t' },
+            { data : 'gsx$fps.$t' }
       ],
             "columnDefs": [
               { // Date columns
@@ -90,27 +103,39 @@ $(document).ready(function(){
           "bLengthChange": true,
 
           columns: [
-            {data: "gsx$week.$t"},
-            {data: "gsx$player.$t"},
-            {data: "gsx$sal.$t"},
-            {data: "gsx$pos.$t"},
-            {data: "gsx$teamname.$t"},
-            {data: "gsx$injurystatus.$t"},
-            {data: "gsx$typeinjury.$t"},
-            {data: "gsx$spread.$t"},
-            {data: "gsx$rvp.$t"},
-            {data: "gsx$prating.$t"},
-            {data: "gsx$ppg.$t"},
-            {data: "gsx$rushattgame.$t"},
-            {data: "gsx$rectarg.$t"},
-            {data: "gsx$totalopp.$t"},
-            {data: "gsx$ppa.$t"},
-            {data: "gsx$expectedwins.$t"},
-            {data: "gsx$ou.$t"},
-            {data: "gsx$salchange.$t"},
-            {data: "gsx$snapcount.$t"},
-            {data: "gsx$oflrating.$t"},
-            {data: "gsx$fps.$t"}
+            { data : 'gsx$week.$t' },
+            { data : 'gsx$player.$t' },
+            { data : 'gsx$sal.$t' },
+            { data : 'gsx$pos.$t' },
+            { data : 'gsx$team.$t' },
+            { data : 'gsx$teamname.$t' },
+            { data : 'gsx$id.$t' },
+            { data : 'gsx$injurystatus.$t' },
+            { data : 'gsx$typeinjury.$t' },
+            { data : 'gsx$spread.$t' },
+            { data : 'gsx$rvp.$t' },
+            { data : 'gsx$playerrank.$t' },
+            { data : 'gsx$ppg.$t' },
+            { data : 'gsx$rushattgame.$t' },
+            { data : 'gsx$rectarg.$t' },
+            { data : 'gsx$totalopp.$t' },
+            { data : 'gsx$ppa.$t' },
+            { data : 'gsx$rdova.$t' },
+            { data : 'gsx$expectedwins.$t' },
+            { data : 'gsx$pathexpectation.$t' },
+            { data : 'gsx$ou.$t' },
+            { data : 'gsx$ml.$t' },
+            { data : 'gsx$sl.$t' },
+            { data : 'gsx$endingml.$t' },
+            { data : 'gsx$linechange.$t' },
+            { data : 'gsx$salchange.$t' },
+            { data : 'gsx$snapcount.$t' },
+            { data : 'gsx$olrank.$t' },
+            { data : 'gsx$recpre.$t' },
+            { data : 'gsx$playerrating.$t' },
+            { data : 'gsx$criteriascore.$t' },
+            { data : 'gsx$critrank.$t' },
+            { data : 'gsx$fps.$t' }
             ]
           });
         });
@@ -120,7 +145,6 @@ $(document).ready(function(){
 
     // if empty show all the appointments
     $.get(urlwr , function( data ) {
-
       $('.fantasyWR').DataTable( {
 
         data: data.feed.entry,
@@ -132,37 +156,49 @@ $(document).ready(function(){
         "bLengthChange": true,
 
         columns: [
-          {data: "gsx$week.$t"},
-          {data: "gsx$player.$t"},
-          {data: "gsx$sal.$t"},
-          {data: "gsx$pos.$t"},
-          {data: "gsx$teamname.$t"},
-          {data: "gsx$injurystatus.$t"},
-          {data: "gsx$typeinjury.$t"},
-          {data: "gsx$spread.$t"},
-          {data: "gsx$rvp.$t"},
-          {data: "gsx$pr.$t"},
-          {data: "gsx$ppg.$t"},
-          {data: "gsx$rushattgame.$t"},
-          {data: "gsx$rectarg.$t"},
-          {data: "gsx$recs.$t"},
-          {data: "gsx$totalopp.$t"},
-          {data: "gsx$ppa.$t"},
-          {data: "gsx$expectedwins.$t"},
-          {data: "gsx$ou.$t"},
-          {data: "gsx$salchange.$t"},
-          {data: "gsx$snapcount.$t"},
-          {data: "gsx$fps.$t"}
+          { data : 'gsx$week.$t' },
+          { data : 'gsx$player.$t' },
+          { data : 'gsx$sal.$t' },
+          { data : 'gsx$pos.$t' },
+          { data : 'gsx$team.$t' },
+          { data : 'gsx$teamname.$t' },
+          { data : 'gsx$id.$t' },
+          { data : 'gsx$injurystatus.$t' },
+          { data : 'gsx$typeinjury.$t' },
+          { data : 'gsx$spread.$t' },
+          { data : 'gsx$qbscore.$t' },
+          { data : 'gsx$rvp.$t' },
+          { data : 'gsx$playerrank.$t' },
+          { data : 'gsx$ppg.$t' },
+          { data : 'gsx$rushattgame.$t' },
+          { data : 'gsx$rectarg.$t' },
+          { data : 'gsx$recs.$t' },
+          { data : 'gsx$totalopp.$t' },
+          { data : 'gsx$ppa.$t' },
+          { data : 'gsx$pdova.$t' },
+          { data : 'gsx$expectedwins.$t' },
+          { data : 'gsx$pathexpectation.$t' },
+          { data : 'gsx$ou.$t' },
+          { data : 'gsx$ml.$t' },
+          { data : 'gsx$sl.$t' },
+          { data : 'gsx$endingml.$t' },
+          { data : 'gsx$linechange.$t' },
+          { data : 'gsx$salchange.$t' },
+          { data : 'gsx$snapcount.$t' },
+          { data : 'gsx$recpre.$t' },
+          { data : 'gsx$playerrating.$t' },
+          { data : 'gsx$criteriascore.$t' },
+          { data : 'gsx$critrank.$t' },
+          { data : 'gsx$fps.$t' }
           ]
         });
       });
-
+//
   var spreadsheetIDte = "1UjVGzANuKJ-_ERg8f4ixjPW6AVL9bjCcIhyq4YK-Z0k";
   var urlte = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDte + "/od6/public/values?alt=json";
 
     // if empty show all the appointments
     $.get(urlte , function( data ) {
-
       //display all appointments with DATA
       $('.fantasyTE').DataTable( {
 
@@ -175,28 +211,40 @@ $(document).ready(function(){
         "bLengthChange": true,
 
         columns: [
-          {data: "gsx$week.$t"},
-          {data: "gsx$player.$t"},
-          {data: "gsx$sal.$t"},
-          {data: "gsx$pos.$t"},
-          {data: "gsx$teamname.$t"},
-          {data: "gsx$injurystatus.$t"},
-          {data: "gsx$typeinjury.$t"},
-          {data: "gsx$spread.$t"},
-          {data: "gsx$qbscore.$t"},
-          {data: "gsx$rvp.$t"},
-          {data: "gsx$pr.$t"},
-          {data: "gsx$ppg.$t"},
-          {data: "gsx$rushattgame.$t"},
-          {data: "gsx$rectarg.$t"},
-          {data: "gsx$recs.$t"},
-          {data: "gsx$totalopp.$t"},
-          {data: "gsx$ppa.$t"},
-          {data: "gsx$expectedwins.$t"},
-          {data: "gsx$ou.$t"},
-          {data: "gsx$salchange.$t"},
-          {data: "gsx$snapcount.$t"},
-          {data: "gsx$fps.$t"}
+          { data : 'gsx$week.$t' },
+          { data : 'gsx$player.$t' },
+          { data : 'gsx$sal.$t' },
+          { data : 'gsx$pos.$t' },
+          { data : 'gsx$team.$t' },
+          { data : 'gsx$teamname.$t' },
+          { data : 'gsx$id.$t' },
+          { data : 'gsx$injurystatus.$t' },
+          { data : 'gsx$typeinjury.$t' },
+          { data : 'gsx$spread.$t' },
+          { data : 'gsx$qbscore.$t' },
+          { data : 'gsx$rvp.$t' },
+          { data : 'gsx$playerrank.$t' },
+          { data : 'gsx$ppg.$t' },
+          { data : 'gsx$rushattgame.$t' },
+          { data : 'gsx$rectarg.$t' },
+          { data : 'gsx$recs.$t' },
+          { data : 'gsx$totalopp.$t' },
+          { data : 'gsx$ppa.$t' },
+          { data : 'gsx$pdova.$t' },
+          { data : 'gsx$expectedwins.$t' },
+          { data : 'gsx$pathexpectation.$t' },
+          { data : 'gsx$ou.$t' },
+          { data : 'gsx$ml.$t' },
+          { data : 'gsx$sl.$t' },
+          { data : 'gsx$endingml.$t' },
+          { data : 'gsx$linechange.$t' },
+          { data : 'gsx$salchange.$t' },
+          { data : 'gsx$snapcount.$t' },
+          { data : 'gsx$recentpre.$t' },
+          { data : 'gsx$playerrating.$t' },
+          { data : 'gsx$criteriascore.$t' },
+          { data : 'gsx$critrank.$t' },
+          { data : 'gsx$fps.$t' }
           ]
         });
       });
@@ -205,7 +253,6 @@ $(document).ready(function(){
   var urlk = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDk + "/od6/public/values?alt=json";
 
     $.get(urlk , function( data ) {
-
       //display all appointments with DATA
       $('.fantasyK').DataTable( {
 
@@ -218,22 +265,33 @@ $(document).ready(function(){
         "bLengthChange": true,
 
         columns: [
-          {data: "gsx$week.$t"},
-          {data: "gsx$player.$t"},
-          {data: "gsx$sal.$t"},
-          {data: "gsx$pos.$t"},
-          {data: "gsx$teamname.$t"},
-          {data: "gsx$injurystatus.$t"},
-          {data: "gsx$typeinjury.$t"},
-          {data: "gsx$rvp.$t"},
-          {data: "gsx$pr.$t"},
-          {data: "gsx$ppg.$t"},
-          {data: "gsx$totalopp.$t"},
-          {data: "gsx$ppk.$t"},
-          {data: "gsx$expectedwins.$t"},
-          {data: "gsx$ou.$t"},
-          {data: "gsx$salchange.$t"},
-          {data: "gsx$fps.$t"}
+          { data : 'gsx$week.$t' },
+          { data : 'gsx$player.$t' },
+          { data : 'gsx$sal.$t' },
+          { data : 'gsx$pos.$t' },
+          { data : 'gsx$team.$t' },
+          { data : 'gsx$teamname.$t' },
+          { data : 'gsx$injurystatus.$t' },
+          { data : 'gsx$typeinjury.$t' },
+          { data : 'gsx$rvp.$t' },
+          { data : 'gsx$playerrank.$t' },
+          { data : 'gsx$ppg.$t' },
+          { data : 'gsx$totalopp.$t' },
+          { data : 'gsx$ppk.$t' },
+          { data : 'gsx$expectedwins.$t' },
+          { data : 'gsx$pathexpectation.$t' },
+          { data : 'gsx$ou.$t' },
+          { data : 'gsx$ml.$t' },
+          { data : 'gsx$sl.$t' },
+          { data : 'gsx$endingml.$t' },
+          { data : 'gsx$linechange.$t' },
+          { data : 'gsx$salchange.$t' },
+          { data : 'gsx$recpre.$t' },
+          { data : 'gsx$tdcon.$t' },
+          { data : 'gsx$playerrating.$t' },
+          { data : 'gsx$criteriascore.$t' },
+          { data : 'gsx$critrank.$t' },
+          { data : 'gsx$fps.$t' }
           ]
         });
       });
@@ -254,22 +312,36 @@ $(document).ready(function(){
       "bLengthChange": true,
 
       columns: [
-        {data: "gsx$week.$t"},
-        {data: "gsx$player.$t"},
-        {data: "gsx$sal.$t"},
-        {data: "gsx$pos.$t"},
-        {data: "gsx$teamname.$t"},
-        {data: "gsx$opp.$t"},
-        {data: "gsx$oppqbinjurystatus.$t"},
-        {data: "gsx$typeinjury.$t"},
-        {data: "gsx$opp-qbscore.$t"},
-        {data: "gsx$rvp.$t"},
-        {data: "gsx$pr.$t"},
-        {data: "gsx$yardsallowed.$t"},
-        {data: "gsx$expectedwins.$t"},
-        {data: "gsx$ou.$t"},
-        {data: "gsx$salchange.$t"},
-        {data: "gsx$fps.$t"}
+        { data : 'gsx$week.$t' },
+        { data : 'gsx$player.$t' },
+        { data : 'gsx$sal.$t' },
+        { data : 'gsx$pos.$t' },
+        { data : 'gsx$team.$t' },
+        { data : 'gsx$teamname.$t' },
+        { data : 'gsx$opp.$t' },
+        { data : 'gsx$ppg.$t' },
+        { data : 'gsx$oppqbinjurystatus.$t' },
+        { data : 'gsx$typeinjury.$t' },
+        { data : 'gsx$opp-qb-score.$t' },
+        { data : 'gsx$rvp.$t' },
+        { data : 'gsx$playerrank.$t' },
+        { data : 'gsx$yardsallowed.$t' },
+        { data : 'gsx$defdova.$t' },
+        { data : 'gsx$oppodova.$t' },
+        { data : 'gsx$combineddova.$t' },
+        { data : 'gsx$expectedwins.$t' },
+        { data : 'gsx$pathexpectation.$t' },
+        { data : 'gsx$ou.$t' },
+        { data : 'gsx$ml.$t' },
+        { data : 'gsx$sl.$t' },
+        { data : 'gsx$endingml.$t' },
+        { data : 'gsx$linechange.$t' },
+        { data : 'gsx$salchange.$t' },
+        { data : 'gsx$playerrating.$t' },
+        { data : 'gsx$criteriascore.$t' },
+        { data : 'gsx$critrank.$t' },
+        { data : 'gsx$recp.$t' },
+        { data : 'gsx$fps.$t' }
         ]
       });
     });
@@ -326,7 +398,7 @@ $(document).ready(function(){
               { data: 'gsx$delete.$t' }
         ],
         "createdRow": function( row, data, dataIndex ) {
-          console.log(data.gsx$salary.$t);
+          // console.log(data.gsx$salary.$t);
         },
         "columnDefs": [
           { // Date columns
@@ -465,8 +537,18 @@ $(document).ready(function(){
 
  // Value based in projections and value based on previous games
 
+ // PtsVPos it's better to be high or low? High
 
-
+ // what's recpre?
+ //
+ // Recent performance  lol
+ // I took it out bc early on it was fucking the pics up. Now I think it's back to being reliable
+ // based on what? cus i see low numbers and negatives lol
+ // what is it measuring
+ // and oh ok i got you
+ //
+ // Their last game compared to their average
+ // So if Big Ben averages 20 pts but hit 11 he needs like 30 pts to come back to average
 
 
   $('.fantasynewsNBA').hide();

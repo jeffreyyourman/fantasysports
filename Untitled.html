@@ -233,9 +233,401 @@ on the social chat page...
  -          <h5 class="center">Fantasy Stats that are easy to work with</h5>
  -          <p class="light">We have provided detailed fantasy statistucs as well as specific code examples to help fanduel users build their bankroll! We are also always open to feedback and can answer any questions a user may have about our fantasy statistics.</p>
 
- 
+
 
 
 
 
   </body>
+
+
+
+<!-- ==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+============================================================================================================================================================
+==============================================================================
+==============================================================================
+==============================================================================
+============================================================================== -->
+
+
+
+
+
+
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WeAreFantasy</title>
+    <!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
+
+
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/assets/css/style.css">
+
+    <style media="screen">
+
+    td {
+      border: 1px solid black;
+      background-color:white;
+    }
+
+
+    .highlight {
+      font-weight: bold;
+      color: blue;
+    }
+    td.highlight {
+      font-weight: bold;
+      color: blue;
+    }
+
+    .pull-left {
+      float:left!important;
+    }
+    .dataTables_paginate {
+      float: left !important;
+    }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container-fluid NFLTeamTable">
+      <div class="row">
+        <div style='font-size:24px;' class="col-md-8">
+          <p>Jets are solid pick Jets are solid pick Jets are solid pick</p>
+          <p>Palmer will kill it Palmer will kill it Palmer will kill it </p>
+          <p>Brady Repeat? Brady Repeat? Brady Repeat?</p>
+          <p>Westbrook Trip dub alert? Westbrook Trip dub alert?</p>
+          <p>KD a bitch? yes. KD a bitch? yes. KD a bitch? yes.</p>
+          <p>Lebron a bitch? also yes. Lebron a bitch? also yes.</p>
+        </div>
+        <div style='font-size:24px;' class="col-md-4">
+          <p>Jets are solid pick</p>
+          <p>Palmer will kill it </p>
+          <p>Brady Repeat?</p>
+          <p>Westbrook Trip dub alert?</p>
+          <p>KD a bitch? yes.</p>
+          <p>Lebron a bitch? also yes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id='playerlist' class="container-fluid NFLtables">
+      <div class="row list">
+        <div class="col-md-2">
+          <li><a id='qbLink' href="#">Quarter Back</a></li>
+        </div>
+        <div class="col-md-2">
+          <li><a id='rbLink' href="#">Running Back</a></li>
+        </div>
+        <div class="col-md-2">
+          <li><a id='wrLink' href="#">Wide Receiver</a></li>
+        </div>
+        <div class="col-md-2">
+          <li><a id='teLink' href="#">Tight End</a></li>
+        </div>
+        <div class="col-md-2">
+          <li><a id='kLink' href="#">Kicker</a></li>
+        </div>
+        <div class="col-md-2">
+          <li><a id='defLink' href='#'>Defense</a></li>
+        </div>
+      </div>
+      <div class="row qbfantasy">
+        <div class="col-md-12">
+          <div class="panel-body beforeResponsive">
+            <div class="table-responsive">
+              <table class="table table-hover fantasyQB">
+                <thead>
+                  <tr style='font-size: 16px;'>
+                    <th> gsx$week </th>
+                    <th> gsx$player </th>
+                    <th> gsx$sal </th>
+                    <th> gsx$pos </th>
+                    <th> gsx$team </th>
+                    <th> gsx$teamname </th>
+                    <th> gsx$id </th>
+                    <th> gsx$injurystatus </th>
+                    <th> gsx$typeinjury </th>
+                    <th> gsx$rvp </th>
+                    <th> gsx$playerrank </th>
+                    <th> gsx$oppdefrank </th>
+                    <th> gsx$fppg </th>
+                    <th> gsx$passattemptgame </th>
+                    <th> gsx$rushattgame </th>
+                    <th> gsx$totalopp </th>
+                    <th> gsx$ppa </th>
+                    <th> gsx$dova </th>
+                    <th> gsx$expectedwins </th>
+                    <th> gsx$pathexpectation </th>
+                    <th> gsx$ou </th>
+                    <th> gsx$ml </th>
+                    <th> gsx$sl </th>
+                    <th> gsx$endingml </th>
+                    <th> gsx$linechange </th>
+                    <th> gsx$salchange </th>
+                    <th> gsx$olscore </th>
+                    <th> gsx$playerrating </th>
+                    <th> gsx$criteriascore </th>
+                    <th> gsx$critrank </th>
+                    <th> gsx$recpre </th>
+                    <th> gsx$fps </th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row rbfantasy">
+        <div class="col-md-12">
+          <div class="panel-body beforeResponsive">
+            <div class="table-responsive">
+              <table class="table table table-hover fantasyRB">
+                <thead>
+                  <tr style='font-size: 16px;'>
+                    <th>gsx$week</th>
+                    <th>gsx$player</th>
+                    <th>gsx$sal</th>
+                    <th>gsx$pos</th>
+                    <th>gsx$team</th>
+                    <th>gsx$teamname</th>
+                    <th>gsx$id</th>
+                    <th>gsx$injurystatus</th>
+                    <th>gsx$typeinjury</th>
+                    <th>gsx$spread</th>
+                    <th>gsx$rvp</th>
+                    <th>gsx$playerrank</th>
+                    <th>gsx$ppg</th>
+                    <th>gsx$rushattgame</th>
+                    <th>gsx$rectarg</th>
+                    <th>gsx$totalopp</th>
+                    <th>gsx$ppa</th>
+                    <th>gsx$rdova</th>
+                    <th>gsx$expectedwins</th>
+                    <th>gsx$pathexpectation</th>
+                    <th>gsx$ou</th>
+                    <th>gsx$ml</th>
+                    <th>gsx$sl</th>
+                    <th>gsx$endingml</th>
+                    <th>gsx$linechange</th>
+                    <th>gsx$salchange</th>
+                    <th>gsx$snapcount</th>
+                    <th>gsx$olrank</th>
+                    <th>gsx$recpre</th>
+                    <th>gsx$playerrating</th>
+                    <th>gsx$criteriascore</th>
+                    <th>gsx$critrank</th>
+                    <th>gsx$fps</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row wrfantasy">
+        <div class="col-md-12">
+          <div class="panel-body beforeResponsive">
+            <div class="table-responsive">
+              <table class="table table table-hover fantasyWR">
+                <thead>
+                  <tr style='font-size: 16px;'>
+                    <th>gsx$week</th>
+                    <th>gsx$player</th>
+                    <th>gsx$sal</th>
+                    <th>gsx$pos</th>
+                    <th>gsx$team</th>
+                    <th>gsx$teamname</th>
+                    <th>gsx$id</th>
+                    <th>gsx$injurystatus</th>
+                    <th>gsx$typeinjury</th>
+                    <th>gsx$spread</th>
+                    <th>gsx$qbscore</th>
+                    <th>gsx$rvp</th>
+                    <th>gsx$playerrank</th>
+                    <th>gsx$ppg</th>
+                    <th>gsx$rushattgame</th>
+                    <th>gsx$rectarg</th>
+                    <th>gsx$recs</th>
+                    <th>gsx$totalopp</th>
+                    <th>gsx$ppa</th>
+                    <th>gsx$rdova</th>
+                    <th>gsx$expectedwins</th>
+                    <th>gsx$pathexpectation</th>
+                    <th>gsx$ou</th>
+                    <th>gsx$ml</th>
+                    <th>gsx$sl</th>
+                    <th>gsx$endingml</th>
+                    <th>gsx$linechange</th>
+                    <th>gsx$salchange</th>
+                    <th>gsx$snapcount</th>
+                    <th>gsx$recpre</th>
+                    <th>gsx$playerrating</th>
+                    <th>gsx$criteriascore</th>
+                    <th>gsx$critrank</th>
+                    <th>gsx$fps</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row tefantasy">
+        <div class="col-md-12">
+          <div class="panel-body beforeResponsive">
+            <div class="table-responsive">
+              <table class="table table table-hover fantasyTE">
+                <thead>
+
+                  <tr style='font-size: 16px;'>
+
+                    <th>gsx$week</th>
+                    <th>gsx$player</th>
+                    <th>gsx$sal</th>
+                    <th>gsx$pos</th>
+                    <th>gsx$team</th>
+                    <th>gsx$teamname</th>
+                    <th>gsx$id</th>
+                    <th>gsx$injurystatus</th>
+                    <th>gsx$typeinjury</th>
+                    <th>gsx$spread</th>
+                    <th>gsx$qbscore</th>
+                    <th>gsx$rvp</th>
+                    <th>gsx$playerrank</th>
+                    <th>gsx$ppg</th>
+                    <th>gsx$rushattgame</th>
+                    <th>gsx$rectarg</th>
+                    <th>gsx$recs</th>
+                    <th>gsx$totalopp</th>
+                    <th>gsx$ppa</th>
+                    <th>gsx$pdova</th>
+                    <th>gsx$expectedwins</th>
+                    <th>gsx$pathexpectation</th>
+                    <th>gsx$ou</th>
+                    <th>gsx$ml</th>
+                    <th>gsx$sl</th>
+                    <th>gsx$endingml</th>
+                    <th>gsx$linechange</th>
+                    <th>gsx$salchange</th>
+                    <th>gsx$snapcount</th>
+                    <th>gsx$recpre</th>
+                    <th>gsx$playerrating</th>
+                    <th>gsx$criteriascore</th>
+                    <th>gsx$critrank</th>
+                    <th>gsx$fps</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row kfantasy">
+        <div class="col-md-12">
+          <div class="panel-body beforeResponsive">
+            <div class="table-responsive">
+              <table class="table table table-hover fantasyK">
+                <thead>
+                  <tr style='font-size: 16px;'>
+                    <th>gsx$week</th>
+                    <th>gsx$player</th>
+                    <th>gsx$sal</th>
+                    <th>gsx$pos</th>
+                    <th>gsx$team</th>
+                    <th>gsx$teamname</th>
+                    <th>gsx$id</th>
+                    <th>gsx$injurystatus</th>
+                    <th>gsx$typeinjury</th>
+                    <th>gsx$rvp</th>
+                    <th>gsx$playerrank</th>
+                    <th>gsx$ppg</th>
+                    <th>gsx$totalopp</th>
+                    <th>gsx$ppk</th>
+                    <th>gsx$expectedwins</th>
+                    <th>gsx$pathexpectation</th>
+                    <th>gsx$ou</th>
+                    <th>gsx$ml</th>
+                    <th>gsx$sl</th>
+                    <th>gsx$endingml</th>
+                    <th>gsx$linechange</th>
+                    <th>gsx$salchange</th>
+                    <th>gsx$recpre</th>
+                    <th>gsx$tdcon</th>
+                    <th>gsx$playerrating</th>
+                    <th>gsx$criteriascore</th>
+                    <th>gsx$critrank</th>
+                    <th>gsx$fps</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row deffantasy">
+        <div class="col-md-12">
+          <div class="panel-body beforeResponsive">
+            <div class="table-responsive">
+              <table class="table table table-hover fantasyDEF">
+                <thead>
+                  <tr style='font-size: 16px;'>
+                    <th>gsx$week</th>
+                    <th>gsx$player</th>
+                    <th>gsx$sal</th>
+                    <th>gsx$pos</th>
+                    <th>gsx$team</th>
+                    <th>gsx$teamname</th>
+                    <th>gsx$opp</th>
+                    <th>gsx$ppg</th>
+                    <th>gsx$oppqbinjurystatus</th>
+                    <th>gsx$typeinjury</th>
+                    <th>gsx$opp-qb-score</th>
+                    <th>gsx$rvp</th>
+                    <th>gsx$playerrank</th>
+                    <th>gsx$yardsallowed</th>
+                    <th>gsx$defdova</th>
+                    <th>gsx$oppodova</th>
+                    <th>gsx$combineddova</th>
+                    <th>gsx$expectedwins</th>
+                    <th>gsx$pathexpectation</th>
+                    <th>gsx$ou</th>
+                    <th>gsx$ml</th>
+                    <th>gsx$sl</th>
+                    <th>gsx$endingml</th>
+                    <th>gsx$linechange</th>
+                    <th>gsx$salchange</th>
+                    <th>gsx$playerrating</th>
+                    <th>gsx$criteriascore</th>
+                    <th>gsx$critrank</th>
+                    <th>gsx$recp</th>
+                    <th>gsx$fps</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- DataTables warning: Non-table node initialisation (DIV). For more information about this error, please see http://datatables.net/tn/2 -->
