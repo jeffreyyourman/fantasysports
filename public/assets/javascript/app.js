@@ -402,6 +402,15 @@ $(document).ready(function(){
         },
         "columnDefs": [
           { // Date columns
+            // [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
+            "targets": 10,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              if ((rowData.gsx$salary.$t > 10000) && (rowData.gsx$ovp.$t > .80) && (rowData.gsx$ppm.$t > 1.5)) {
+                console.log(rowData.gsx$player.$t);
+              }
+            }
+          },
+          { // Date columns
             "targets": 8,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= "31:00:00" ) {
