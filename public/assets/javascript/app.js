@@ -405,7 +405,13 @@ $(document).ready(function(){
             "targets": 1,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ((rowData.gsx$projmins.$t > 28) && (rowData.gsx$useage.$t > "20.00%") && (rowData.gsx$ppm.$t > 0.8) && (rowData.gsx$ovp.$t > 0.88) && (rowData.gsx$projscore.$t > 100) && (rowData.gsx$gameline.$t > 200) && (rowData.gsx$value.$t > 5.00)) {
-                console.log(rowData.gsx$player.$t);
+                //suggestedPlayersNBA
+                // console.log(rowData.gsx$player.$t);
+                var playernames = rowData.gsx$player.$t;
+                $('.suggestedPlayersNBA').append('<li>' + playernames + '</li>');
+                // console.log(playernames);
+                // var playerNamesArray = []
+                // playerNamesArray.push(playernames);
               }
             }
           },
