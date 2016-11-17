@@ -351,13 +351,6 @@ $(document).ready(function(){
 
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
-
-        //   $(".tableNbaFantasy").dataTable().fnDestroy();
-        //
-        //   $('.tableNbaFantasy').DataTable( {
-
-        // });
-
           //display all appointments with DATA
         $('.tableNbaFantasy').DataTable({
 
@@ -395,7 +388,8 @@ $(document).ready(function(){
               { data: 'gsx$recpr.$t' },
               { data: 'gsx$score.$t' },
               { data: 'gsx$ptsvpos.$t' },
-              { data: 'gsx$delete.$t' }
+              { data: 'gsx$delete.$t' },
+              { data: 'gsx$criteriaranking.$t' }
         ],
         "createdRow": function( row, data, dataIndex ) {
           // console.log(data.gsx$salary.$t);
