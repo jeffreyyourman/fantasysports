@@ -3,38 +3,21 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
-
-  <!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
-
-
       <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="/assets/css/style.css">
 
+
   <style media="screen">
-
-  td {
-    border: 1px solid black;
-    background-color:white;
-  }
-  .pull-left {
-    float:left!important;
-  }
-  .dataTables_paginate {
-    float: left !important;
-  }
-
-  td.highlight {
-          font-weight: bold;
-          color: blue;
-      }
+  /*Change the size here*/
+div.tooltip-inner {
+    max-width: 350px;
+}
   </style>
-
 </head>
 <body>
-
   <div class="container-fluid NFLTeamTable">
     <div class="row">
-      <div style='font-size:24px;' class="col-md-8">
+      <div style='font-size:24px;' class="col-md-7">
         <p>This will be dummy data unitl i figre out what to put here</p>
         <p>This will be dummy data unitl i figre out what to put here</p>
         <p>This will be dummy data unitl i figre out what to put here</p>
@@ -43,15 +26,13 @@
         <p>This will be dummy data unitl i figre out what to put here</p>
         <p>This will be dummy data unitl i figre out what to put here</p>
       </div>
-      <div style='font-size:24px;' class="col-md-4">
+      <div style='font-size:24px;' class="col-md-5">
         <h2>My Suggested Fanduel NBA Players</h2>
         <ul class='suggestedPlayersNBA'>
-
         </ul>
       </div>
     </div>
   </div>
-
   <div id='playerlist' class="container-fluid NFLtables">
     <div class="row nbafantasy">
       <div class="col-md-12">
@@ -60,34 +41,32 @@
             <table class="table table-hover tableNbaFantasy secondtablenbafantasy">
               <thead>
                 <tr style='font-size: 16px;'>
-                  <th>Player</th>
-                  <th>H/A</th>
-                  <th>Position</th>
-                  <th>Team</th>
-                  <th>Opp</th>
-                  <th>Condition</th>
-                  <th>Details</th>
-                  <th>POSID</th>
-                  <th>AvgMins/L10</th>
-                  <th>ProjMins</th>
-                  <th>Salary</th>
-                  <th>Useage%</th>
-                  <th>PPG/L10</th>
-                  <th>PPM</th>
-                  <th>OVP</th>
-                  <th>ProjTeamScore</th>
-                  <th>GameLine</th>
-                  <th>ProjectedPts</th>
-                  <th>Value18</th>
-                  <th>Ownership%</th>
-                  <th>ExpectedValue</th>
-                  <th>NetValue</th>
-                  <th>GamesPlayed</th>
-                  <th>RecentPerformance</th>
-                  <th>Score</th>
-                  <th>PTsVPos</th>
-                  <th>Use/Fade</th>
-                  <th>CriteriaRank</th>
+                  <th>Player<a href="#" data-toggle="tooltip" data-placement="top" title="Player names"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>H/A<a href="#" data-toggle="tooltip" data-placement="top" title="Home or away game"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Position<a href="#" data-toggle="tooltip" data-placement="top" title="Position of a player"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Team<a href="#" data-toggle="tooltip" data-placement="top" title="Players current team"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Opp<a href="#" data-toggle="tooltip" data-placement="top" title="What team they're up against"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Condition<a href="#" data-toggle="tooltip" data-placement="top" title="Injury status"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Details<a href="#" data-toggle="tooltip" data-placement="top" title="Details of injury"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>AvgMins/L10<a href="#" data-toggle="tooltip" data-placement="top" title="Average minutes per game for the last 10 games"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>ProjMins<a href="#" data-toggle="tooltip" data-placement="top" title="How many minutes a player is projected to play"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Salary<a href="#" data-toggle="tooltip" data-placement="top" title="Cost of player on Fanduel"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Useage%<a href="#" data-toggle="tooltip" data-placement="top" title="How long a player has control of the ball per possession"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>PPG/L10<a href="#" data-toggle="tooltip" data-placement="top" title="Average fantasy points per game for the last 10 games"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>PPM<a href="#" data-toggle="tooltip" data-placement="top" title="How many fantasy points a player gets per minute"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>OVP<a href="#" data-toggle="tooltip" data-placement="top" title="How well the opponent defends that specific position"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>ProjTeamScore<a href="#" data-toggle="tooltip" data-placement="top" title="Teams projected score"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>GameLine<a href="#" data-toggle="tooltip" data-placement="top" title="Total team points"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>ProjectedPts<a href="#" data-toggle="tooltip" data-placement="top" title="Projected points of a specific player"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Value<a href="#" data-toggle="tooltip" data-placement="top" title="Projected value of a specific player based on projections"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Ownership%(delete)</th>
+                  <th>ExpectedValue<a href="#" data-toggle="tooltip" data-placement="top" title="Projected value of a specific player based on previous games"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>NetValue(delete)</th>
+                  <th>GamesPlayed<a href="#" data-toggle="tooltip" data-placement="top" title="How many games a player has played"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>RecentPerformance<a href="#" data-toggle="tooltip" data-placement="top" title="Their last game compared to their average"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Score(delete)</th>
+                  <th>PTsVPos<a href="#" data-toggle="tooltip" data-placement="top" title="How many points the opponent gives up against a specific position"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Use/Fade<a href="#" data-toggle="tooltip" data-placement="top" title="Our preference of who you should play or fade"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                 </tr>
               </thead>
             </table>
@@ -96,3 +75,12 @@
       </div>
     </div>
   </div>
+<script type="text/javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip({
+      'selector': '',
+      'placement': 'top',
+      'container':'body'
+    })
+  });
+</script>

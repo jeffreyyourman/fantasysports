@@ -369,7 +369,6 @@ $(document).ready(function(){
               { data: 'gsx$opp.$t' },
               { data: 'gsx$condition.$t' },
               { data: 'gsx$details.$t' },
-              { data: 'gsx$posid.$t' },
               { data: 'gsx$avgminsl10.$t' },
               { data: 'gsx$projmins.$t' },
               { data: 'gsx$salary.$t' },
@@ -388,8 +387,7 @@ $(document).ready(function(){
               { data: 'gsx$recpr.$t' },
               { data: 'gsx$score.$t' },
               { data: 'gsx$ptsvpos.$t' },
-              { data: 'gsx$delete.$t' },
-              { data: 'gsx$criteriaranking.$t' }
+              { data: 'gsx$delete.$t' }
         ],
         "createdRow": function( row, data, dataIndex ) {
           // console.log(data.gsx$salary.$t);
@@ -399,32 +397,40 @@ $(document).ready(function(){
             "targets": 1,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ((rowData.gsx$projmins.$t > 28) && (rowData.gsx$useage.$t > "20.00%") && (rowData.gsx$ppm.$t > 0.8) && (rowData.gsx$ovp.$t > 0.88) && (rowData.gsx$projscore.$t > 100) && (rowData.gsx$gameline.$t > 200) && (rowData.gsx$value.$t > 5.00)) {
-                //suggestedPlayersNBA
-                // console.log(rowData.gsx$player.$t);
                 var playernames = rowData.gsx$player.$t;
-                $('.suggestedPlayersNBA').append('<li>' + playernames + '</li>');
-                // console.log(playernames);
-                // var playerNamesArray = []
-                // playerNamesArray.push(playernames);
+                var playercondition = rowData.gsx$condition.$t
+                var playerdetails = rowData.gsx$details.$t
+                if (playercondition == 'GTD') {
+                  $('.suggestedPlayersNBA').append('<li>' + playernames + ' ' + '(GTD ' + playerdetails + ')' + '</li>');
+                }
+                if (playercondition == '-') {
+                  $('.suggestedPlayersNBA').append('<li>' + playernames + ' ' + '(Playing)' + '</li>');
+                }
+                if (playercondition == 'O') {
+                  $('.suggestedPlayersNBA').append('<li>' + playernames + ' ' + '(OUT ' + playerdetails + ')' + '</li>');
+                }
               }
             }
           },
           { // Date columns
-            "targets": 8,
+            "targets": 7,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= "31:00:00" ) {
+              var time = cellData;
+              var minutes = time.split(":");
+              var display=minutes[0];
+              if ( display >= 31 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= "24:00:00") && (cellData <= "31:99:00")) {
+              } else if ((display >= 24) && (display <= 30.99)) {
                 $(td).css('background-color', 'yellow')
-              } else if ((cellData >= "17:00:00") && (cellData <= "23:99:00")) {
+              } else if ((display >= 17) && (display <= 23.99)) {
                 $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= "0:10:00") && (cellData <= "16:99:00") || (cellData = '-')) {
+              } else if ((display >= 0) && (display <= 16.99) || (cellData = '-')) {
                 $(td).css('background-color', 'red')
               }
             }
           },
           { // Date columns
-            "targets": 9,
+            "targets": 8,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 31 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -438,7 +444,7 @@ $(document).ready(function(){
             }
           },
           {
-            targets: 11,
+            targets: 10,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= "35.00%" ) {
                 $(td).css('background-color', 'lightgreen')
@@ -452,7 +458,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns
-            "targets": 13,
+            "targets": 12,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 1.3 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -466,7 +472,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns
-            "targets": 14,
+            "targets": 13,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 1.1 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -480,7 +486,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns
-            "targets": 15,
+            "targets": 14,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 108 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -494,7 +500,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 16,
+            "targets": 15,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 212 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -510,7 +516,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 18,
+            "targets": 17,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 5.00 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -526,7 +532,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 26,
+            "targets": 25,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData == "KEEP" ) {
                 $(td).css('background-color', 'lightgreen')

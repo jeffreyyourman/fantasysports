@@ -1,127 +1,123 @@
 <!doctype html>
 <html>
-    <head>
-    <title>Daily Fantasy Sports</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" media="screen" title="no title">
-        <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
-        <!-- <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
-        <!--bootstrap-file-->
-        <link href="/assets/Themecss/bootstrap.min.css" rel="stylesheet" type="text/css">
-        <!--custom-css-->
-        <link href="/assets/Themecss/style.css" rel="stylesheet" type="text/css">
-        <!--fonts-->
-        <link href="http://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" type="text/css">
-        <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
-        <!--js-->
-        <script src="/assets/ThemeJS/jquery.min.js"></script>
-        <script src="/assets/ThemeJS/responsiveslides.min.js"></script>
-        <style media="screen">
-            table.dataTable thead .sorting,
-            table.dataTable thead .sorting_asc,
-            table.dataTable thead .sorting_desc {
-                background : none;
-            }
 
-            .navlist {
-                list-style: none;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="header" id="home">
-            <!--js-->
-            <script src="/assets/ThemeJS/bootstrap.min.js"></script>
-            <!--js-->
-            <div class="banner">
-                <div class="container">
-                    <nav class="navbar navbar-default bg">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                          <div class="logo">
-                              <a href="/">DFS<span>Play-Offs</span></a>
-                        </div>
-                        <div class="navbar-header">
-                          <button type="button" class="navbar-toggle collapsed mod" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+<head>
+    <title>Daily Fantasy Sports</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"
+    />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" media="screen" title="no title">
+    <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
+    <!-- <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
+    <!--bootstrap-file-->
+    <link href="/assets/Themecss/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--custom-css-->
+    <link href="/assets/Themecss/style.css" rel="stylesheet" type="text/css">
+    <!--fonts-->
+    <link href="http://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!--js-->
+    <script src="/assets/ThemeJS/jquery.min.js"></script>
+    <script src="/assets/ThemeJS/responsiveslides.min.js"></script>
+    <style media="screen">
+        table.dataTable thead .sorting,
+        table.dataTable thead .sorting_asc,
+        table.dataTable thead .sorting_desc {
+            background: none;
+        }
+
+        .navlist {
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header" id="home">
+        <!--js-->
+        <script src="/assets/ThemeJS/bootstrap.min.js"></script>
+        <!--js-->
+        <div class="banner">
+            <div class="container">
+                <nav class="navbar navbar-default bg">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="logo">
+                        <a href="/">DFS<span>Play-Offs</span></a>
+                    </div>
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed mod" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
                             <span class="icon-bar wt"></span>
                             <span class="icon-bar wt"></span>
                             <span class="icon-bar wt"></span>
-                          </button>
-                        </div>
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse bod" id="bs-example-navbar-collapse-1">
-                          <ul class="nav navbar-nav navbar-right navigate">
+                        </button>
+                    </div>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse bod" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right navigate">
                             <li class='navlist'><a href="/">Home</a></li>
                             <li class='navlist'><a href="/NBA">NBA</a></li>
                             <li class='navlist'><a href="/NFL">NFL</a></li>
-                          </ul>
-                        </div><!-- /.navbar-collapse -->
-                          <div class="clearfix"></div>
-                    </nav>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                    <div class="clearfix"></div>
+                </nav>
                 <!--start-smoth-scrolling-->
                 <script type="text/javascript" src="/assets/ThemeJS/move-top.js"></script>
                 <script type="text/javascript" src="/assets/ThemeJS/easing.js"></script>
                 <script type="text/javascript">
                     jQuery(document).ready(function($) {
-                        $(".scroll").click(function(event){
+                        $(".scroll").click(function(event) {
                             event.preventDefault();
-                            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+                            $('html,body').animate({
+                                scrollTop: $(this.hash).offset().top
+                            }, 1000);
                         });
                     });
                 </script>
                 <!--start-smoth-scrolling-->
-            <div class="clear"></div>
+                <div class="clear"></div>
             </div>
-         </div>
-
         </div>
-        {{{ body }}}
-
-        <div class="buttondiv">
-          <div class="chatdiv">
+    </div>
+    {{{ body }}}
+    <div class="buttondiv">
+        <div class="chatdiv">
             <button style='text-align:center;' type="button" class="btn btn-default chatbutton">Chat</button>
-          </div>
         </div>
-
-
-        <div class="chatdivshow">
-          <div id="sizer">
-              <a class='closechat' href="#">x</a>
+    </div>
+    <div class="chatdivshow">
+        <div id="sizer">
+            <a class='closechat' href="#">x</a>
             <br>
             <!-- <div id="swapzone"><input id="username" placeholder="Name"/>
             <button id='start' type="button" class="btn btn-default">Enter Chat</button>
             </div> -->
-          </div>
-          <div id="chatmessages"></div>
-          <br>
-          <div id="chatbar">
+        </div>
+        <div id="chatmessages"></div>
+        <br>
+        <div id="chatbar">
             <input placeholder="Start Typing" id="chatinput" />
             <button id='chatsend' type="button" class="btn btn-default btn-sm">Send</button>
-          </div>
         </div>
-
-            <!--footer-->
-        <!--  Scripts-->
-        <script src='/assets/javascript/chatapp.js'></script>
-        <!-- <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script> -->
-
-        <script src="/assets/javascript/app.js"></script>
-        <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
-        <script type="text/javascript">
-          $('.chatdivshow').hide();
-          $('.chatbutton').on('click', function(){
+    </div>
+    <script src='/assets/javascript/chatapp.js'></script>
+    <script src="/assets/javascript/app.js"></script>
+    <script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+    <script type="text/javascript">
+        $('.chatdivshow').hide();
+        $('.chatbutton').on('click', function() {
             $('.chatdiv').hide();
             $('.chatdivshow').show();
-          });
-
-          $('.closechat').on('click', function(){
+        });
+        $('.closechat').on('click', function() {
             $(".chatdivshow").hide();
             $('.chatdiv').show();
             return false;
-          });
-        </script>
-
-    </body>
+        });
+    </script>
+</body>
 </html>
