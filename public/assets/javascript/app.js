@@ -14,7 +14,9 @@ $(document).ready(function(){
 
           data: data.feed.entry,
 
-          "dom": '<"pull-left"f><"pull-right"l>tip',
+          "dom": '<"NFLtable">frtip',
+          "scrollX": true,
+          "order": [[ 9, "desc" ]],
 
           "ordering": true,
           "info":     false,
@@ -96,7 +98,9 @@ $(document).ready(function(){
 
           data: data.feed.entry,
 
-          "dom": '<"pull-left"f><"pull-right"l>tip',
+          "dom": '<"NFLtable">frtip',
+          "scrollX": true,
+          "order": [[ 9, "desc" ]],
 
           "ordering": true,
           "info":     false,
@@ -149,7 +153,9 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-        "dom": '<"pull-left"f><"pull-right"l>tip',
+        "dom": '<"NFLtable">frtip',
+        "scrollX": true,
+        "order": [[ 9, "desc" ]],
 
         "ordering": true,
         "info":     false,
@@ -204,7 +210,9 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-        "dom": '<"pull-left"f><"pull-right"l>tip',
+        "dom": '<"NFLtable">frtip',
+        "scrollX": true,
+        "order": [[ 9, "desc" ]],
 
         "ordering": true,
         "info":     false,
@@ -258,7 +266,9 @@ $(document).ready(function(){
 
         data: data.feed.entry,
 
-        "dom": '<"pull-left"f><"pull-right"l>tip',
+        "dom": '<"NFLtable">frtip',
+        "scrollX": true,
+        "order": [[ 9, "desc" ]],
 
         "ordering": true,
         "info":     false,
@@ -303,9 +313,9 @@ $(document).ready(function(){
     //display all appointments with DATA
     $('.fantasyDEF').DataTable( {
 
-      data: data.feed.entry,
-
-      "dom": '<"pull-left"f><"pull-right"l>tip',
+      "dom": '<"NFLtable">frtip',
+      "scrollX": true,
+      "order": [[ 9, "desc" ]],
 
       "ordering": true,
       "info":     false,
@@ -355,7 +365,8 @@ $(document).ready(function(){
         $('.tableNbaFantasy').DataTable({
 
             data: data.feed.entry,
-            "dom": '<"pull-left"f><"pull-right"l>tip',
+            "dom": '<"NBAimages">frtip',
+            "scrollX": true,
             "order": [[ 9, "desc" ]],
 
             "ordering": true,
@@ -389,9 +400,6 @@ $(document).ready(function(){
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$delete.$t' }
         ],
-        "createdRow": function( row, data, dataIndex ) {
-          // console.log(data.gsx$salary.$t);
-        },
         "columnDefs": [
           { // Date columns
             "targets": 1,
