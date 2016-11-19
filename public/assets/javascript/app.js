@@ -367,6 +367,7 @@ $(document).ready(function(){
             data: data.feed.entry,
             "dom": '<"NBAimages">frtip',
             "scrollX": true,
+            "pageLength": 50,
             "order": [[ 9, "desc" ]],
 
             "ordering": true,
