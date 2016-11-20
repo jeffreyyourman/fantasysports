@@ -19,4 +19,4 @@ var connection = require('../config/connection.js');
 
 
 
-module.exports = FanduelListNBA;
+// module.exports = FanduelListNBA;
