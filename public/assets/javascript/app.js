@@ -358,7 +358,7 @@ $(document).ready(function(){
     var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
     var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
 
-
+      var arr = [];
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
           //display all appointments with DATA
@@ -381,7 +381,6 @@ $(document).ready(function(){
               { data: 'gsx$opp.$t' },
               { data: 'gsx$condition.$t' },
               { data: 'gsx$details.$t' },
-              { data: 'gsx$avgminsl10.$t' },
               { data: 'gsx$projmins.$t' },
               { data: 'gsx$salary.$t' },
               { data: 'gsx$useage.$t' },
@@ -392,16 +391,20 @@ $(document).ready(function(){
               { data: 'gsx$gameline.$t' },
               { data: 'gsx$projectedpts.$t' },
               { data: 'gsx$value.$t' },
-              { data: 'gsx$ownership.$t' },
               { data: 'gsx$expectedvalue.$t' },
-              { data: 'gsx$netvalue.$t' },
               { data: 'gsx$gamesplayed.$t' },
               { data: 'gsx$recpr.$t' },
-              { data: 'gsx$score.$t' },
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$delete.$t' }
         ],
         "columnDefs": [
+          { // Date columns
+            "targets": 3,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              arr.push(rowData.gsx$team.$t);
+                
+            }
+          },
           { // Date columns
             "targets": 1,
             "createdCell": function (td, cellData, rowData, row, col) {
@@ -438,22 +441,8 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns
-            "targets": 8,
-            "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= 31 ) {
-                $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= 24) && (cellData <= 31.9)) {
-                $(td).css('background-color', 'yellow')
-              } else if ((cellData >= 17) && (cellData <= 23.9)) {
-                $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= 0.1) && (cellData <= 16.9) || (cellData = '-')) {
-                $(td).css('background-color', 'red')
-              }
-            }
-          },
           {
-            targets: 10,
+            targets: 9,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= "35.00%" ) {
                 $(td).css('background-color', 'lightgreen')
@@ -467,7 +456,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns
-            "targets": 12,
+            "targets": 11,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 1.3 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -481,7 +470,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns
-            "targets": 13,
+            "targets": 12,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 1.1 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -495,7 +484,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns
-            "targets": 14,
+            "targets": 13,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 108 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -509,7 +498,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 15,
+            "targets": 14,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 212 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -525,7 +514,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 17,
+            "targets": 16,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 5.00 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -541,7 +530,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 25,
+            "targets": 21,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData == "KEEP" ) {
                 $(td).css('background-color', 'lightgreen')
@@ -551,6 +540,7 @@ $(document).ready(function(){
             }
           }
         ]
+
     });
   });
 
