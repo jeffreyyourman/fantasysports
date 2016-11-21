@@ -2,359 +2,6 @@ $(document).ready(function(){
   // var table = $('.fantasyQB').DataTable();
 
 
-
-  var spreadsheetIDqb = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
-  var urlqb = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDqb + "/od6/public/values?alt=json";
-
-      // if emptdy show all the appointments
-      $.get(urlqb , function( data ) {
-
-        //display all appointments with DATA
-        $('.fantasyQB').DataTable({
-
-          data: data.feed.entry,
-
-          "dom": '<"NFLtable">frtip',
-          "scrollX": true,
-          "order": [[ 9, "desc" ]],
-
-          "ordering": true,
-          "info":     false,
-          "bLengthChange": true,
-
-          columns: [
-            { data : 'gsx$week.$t' },
-            { data : 'gsx$player.$t' },
-            { data : 'gsx$sal.$t' },
-            { data : 'gsx$pos.$t' },
-            { data : 'gsx$team.$t' },
-            { data : 'gsx$teamname.$t' },
-            { data : 'gsx$id.$t' },
-            { data : 'gsx$injurystatus.$t' },
-            { data : 'gsx$typeinjury.$t' },
-            { data : 'gsx$rvp.$t' },
-            { data : 'gsx$playerrank.$t' },
-            { data : 'gsx$oppdefrank.$t' },
-            { data : 'gsx$fppg.$t' },
-            { data : 'gsx$passattemptgame.$t' },
-            { data : 'gsx$rushattgame.$t' },
-            { data : 'gsx$totalopp.$t' },
-            { data : 'gsx$ppa.$t' },
-            { data : 'gsx$dova.$t' },
-            { data : 'gsx$expectedwins.$t' },
-            { data : 'gsx$pathexpectation.$t' },
-            { data : 'gsx$ou.$t' },
-            { data : 'gsx$ml.$t' },
-            { data : 'gsx$sl.$t' },
-            { data : 'gsx$endingml.$t' },
-            { data : 'gsx$linechange.$t' },
-            { data : 'gsx$salchange.$t' },
-            { data : 'gsx$olscore.$t' },
-            { data : 'gsx$playerrating.$t' },
-            { data : 'gsx$criteriascore.$t' },
-            { data : 'gsx$critrank.$t' },
-            { data : 'gsx$recpre.$t' },
-            { data : 'gsx$fps.$t' }
-      ],
-            "columnDefs": [
-              { // Date columns
-                "targets": 7,
-                "createdCell": function (td, cellData, rowData, row, col) {
-                  if ( cellData >= 20 ) {
-                    $(td).css('background-color', 'lightgreen')
-                  } else if ((cellData >= 10) && (cellData <= 19)) {
-                    $(td).css('background-color', '#FFBD00')
-                  } else if ((cellData) >= 0 && (cellData <= 9)) {
-                    $(td).css('background-color', 'red')
-                  }
-                }
-              },
-              {
-                targets: 11,
-                "createdCell": function (td, cellData, rowData, row, col) {
-                  // if ( cellData >= "35.00%" ) {
-                  //   $(td).css('background-color', 'lightgreen')
-                  // } else if ((cellData >= "24.00%") && (cellData <= "34.99%")) {
-                  //   $(td).css('background-color', 'yellow')
-                  // } else if ((cellData >= "16.00%") && (cellData <= "23.99%")) {
-                  //   $(td).css('background-color', '#FFBD00')
-                  // } else if (cellData <= "15.99%") {
-                  //   $(td).css('background-color', 'red')
-                  // }
-                }
-              }
-            ]
-          });
-        });
-    var spreadsheetIDrb = "15mSJN1WKrxFVJtIYT20sJS9mGr7f65Ow1XGLhHVuzDo";
-    // Make sure it is public or set to Anyone with link can view
-    var urlrb = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDrb + "/od6/public/values?alt=json";
-
-      // if empty show all the appointments
-      $.get(urlrb , function( data ) {
-
-        //display all appointments with DATA
-        $('.fantasyRB').DataTable( {
-
-          data: data.feed.entry,
-
-          "dom": '<"NFLtable">frtip',
-          "scrollX": true,
-          "order": [[ 9, "desc" ]],
-
-          "ordering": true,
-          "info":     false,
-          "bLengthChange": true,
-
-          columns: [
-            { data : 'gsx$week.$t' },
-            { data : 'gsx$player.$t' },
-            { data : 'gsx$sal.$t' },
-            { data : 'gsx$pos.$t' },
-            { data : 'gsx$team.$t' },
-            { data : 'gsx$teamname.$t' },
-            { data : 'gsx$id.$t' },
-            { data : 'gsx$injurystatus.$t' },
-            { data : 'gsx$typeinjury.$t' },
-            { data : 'gsx$spread.$t' },
-            { data : 'gsx$rvp.$t' },
-            { data : 'gsx$playerrank.$t' },
-            { data : 'gsx$ppg.$t' },
-            { data : 'gsx$rushattgame.$t' },
-            { data : 'gsx$rectarg.$t' },
-            { data : 'gsx$totalopp.$t' },
-            { data : 'gsx$ppa.$t' },
-            { data : 'gsx$rdova.$t' },
-            { data : 'gsx$expectedwins.$t' },
-            { data : 'gsx$pathexpectation.$t' },
-            { data : 'gsx$ou.$t' },
-            { data : 'gsx$ml.$t' },
-            { data : 'gsx$sl.$t' },
-            { data : 'gsx$endingml.$t' },
-            { data : 'gsx$linechange.$t' },
-            { data : 'gsx$salchange.$t' },
-            { data : 'gsx$snapcount.$t' },
-            { data : 'gsx$olrank.$t' },
-            { data : 'gsx$recpre.$t' },
-            { data : 'gsx$playerrating.$t' },
-            { data : 'gsx$criteriascore.$t' },
-            { data : 'gsx$critrank.$t' },
-            { data : 'gsx$fps.$t' }
-            ]
-          });
-        });
-
-  var spreadsheetIDwr = "1gNVt-L_tVtvNSvoZpmocD91q7JShDjC370JqXo4E6Ko";
-  var urlwr = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDwr + "/od6/public/values?alt=json";
-
-    // if empty show all the appointments
-    $.get(urlwr , function( data ) {
-      $('.fantasyWR').DataTable( {
-
-        data: data.feed.entry,
-
-        "dom": '<"NFLtable">frtip',
-        "scrollX": true,
-        "order": [[ 9, "desc" ]],
-
-        "ordering": true,
-        "info":     false,
-        "bLengthChange": true,
-
-        columns: [
-          { data : 'gsx$week.$t' },
-          { data : 'gsx$player.$t' },
-          { data : 'gsx$sal.$t' },
-          { data : 'gsx$pos.$t' },
-          { data : 'gsx$team.$t' },
-          { data : 'gsx$teamname.$t' },
-          { data : 'gsx$id.$t' },
-          { data : 'gsx$injurystatus.$t' },
-          { data : 'gsx$typeinjury.$t' },
-          { data : 'gsx$spread.$t' },
-          { data : 'gsx$qbscore.$t' },
-          { data : 'gsx$rvp.$t' },
-          { data : 'gsx$playerrank.$t' },
-          { data : 'gsx$ppg.$t' },
-          { data : 'gsx$rushattgame.$t' },
-          { data : 'gsx$rectarg.$t' },
-          { data : 'gsx$recs.$t' },
-          { data : 'gsx$totalopp.$t' },
-          { data : 'gsx$ppa.$t' },
-          { data : 'gsx$pdova.$t' },
-          { data : 'gsx$expectedwins.$t' },
-          { data : 'gsx$pathexpectation.$t' },
-          { data : 'gsx$ou.$t' },
-          { data : 'gsx$ml.$t' },
-          { data : 'gsx$sl.$t' },
-          { data : 'gsx$endingml.$t' },
-          { data : 'gsx$linechange.$t' },
-          { data : 'gsx$salchange.$t' },
-          { data : 'gsx$snapcount.$t' },
-          { data : 'gsx$recpre.$t' },
-          { data : 'gsx$playerrating.$t' },
-          { data : 'gsx$criteriascore.$t' },
-          { data : 'gsx$critrank.$t' },
-          { data : 'gsx$fps.$t' }
-          ]
-        });
-      });
-//
-  var spreadsheetIDte = "1UjVGzANuKJ-_ERg8f4ixjPW6AVL9bjCcIhyq4YK-Z0k";
-  var urlte = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDte + "/od6/public/values?alt=json";
-
-    // if empty show all the appointments
-    $.get(urlte , function( data ) {
-      //display all appointments with DATA
-      $('.fantasyTE').DataTable( {
-
-        data: data.feed.entry,
-
-        "dom": '<"NFLtable">frtip',
-        "scrollX": true,
-        "order": [[ 9, "desc" ]],
-
-        "ordering": true,
-        "info":     false,
-        "bLengthChange": true,
-
-        columns: [
-          { data : 'gsx$week.$t' },
-          { data : 'gsx$player.$t' },
-          { data : 'gsx$sal.$t' },
-          { data : 'gsx$pos.$t' },
-          { data : 'gsx$team.$t' },
-          { data : 'gsx$teamname.$t' },
-          { data : 'gsx$id.$t' },
-          { data : 'gsx$injurystatus.$t' },
-          { data : 'gsx$typeinjury.$t' },
-          { data : 'gsx$spread.$t' },
-          { data : 'gsx$qbscore.$t' },
-          { data : 'gsx$rvp.$t' },
-          { data : 'gsx$playerrank.$t' },
-          { data : 'gsx$ppg.$t' },
-          { data : 'gsx$rushattgame.$t' },
-          { data : 'gsx$rectarg.$t' },
-          { data : 'gsx$recs.$t' },
-          { data : 'gsx$totalopp.$t' },
-          { data : 'gsx$ppa.$t' },
-          { data : 'gsx$pdova.$t' },
-          { data : 'gsx$expectedwins.$t' },
-          { data : 'gsx$pathexpectation.$t' },
-          { data : 'gsx$ou.$t' },
-          { data : 'gsx$ml.$t' },
-          { data : 'gsx$sl.$t' },
-          { data : 'gsx$endingml.$t' },
-          { data : 'gsx$linechange.$t' },
-          { data : 'gsx$salchange.$t' },
-          { data : 'gsx$snapcount.$t' },
-          { data : 'gsx$recentpre.$t' },
-          { data : 'gsx$playerrating.$t' },
-          { data : 'gsx$criteriascore.$t' },
-          { data : 'gsx$critrank.$t' },
-          { data : 'gsx$fps.$t' }
-          ]
-        });
-      });
-
-  var spreadsheetIDk = "1RWrzWmrAZqyLlmpqNnA8kKRk9fjFN3japYiAtztRWKs";
-  var urlk = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDk + "/od6/public/values?alt=json";
-
-    $.get(urlk , function( data ) {
-      //display all appointments with DATA
-      $('.fantasyK').DataTable( {
-
-        data: data.feed.entry,
-
-        "dom": '<"NFLtable">frtip',
-        "scrollX": true,
-        "order": [[ 9, "desc" ]],
-
-        "ordering": true,
-        "info":     false,
-        "bLengthChange": true,
-
-        columns: [
-          { data : 'gsx$week.$t' },
-          { data : 'gsx$player.$t' },
-          { data : 'gsx$sal.$t' },
-          { data : 'gsx$pos.$t' },
-          { data : 'gsx$team.$t' },
-          { data : 'gsx$teamname.$t' },
-          { data : 'gsx$injurystatus.$t' },
-          { data : 'gsx$typeinjury.$t' },
-          { data : 'gsx$rvp.$t' },
-          { data : 'gsx$playerrank.$t' },
-          { data : 'gsx$ppg.$t' },
-          { data : 'gsx$totalopp.$t' },
-          { data : 'gsx$ppk.$t' },
-          { data : 'gsx$expectedwins.$t' },
-          { data : 'gsx$pathexpectation.$t' },
-          { data : 'gsx$ou.$t' },
-          { data : 'gsx$ml.$t' },
-          { data : 'gsx$sl.$t' },
-          { data : 'gsx$endingml.$t' },
-          { data : 'gsx$linechange.$t' },
-          { data : 'gsx$salchange.$t' },
-          { data : 'gsx$recpre.$t' },
-          { data : 'gsx$tdcon.$t' },
-          { data : 'gsx$playerrating.$t' },
-          { data : 'gsx$criteriascore.$t' },
-          { data : 'gsx$critrank.$t' },
-          { data : 'gsx$fps.$t' }
-          ]
-        });
-      });
-
-  var spreadsheetIDdef = "1B63c8kUsBMC3nHhIq2vErR-55b-SgiTlhGSYIA-G2X4";
-
-  var urldef = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDdef + "/od6/public/values?alt=json";
-  $.get(urldef , function( data ) {
-    //display all appointments with DATA
-    $('.fantasyDEF').DataTable( {
-
-      "dom": '<"NFLtable">frtip',
-      "scrollX": true,
-      "order": [[ 9, "desc" ]],
-
-      "ordering": true,
-      "info":     false,
-      "bLengthChange": true,
-
-      columns: [
-        { data : 'gsx$week.$t' },
-        { data : 'gsx$player.$t' },
-        { data : 'gsx$sal.$t' },
-        { data : 'gsx$pos.$t' },
-        { data : 'gsx$team.$t' },
-        { data : 'gsx$teamname.$t' },
-        { data : 'gsx$opp.$t' },
-        { data : 'gsx$ppg.$t' },
-        { data : 'gsx$oppqbinjurystatus.$t' },
-        { data : 'gsx$typeinjury.$t' },
-        { data : 'gsx$opp-qb-score.$t' },
-        { data : 'gsx$rvp.$t' },
-        { data : 'gsx$playerrank.$t' },
-        { data : 'gsx$yardsallowed.$t' },
-        { data : 'gsx$defdova.$t' },
-        { data : 'gsx$oppodova.$t' },
-        { data : 'gsx$combineddova.$t' },
-        { data : 'gsx$expectedwins.$t' },
-        { data : 'gsx$pathexpectation.$t' },
-        { data : 'gsx$ou.$t' },
-        { data : 'gsx$ml.$t' },
-        { data : 'gsx$sl.$t' },
-        { data : 'gsx$endingml.$t' },
-        { data : 'gsx$linechange.$t' },
-        { data : 'gsx$salchange.$t' },
-        { data : 'gsx$playerrating.$t' },
-        { data : 'gsx$criteriascore.$t' },
-        { data : 'gsx$critrank.$t' },
-        { data : 'gsx$recp.$t' },
-        { data : 'gsx$fps.$t' }
-        ]
-      });
-    });
     var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
     var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
 
@@ -362,7 +9,38 @@ $(document).ready(function(){
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
           //display all appointments with DATA
-        $('.tableNbaFantasy').DataTable({
+
+        nbatable(data);
+        nbatablefilter();
+  });
+    var nbatablefilter = function(){
+      // $(".tableNbaFantasy").dataTable().fnDestroy();
+      var table = $('.tableNbaFantasy').DataTable();
+
+      $(".nbaposition").on("click", function(){
+        var position = $(this).data('button');
+        if (position == 'All') {
+          //returns all players back
+        } else {
+          $.fn.dataTable.ext.search.push(
+              function( settings, data, dataIndex ) {
+                  return  data[2] == position
+                      ? true
+                      : false
+              }
+          );
+        }
+
+
+        table.draw();
+        $.fn.dataTable.ext.search.pop();
+      });
+    };
+
+
+      var nbatable = function(data) {
+      $(".tableNbaFantasy").dataTable().fnDestroy();
+      var table = $('.tableNbaFantasy').DataTable({
 
             data: data.feed.entry,
             "dom": '<"NBAimages">frtip',
@@ -370,9 +48,11 @@ $(document).ready(function(){
             "pageLength": 50,
             "order": [[ 9, "desc" ]],
 
+
             "ordering": true,
             "info":     false,
             "bLengthChange": true,
+
             columns: [
               { data: 'gsx$player.$t' },
               { data: 'gsx$ha.$t' },
@@ -398,13 +78,6 @@ $(document).ready(function(){
               { data: 'gsx$delete.$t' }
         ],
         "columnDefs": [
-          { // Date columns
-            "targets": 3,
-            "createdCell": function (td, cellData, rowData, row, col) {
-              arr.push(rowData.gsx$team.$t);
-                
-            }
-          },
           { // Date columns
             "targets": 1,
             "createdCell": function (td, cellData, rowData, row, col) {
@@ -540,9 +213,8 @@ $(document).ready(function(){
             }
           }
         ]
-
     });
-  });
+  }
 
 // Player rank is a players rank (lower better ) and rvp is the opponents rank at that pos (higher better)
 
