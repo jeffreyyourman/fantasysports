@@ -16,7 +16,6 @@ $(document).ready(function(){
     var nbatablefilter = function(){
       // $(".tableNbaFantasy").dataTable().fnDestroy();
       var table = $('.tableNbaFantasy').DataTable();
-
       $(".nbaposition").on("click", function(){
         var position = $(this).data('button');
         if (position == 'All') {
@@ -30,14 +29,10 @@ $(document).ready(function(){
               }
           );
         }
-
-
         table.draw();
         $.fn.dataTable.ext.search.pop();
       });
     };
-
-
       var nbatable = function(data) {
       $(".tableNbaFantasy").dataTable().fnDestroy();
       var table = $('.tableNbaFantasy').DataTable({
@@ -81,7 +76,7 @@ $(document).ready(function(){
           { // Date columns
             "targets": 1,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ((rowData.gsx$projmins.$t > 28) && (rowData.gsx$useage.$t > "20.00%") && (rowData.gsx$ppm.$t > 0.8) && (rowData.gsx$ovp.$t > 0.88) && (rowData.gsx$projscore.$t > 100) && (rowData.gsx$gameline.$t > 200) && (rowData.gsx$value.$t > 5.00)) {
+              if ((rowData.gsx$projmins.$t > 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$ppm.$t > 0.8) && (rowData.gsx$ovp.$t > 0.85) && (rowData.gsx$projscore.$t > 98) && (rowData.gsx$gameline.$t > 198) && (rowData.gsx$value.$t > 4.5)) {
                 var playernames = rowData.gsx$player.$t;
                 var playercondition = rowData.gsx$condition.$t
                 var playerdetails = rowData.gsx$details.$t
