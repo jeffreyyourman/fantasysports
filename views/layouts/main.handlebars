@@ -1,19 +1,18 @@
 <!doctype html>
 <html>
-
 <head>
     <title>Daily Fantasy Sports</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="keywords" content="Play-Offs Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design"
     />
+    <link href="/assets/Themecss/style.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" media="screen" title="no title">
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
     <!-- <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script> -->
     <!--bootstrap-file-->
     <link href="/assets/Themecss/bootstrap.min.css" rel="stylesheet" type="text/css">
     <!--custom-css-->
-    <link href="/assets/Themecss/style.css" rel="stylesheet" type="text/css">
     <!--fonts-->
     <link href="http://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" type="text/css">
     <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet" type="text/css">
@@ -22,15 +21,68 @@
     <script src="/assets/ThemeJS/jquery.min.js"></script>
     <script src="/assets/ThemeJS/responsiveslides.min.js"></script>
     <style media="screen">
-        table.dataTable thead .sorting,
-        table.dataTable thead .sorting_asc,
-        table.dataTable thead .sorting_desc {
-            background: none;
-        }
+    table.dataTable thead .sorting,
+    table.dataTable thead .sorting_asc,
+    table.dataTable thead .sorting_desc {
+        background: none;
+    }
 
-        .navlist {
-            list-style: none;
-        }
+    .navlist {
+        list-style: none;
+    }
+    #chatmessages{
+      overflow:auto;
+      background-color: #021A3A;
+      height:300px;
+      margin-left: 5%;
+    }
+    .player1{
+      color: #edb82a;
+    }
+
+    .playerfalse {
+      color:#edb82a;
+    }
+    .player0{
+      background-color: lightgrey;
+      color:#edb82a;
+    }
+    .chatdiv {
+      bottom: 0;
+      position: fixed;
+      right:10%;
+    }
+    .chatdivshow {
+      right:10%;
+      overflow:auto;
+      background-color: #021A3A;
+      width:250px;
+      position: fixed;
+      bottom: 0px;
+    }
+      #chatbar {
+        margin-left: 5%;
+        margin-bottom:5%;
+      }
+
+      #chatinput {
+        border-radius: 8px;
+        height:35px;
+      }
+      #chatsend {
+        border-radius:8px;
+      }
+
+    .closechat {
+        margin-left: 90%;
+        font-size: 18px;
+        background-color: #021A3A;
+        color:white;
+        border-color: none;
+    }
+    .stickbutton {
+        text-align: center;
+    }
     </style>
 </head>
 
