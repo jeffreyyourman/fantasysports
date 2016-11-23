@@ -143,7 +143,7 @@ $(document).ready(function(){
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 1.1 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= .97) && (cellData <= 1.09)) {
+              } else if ((cellData >= .97) && (cellData <= 1.099)) {
                 $(td).css('background-color', 'yellow')
               } else if ((cellData >= .89) && (cellData <= .969)) {
                 $(td).css('background-color', '#FFBD00')
