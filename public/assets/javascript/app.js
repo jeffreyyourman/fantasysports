@@ -1,11 +1,11 @@
 $(document).ready(function(){
-  // var table = $('.fantasyQB').DataTable();
 
 
     var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
     var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
 
       var arr = [];
+
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
           //display all appointments with DATA
@@ -70,6 +70,7 @@ $(document).ready(function(){
               { data: 'gsx$gamesplayed.$t' },
               { data: 'gsx$recpr.$t' },
               { data: 'gsx$ptsvpos.$t' },
+              { data: 'gsx$criteriaranking.$t' },
               { data: 'gsx$delete.$t' }
         ],
         "columnDefs": [
@@ -207,6 +208,7 @@ $(document).ready(function(){
               }
             }
           }
+
         ]
     });
   }
