@@ -12,6 +12,11 @@ body,html{
   color: #edb82a;
 }
 
+.suggestedPlayersNBA {
+  height: 300px;
+  overflow-x: auto;
+}
+
 .playerfalse {
   color:#edb82a;
 }

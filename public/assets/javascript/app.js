@@ -73,11 +73,16 @@ $(document).ready(function(){
               { data: 'gsx$criteriaranking.$t' },
               { data: 'gsx$delete.$t' }
         ],
+
         "columnDefs": [
+          { className: "recentPerformance", "targets": [ 19 ] },
           { // Date columns
-            "targets": 1,
+            "targets": 19,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ((rowData.gsx$projmins.$t > 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$ppm.$t > 0.8) && (rowData.gsx$ovp.$t > 0.85) && (rowData.gsx$projscore.$t > 98) && (rowData.gsx$gameline.$t > 198) && (rowData.gsx$value.$t > 4.5)) {
+              var recentPerformance = rowData.gsx$recpr.$t;
+
+              if (((rowData.gsx$recpr.$t <= 0) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t > 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'KEEP') && (rowData.gsx$salaryadjust.$t <= 0)) {
+
                 var playernames = rowData.gsx$player.$t;
                 var playercondition = rowData.gsx$condition.$t
                 var playerdetails = rowData.gsx$details.$t
