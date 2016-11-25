@@ -68,6 +68,7 @@ $(document).ready(function(){
               { data: 'gsx$value.$t' },
               { data: 'gsx$expectedvalue.$t' },
               { data: 'gsx$gamesplayed.$t' },
+              { data: 'gsx$salaryadjust.$t' },
               { data: 'gsx$recpr.$t' },
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$criteriaranking.$t' },
@@ -81,19 +82,20 @@ $(document).ready(function(){
             "createdCell": function (td, cellData, rowData, row, col) {
               var recentPerformance = rowData.gsx$recpr.$t;
 
-              if (((rowData.gsx$recpr.$t <= 0) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t > 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'KEEP') && (rowData.gsx$salaryadjust.$t <= 0)) {
+              if (((rowData.gsx$recpr.$t <= 10) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t >= 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'KEEP') && (rowData.gsx$salaryadjust.$t <= 400)) {
 
                 var playernames = rowData.gsx$player.$t;
+                var playerposition = rowData.gsx$position.$t;
                 var playercondition = rowData.gsx$condition.$t
                 var playerdetails = rowData.gsx$details.$t
                 if (playercondition == 'GTD') {
-                  $('.suggestedPlayersNBA').append('<li>' + playernames + ' ' + '(GTD ' + playerdetails + ')' + '</li>');
+                  $('.suggestedPlayersNBA').append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(GTD ' + playerdetails + ')' + '</li>');
                 }
                 if (playercondition == '-') {
-                  $('.suggestedPlayersNBA').append('<li>' + playernames + ' ' + '(Playing)' + '</li>');
+                  $('.suggestedPlayersNBA').append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(Playing)' + '</li>');
                 }
                 if (playercondition == 'O') {
-                  $('.suggestedPlayersNBA').append('<li>' + playernames + ' ' + '(OUT ' + playerdetails + ')' + '</li>');
+                  $('.suggestedPlayersNBA').append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(OUT ' + playerdetails + ')' + '</li>');
                 }
               }
             }
