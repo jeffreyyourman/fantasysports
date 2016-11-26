@@ -11,16 +11,22 @@ $(document).ready(function(){
           //display all appointments with DATA
 
         nbatable(data);
-        nbatablefilter();
+        nbaFilterPosition();
+
+
   });
-    var nbatablefilter = function(){
+    var nbaFilterPosition = function(){
       // $(".tableNbaFantasy").dataTable().fnDestroy();
       var table = $('.tableNbaFantasy').DataTable();
-      $(".nbaposition").on("click", function(){
-        var position = $(this).data('button');
+      $(document).on("click",'.nbaposition', function(){
+        $('.nbaposition').removeClass('highlight');
+        $(this).addClass('highlight');
+        var position = $(this).data('position');
+        console.log(position);
         if (position == 'All') {
           //returns all players back
         } else {
+
           $.fn.dataTable.ext.search.push(
               function( settings, data, dataIndex ) {
                   return  data[2] == position
@@ -33,6 +39,7 @@ $(document).ready(function(){
         $.fn.dataTable.ext.search.pop();
       });
     };
+
       var nbatable = function(data) {
       $(".tableNbaFantasy").dataTable().fnDestroy();
       var table = $('.tableNbaFantasy').DataTable({
@@ -206,7 +213,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 21,
+            "targets": 23,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData == "KEEP" ) {
                 $(td).css('background-color', 'lightgreen')
