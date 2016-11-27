@@ -8,6 +8,10 @@ body,html{
   height:300px;
   margin-left: 5%;
 }
+
+#swapzone {
+  /*color:#edb82a;*/
+}
 .player1{
   color: #edb82a;
 }

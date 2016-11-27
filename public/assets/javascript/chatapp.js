@@ -265,7 +265,7 @@ function getInGame() {
     });
 
     //Remove name input box and show current player number.
-    $('#swapzone').html('<h2>Hi ' + username + '!');
+    $('#swapzone').html('<h2 style="color:#edb82a; font-size:15px;">Welcome ' + username + ' to DFS-PlayOffs!');
 
   } else {
     //if current players is '2', will not allow the player to join
