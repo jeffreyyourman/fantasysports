@@ -81,7 +81,8 @@ $(document).ready(function(){
               { data: 'gsx$delete.$t' }
         ],
         "columnDefs": [
-          { className: "recentPerformance", "targets": [ 19 ] },
+          { className: "playername", "targets": [ 0 ] },
+
           { // Date columns
             "targets": 19,
             "createdCell": function (td, cellData, rowData, row, col) {
