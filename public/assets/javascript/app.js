@@ -51,7 +51,7 @@ $(document).ready(function(){
             "pageLength": 50,
             "order": [[ 9, "desc" ]],
             "fixedHeader": true,
-            "fixedColumns": true,
+            // "fixedColumns": true,
             "paging": false,
 
             columns: [
