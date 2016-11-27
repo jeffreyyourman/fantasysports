@@ -94,8 +94,9 @@ $(document).ready(function(){
           { className: "playername", "targets": [ 0 ] },
 
           { // Date columns
-            "targets": 19,
+            "targets": 0,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var varRowData = rowData;
               var recentPerformance = rowData.gsx$recpr.$t;
 
               if (((rowData.gsx$recpr.$t <= 10) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t >= 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'KEEP') && (rowData.gsx$salaryadjust.$t <= 400)) {
@@ -119,16 +120,19 @@ $(document).ready(function(){
           { // Date columns
             "targets": 7,
             "createdCell": function (td, cellData, rowData, row, col) {
-              var time = cellData;
+              var varDataCell = cellData;
+              var time = varDataCell;
               var minutes = time.split(":");
               var display=minutes[0];
               if ( display >= 31 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((display >= 24) && (display <= 30.99)) {
+              } else if ((display >= 26) && (display <= 30.999)) {
                 $(td).css('background-color', 'yellow')
-              } else if ((display >= 17) && (display <= 23.99)) {
+              } else if ((display >= 23) && (display <= 25.999)) {
                 $(td).css('background-color', '#FFBD00')
-              } else if ((display >= 0) && (display <= 16.99) || (cellData = '-')) {
+              } else if ((display >= 19) && (display <= 22.999)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((display >= 0) && (display <= 18.999) || (varDataCell = '-')) {
                 $(td).css('background-color', 'red')
               }
             }
@@ -136,13 +140,16 @@ $(document).ready(function(){
           {
             targets: 9,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= "35.00%" ) {
+              var varDataCell = cellData;
+              if ( varDataCell >= "35.00%" ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= "24.00%") && (cellData <= "34.99%")) {
+              } else if ((varDataCell >= "27.00%") && (varDataCell <= "34.99%")) {
                 $(td).css('background-color', 'yellow')
-              } else if ((cellData >= "16.00%") && (cellData <= "23.99%")) {
+              } else if ((varDataCell >= "20.00%") && (varDataCell <= "26.99%")) {
                 $(td).css('background-color', '#FFBD00')
-              } else if (cellData <= "15.99%") {
+              } else if ((varDataCell >= "16.00%") && (varDataCell <= "19.99%")) {
+                $(td).css('background-color', '#FFBD00')
+              } else if (varDataCell <= "15.99%") {
                 $(td).css('background-color', 'red')
               }
             }
@@ -150,13 +157,16 @@ $(document).ready(function(){
           { // Date columns
             "targets": 11,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= 1.3 ) {
+              var varDataCell = cellData;
+              if ( varDataCell >= 1.3 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= 1.00) && (cellData <= 1.29)) {
+              } else if ((varDataCell >= 1.00) && (varDataCell <= 1.29)) {
                 $(td).css('background-color', 'yellow')
-              } else if ((cellData >= .85) && (cellData <= .999)) {
+              } else if ((varDataCell >= .85) && (varDataCell <= .9999)) {
                 $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= 0) && (cellData <= .849) || (cellData = '-')) {
+              } else if ((varDataCell >= .80) && (varDataCell <= .8499)) {
+                $(td).css('background-color', '#FF8700')
+              } else if ((varDataCell >= 0) && (varDataCell <= .7999) || (varDataCell = '-')) {
                 $(td).css('background-color', 'red')
               }
             }
@@ -164,13 +174,16 @@ $(document).ready(function(){
           { // Date columns
             "targets": 12,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= 1.1 ) {
+              var varDataCell = cellData;
+              if ( varDataCell >= 1.1 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= .97) && (cellData <= 1.099)) {
+              } else if ((varDataCell >= .97) && (varDataCell <= 1.099)) {
                 $(td).css('background-color', 'yellow')
-              } else if ((cellData >= .89) && (cellData <= .969)) {
+              } else if ((varDataCell >= .89) && (varDataCell <= .9699)) {
                 $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= 0) && (cellData <= .889) || (cellData = '-')) {
+              } else if ((varDataCell >= .85) && (varDataCell <= .8899)) {
+                $(td).css('background-color', '#FF8700')
+              } else if ((varDataCell >= 0) && (varDataCell <= .8499) || (varDataCell = '-')) {
                 $(td).css('background-color', 'red')
               }
             }
@@ -178,13 +191,16 @@ $(document).ready(function(){
           { // Date columns
             "targets": 13,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= 108 ) {
+              var varDataCell = cellData;
+              if ( varDataCell >= 105 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= 100) && (cellData <= 107.9)) {
+              } else if ((varDataCell >= 100) && (varDataCell <= 104.99)) {
                 $(td).css('background-color', 'yellow')
-              } else if ((cellData >= 92) && (cellData <= 99.9)) {
+              } else if ((varDataCell >= 94) && (varDataCell <= 99.99)) {
                 $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= 0) && (cellData <= 91.9) || (cellData = '-')) {
+              } else if ((varDataCell >= 90) && (varDataCell <= 93.99)) {
+                $(td).css('background-color', '#FF8700')
+              } else if ((varDataCell >= 0) && (varDataCell <= 89.99) || (varDataCell = '-')) {
                 $(td).css('background-color', 'red')
               }
             }
@@ -192,31 +208,84 @@ $(document).ready(function(){
           { // Date columns FF8700
             "targets": 15,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= 212 ) {
+              var varDataCell = cellData;
+              if ( varDataCell >= 210 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= 206) && (cellData <= 211.99)) {
+              } else if ((varDataCell >= 200) && (varDataCell <= 209.99)) {
                 $(td).css('background-color', 'yellow')
-              } else if ((cellData >= 200) && (cellData <= 205.99)) {
+              } else if ((varDataCell >= 195) && (varDataCell <= 199.99)) {
                 $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= 195) && (cellData <= 199.99)) {
+              } else if ((varDataCell >= 190) && (varDataCell <= 194.99)) {
                 $(td).css('background-color', '#FF8700')
-              } else if ((cellData >= 0) && (cellData <= 194.99) || (cellData = '-')) {
+              } else if ((varDataCell >= 0) && (varDataCell <= 194.99) || (varDataCell = '-')) {
                 $(td).css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
-            "targets": 16,
+            "targets": 17,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData >= 5.00 ) {
+              var varDataCell = cellData;
+              if ( varDataCell >= 5.00 ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if ((cellData >= 4.5) && (cellData <= 4.99)) {
+              } else if ((varDataCell >= 4.5) && (varDataCell <= 4.99)) {
                 $(td).css('background-color', 'yellow')
-              } else if ((cellData >= 4.0) && (cellData <= 4.499)) {
+              } else if ((varDataCell >= 4.0) && (varDataCell <= 4.499)) {
                 $(td).css('background-color', '#FFBD00')
-              } else if ((cellData >= 3.5) && (cellData <= 3.99)) {
+              } else if ((varDataCell >= 3.5) && (varDataCell <= 3.99)) {
                 $(td).css('background-color', '#FF8700')
-              } else if ((cellData >= 0) && (cellData <= 3.499) || (cellData = '-')) {
+              } else if ((varDataCell >= 0) && (varDataCell <= 3.499) || (varDataCell = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns FF8700
+            "targets": 18,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              var varDataCell = cellData;
+              if (( varDataCell <= 400 )|| (varDataCell == '-')) {
+                $(td).css('background-color', 'lightgreen')
+              } else {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns FF8700
+            "targets": 19,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              console.log(rowData);
+              var varDataCell = cellData;
+              if (( varDataCell <= 10 ) || (varDataCell == '-')) {
+                $(td).css('background-color', 'lightgreen')
+              } else {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns FF8700
+            "targets": 20,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              var varDataCell = cellData;
+              if ( varDataCell >= 40.00 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else if ((varDataCell >= 33) && (varDataCell <= 39.99)) {
+                $(td).css('background-color', 'yellow')
+              } else if ((varDataCell >= 25) && (varDataCell <= 32.99)) {
+                $(td).css('background-color', '#FFBD00')
+              } else if ((varDataCell >= 20) && (varDataCell <= 24.99)) {
+                $(td).css('background-color', '#FF8700')
+              } else if ((varDataCell >= 0) && (varDataCell <= 19.99) || (varDataCell = '-')) {
+                $(td).css('background-color', 'red')
+              }
+            }
+          },
+          { // Date columns FF8700
+            "targets": 21,
+            "createdCell": function (td, cellData, rowData, row, col) {
+              var varDataCell = cellData;
+              if ( varDataCell >= 5 ) {
+                $(td).css('background-color', 'lightgreen')
+              } else {
                 $(td).css('background-color', 'red')
               }
             }
@@ -224,9 +293,10 @@ $(document).ready(function(){
           { // Date columns FF8700
             "targets": 22,
             "createdCell": function (td, cellData, rowData, row, col) {
-              if ( cellData == "KEEP" ) {
+              var varDataCell = cellData;
+              if ( varDataCell == "KEEP" ) {
                 $(td).css('background-color', 'lightgreen')
-              } else if (cellData == "DELETE") {
+              } else if (varDataCell == "DELETE") {
                 $(td).css('background-color', 'red')
               }
             }
@@ -253,88 +323,88 @@ $(document).ready(function(){
  // Rating is just the number but rank is how they rank against other guys
 
 // For the ranks, lower is better
-
-
-  $('.fantasynewsNBA').hide();
-  var qbfantasy = $('.qbfantasy');
-  var rbfantasy = $('.rbfantasy');
-  var wrfantasy = $('.wrfantasy');
-  var tefantasy = $('.tefantasy');
-  var kfantasy = $('.kfantasy');
-  var deffantasy = $('.deffantasy');
-
-  rbfantasy.hide();
-  wrfantasy.hide();
-  tefantasy.hide();
-  kfantasy.hide();
-  deffantasy.hide();
-
-  $('#FPNewsNBAButton').on('click', function(){
-    $('.fantasynewsNFL').hide();
-    $('.fantasynewsNBA').show();
-  });
-  $('#FPNewsNFLButton').on('click', function(){
-    $('.fantasynewsNBA').hide();
-    $('.fantasynewsNFL').show();
-  });
-
-  $("#qbLink").on('click', function(e){
-    e.preventDefault();
-    rbfantasy.hide();
-    wrfantasy.hide();
-    tefantasy.hide();
-    kfantasy.hide();
-    deffantasy.hide();
-    qbfantasy.show();
-  });
-
-  $("#rbLink").on('click', function(e){
-    e.preventDefault();
-    qbfantasy.hide();
-    wrfantasy.hide();
-    tefantasy.hide();
-    kfantasy.hide();
-    deffantasy.hide();
-    rbfantasy.show();
-  });
-
-  $("#wrLink").on('click', function(e){
-    e.preventDefault();
-    qbfantasy.hide();
-    rbfantasy.hide();
-    tefantasy.hide();
-    kfantasy.hide();
-    deffantasy.hide();
-    wrfantasy.show();
-  });
-
-  $("#teLink").on('click', function(e){
-    e.preventDefault();
-    qbfantasy.hide();
-    wrfantasy.hide();
-    rbfantasy.hide();
-    kfantasy.hide();
-    deffantasy.hide();
-    tefantasy.show();
-  });
-
-  $("#kLink").on('click', function(e){
-    e.preventDefault();
-    qbfantasy.hide();
-    wrfantasy.hide();
-    tefantasy.hide();
-    rbfantasy.hide();
-    deffantasy.hide();
-    kfantasy.show();
-  });
-
-  $("#defLink").on('click', function(e){
-    e.preventDefault();
-    qbfantasy.hide();
-    wrfantasy.hide();
-    tefantasy.hide();
-    kfantasy.hide();
-    rbfantasy.hide();
-    deffantasy.show();
-  });
+  //
+  //
+  // $('.fantasynewsNBA').hide();
+  // var qbfantasy = $('.qbfantasy');
+  // var rbfantasy = $('.rbfantasy');
+  // var wrfantasy = $('.wrfantasy');
+  // var tefantasy = $('.tefantasy');
+  // var kfantasy = $('.kfantasy');
+  // var deffantasy = $('.deffantasy');
+  //
+  // rbfantasy.hide();
+  // wrfantasy.hide();
+  // tefantasy.hide();
+  // kfantasy.hide();
+  // deffantasy.hide();
+  //
+  // $('#FPNewsNBAButton').on('click', function(){
+  //   $('.fantasynewsNFL').hide();
+  //   $('.fantasynewsNBA').show();
+  // });
+  // $('#FPNewsNFLButton').on('click', function(){
+  //   $('.fantasynewsNBA').hide();
+  //   $('.fantasynewsNFL').show();
+  // });
+  //
+  // $("#qbLink").on('click', function(e){
+  //   e.preventDefault();
+  //   rbfantasy.hide();
+  //   wrfantasy.hide();
+  //   tefantasy.hide();
+  //   kfantasy.hide();
+  //   deffantasy.hide();
+  //   qbfantasy.show();
+  // });
+  //
+  // $("#rbLink").on('click', function(e){
+  //   e.preventDefault();
+  //   qbfantasy.hide();
+  //   wrfantasy.hide();
+  //   tefantasy.hide();
+  //   kfantasy.hide();
+  //   deffantasy.hide();
+  //   rbfantasy.show();
+  // });
+  //
+  // $("#wrLink").on('click', function(e){
+  //   e.preventDefault();
+  //   qbfantasy.hide();
+  //   rbfantasy.hide();
+  //   tefantasy.hide();
+  //   kfantasy.hide();
+  //   deffantasy.hide();
+  //   wrfantasy.show();
+  // });
+  //
+  // $("#teLink").on('click', function(e){
+  //   e.preventDefault();
+  //   qbfantasy.hide();
+  //   wrfantasy.hide();
+  //   rbfantasy.hide();
+  //   kfantasy.hide();
+  //   deffantasy.hide();
+  //   tefantasy.show();
+  // });
+  //
+  // $("#kLink").on('click', function(e){
+  //   e.preventDefault();
+  //   qbfantasy.hide();
+  //   wrfantasy.hide();
+  //   tefantasy.hide();
+  //   rbfantasy.hide();
+  //   deffantasy.hide();
+  //   kfantasy.show();
+  // });
+  //
+  // $("#defLink").on('click', function(e){
+  //   e.preventDefault();
+  //   qbfantasy.hide();
+  //   wrfantasy.hide();
+  //   tefantasy.hide();
+  //   kfantasy.hide();
+  //   rbfantasy.hide();
+  //   deffantasy.show();
+  // });
 });
