@@ -51,6 +51,10 @@ router.get('/NBA', function (req,res){
       res.render('fantasydata/NBAfantasy_data', hbsObject);
 });
 
+router.get('/Contact', function(req,res){
+  res.render('users/contactus');
+});
+
 
 router.get('/Profile', function(req,res){
     res.render('users/profile');
