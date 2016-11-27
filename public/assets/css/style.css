@@ -16,6 +16,8 @@ body,html{
   height: 300px;
   overflow-x: scroll;
   overflow-y: scroll;
+  background-color:white;
+  border-radius: 5%;
 }
 
 .playerfalse {
@@ -28,10 +30,10 @@ body,html{
 .chatdiv {
   bottom: 0;
   position: fixed;
-  right:10%;
+  right:5%;
 }
 .chatdivshow {
-  right:10%;
+  right:5%;
   overflow:auto;
   background-color: #021A3A;
   width:250px;
@@ -51,6 +53,13 @@ body,html{
     border-radius:8px;
   }
 
+  .chatbutton {
+    /*background-color: #021A3A;
+    color: #edb82a;*/
+    background-color: #edb82a;
+    color: #021A3A;
+    font-size: 16px;
+  }
 .closechat {
     margin-left: 90%;
     font-size: 18px;
@@ -82,4 +91,39 @@ td.highlight {
 
 .NFLtables {
   list-style: none;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 7px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+
+div.tooltip-inner {
+  max-width: 350px;
+}
+
+
+.nbaposition {
+background-color:#021A3A;
+color:white;
+}
+.highlight {
+background-color:#edb82a;
+color:black;
+}
+/*========*/
+
+table.dataTable thead .sorting,
+table.dataTable thead .sorting_asc,
+table.dataTable thead .sorting_desc {
+    background: none;
+}
+.navlist {
+    list-style: none;
 }

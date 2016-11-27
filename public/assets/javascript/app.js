@@ -17,6 +17,7 @@ $(document).ready(function(){
   });
     var nbaFilterPosition = function(){
       // $(".tableNbaFantasy").dataTable().fnDestroy();
+
       var table = $('.tableNbaFantasy').DataTable();
       $(document).on("click",'.nbaposition', function(){
         $('.nbaposition').removeClass('highlight');
@@ -54,6 +55,15 @@ $(document).ready(function(){
             // "fixedColumns": true,
             "paging": false,
 
+            // scrollY:        "700px",
+            // scrollX:        true,
+            // scrollCollapse: true,
+            // paging:         false,
+            // fixedColumns:   {
+            //     leftColumns: 1,
+            //     rightColumns: 1
+            // },
+
             columns: [
               { data: 'gsx$player.$t' },
               { data: 'gsx$ha.$t' },
@@ -69,16 +79,16 @@ $(document).ready(function(){
               { data: 'gsx$ppm.$t' },
               { data: 'gsx$ovp.$t' },
               { data: 'gsx$projscore.$t' },
+              { data: 'gsx$player.$t' },
               { data: 'gsx$gameline.$t' },
               { data: 'gsx$projectedpts.$t' },
               { data: 'gsx$value.$t' },
-              { data: 'gsx$expectedvalue.$t' },
-              { data: 'gsx$gamesplayed.$t' },
               { data: 'gsx$salaryadjust.$t' },
               { data: 'gsx$recpr.$t' },
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$criteriaranking.$t' },
-              { data: 'gsx$delete.$t' }
+              { data: 'gsx$delete.$t' },
+              { data: 'gsx$gamesplayed.$t' }
         ],
         "columnDefs": [
           { className: "playername", "targets": [ 0 ] },
@@ -180,7 +190,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 14,
+            "targets": 15,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData >= 212 ) {
                 $(td).css('background-color', 'lightgreen')
@@ -212,7 +222,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 23,
+            "targets": 22,
             "createdCell": function (td, cellData, rowData, row, col) {
               if ( cellData == "KEEP" ) {
                 $(td).css('background-color', 'lightgreen')

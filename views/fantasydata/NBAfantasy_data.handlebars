@@ -5,54 +5,12 @@
   <title>WeAreFantasy</title>
       <!-- Latest compiled and minified CSS -->
 
-
-
-      <link rel="stylesheet" href="/assets/css/style.css">
-
-
-  <style media="screen">
-  /*Change the size here*/
-  /*th, td { white-space: nowrap; }
-  div.dataTables_wrapper {
-      width: 800px;
-      margin: 0 auto;
-  }*/
-
-::-webkit-scrollbar {
-    -webkit-appearance: none;
-    width: 7px;
-}
-::-webkit-scrollbar-thumb {
-    border-radius: 4px;
-    background-color: rgba(0,0,0,.5);
-    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
-
-
-div.tooltip-inner {
-    max-width: 350px;
-}
-
-
-.nbaposition {
-  background-color:#021A3A;
-  color:white;
-}
-.highlight {
-  background-color:#edb82a;
-  color:black;
-}
-/*========*/
-  </style>
 </head>
 <body>
   <div class="container-fluid NFLTeamTable">
     <div class="row">
       <div style='font-size:24px;' class="col-md-7">
         <h2>What will go here is:</h2>
-        <!-- <button class='fadeORdelete' type="button" data-fadeORkeep='All' name="button">All</button>
-        <button class='fadeORdelete' type="button" data-fadeORkeep='KEEP' name="button">KEEP</button>
-        <button class='fadeORdelete' type="button" data-fadeORkeep='DELETE' name="button">DELETE</button> -->
         <button class='nbaposition' type="button" data-position='All' name="button">All</button>
         <button class='nbaposition' type="button" data-position='PG' name="button">PG</button>
         <button class='nbaposition' type="button" data-position='SG' name="button">SG</button>
@@ -74,7 +32,7 @@ div.tooltip-inner {
         <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <!-- put images here -->
-            <table class="table table-hover tableNbaFantasy secondtablenbafantasy">
+            <table class="table table-striped table-hover tableNbaFantasy" cellspacing="0" width="100%">
               <thead>
                 <tr style='font-size: 16px;'>
                   <th>Player<a href="#" data-toggle="tooltip" data-placement="top" title="Player names"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
@@ -91,16 +49,16 @@ div.tooltip-inner {
                   <th>PPM<a href="#" data-toggle="tooltip" data-placement="top" title="How many fantasy points a player gets per minute"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>OVP<a href="#" data-toggle="tooltip" data-placement="top" title="How well the opponent defends that specific position"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>ProjTeamScore<a href="#" data-toggle="tooltip" data-placement="top" title="Teams projected score"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>Player<a href="#" data-toggle="tooltip" data-placement="top" title="Player names"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>GameLine<a href="#" data-toggle="tooltip" data-placement="top" title="Total team points"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>ProjectedPts<a href="#" data-toggle="tooltip" data-placement="top" title="Projected points of a specific player"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>Value<a href="#" data-toggle="tooltip" data-placement="top" title="Projected value of a specific player based on projections"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
-                  <th>ExpectedValue<a href="#" data-toggle="tooltip" data-placement="top" title="Projected value of a specific player based on previous games"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
-                  <th>GamesPlayed<a href="#" data-toggle="tooltip" data-placement="top" title="How many games a player has played"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>SalaryAdjust<a href="#" data-toggle="tooltip" data-placement="top" title="How much their salary has either increased or decreased from previous game"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>RecentPerformance<a href="#" data-toggle="tooltip" data-placement="top" title="Their last game compared to their average"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>PTsVPos<a href="#" data-toggle="tooltip" data-placement="top" title="How many points the opponent gives up against a specific position"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>CriteriaRanking<a href="#" data-toggle="tooltip" data-placement="top" title="My rankings for players. 6 is the best. 5 is ok. Everybody below be catious"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>Keep/Fade<a href="#" data-toggle="tooltip" data-placement="top" title="Our preference of who you should play or fade"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>GamesPlayed<a href="#" data-toggle="tooltip" data-placement="top" title="How many games a player has played"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                 </tr>
               </thead>
             </table>
@@ -110,9 +68,6 @@ div.tooltip-inner {
     </div>
   </div>
 
-
-
-
 <script type="text/javascript">
   $(function () {
     $('[data-toggle="tooltip"]').tooltip({
@@ -121,4 +76,6 @@ div.tooltip-inner {
       'container':'body'
     })
   });
+
+
 </script>
