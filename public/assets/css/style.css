@@ -12,6 +12,36 @@ body,html{
   color: #edb82a;
 }
 
+
+/*// all my added stuff*/
+.playername{
+  
+
+
+}
+/*//fixed row*/
+.table.table-hover.tableNbaFantasy.secondtablenbafantasy.no-footer.dataTable.DTFC_Cloned{
+
+
+
+
+
+}.DTFC_LeftHeadWrapper{
+  height: 39.5px;
+
+}#DataTables_Table_1_length{
+
+}
+#DataTables_Table_1_wrapper{
+  display: none;
+}
+#DataTables_Table_2_wrapper{
+  display: none;
+}
+.paginate_button{
+  display: none !important;
+}
+
 .suggestedPlayersNBA {
   height: 300px;
   overflow-x: scroll;

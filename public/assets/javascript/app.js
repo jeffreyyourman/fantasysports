@@ -44,15 +44,16 @@ $(document).ready(function(){
 
 
             data: data.feed.entry,
-            "dom": '<"NBAimages">frtip',
+            "dom": '<"NBAimages">fr<t>ip',
             "scrollY": "600px",
             "scrollX": true,
             "scrollCollapse": true,
+            "fixedHeader": true,
             "pageLength": 50,
             "order": [[ 9, "desc" ]],
-            "fixedHeader": true,
-            "fixedColumns": true,
             "paging": false,
+            "fixedColumns": true,
+            
 
             columns: [
               { data: 'gsx$player.$t' },
@@ -81,9 +82,9 @@ $(document).ready(function(){
               { data: 'gsx$delete.$t' }
         ],
         "columnDefs": [
-          { className: "recentPerformance", "targets": [ 19 ] },
+          { className: "playername", "targets": [ 0 ] },
           { // Date columns
-            "targets": 19,
+            "targets": 20,
             "createdCell": function (td, cellData, rowData, row, col) {
               var recentPerformance = rowData.gsx$recpr.$t;
 
