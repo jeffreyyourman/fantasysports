@@ -19,11 +19,11 @@
         <button class='nbaposition' type="button" data-position='C' name="button">C</button>
 
       </div>
-      <div style='font-size:24px;' class="col-md-5">
+      <!-- <div style='font-size:24px;' class="col-md-5">
         <h2>My Suggested Fanduel NBA Players</h2>
         <ul class='suggestedPlayersNBA'>
         </ul>
-      </div>
+      </div> -->
     </div>
   </div>
   <div id='playerlist' class="container-fluid NFLtables">
@@ -68,7 +68,35 @@
     </div>
   </div>
 
+
+  <div class="suggestedbuttondiv">
+      <div class="suggesteddiv">
+          <button style='text-align:center;' type="button" class="btn btn-default suggestedbutton">My Suggested Players</button>
+      </div>
+  </div>
+  <div class="suggesteddivshow">
+      <div id="sizer">
+          <a class='closesuggested' href="#">x</a>
+      </div>
+      <h4 class='suggestedPlayersh4'>My Suggested Fanduel NBA Players</h4>
+      <div class="suggestedDivScroll">
+        <ul class='suggestedPlayersNBA'></ul>
+      </div>
+
+      <br>
+  </div>
+
 <script type="text/javascript">
+$('.suggesteddivshow').hide();
+$('.suggestedbutton').on('click', function() {
+    $('.suggesteddiv').hide();
+    $('.suggesteddivshow').show();
+});
+$('.closesuggested').on('click', function() {
+    $(".suggesteddivshow").hide();
+    $('.suggesteddiv').show();
+    return false;
+});
   $(function () {
     $('[data-toggle="tooltip"]').tooltip({
       'selector': '',
