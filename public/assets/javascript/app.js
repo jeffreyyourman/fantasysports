@@ -253,7 +253,6 @@ $(document).ready(function(){
           { // Date columns FF8700
             "targets": 19,
             "createdCell": function (td, cellData, rowData, row, col) {
-              console.log(rowData);
               var varDataCell = cellData;
               if (( varDataCell <= 10 ) || (varDataCell == '-')) {
                 $(td).css('background-color', 'lightgreen')
