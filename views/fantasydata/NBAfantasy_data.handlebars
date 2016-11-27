@@ -4,14 +4,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
       <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css">
+
+
+
+      <link rel="stylesheet" href="/assets/css/style.css">
 
 
   <style media="screen">
   /*Change the size here*/
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+
 div.tooltip-inner {
     max-width: 350px;
 }
+
+
 .nbaposition {
   background-color:#021A3A;
   color:white;
@@ -73,7 +90,7 @@ div.tooltip-inner {
                   <th>Value<a href="#" data-toggle="tooltip" data-placement="top" title="Projected value of a specific player based on projections"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>ExpectedValue<a href="#" data-toggle="tooltip" data-placement="top" title="Projected value of a specific player based on previous games"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>GamesPlayed<a href="#" data-toggle="tooltip" data-placement="top" title="How many games a player has played"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
-                  <th>SalaryAdjust<a href="#" data-toggle="tooltip" data-placement="top" title="how much their salary has either increased or decreased"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
+                  <th>SalaryAdjust<a href="#" data-toggle="tooltip" data-placement="top" title="How much their salary has either increased or decreased from previous game"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>RecentPerformance<a href="#" data-toggle="tooltip" data-placement="top" title="Their last game compared to their average"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>PTsVPos<a href="#" data-toggle="tooltip" data-placement="top" title="How many points the opponent gives up against a specific position"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
                   <th>CriteriaRanking<a href="#" data-toggle="tooltip" data-placement="top" title="My rankings for players. 6 is the best. 5 is ok. Everybody below be catious"><span class="infoicon glyphicon glyphicon-info-sign"></span></a></th>
@@ -86,6 +103,10 @@ div.tooltip-inner {
       </div>
     </div>
   </div>
+
+
+
+
 <script type="text/javascript">
   $(function () {
     $('[data-toggle="tooltip"]').tooltip({

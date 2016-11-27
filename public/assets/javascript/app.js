@@ -21,12 +21,10 @@ $(document).ready(function(){
       $(document).on("click",'.nbaposition', function(){
         $('.nbaposition').removeClass('highlight');
         $(this).addClass('highlight');
-        var position = $(this).data('position');
-        console.log(position);
+        var position = $(this).attr('data-position');
         if (position == 'All') {
           //returns all players back
         } else {
-
           $.fn.dataTable.ext.search.push(
               function( settings, data, dataIndex ) {
                   return  data[2] == position
@@ -44,16 +42,17 @@ $(document).ready(function(){
       $(".tableNbaFantasy").dataTable().fnDestroy();
       var table = $('.tableNbaFantasy').DataTable({
 
+
             data: data.feed.entry,
             "dom": '<"NBAimages">frtip',
+            "scrollY": "600px",
             "scrollX": true,
+            "scrollCollapse": true,
             "pageLength": 50,
             "order": [[ 9, "desc" ]],
-
-
-            "ordering": true,
-            "info":     false,
-            "bLengthChange": true,
+            "fixedHeader": true,
+            "fixedColumns": true,
+            "paging": false,
 
             columns: [
               { data: 'gsx$player.$t' },
@@ -81,7 +80,6 @@ $(document).ready(function(){
               { data: 'gsx$criteriaranking.$t' },
               { data: 'gsx$delete.$t' }
         ],
-
         "columnDefs": [
           { className: "recentPerformance", "targets": [ 19 ] },
           { // Date columns

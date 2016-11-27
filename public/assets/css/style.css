@@ -14,7 +14,8 @@ body,html{
 
 .suggestedPlayersNBA {
   height: 300px;
-  overflow-x: auto;
+  overflow-x: scroll;
+  overflow-y: scroll;
 }
 
 .playerfalse {
