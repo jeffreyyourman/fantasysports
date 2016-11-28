@@ -65,6 +65,15 @@ $(document).ready(function(){
             "order": [[ 9, "desc" ]],
             "paging": false,
             "fixedColumns": true,
+            // "buttons": [
+            //     {
+            //         "text": 'Table Description',
+            //         "className": "tableDescription",
+            //         // action: function ( e, dt, node, config ) {
+            //         //     alert( 'Button activated' );
+            //         // }
+            //     }
+            // ],
 
 
             columns: [
@@ -133,7 +142,7 @@ $(document).ready(function(){
               } else if ((display >= 23) && (display <= 25.999)) {
                 $(td).css('background-color', '#FFBD00')
               } else if ((display >= 19) && (display <= 22.999)) {
-                $(td).css('background-color', '#FFBD00')
+                $(td).css('background-color', '#FF8700')
               } else if ((display >= 0) && (display <= 18.999) || (varDataCell = '-')) {
                 $(td).css('background-color', 'red')
               }
@@ -150,7 +159,7 @@ $(document).ready(function(){
               } else if ((varDataCell >= "20.00%") && (varDataCell <= "26.99%")) {
                 $(td).css('background-color', '#FFBD00')
               } else if ((varDataCell >= "16.00%") && (varDataCell <= "19.99%")) {
-                $(td).css('background-color', '#FFBD00')
+                $(td).css('background-color', '#FF8700')
               } else if (varDataCell <= "15.99%") {
                 $(td).css('background-color', 'red')
               }
@@ -304,7 +313,9 @@ $(document).ready(function(){
           }
 
         ]
+
     });
+    $("div.NBAimages").html('<button style="background-color:021A3A; color:white;" type="button" class="btn btn-info btn-lg tableDescription" data-toggle="modal" data-target="#myModal">Table Description</button>');
   }
 
 // Player rank is a players rank (lower better ) and rvp is the opponents rank at that pos (higher better)
