@@ -315,7 +315,7 @@ $(document).ready(function(){
         ]
 
     });
-    $("div.NBAimages").html('<button style="background-color:021A3A; color:white;" type="button" class="btn btn-info btn-lg tableDescription" data-toggle="modal" data-target="#myModal">Table Description</button>');
+    $("div.NBAimages").html('<button style="background-color:#021A3A; color:white;" type="button" class="btn btn-info btn-lg tableDescription" data-toggle="modal" data-target="#myModal">Table Description</button>');
   }
 
 // Player rank is a players rank (lower better ) and rvp is the opponents rank at that pos (higher better)

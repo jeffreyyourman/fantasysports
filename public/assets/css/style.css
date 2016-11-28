@@ -199,15 +199,7 @@ td.highlight {
 background-color:#021A3A;
 color:white;
 }
-/*button.dt-button, div.dt-button, a.dt-button {
-  background-image: linear-gradient(to bottom, #021A3A 0%, #021A3A 100%);
-  color:white;
-}
 
-button.dt-button:hover:not(.disabled), div.dt-button:hover:not(.disabled), a.dt-button:hover:not(.disabled) {
-    background-image: linear-gradient(to bottom, #edb82a 0%, #edb82a 100%);
-    color:black;
-}*/
 .btn-group-lg>.btn, .btn-lg {
   padding: 5px 10px;
   font-size: 16px;
