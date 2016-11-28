@@ -413,3 +413,45 @@
         ]
       });
     });
+
+    // {
+    //   "name": "fantasysports",
+    //   "version": "1.0.0",
+    //   "description": "",
+    //   "main": "server.js",
+    //   "scripts": {
+    //     "test": "echo \"Error: no test specified\" && exit 1",
+    //     "start": "node server.js"
+    //   },
+    //   "author": "",
+    //   "license": "ISC",
+    //   "repository": {
+    //     "type": "git",
+    //     "url": "git+https://https://github.com/jeffreyyourman/fantasysports.git"
+    //   },
+    //   "dependencies": {
+    //     "bcryptjs": "^2.3.0",
+    //     "body-parser": "^1.15.2",
+    //     "callevery": "^1.0.6",
+    //     "cheerio": "^0.22.0",
+    //     "cookie-parser": "^1.4.3",
+    //     "csv": "^1.1.0",
+    //     "dateformat": "^1.0.12",
+    //     "express": "^4.14.0",
+    //     "express-handlebars": "^3.0.0",
+    //     "express-session": "^1.14.1",
+    //     "fs": "0.0.1-security",
+    //     "google-auth-library": "^0.9.8",
+    //     "googleapis": "^14.0.0",
+    //     "method-override": "^2.3.6",
+    //     "moment": "^2.15.1",
+    //     "multer": "^1.2.0",
+    //     "mysql": "^2.11.1",
+    //     "node-schedule": "^1.2.0",
+    //     "nodemailer": "^2.5.0",
+    //     "nodemon": "^1.10.2",
+    //     "readline": "^1.3.0",
+    //     "request": "^2.76.0",
+    //     "util": "^0.10.3"
+    //   }
+    // }

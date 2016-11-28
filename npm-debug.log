@@ -1,0 +1,780 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'prune' ]
+2 info using npm@3.9.5
+3 info using node@v6.2.2
+4 verbose unbuild node_modules/addressparser
+5 verbose unbuild node_modules/append-field
+6 verbose unbuild node_modules/bcryptjs
+7 verbose unbuild node_modules/bluebird
+8 verbose unbuild node_modules/buffer-equal-constant-time
+9 verbose unbuild node_modules/buildmail
+10 verbose unbuild node_modules/callevery
+11 verbose unbuild node_modules/busboy
+12 verbose unbuild node_modules/concat-stream
+13 verbose unbuild node_modules/cron-parser
+14 verbose unbuild node_modules/csv-generate
+15 verbose unbuild node_modules/csv-stringify
+16 verbose unbuild node_modules/csv-parse
+17 verbose unbuild node_modules/csv
+18 verbose unbuild node_modules/ctype
+19 verbose unbuild node_modules/dicer
+20 verbose unbuild node_modules/ecdsa-sig-formatter
+21 verbose unbuild node_modules/fs
+22 verbose unbuild node_modules/gtoken
+23 verbose unbuild node_modules/httpntlm
+24 verbose unbuild node_modules/httpreq
+25 verbose unbuild node_modules/ip
+26 verbose unbuild node_modules/jws
+27 verbose unbuild node_modules/libmime
+28 verbose unbuild node_modules/libqp
+29 verbose unbuild node_modules/libbase64
+30 verbose unbuild node_modules/lodash
+31 verbose unbuild node_modules/lodash.get
+32 verbose unbuild node_modules/lodash.noop
+33 verbose unbuild node_modules/mailcomposer
+34 verbose unbuild node_modules/long-timeout
+35 verbose unbuild node_modules/node-forge
+36 verbose unbuild node_modules/node-schedule
+37 verbose unbuild node_modules/nodemailer-direct-transport
+38 verbose unbuild node_modules/nodemailer
+39 verbose unbuild node_modules/nodemailer-fetch
+40 verbose unbuild node_modules/nodemailer-shared
+41 verbose unbuild node_modules/nodemailer-smtp-pool
+42 verbose unbuild node_modules/nodemailer-wellknown
+43 verbose unbuild node_modules/nodemailer-smtp-transport
+44 verbose unbuild node_modules/readline
+45 verbose unbuild node_modules/smtp-connection
+46 verbose unbuild node_modules/smart-buffer
+47 verbose unbuild node_modules/socks
+48 verbose unbuild node_modules/stream-transform
+49 verbose unbuild node_modules/string-template
+50 verbose unbuild node_modules/streamsearch
+51 verbose unbuild node_modules/typedarray
+52 verbose unbuild node_modules/underscore
+53 verbose unbuild node_modules/util
+54 verbose unbuild node_modules/google-p12-pem
+55 verbose unbuild node_modules/bl
+56 verbose unbuild node_modules/form-data
+57 verbose unbuild node_modules/googleapis
+58 verbose unbuild node_modules/jwa
+59 verbose unbuild node_modules/multer
+60 verbose unbuild node_modules/google-auth-library
+61 verbose unbuild node_modules/base64url
+62 info lifecycle addressparser@1.0.1~preuninstall: addressparser@1.0.1
+63 info lifecycle append-field@0.1.0~preuninstall: append-field@0.1.0
+64 info lifecycle bcryptjs@2.3.0~preuninstall: bcryptjs@2.3.0
+65 info lifecycle bluebird@2.11.0~preuninstall: bluebird@2.11.0
+66 info lifecycle buffer-equal-constant-time@1.0.1~preuninstall: buffer-equal-constant-time@1.0.1
+67 info lifecycle buildmail@3.8.0~preuninstall: buildmail@3.8.0
+68 info lifecycle callevery@1.0.6~preuninstall: callevery@1.0.6
+69 info lifecycle busboy@0.2.13~preuninstall: busboy@0.2.13
+70 info lifecycle concat-stream@1.4.10~preuninstall: concat-stream@1.4.10
+71 info lifecycle cron-parser@1.1.0~preuninstall: cron-parser@1.1.0
+72 info lifecycle csv-generate@1.0.0~preuninstall: csv-generate@1.0.0
+73 info lifecycle csv-parse@1.1.7~preuninstall: csv-parse@1.1.7
+74 info lifecycle csv-stringify@1.0.4~preuninstall: csv-stringify@1.0.4
+75 info lifecycle csv@1.1.0~preuninstall: csv@1.1.0
+76 info lifecycle ctype@0.5.3~preuninstall: ctype@0.5.3
+77 info lifecycle dicer@0.2.5~preuninstall: dicer@0.2.5
+78 info lifecycle ecdsa-sig-formatter@1.0.7~preuninstall: ecdsa-sig-formatter@1.0.7
+79 info lifecycle fs@0.0.1-security~preuninstall: fs@0.0.1-security
+80 info lifecycle gtoken@1.2.1~preuninstall: gtoken@1.2.1
+81 info lifecycle httpntlm@1.6.1~preuninstall: httpntlm@1.6.1
+82 info lifecycle httpreq@0.4.22~preuninstall: httpreq@0.4.22
+83 info lifecycle ip@1.1.3~preuninstall: ip@1.1.3
+84 info lifecycle jws@3.0.0~preuninstall: jws@3.0.0
+85 info lifecycle libmime@2.0.3~preuninstall: libmime@2.0.3
+86 info lifecycle libqp@1.1.0~preuninstall: libqp@1.1.0
+87 info lifecycle libbase64@0.1.0~preuninstall: libbase64@0.1.0
+88 info lifecycle lodash@4.15.0~preuninstall: lodash@4.15.0
+89 info lifecycle lodash.get@4.4.2~preuninstall: lodash.get@4.4.2
+90 info lifecycle lodash.noop@3.0.1~preuninstall: lodash.noop@3.0.1
+91 info lifecycle mailcomposer@3.10.0~preuninstall: mailcomposer@3.10.0
+92 info lifecycle long-timeout@0.0.2~preuninstall: long-timeout@0.0.2
+93 info lifecycle node-forge@0.6.42~preuninstall: node-forge@0.6.42
+94 info lifecycle node-schedule@1.2.0~preuninstall: node-schedule@1.2.0
+95 info lifecycle nodemailer-direct-transport@3.2.0~preuninstall: nodemailer-direct-transport@3.2.0
+96 info lifecycle nodemailer@2.5.0~preuninstall: nodemailer@2.5.0
+97 info lifecycle nodemailer-fetch@1.4.0~preuninstall: nodemailer-fetch@1.4.0
+98 info lifecycle nodemailer-shared@1.0.5~preuninstall: nodemailer-shared@1.0.5
+99 info lifecycle nodemailer-smtp-pool@2.7.0~preuninstall: nodemailer-smtp-pool@2.7.0
+100 info lifecycle nodemailer-wellknown@0.1.10~preuninstall: nodemailer-wellknown@0.1.10
+101 info lifecycle nodemailer-smtp-transport@2.6.0~preuninstall: nodemailer-smtp-transport@2.6.0
+102 info lifecycle smtp-connection@2.8.0~preuninstall: smtp-connection@2.8.0
+103 info lifecycle readline@1.3.0~preuninstall: readline@1.3.0
+104 info lifecycle smart-buffer@1.0.11~preuninstall: smart-buffer@1.0.11
+105 info lifecycle socks@1.1.9~preuninstall: socks@1.1.9
+106 info lifecycle stream-transform@0.1.1~preuninstall: stream-transform@0.1.1
+107 info lifecycle string-template@1.0.0~preuninstall: string-template@1.0.0
+108 info lifecycle streamsearch@0.1.2~preuninstall: streamsearch@0.1.2
+109 info lifecycle typedarray@0.0.6~preuninstall: typedarray@0.0.6
+110 info lifecycle underscore@1.7.0~preuninstall: underscore@1.7.0
+111 info lifecycle util@0.10.3~preuninstall: util@0.10.3
+112 info lifecycle bl@1.1.2~preuninstall: bl@1.1.2
+113 info lifecycle form-data@1.0.1~preuninstall: form-data@1.0.1
+114 info lifecycle googleapis@14.0.0~preuninstall: googleapis@14.0.0
+115 info lifecycle jwa@1.0.2~preuninstall: jwa@1.0.2
+116 info lifecycle multer@1.2.0~preuninstall: multer@1.2.0
+117 info lifecycle google-auth-library@0.9.8~preuninstall: google-auth-library@0.9.8
+118 silly lifecycle addressparser@1.0.1~preuninstall: no script for preuninstall, continuing
+119 silly lifecycle append-field@0.1.0~preuninstall: no script for preuninstall, continuing
+120 silly lifecycle bcryptjs@2.3.0~preuninstall: no script for preuninstall, continuing
+121 silly lifecycle bluebird@2.11.0~preuninstall: no script for preuninstall, continuing
+122 silly lifecycle buffer-equal-constant-time@1.0.1~preuninstall: no script for preuninstall, continuing
+123 silly lifecycle buildmail@3.8.0~preuninstall: no script for preuninstall, continuing
+124 silly lifecycle callevery@1.0.6~preuninstall: no script for preuninstall, continuing
+125 silly lifecycle busboy@0.2.13~preuninstall: no script for preuninstall, continuing
+126 silly lifecycle concat-stream@1.4.10~preuninstall: no script for preuninstall, continuing
+127 silly lifecycle cron-parser@1.1.0~preuninstall: no script for preuninstall, continuing
+128 silly lifecycle csv-generate@1.0.0~preuninstall: no script for preuninstall, continuing
+129 silly lifecycle csv-parse@1.1.7~preuninstall: no script for preuninstall, continuing
+130 silly lifecycle csv-stringify@1.0.4~preuninstall: no script for preuninstall, continuing
+131 silly lifecycle csv@1.1.0~preuninstall: no script for preuninstall, continuing
+132 silly lifecycle ctype@0.5.3~preuninstall: no script for preuninstall, continuing
+133 silly lifecycle dicer@0.2.5~preuninstall: no script for preuninstall, continuing
+134 silly lifecycle ecdsa-sig-formatter@1.0.7~preuninstall: no script for preuninstall, continuing
+135 silly lifecycle fs@0.0.1-security~preuninstall: no script for preuninstall, continuing
+136 silly lifecycle gtoken@1.2.1~preuninstall: no script for preuninstall, continuing
+137 silly lifecycle httpntlm@1.6.1~preuninstall: no script for preuninstall, continuing
+138 silly lifecycle httpreq@0.4.22~preuninstall: no script for preuninstall, continuing
+139 silly lifecycle ip@1.1.3~preuninstall: no script for preuninstall, continuing
+140 silly lifecycle jws@3.0.0~preuninstall: no script for preuninstall, continuing
+141 silly lifecycle libmime@2.0.3~preuninstall: no script for preuninstall, continuing
+142 silly lifecycle libqp@1.1.0~preuninstall: no script for preuninstall, continuing
+143 silly lifecycle libbase64@0.1.0~preuninstall: no script for preuninstall, continuing
+144 silly lifecycle lodash@4.15.0~preuninstall: no script for preuninstall, continuing
+145 silly lifecycle lodash.get@4.4.2~preuninstall: no script for preuninstall, continuing
+146 silly lifecycle lodash.noop@3.0.1~preuninstall: no script for preuninstall, continuing
+147 silly lifecycle mailcomposer@3.10.0~preuninstall: no script for preuninstall, continuing
+148 silly lifecycle long-timeout@0.0.2~preuninstall: no script for preuninstall, continuing
+149 silly lifecycle node-forge@0.6.42~preuninstall: no script for preuninstall, continuing
+150 silly lifecycle node-schedule@1.2.0~preuninstall: no script for preuninstall, continuing
+151 silly lifecycle nodemailer-direct-transport@3.2.0~preuninstall: no script for preuninstall, continuing
+152 silly lifecycle nodemailer@2.5.0~preuninstall: no script for preuninstall, continuing
+153 silly lifecycle nodemailer-fetch@1.4.0~preuninstall: no script for preuninstall, continuing
+154 silly lifecycle nodemailer-shared@1.0.5~preuninstall: no script for preuninstall, continuing
+155 silly lifecycle nodemailer-smtp-pool@2.7.0~preuninstall: no script for preuninstall, continuing
+156 silly lifecycle nodemailer-wellknown@0.1.10~preuninstall: no script for preuninstall, continuing
+157 silly lifecycle nodemailer-smtp-transport@2.6.0~preuninstall: no script for preuninstall, continuing
+158 silly lifecycle smtp-connection@2.8.0~preuninstall: no script for preuninstall, continuing
+159 silly lifecycle readline@1.3.0~preuninstall: no script for preuninstall, continuing
+160 silly lifecycle smart-buffer@1.0.11~preuninstall: no script for preuninstall, continuing
+161 silly lifecycle socks@1.1.9~preuninstall: no script for preuninstall, continuing
+162 silly lifecycle stream-transform@0.1.1~preuninstall: no script for preuninstall, continuing
+163 silly lifecycle string-template@1.0.0~preuninstall: no script for preuninstall, continuing
+164 silly lifecycle streamsearch@0.1.2~preuninstall: no script for preuninstall, continuing
+165 silly lifecycle typedarray@0.0.6~preuninstall: no script for preuninstall, continuing
+166 silly lifecycle underscore@1.7.0~preuninstall: no script for preuninstall, continuing
+167 silly lifecycle util@0.10.3~preuninstall: no script for preuninstall, continuing
+168 info lifecycle google-p12-pem@0.1.0~preuninstall: google-p12-pem@0.1.0
+169 silly lifecycle bl@1.1.2~preuninstall: no script for preuninstall, continuing
+170 silly lifecycle form-data@1.0.1~preuninstall: no script for preuninstall, continuing
+171 silly lifecycle googleapis@14.0.0~preuninstall: no script for preuninstall, continuing
+172 silly lifecycle jwa@1.0.2~preuninstall: no script for preuninstall, continuing
+173 silly lifecycle multer@1.2.0~preuninstall: no script for preuninstall, continuing
+174 silly lifecycle google-auth-library@0.9.8~preuninstall: no script for preuninstall, continuing
+175 info lifecycle base64url@1.0.6~preuninstall: base64url@1.0.6
+176 info lifecycle addressparser@1.0.1~uninstall: addressparser@1.0.1
+177 info lifecycle append-field@0.1.0~uninstall: append-field@0.1.0
+178 info lifecycle bcryptjs@2.3.0~uninstall: bcryptjs@2.3.0
+179 info lifecycle bluebird@2.11.0~uninstall: bluebird@2.11.0
+180 info lifecycle buffer-equal-constant-time@1.0.1~uninstall: buffer-equal-constant-time@1.0.1
+181 info lifecycle buildmail@3.8.0~uninstall: buildmail@3.8.0
+182 info lifecycle callevery@1.0.6~uninstall: callevery@1.0.6
+183 info lifecycle busboy@0.2.13~uninstall: busboy@0.2.13
+184 info lifecycle concat-stream@1.4.10~uninstall: concat-stream@1.4.10
+185 info lifecycle cron-parser@1.1.0~uninstall: cron-parser@1.1.0
+186 info lifecycle csv-generate@1.0.0~uninstall: csv-generate@1.0.0
+187 info lifecycle csv-parse@1.1.7~uninstall: csv-parse@1.1.7
+188 info lifecycle csv-stringify@1.0.4~uninstall: csv-stringify@1.0.4
+189 info lifecycle csv@1.1.0~uninstall: csv@1.1.0
+190 info lifecycle ctype@0.5.3~uninstall: ctype@0.5.3
+191 info lifecycle dicer@0.2.5~uninstall: dicer@0.2.5
+192 info lifecycle ecdsa-sig-formatter@1.0.7~uninstall: ecdsa-sig-formatter@1.0.7
+193 info lifecycle fs@0.0.1-security~uninstall: fs@0.0.1-security
+194 info lifecycle gtoken@1.2.1~uninstall: gtoken@1.2.1
+195 info lifecycle httpntlm@1.6.1~uninstall: httpntlm@1.6.1
+196 info lifecycle httpreq@0.4.22~uninstall: httpreq@0.4.22
+197 info lifecycle ip@1.1.3~uninstall: ip@1.1.3
+198 info lifecycle jws@3.0.0~uninstall: jws@3.0.0
+199 info lifecycle libmime@2.0.3~uninstall: libmime@2.0.3
+200 info lifecycle libqp@1.1.0~uninstall: libqp@1.1.0
+201 info lifecycle libbase64@0.1.0~uninstall: libbase64@0.1.0
+202 info lifecycle lodash@4.15.0~uninstall: lodash@4.15.0
+203 info lifecycle lodash.get@4.4.2~uninstall: lodash.get@4.4.2
+204 info lifecycle lodash.noop@3.0.1~uninstall: lodash.noop@3.0.1
+205 info lifecycle mailcomposer@3.10.0~uninstall: mailcomposer@3.10.0
+206 info lifecycle long-timeout@0.0.2~uninstall: long-timeout@0.0.2
+207 info lifecycle node-forge@0.6.42~uninstall: node-forge@0.6.42
+208 info lifecycle node-schedule@1.2.0~uninstall: node-schedule@1.2.0
+209 info lifecycle nodemailer-direct-transport@3.2.0~uninstall: nodemailer-direct-transport@3.2.0
+210 info lifecycle nodemailer@2.5.0~uninstall: nodemailer@2.5.0
+211 info lifecycle nodemailer-fetch@1.4.0~uninstall: nodemailer-fetch@1.4.0
+212 info lifecycle nodemailer-shared@1.0.5~uninstall: nodemailer-shared@1.0.5
+213 info lifecycle nodemailer-smtp-pool@2.7.0~uninstall: nodemailer-smtp-pool@2.7.0
+214 info lifecycle nodemailer-wellknown@0.1.10~uninstall: nodemailer-wellknown@0.1.10
+215 info lifecycle nodemailer-smtp-transport@2.6.0~uninstall: nodemailer-smtp-transport@2.6.0
+216 info lifecycle smtp-connection@2.8.0~uninstall: smtp-connection@2.8.0
+217 info lifecycle readline@1.3.0~uninstall: readline@1.3.0
+218 info lifecycle smart-buffer@1.0.11~uninstall: smart-buffer@1.0.11
+219 info lifecycle socks@1.1.9~uninstall: socks@1.1.9
+220 info lifecycle stream-transform@0.1.1~uninstall: stream-transform@0.1.1
+221 info lifecycle string-template@1.0.0~uninstall: string-template@1.0.0
+222 info lifecycle streamsearch@0.1.2~uninstall: streamsearch@0.1.2
+223 info lifecycle typedarray@0.0.6~uninstall: typedarray@0.0.6
+224 info lifecycle underscore@1.7.0~uninstall: underscore@1.7.0
+225 info lifecycle util@0.10.3~uninstall: util@0.10.3
+226 silly lifecycle google-p12-pem@0.1.0~preuninstall: no script for preuninstall, continuing
+227 info lifecycle bl@1.1.2~uninstall: bl@1.1.2
+228 info lifecycle form-data@1.0.1~uninstall: form-data@1.0.1
+229 info lifecycle googleapis@14.0.0~uninstall: googleapis@14.0.0
+230 info lifecycle jwa@1.0.2~uninstall: jwa@1.0.2
+231 info lifecycle multer@1.2.0~uninstall: multer@1.2.0
+232 info lifecycle google-auth-library@0.9.8~uninstall: google-auth-library@0.9.8
+233 silly lifecycle base64url@1.0.6~preuninstall: no script for preuninstall, continuing
+234 silly lifecycle addressparser@1.0.1~uninstall: no script for uninstall, continuing
+235 silly lifecycle append-field@0.1.0~uninstall: no script for uninstall, continuing
+236 silly lifecycle bcryptjs@2.3.0~uninstall: no script for uninstall, continuing
+237 silly lifecycle bluebird@2.11.0~uninstall: no script for uninstall, continuing
+238 silly lifecycle buffer-equal-constant-time@1.0.1~uninstall: no script for uninstall, continuing
+239 silly lifecycle buildmail@3.8.0~uninstall: no script for uninstall, continuing
+240 silly lifecycle callevery@1.0.6~uninstall: no script for uninstall, continuing
+241 silly lifecycle busboy@0.2.13~uninstall: no script for uninstall, continuing
+242 silly lifecycle concat-stream@1.4.10~uninstall: no script for uninstall, continuing
+243 silly lifecycle cron-parser@1.1.0~uninstall: no script for uninstall, continuing
+244 silly lifecycle csv-generate@1.0.0~uninstall: no script for uninstall, continuing
+245 silly lifecycle csv-parse@1.1.7~uninstall: no script for uninstall, continuing
+246 silly lifecycle csv-stringify@1.0.4~uninstall: no script for uninstall, continuing
+247 silly lifecycle csv@1.1.0~uninstall: no script for uninstall, continuing
+248 silly lifecycle ctype@0.5.3~uninstall: no script for uninstall, continuing
+249 silly lifecycle dicer@0.2.5~uninstall: no script for uninstall, continuing
+250 silly lifecycle ecdsa-sig-formatter@1.0.7~uninstall: no script for uninstall, continuing
+251 silly lifecycle fs@0.0.1-security~uninstall: no script for uninstall, continuing
+252 silly lifecycle gtoken@1.2.1~uninstall: no script for uninstall, continuing
+253 silly lifecycle httpntlm@1.6.1~uninstall: no script for uninstall, continuing
+254 silly lifecycle httpreq@0.4.22~uninstall: no script for uninstall, continuing
+255 silly lifecycle ip@1.1.3~uninstall: no script for uninstall, continuing
+256 silly lifecycle jws@3.0.0~uninstall: no script for uninstall, continuing
+257 silly lifecycle libmime@2.0.3~uninstall: no script for uninstall, continuing
+258 silly lifecycle libqp@1.1.0~uninstall: no script for uninstall, continuing
+259 silly lifecycle libbase64@0.1.0~uninstall: no script for uninstall, continuing
+260 silly lifecycle lodash@4.15.0~uninstall: no script for uninstall, continuing
+261 silly lifecycle lodash.get@4.4.2~uninstall: no script for uninstall, continuing
+262 silly lifecycle lodash.noop@3.0.1~uninstall: no script for uninstall, continuing
+263 silly lifecycle mailcomposer@3.10.0~uninstall: no script for uninstall, continuing
+264 silly lifecycle long-timeout@0.0.2~uninstall: no script for uninstall, continuing
+265 silly lifecycle node-forge@0.6.42~uninstall: no script for uninstall, continuing
+266 silly lifecycle node-schedule@1.2.0~uninstall: no script for uninstall, continuing
+267 silly lifecycle nodemailer-direct-transport@3.2.0~uninstall: no script for uninstall, continuing
+268 silly lifecycle nodemailer@2.5.0~uninstall: no script for uninstall, continuing
+269 silly lifecycle nodemailer-fetch@1.4.0~uninstall: no script for uninstall, continuing
+270 silly lifecycle nodemailer-shared@1.0.5~uninstall: no script for uninstall, continuing
+271 silly lifecycle nodemailer-smtp-pool@2.7.0~uninstall: no script for uninstall, continuing
+272 silly lifecycle nodemailer-wellknown@0.1.10~uninstall: no script for uninstall, continuing
+273 silly lifecycle nodemailer-smtp-transport@2.6.0~uninstall: no script for uninstall, continuing
+274 silly lifecycle smtp-connection@2.8.0~uninstall: no script for uninstall, continuing
+275 silly lifecycle readline@1.3.0~uninstall: no script for uninstall, continuing
+276 silly lifecycle smart-buffer@1.0.11~uninstall: no script for uninstall, continuing
+277 silly lifecycle socks@1.1.9~uninstall: no script for uninstall, continuing
+278 silly lifecycle stream-transform@0.1.1~uninstall: no script for uninstall, continuing
+279 silly lifecycle string-template@1.0.0~uninstall: no script for uninstall, continuing
+280 silly lifecycle streamsearch@0.1.2~uninstall: no script for uninstall, continuing
+281 silly lifecycle typedarray@0.0.6~uninstall: no script for uninstall, continuing
+282 silly lifecycle underscore@1.7.0~uninstall: no script for uninstall, continuing
+283 silly lifecycle util@0.10.3~uninstall: no script for uninstall, continuing
+284 info lifecycle google-p12-pem@0.1.0~uninstall: google-p12-pem@0.1.0
+285 silly lifecycle bl@1.1.2~uninstall: no script for uninstall, continuing
+286 silly lifecycle form-data@1.0.1~uninstall: no script for uninstall, continuing
+287 silly lifecycle googleapis@14.0.0~uninstall: no script for uninstall, continuing
+288 silly lifecycle jwa@1.0.2~uninstall: no script for uninstall, continuing
+289 silly lifecycle multer@1.2.0~uninstall: no script for uninstall, continuing
+290 silly lifecycle google-auth-library@0.9.8~uninstall: no script for uninstall, continuing
+291 info lifecycle base64url@1.0.6~uninstall: base64url@1.0.6
+292 verbose unbuild rmStuff addressparser@1.0.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+293 info lifecycle addressparser@1.0.1~postuninstall: addressparser@1.0.1
+294 verbose unbuild rmStuff append-field@0.1.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+295 info lifecycle append-field@0.1.0~postuninstall: append-field@0.1.0
+296 verbose unbuild rmStuff bcryptjs@2.3.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+297 info lifecycle bcryptjs@2.3.0~postuninstall: bcryptjs@2.3.0
+298 verbose unbuild rmStuff bluebird@2.11.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+299 info lifecycle bluebird@2.11.0~postuninstall: bluebird@2.11.0
+300 verbose unbuild rmStuff buffer-equal-constant-time@1.0.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+301 info lifecycle buffer-equal-constant-time@1.0.1~postuninstall: buffer-equal-constant-time@1.0.1
+302 verbose unbuild rmStuff buildmail@3.8.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+303 info lifecycle buildmail@3.8.0~postuninstall: buildmail@3.8.0
+304 verbose unbuild rmStuff callevery@1.0.6 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+305 info lifecycle callevery@1.0.6~postuninstall: callevery@1.0.6
+306 verbose unbuild rmStuff busboy@0.2.13 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+307 info lifecycle busboy@0.2.13~postuninstall: busboy@0.2.13
+308 verbose unbuild rmStuff concat-stream@1.4.10 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+309 info lifecycle concat-stream@1.4.10~postuninstall: concat-stream@1.4.10
+310 verbose unbuild rmStuff cron-parser@1.1.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+311 info lifecycle cron-parser@1.1.0~postuninstall: cron-parser@1.1.0
+312 verbose unbuild rmStuff csv-generate@1.0.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+313 info lifecycle csv-generate@1.0.0~postuninstall: csv-generate@1.0.0
+314 verbose unbuild rmStuff csv-parse@1.1.7 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+315 info lifecycle csv-parse@1.1.7~postuninstall: csv-parse@1.1.7
+316 verbose unbuild rmStuff csv-stringify@1.0.4 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+317 info lifecycle csv-stringify@1.0.4~postuninstall: csv-stringify@1.0.4
+318 verbose unbuild rmStuff csv@1.1.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+319 info lifecycle csv@1.1.0~postuninstall: csv@1.1.0
+320 verbose unbuild rmStuff ctype@0.5.3 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+321 info lifecycle ctype@0.5.3~postuninstall: ctype@0.5.3
+322 verbose unbuild rmStuff dicer@0.2.5 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+323 info lifecycle dicer@0.2.5~postuninstall: dicer@0.2.5
+324 verbose unbuild rmStuff ecdsa-sig-formatter@1.0.7 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+325 info lifecycle ecdsa-sig-formatter@1.0.7~postuninstall: ecdsa-sig-formatter@1.0.7
+326 verbose unbuild rmStuff fs@0.0.1-security from /Users/jeffyourman/Desktop/fantasysports/node_modules
+327 info lifecycle fs@0.0.1-security~postuninstall: fs@0.0.1-security
+328 verbose unbuild rmStuff gtoken@1.2.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+329 info lifecycle gtoken@1.2.1~postuninstall: gtoken@1.2.1
+330 verbose unbuild rmStuff httpntlm@1.6.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+331 info lifecycle httpntlm@1.6.1~postuninstall: httpntlm@1.6.1
+332 verbose unbuild rmStuff httpreq@0.4.22 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+333 info lifecycle httpreq@0.4.22~postuninstall: httpreq@0.4.22
+334 verbose unbuild rmStuff ip@1.1.3 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+335 info lifecycle ip@1.1.3~postuninstall: ip@1.1.3
+336 verbose unbuild rmStuff jws@3.0.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+337 info lifecycle jws@3.0.0~postuninstall: jws@3.0.0
+338 verbose unbuild rmStuff libmime@2.0.3 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+339 info lifecycle libmime@2.0.3~postuninstall: libmime@2.0.3
+340 verbose unbuild rmStuff libqp@1.1.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+341 info lifecycle libqp@1.1.0~postuninstall: libqp@1.1.0
+342 verbose unbuild rmStuff libbase64@0.1.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+343 info lifecycle libbase64@0.1.0~postuninstall: libbase64@0.1.0
+344 verbose unbuild rmStuff lodash@4.15.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+345 info lifecycle lodash@4.15.0~postuninstall: lodash@4.15.0
+346 verbose unbuild rmStuff lodash.get@4.4.2 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+347 info lifecycle lodash.get@4.4.2~postuninstall: lodash.get@4.4.2
+348 verbose unbuild rmStuff lodash.noop@3.0.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+349 info lifecycle lodash.noop@3.0.1~postuninstall: lodash.noop@3.0.1
+350 verbose unbuild rmStuff mailcomposer@3.10.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+351 info lifecycle mailcomposer@3.10.0~postuninstall: mailcomposer@3.10.0
+352 verbose unbuild rmStuff long-timeout@0.0.2 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+353 info lifecycle long-timeout@0.0.2~postuninstall: long-timeout@0.0.2
+354 verbose unbuild rmStuff node-forge@0.6.42 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+355 info lifecycle node-forge@0.6.42~postuninstall: node-forge@0.6.42
+356 verbose unbuild rmStuff node-schedule@1.2.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+357 info lifecycle node-schedule@1.2.0~postuninstall: node-schedule@1.2.0
+358 verbose unbuild rmStuff nodemailer-direct-transport@3.2.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+359 info lifecycle nodemailer-direct-transport@3.2.0~postuninstall: nodemailer-direct-transport@3.2.0
+360 verbose unbuild rmStuff nodemailer@2.5.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+361 info lifecycle nodemailer@2.5.0~postuninstall: nodemailer@2.5.0
+362 verbose unbuild rmStuff nodemailer-fetch@1.4.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+363 info lifecycle nodemailer-fetch@1.4.0~postuninstall: nodemailer-fetch@1.4.0
+364 verbose unbuild rmStuff nodemailer-shared@1.0.5 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+365 info lifecycle nodemailer-shared@1.0.5~postuninstall: nodemailer-shared@1.0.5
+366 verbose unbuild rmStuff nodemailer-smtp-pool@2.7.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+367 info lifecycle nodemailer-smtp-pool@2.7.0~postuninstall: nodemailer-smtp-pool@2.7.0
+368 verbose unbuild rmStuff nodemailer-wellknown@0.1.10 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+369 info lifecycle nodemailer-wellknown@0.1.10~postuninstall: nodemailer-wellknown@0.1.10
+370 verbose unbuild rmStuff nodemailer-smtp-transport@2.6.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+371 info lifecycle nodemailer-smtp-transport@2.6.0~postuninstall: nodemailer-smtp-transport@2.6.0
+372 verbose unbuild rmStuff smtp-connection@2.8.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+373 info lifecycle smtp-connection@2.8.0~postuninstall: smtp-connection@2.8.0
+374 verbose unbuild rmStuff readline@1.3.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+375 info lifecycle readline@1.3.0~postuninstall: readline@1.3.0
+376 verbose unbuild rmStuff smart-buffer@1.0.11 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+377 info lifecycle smart-buffer@1.0.11~postuninstall: smart-buffer@1.0.11
+378 verbose unbuild rmStuff socks@1.1.9 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+379 info lifecycle socks@1.1.9~postuninstall: socks@1.1.9
+380 verbose unbuild rmStuff stream-transform@0.1.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+381 info lifecycle stream-transform@0.1.1~postuninstall: stream-transform@0.1.1
+382 verbose unbuild rmStuff string-template@1.0.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+383 info lifecycle string-template@1.0.0~postuninstall: string-template@1.0.0
+384 verbose unbuild rmStuff streamsearch@0.1.2 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+385 info lifecycle streamsearch@0.1.2~postuninstall: streamsearch@0.1.2
+386 verbose unbuild rmStuff typedarray@0.0.6 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+387 info lifecycle typedarray@0.0.6~postuninstall: typedarray@0.0.6
+388 verbose unbuild rmStuff underscore@1.7.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+389 info lifecycle underscore@1.7.0~postuninstall: underscore@1.7.0
+390 verbose unbuild rmStuff util@0.10.3 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+391 info lifecycle util@0.10.3~postuninstall: util@0.10.3
+392 silly lifecycle google-p12-pem@0.1.0~uninstall: no script for uninstall, continuing
+393 verbose unbuild rmStuff bl@1.1.2 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+394 info lifecycle bl@1.1.2~postuninstall: bl@1.1.2
+395 verbose unbuild rmStuff form-data@1.0.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+396 info lifecycle form-data@1.0.1~postuninstall: form-data@1.0.1
+397 verbose unbuild rmStuff googleapis@14.0.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+398 info lifecycle googleapis@14.0.0~postuninstall: googleapis@14.0.0
+399 verbose unbuild rmStuff jwa@1.0.2 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+400 info lifecycle jwa@1.0.2~postuninstall: jwa@1.0.2
+401 verbose unbuild rmStuff multer@1.2.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+402 info lifecycle multer@1.2.0~postuninstall: multer@1.2.0
+403 verbose unbuild rmStuff google-auth-library@0.9.8 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+404 info lifecycle google-auth-library@0.9.8~postuninstall: google-auth-library@0.9.8
+405 silly lifecycle base64url@1.0.6~uninstall: no script for uninstall, continuing
+406 silly lifecycle addressparser@1.0.1~postuninstall: no script for postuninstall, continuing
+407 silly lifecycle append-field@0.1.0~postuninstall: no script for postuninstall, continuing
+408 silly lifecycle bcryptjs@2.3.0~postuninstall: no script for postuninstall, continuing
+409 silly lifecycle bluebird@2.11.0~postuninstall: no script for postuninstall, continuing
+410 silly lifecycle buffer-equal-constant-time@1.0.1~postuninstall: no script for postuninstall, continuing
+411 silly lifecycle buildmail@3.8.0~postuninstall: no script for postuninstall, continuing
+412 silly lifecycle callevery@1.0.6~postuninstall: no script for postuninstall, continuing
+413 silly lifecycle busboy@0.2.13~postuninstall: no script for postuninstall, continuing
+414 silly lifecycle concat-stream@1.4.10~postuninstall: no script for postuninstall, continuing
+415 silly lifecycle cron-parser@1.1.0~postuninstall: no script for postuninstall, continuing
+416 silly lifecycle csv-generate@1.0.0~postuninstall: no script for postuninstall, continuing
+417 silly lifecycle csv-parse@1.1.7~postuninstall: no script for postuninstall, continuing
+418 silly lifecycle csv-stringify@1.0.4~postuninstall: no script for postuninstall, continuing
+419 silly lifecycle csv@1.1.0~postuninstall: no script for postuninstall, continuing
+420 silly lifecycle ctype@0.5.3~postuninstall: no script for postuninstall, continuing
+421 silly lifecycle dicer@0.2.5~postuninstall: no script for postuninstall, continuing
+422 silly lifecycle ecdsa-sig-formatter@1.0.7~postuninstall: no script for postuninstall, continuing
+423 silly lifecycle fs@0.0.1-security~postuninstall: no script for postuninstall, continuing
+424 silly lifecycle gtoken@1.2.1~postuninstall: no script for postuninstall, continuing
+425 silly lifecycle httpntlm@1.6.1~postuninstall: no script for postuninstall, continuing
+426 silly lifecycle httpreq@0.4.22~postuninstall: no script for postuninstall, continuing
+427 silly lifecycle ip@1.1.3~postuninstall: no script for postuninstall, continuing
+428 silly lifecycle jws@3.0.0~postuninstall: no script for postuninstall, continuing
+429 silly lifecycle libmime@2.0.3~postuninstall: no script for postuninstall, continuing
+430 silly lifecycle libqp@1.1.0~postuninstall: no script for postuninstall, continuing
+431 silly lifecycle libbase64@0.1.0~postuninstall: no script for postuninstall, continuing
+432 silly lifecycle lodash@4.15.0~postuninstall: no script for postuninstall, continuing
+433 silly lifecycle lodash.get@4.4.2~postuninstall: no script for postuninstall, continuing
+434 silly lifecycle lodash.noop@3.0.1~postuninstall: no script for postuninstall, continuing
+435 silly lifecycle mailcomposer@3.10.0~postuninstall: no script for postuninstall, continuing
+436 silly lifecycle long-timeout@0.0.2~postuninstall: no script for postuninstall, continuing
+437 silly lifecycle node-forge@0.6.42~postuninstall: no script for postuninstall, continuing
+438 silly lifecycle node-schedule@1.2.0~postuninstall: no script for postuninstall, continuing
+439 silly lifecycle nodemailer-direct-transport@3.2.0~postuninstall: no script for postuninstall, continuing
+440 silly lifecycle nodemailer@2.5.0~postuninstall: no script for postuninstall, continuing
+441 silly lifecycle nodemailer-fetch@1.4.0~postuninstall: no script for postuninstall, continuing
+442 silly lifecycle nodemailer-shared@1.0.5~postuninstall: no script for postuninstall, continuing
+443 silly lifecycle nodemailer-smtp-pool@2.7.0~postuninstall: no script for postuninstall, continuing
+444 silly lifecycle nodemailer-wellknown@0.1.10~postuninstall: no script for postuninstall, continuing
+445 silly lifecycle nodemailer-smtp-transport@2.6.0~postuninstall: no script for postuninstall, continuing
+446 silly lifecycle smtp-connection@2.8.0~postuninstall: no script for postuninstall, continuing
+447 silly lifecycle readline@1.3.0~postuninstall: no script for postuninstall, continuing
+448 silly lifecycle smart-buffer@1.0.11~postuninstall: no script for postuninstall, continuing
+449 silly lifecycle socks@1.1.9~postuninstall: no script for postuninstall, continuing
+450 silly lifecycle stream-transform@0.1.1~postuninstall: no script for postuninstall, continuing
+451 silly lifecycle string-template@1.0.0~postuninstall: no script for postuninstall, continuing
+452 silly lifecycle streamsearch@0.1.2~postuninstall: no script for postuninstall, continuing
+453 silly lifecycle typedarray@0.0.6~postuninstall: no script for postuninstall, continuing
+454 silly lifecycle underscore@1.7.0~postuninstall: no script for postuninstall, continuing
+455 silly lifecycle util@0.10.3~postuninstall: no script for postuninstall, continuing
+456 verbose unbuild rmStuff google-p12-pem@0.1.0 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+457 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/gp12-pem is being gently removed from base /Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem
+458 silly lifecycle bl@1.1.2~postuninstall: no script for postuninstall, continuing
+459 silly lifecycle form-data@1.0.1~postuninstall: no script for postuninstall, continuing
+460 silly lifecycle googleapis@14.0.0~postuninstall: no script for postuninstall, continuing
+461 silly lifecycle jwa@1.0.2~postuninstall: no script for postuninstall, continuing
+462 silly lifecycle multer@1.2.0~postuninstall: no script for postuninstall, continuing
+463 silly lifecycle google-auth-library@0.9.8~postuninstall: no script for postuninstall, continuing
+464 verbose unbuild rmStuff base64url@1.0.6 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+465 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url is being gently removed from base /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+466 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/addressparser is being purged from base /Users/jeffyourman/Desktop/fantasysports
+467 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/addressparser
+468 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/append-field is being purged from base /Users/jeffyourman/Desktop/fantasysports
+469 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/append-field
+470 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/bcryptjs is being purged from base /Users/jeffyourman/Desktop/fantasysports
+471 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/bcryptjs
+472 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/bluebird is being purged from base /Users/jeffyourman/Desktop/fantasysports
+473 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/bluebird
+474 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/buffer-equal-constant-time is being purged from base /Users/jeffyourman/Desktop/fantasysports
+475 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/buffer-equal-constant-time
+476 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/buildmail is being purged from base /Users/jeffyourman/Desktop/fantasysports
+477 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/buildmail
+478 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/callevery is being purged from base /Users/jeffyourman/Desktop/fantasysports
+479 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/callevery
+480 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/busboy is being purged from base /Users/jeffyourman/Desktop/fantasysports
+481 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/busboy
+482 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/concat-stream is being purged from base /Users/jeffyourman/Desktop/fantasysports
+483 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/concat-stream
+484 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/cron-parser is being purged from base /Users/jeffyourman/Desktop/fantasysports
+485 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/cron-parser
+486 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-generate is being purged from base /Users/jeffyourman/Desktop/fantasysports
+487 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-generate
+488 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-parse is being purged from base /Users/jeffyourman/Desktop/fantasysports
+489 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-parse
+490 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-stringify is being purged from base /Users/jeffyourman/Desktop/fantasysports
+491 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-stringify
+492 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/csv is being purged from base /Users/jeffyourman/Desktop/fantasysports
+493 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/csv
+494 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/ctype is being purged from base /Users/jeffyourman/Desktop/fantasysports
+495 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/ctype
+496 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/dicer is being purged from base /Users/jeffyourman/Desktop/fantasysports
+497 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/dicer
+498 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/ecdsa-sig-formatter is being purged from base /Users/jeffyourman/Desktop/fantasysports
+499 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/ecdsa-sig-formatter
+500 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/fs is being purged from base /Users/jeffyourman/Desktop/fantasysports
+501 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/fs
+502 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/gtoken is being purged from base /Users/jeffyourman/Desktop/fantasysports
+503 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/gtoken
+504 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/httpntlm is being purged from base /Users/jeffyourman/Desktop/fantasysports
+505 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/httpntlm
+506 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/httpreq is being purged from base /Users/jeffyourman/Desktop/fantasysports
+507 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/httpreq
+508 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/ip is being purged from base /Users/jeffyourman/Desktop/fantasysports
+509 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/ip
+510 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/jws is being purged from base /Users/jeffyourman/Desktop/fantasysports
+511 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/jws
+512 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/libmime is being purged from base /Users/jeffyourman/Desktop/fantasysports
+513 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/libmime
+514 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/libqp is being purged from base /Users/jeffyourman/Desktop/fantasysports
+515 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/libqp
+516 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/libbase64 is being purged from base /Users/jeffyourman/Desktop/fantasysports
+517 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/libbase64
+518 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash is being purged from base /Users/jeffyourman/Desktop/fantasysports
+519 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash
+520 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash.get is being purged from base /Users/jeffyourman/Desktop/fantasysports
+521 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash.get
+522 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash.noop is being purged from base /Users/jeffyourman/Desktop/fantasysports
+523 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash.noop
+524 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/mailcomposer is being purged from base /Users/jeffyourman/Desktop/fantasysports
+525 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/mailcomposer
+526 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/long-timeout is being purged from base /Users/jeffyourman/Desktop/fantasysports
+527 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/long-timeout
+528 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/node-forge is being purged from base /Users/jeffyourman/Desktop/fantasysports
+529 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/node-forge
+530 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/node-schedule is being purged from base /Users/jeffyourman/Desktop/fantasysports
+531 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/node-schedule
+532 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-direct-transport is being purged from base /Users/jeffyourman/Desktop/fantasysports
+533 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-direct-transport
+534 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer is being purged from base /Users/jeffyourman/Desktop/fantasysports
+535 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer
+536 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-fetch is being purged from base /Users/jeffyourman/Desktop/fantasysports
+537 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-fetch
+538 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-shared is being purged from base /Users/jeffyourman/Desktop/fantasysports
+539 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-shared
+540 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-smtp-pool is being purged from base /Users/jeffyourman/Desktop/fantasysports
+541 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-smtp-pool
+542 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-wellknown is being purged from base /Users/jeffyourman/Desktop/fantasysports
+543 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-wellknown
+544 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-smtp-transport is being purged from base /Users/jeffyourman/Desktop/fantasysports
+545 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-smtp-transport
+546 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/smtp-connection is being purged from base /Users/jeffyourman/Desktop/fantasysports
+547 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/smtp-connection
+548 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/readline is being purged from base /Users/jeffyourman/Desktop/fantasysports
+549 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/readline
+550 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/smart-buffer is being purged from base /Users/jeffyourman/Desktop/fantasysports
+551 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/smart-buffer
+552 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/socks is being purged from base /Users/jeffyourman/Desktop/fantasysports
+553 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/socks
+554 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/stream-transform is being purged from base /Users/jeffyourman/Desktop/fantasysports
+555 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/stream-transform
+556 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/string-template is being purged from base /Users/jeffyourman/Desktop/fantasysports
+557 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/string-template
+558 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/streamsearch is being purged from base /Users/jeffyourman/Desktop/fantasysports
+559 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/streamsearch
+560 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/typedarray is being purged from base /Users/jeffyourman/Desktop/fantasysports
+561 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/typedarray
+562 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/underscore is being purged from base /Users/jeffyourman/Desktop/fantasysports
+563 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/underscore
+564 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/util is being purged from base /Users/jeffyourman/Desktop/fantasysports
+565 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/util
+566 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/bl is being purged from base /Users/jeffyourman/Desktop/fantasysports
+567 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/bl
+568 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/form-data is being purged from base /Users/jeffyourman/Desktop/fantasysports
+569 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/form-data
+570 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/googleapis is being purged from base /Users/jeffyourman/Desktop/fantasysports
+571 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/googleapis
+572 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/jwa is being purged from base /Users/jeffyourman/Desktop/fantasysports
+573 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/jwa
+574 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/multer is being purged from base /Users/jeffyourman/Desktop/fantasysports
+575 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/multer
+576 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/google-auth-library is being purged from base /Users/jeffyourman/Desktop/fantasysports
+577 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/google-auth-library
+578 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/addressparser
+579 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/append-field
+580 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/bcryptjs
+581 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/bluebird
+582 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/buffer-equal-constant-time
+583 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/buildmail
+584 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/callevery
+585 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/busboy
+586 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/concat-stream
+587 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/cron-parser
+588 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-generate
+589 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-parse
+590 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/csv-stringify
+591 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/csv
+592 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/ctype
+593 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/dicer
+594 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/ecdsa-sig-formatter
+595 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/fs
+596 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/gtoken
+597 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/httpntlm
+598 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/httpreq
+599 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/ip
+600 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/jws
+601 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/libmime
+602 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/libqp
+603 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/libbase64
+604 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash
+605 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash.get
+606 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/lodash.noop
+607 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/mailcomposer
+608 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/long-timeout
+609 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/node-forge
+610 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/node-schedule
+611 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-direct-transport
+612 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer
+613 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-fetch
+614 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-shared
+615 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-smtp-pool
+616 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-wellknown
+617 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/nodemailer-smtp-transport
+618 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/smtp-connection
+619 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/readline
+620 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/smart-buffer
+621 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/socks
+622 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/stream-transform
+623 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/string-template
+624 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/streamsearch
+625 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/typedarray
+626 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/underscore
+627 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/util
+628 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/bl
+629 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/form-data
+630 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/googleapis
+631 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/jwa
+632 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/multer
+633 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/google-auth-library
+634 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+635 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+636 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+637 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+638 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+639 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+640 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+641 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+642 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+643 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+644 silly isEverInside /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url is not inside /usr/local
+645 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+646 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+647 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+648 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+649 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+650 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+651 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+652 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+653 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+654 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+655 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+656 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+657 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+658 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+659 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+660 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+661 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+662 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+663 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+664 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+665 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+666 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+667 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+668 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+669 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+670 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+671 silly gentlyRm parent.path = /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+672 silly gentlyRm parent.managed = /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url is in /Users/jeffyourman/Desktop/fantasysports/node_modules
+673 silly gentlyRm target.path =  /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url
+674 silly gentlyRm target.symlink = #!/bin/sh
+674 silly gentlyRm basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+674 silly gentlyRm
+674 silly gentlyRm case `uname` in
+674 silly gentlyRm     *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+674 silly gentlyRm esac
+674 silly gentlyRm
+674 silly gentlyRm if [ -x "$basedir/node" ]; then
+674 silly gentlyRm   "$basedir/node"  "$basedir/../base64url/bin/base64url" "$@"
+674 silly gentlyRm   ret=$?
+674 silly gentlyRm else
+674 silly gentlyRm   node  "$basedir/../base64url/bin/base64url" "$@"
+674 silly gentlyRm   ret=$?
+674 silly gentlyRm fi
+674 silly gentlyRm exit $ret
+675 silly gentlyRm target.managed = false
+676 silly gentlyRm target.inParent =  false
+677 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+678 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+679 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+680 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+681 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+682 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+683 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+684 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+685 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+686 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+687 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+688 silly isEverInside /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/gp12-pem is not inside /Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem
+689 silly gentlyRm parent.path = /Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem
+690 silly gentlyRm parent.managed = /Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem is in /Users/jeffyourman/Desktop/fantasysports
+691 silly gentlyRm target.path =  /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/gp12-pem
+692 silly gentlyRm target.symlink = ../google-p12-pem/bin/gp12-pem
+693 silly gentlyRm target.managed = /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/gp12-pem is in /Users/jeffyourman/Desktop/fantasysports
+694 silly gentlyRm target.inParent =  { target: '/Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem/bin/gp12-pem',
+694 silly gentlyRm   path: '/Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem' }
+695 verbose gentlyRm Vacuuming /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/gp12-pem up to /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin
+696 silly vacuum-fs removing /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/gp12-pem
+697 silly vacuum-fs finished vacuuming up to /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin
+698 info lifecycle google-p12-pem@0.1.0~postuninstall: google-p12-pem@0.1.0
+699 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+700 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+701 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+702 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+703 silly lifecycle google-p12-pem@0.1.0~postuninstall: no script for postuninstall, continuing
+704 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+705 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+706 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem is being purged from base /Users/jeffyourman/Desktop/fantasysports
+707 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem
+708 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/google-p12-pem
+709 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+710 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+711 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+712 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+713 verbose stack Error: Refusing to delete /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url: #!/bin/sh
+713 verbose stack basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+713 verbose stack
+713 verbose stack case `uname` in
+713 verbose stack     *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+713 verbose stack esac
+713 verbose stack
+713 verbose stack if [ -x "$basedir/node" ]; then
+713 verbose stack   "$basedir/node"  "$basedir/../base64url/bin/base64url" "$@"
+713 verbose stack   ret=$?
+713 verbose stack else
+713 verbose stack   node  "$basedir/../base64url/bin/base64url" "$@"
+713 verbose stack   ret=$?
+713 verbose stack fi
+713 verbose stack exit $ret
+713 verbose stack  symlink target is not controlled by npm /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+713 verbose stack     at clobberFail (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:162:12)
+713 verbose stack     at isSafeToRm (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:152:15)
+713 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:93:5
+713 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:7:26)
+713 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:18:7
+713 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:179:14
+713 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+713 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+713 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+713 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+714 verbose cwd /Users/jeffyourman/Desktop/fantasysports
+715 error Darwin 16.0.0
+716 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "prune"
+717 error node v6.2.2
+718 error npm  v3.9.5
+719 error path /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url
+720 error code EEXIST
+721 error Refusing to delete /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url: #!/bin/sh
+721 error basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+721 error
+721 error case `uname` in
+721 error     *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+721 error esac
+721 error
+721 error if [ -x "$basedir/node" ]; then
+721 error   "$basedir/node"  "$basedir/../base64url/bin/base64url" "$@"
+721 error   ret=$?
+721 error else
+721 error   node  "$basedir/../base64url/bin/base64url" "$@"
+721 error   ret=$?
+721 error fi
+721 error exit $ret
+721 error  symlink target is not controlled by npm /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+722 error File exists: /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url
+723 error Move it away, and try again.
+724 verbose exit [ 1, true ]
