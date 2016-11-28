@@ -153,6 +153,7 @@ body,html{
 
 /*Table stuff start*/
 td {
+  font-family: 'Audiowide', cursive;
   border: 1px solid black;
   background-color:white;
 }
@@ -199,6 +200,7 @@ td.highlight {
 background-color:#021A3A;
 color:white;
 }
+
 
 /*Table stuff end*/
 .highlight {
