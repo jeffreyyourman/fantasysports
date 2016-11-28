@@ -1,23 +1,14 @@
 $(document).ready(function(){
-
-
     var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
     var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
-
       var arr = [];
-
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
           //display all appointments with DATA
-
         nbatable(data);
         nbaFilterPosition();
-
-
   });
     var nbaFilterPosition = function(){
-      // $(".tableNbaFantasy").dataTable().fnDestroy();
-
       var table = $('.tableNbaFantasy').DataTable();
       $(document).on("click",'.nbaposition', function(){
         $('.nbaposition').removeClass('highlight');
@@ -42,19 +33,6 @@ $(document).ready(function(){
       var nbatable = function(data) {
       $(".tableNbaFantasy").dataTable().fnDestroy();
       var table = $('.tableNbaFantasy').DataTable({
-
-
-            // data: data.feed.entry,
-            // "dom": '<"NBAimages">frtip',
-            // "scrollY": "600px",
-            // "scrollX": true,
-            // "scrollCollapse": true,
-            // "pageLength": 50,
-            // "order": [[ 9, "desc" ]],
-            // "fixedHeader": true,
-            // // "fixedColumns": true,
-            // "paging": false,
-
             data: data.feed.entry,
             "dom": '<"NBAimages">fr<t>ip',
             "scrollY": "600px",
@@ -65,16 +43,6 @@ $(document).ready(function(){
             "order": [[ 9, "desc" ]],
             "paging": false,
             "fixedColumns": true,
-            // "buttons": [
-            //     {
-            //         "text": 'Table Description',
-            //         "className": "tableDescription",
-            //         // action: function ( e, dt, node, config ) {
-            //         //     alert( 'Button activated' );
-            //         // }
-            //     }
-            // ],
-
 
             columns: [
               { data: 'gsx$player.$t' },
@@ -317,106 +285,4 @@ $(document).ready(function(){
     });
     $("div.NBAimages").html('<button style="background-color:#021A3A; color:white;" type="button" class="btn btn-info btn-lg tableDescription" data-toggle="modal" data-target="#myModal">Table Description</button>');
   }
-
-// Player rank is a players rank (lower better ) and rvp is the opponents rank at that pos (higher better)
-
- // what's the diff between value and expected value?
-
- // Value based in projections and expexted value based on previous games
-
- // PtsVPos it's better to be high or low? High
-
- // what's recpre = Recent performance (Their last game compared to their average) = So if Big Ben averages 20 pts but hit 11 he needs like 30 pts to come back to average
-
-
-
-
- // diff between player rank and rating?
- // Rating is just the number but rank is how they rank against other guys
-
-// For the ranks, lower is better
-  //
-  //
-  // $('.fantasynewsNBA').hide();
-  // var qbfantasy = $('.qbfantasy');
-  // var rbfantasy = $('.rbfantasy');
-  // var wrfantasy = $('.wrfantasy');
-  // var tefantasy = $('.tefantasy');
-  // var kfantasy = $('.kfantasy');
-  // var deffantasy = $('.deffantasy');
-  //
-  // rbfantasy.hide();
-  // wrfantasy.hide();
-  // tefantasy.hide();
-  // kfantasy.hide();
-  // deffantasy.hide();
-  //
-  // $('#FPNewsNBAButton').on('click', function(){
-  //   $('.fantasynewsNFL').hide();
-  //   $('.fantasynewsNBA').show();
-  // });
-  // $('#FPNewsNFLButton').on('click', function(){
-  //   $('.fantasynewsNBA').hide();
-  //   $('.fantasynewsNFL').show();
-  // });
-  //
-  // $("#qbLink").on('click', function(e){
-  //   e.preventDefault();
-  //   rbfantasy.hide();
-  //   wrfantasy.hide();
-  //   tefantasy.hide();
-  //   kfantasy.hide();
-  //   deffantasy.hide();
-  //   qbfantasy.show();
-  // });
-  //
-  // $("#rbLink").on('click', function(e){
-  //   e.preventDefault();
-  //   qbfantasy.hide();
-  //   wrfantasy.hide();
-  //   tefantasy.hide();
-  //   kfantasy.hide();
-  //   deffantasy.hide();
-  //   rbfantasy.show();
-  // });
-  //
-  // $("#wrLink").on('click', function(e){
-  //   e.preventDefault();
-  //   qbfantasy.hide();
-  //   rbfantasy.hide();
-  //   tefantasy.hide();
-  //   kfantasy.hide();
-  //   deffantasy.hide();
-  //   wrfantasy.show();
-  // });
-  //
-  // $("#teLink").on('click', function(e){
-  //   e.preventDefault();
-  //   qbfantasy.hide();
-  //   wrfantasy.hide();
-  //   rbfantasy.hide();
-  //   kfantasy.hide();
-  //   deffantasy.hide();
-  //   tefantasy.show();
-  // });
-  //
-  // $("#kLink").on('click', function(e){
-  //   e.preventDefault();
-  //   qbfantasy.hide();
-  //   wrfantasy.hide();
-  //   tefantasy.hide();
-  //   rbfantasy.hide();
-  //   deffantasy.hide();
-  //   kfantasy.show();
-  // });
-  //
-  // $("#defLink").on('click', function(e){
-  //   e.preventDefault();
-  //   qbfantasy.hide();
-  //   wrfantasy.hide();
-  //   tefantasy.hide();
-  //   kfantasy.hide();
-  //   rbfantasy.hide();
-  //   deffantasy.show();
-  // });
 });
