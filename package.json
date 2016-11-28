@@ -14,6 +14,7 @@
     "url": "git+https://https://github.com/jeffreyyourman/fantasysports.git"
   },
   "dependencies": {
+    "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "cheerio": "^0.22.0",
     "cookie-parser": "^1.4.3",
