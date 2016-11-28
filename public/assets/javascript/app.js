@@ -44,25 +44,28 @@ $(document).ready(function(){
       var table = $('.tableNbaFantasy').DataTable({
 
 
+            // data: data.feed.entry,
+            // "dom": '<"NBAimages">frtip',
+            // "scrollY": "600px",
+            // "scrollX": true,
+            // "scrollCollapse": true,
+            // "pageLength": 50,
+            // "order": [[ 9, "desc" ]],
+            // "fixedHeader": true,
+            // // "fixedColumns": true,
+            // "paging": false,
+
             data: data.feed.entry,
-            "dom": '<"NBAimages">frtip',
+            "dom": '<"NBAimages">fr<t>ip',
             "scrollY": "600px",
             "scrollX": true,
             "scrollCollapse": true,
+            "fixedHeader": true,
             "pageLength": 50,
             "order": [[ 9, "desc" ]],
-            "fixedHeader": true,
-            // "fixedColumns": true,
             "paging": false,
+            "fixedColumns": true,
 
-            // scrollY:        "700px",
-            // scrollX:        true,
-            // scrollCollapse: true,
-            // paging:         false,
-            // fixedColumns:   {
-            //     leftColumns: 1,
-            //     rightColumns: 1
-            // },
 
             columns: [
               { data: 'gsx$player.$t' },
@@ -79,7 +82,6 @@ $(document).ready(function(){
               { data: 'gsx$ppm.$t' },
               { data: 'gsx$ovp.$t' },
               { data: 'gsx$projscore.$t' },
-              { data: 'gsx$player.$t' },
               { data: 'gsx$gameline.$t' },
               { data: 'gsx$projectedpts.$t' },
               { data: 'gsx$value.$t' },
@@ -206,7 +208,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 15,
+            "targets": 14,
             "createdCell": function (td, cellData, rowData, row, col) {
               var varDataCell = cellData;
               if ( varDataCell >= 210 ) {
@@ -223,7 +225,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 17,
+            "targets": 16,
             "createdCell": function (td, cellData, rowData, row, col) {
               var varDataCell = cellData;
               if ( varDataCell >= 5.00 ) {
@@ -240,7 +242,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 18,
+            "targets": 17,
             "createdCell": function (td, cellData, rowData, row, col) {
               var varDataCell = cellData;
               if (( varDataCell <= 400 )|| (varDataCell == '-')) {
@@ -251,7 +253,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 19,
+            "targets": 18,
             "createdCell": function (td, cellData, rowData, row, col) {
               var varDataCell = cellData;
               if (( varDataCell <= 10 ) || (varDataCell == '-')) {
@@ -262,7 +264,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 20,
+            "targets": 19,
             "createdCell": function (td, cellData, rowData, row, col) {
               var varDataCell = cellData;
               if ( varDataCell >= 40.00 ) {
@@ -279,7 +281,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 21,
+            "targets": 20,
             "createdCell": function (td, cellData, rowData, row, col) {
               var varDataCell = cellData;
               if ( varDataCell >= 5 ) {
@@ -290,7 +292,7 @@ $(document).ready(function(){
             }
           },
           { // Date columns FF8700
-            "targets": 22,
+            "targets": 21,
             "createdCell": function (td, cellData, rowData, row, col) {
               var varDataCell = cellData;
               if ( varDataCell == "KEEP" ) {

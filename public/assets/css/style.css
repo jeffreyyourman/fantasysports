@@ -170,7 +170,7 @@ table.dataTable thead .sorting_desc {
     background: none;
 }
 
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
   -webkit-appearance: none;
   width: 7px;
 }
@@ -178,7 +178,7 @@ table.dataTable thead .sorting_desc {
   border-radius: 4px;
   background-color: rgba(0,0,0,.5);
   -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
-}
+}*/
 
 
 div.tooltip-inner {
@@ -208,3 +208,27 @@ background-color:#edb82a;
 color:black;
 }
 /*========*/
+
+/*Table fixed column below*/
+/*//fixed row*/
+.table.table-hover.tableNbaFantasy.secondtablenbafantasy.no-footer.dataTable.DTFC_Cloned{
+
+
+
+
+
+}.DTFC_LeftHeadWrapper{
+  height: 39.5px;
+
+}#DataTables_Table_1_length{
+
+}
+#DataTables_Table_1_wrapper{
+  display: none;
+}
+#DataTables_Table_2_wrapper{
+  display: none;
+}
+.paginate_button{
+  display: none !important;
+}
