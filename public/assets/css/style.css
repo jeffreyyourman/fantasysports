@@ -258,3 +258,12 @@ color:black;
 .paginate_button{
   display: none !important;
 }
+
+@media screen and (max-width: 375px) and (min-width: 320px) {
+  .suggestedbutton {
+    font-size: 11px;
+  }
+  .chatbutton {
+    font-size: 11px;
+  }
+}
