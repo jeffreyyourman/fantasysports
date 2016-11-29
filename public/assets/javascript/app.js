@@ -40,7 +40,7 @@ $(document).ready(function(){
             "scrollCollapse": true,
             "fixedHeader": true,
             "pageLength": 50,
-            "order": [[ 9, "desc" ]],
+            "order": [[ 20, "desc" ]],
             "paging": false,
             "fixedColumns": true,
 
@@ -75,6 +75,7 @@ $(document).ready(function(){
           { // Date columns
             "targets": 0,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varRowData = rowData;
               var recentPerformance = rowData.gsx$recpr.$t;
 
@@ -82,16 +83,17 @@ $(document).ready(function(){
 
                 var playernames = rowData.gsx$player.$t;
                 var playerposition = rowData.gsx$position.$t;
-                var playercondition = rowData.gsx$condition.$t
-                var playerdetails = rowData.gsx$details.$t
+                var playercondition = rowData.gsx$condition.$t;
+                var playerdetails = rowData.gsx$details.$t;
+                var suggestedPlayersNBA = $('.suggestedPlayersNBA');
                 if (playercondition == 'GTD') {
-                  $('.suggestedPlayersNBA').append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(GTD ' + playerdetails + ')' + '</li>');
+                  suggestedPlayersNBA.append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(GTD ' + playerdetails + ')' + '</li>');
                 }
                 if (playercondition == '-') {
-                  $('.suggestedPlayersNBA').append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(Playing)' + '</li>');
+                  suggestedPlayersNBA.append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(Playing)' + '</li>');
                 }
                 if (playercondition == 'O') {
-                  $('.suggestedPlayersNBA').append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(OUT ' + playerdetails + ')' + '</li>');
+                  suggestedPlayersNBA.append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(OUT ' + playerdetails + ')' + '</li>');
                 }
               }
             }
@@ -99,183 +101,195 @@ $(document).ready(function(){
           { // Date columns
             "targets": 7,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               var time = varDataCell;
               var minutes = time.split(":");
               var display=minutes[0];
               if ( display >= 31 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((display >= 26) && (display <= 30.999)) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((display >= 23) && (display <= 25.999)) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((display >= 19) && (display <= 22.999)) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if ((display >= 0) && (display <= 18.999) || (varDataCell = '-')) {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           {
             targets: 9,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= "35.00%" ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((varDataCell >= "27.00%") && (varDataCell <= "34.99%")) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((varDataCell >= "20.00%") && (varDataCell <= "26.99%")) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((varDataCell >= "16.00%") && (varDataCell <= "19.99%")) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if (varDataCell <= "15.99%") {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns
             "targets": 11,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= 1.3 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((varDataCell >= 1.00) && (varDataCell <= 1.29)) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((varDataCell >= .85) && (varDataCell <= .9999)) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((varDataCell >= .80) && (varDataCell <= .8499)) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if ((varDataCell >= 0) && (varDataCell <= .7999) || (varDataCell = '-')) {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns
             "targets": 12,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= 1.1 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((varDataCell >= .97) && (varDataCell <= 1.099)) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((varDataCell >= .89) && (varDataCell <= .9699)) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((varDataCell >= .85) && (varDataCell <= .8899)) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if ((varDataCell >= 0) && (varDataCell <= .8499) || (varDataCell = '-')) {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns
             "targets": 13,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= 105 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((varDataCell >= 100) && (varDataCell <= 104.99)) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((varDataCell >= 94) && (varDataCell <= 99.99)) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((varDataCell >= 90) && (varDataCell <= 93.99)) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if ((varDataCell >= 0) && (varDataCell <= 89.99) || (varDataCell = '-')) {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
             "targets": 14,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= 210 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((varDataCell >= 200) && (varDataCell <= 209.99)) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((varDataCell >= 195) && (varDataCell <= 199.99)) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((varDataCell >= 190) && (varDataCell <= 194.99)) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if ((varDataCell >= 0) && (varDataCell <= 194.99) || (varDataCell = '-')) {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
             "targets": 16,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= 5.00 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((varDataCell >= 4.5) && (varDataCell <= 4.99)) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((varDataCell >= 4.0) && (varDataCell <= 4.499)) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((varDataCell >= 3.5) && (varDataCell <= 3.99)) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if ((varDataCell >= 0) && (varDataCell <= 3.499) || (varDataCell = '-')) {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
             "targets": 17,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if (( varDataCell <= 400 )|| (varDataCell == '-')) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
             "targets": 18,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if (( varDataCell <= 10 ) || (varDataCell == '-')) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
             "targets": 19,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= 40.00 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if ((varDataCell >= 33) && (varDataCell <= 39.99)) {
-                $(td).css('background-color', 'yellow')
+                td$.css('background-color', 'yellow')
               } else if ((varDataCell >= 25) && (varDataCell <= 32.99)) {
-                $(td).css('background-color', '#FFBD00')
+                td$.css('background-color', '#FFBD00')
               } else if ((varDataCell >= 20) && (varDataCell <= 24.99)) {
-                $(td).css('background-color', '#FF8700')
+                td$.css('background-color', '#FF8700')
               } else if ((varDataCell >= 0) && (varDataCell <= 19.99) || (varDataCell = '-')) {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
             "targets": 20,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell >= 5 ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           },
           { // Date columns FF8700
             "targets": 21,
             "createdCell": function (td, cellData, rowData, row, col) {
+              var td$ = $(td);
               var varDataCell = cellData;
               if ( varDataCell == "KEEP" ) {
-                $(td).css('background-color', 'lightgreen')
+                td$.css('background-color', 'lightgreen')
               } else if (varDataCell == "DELETE") {
-                $(td).css('background-color', 'red')
+                td$.css('background-color', 'red')
               }
             }
           }
