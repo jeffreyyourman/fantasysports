@@ -66,8 +66,7 @@ $(document).ready(function(){
               { data: 'gsx$recpr.$t' },
               { data: 'gsx$ptsvpos.$t' },
               { data: 'gsx$criteriaranking.$t' },
-              { data: 'gsx$delete.$t' },
-              { data: 'gsx$gamesplayed.$t' }
+              { data: 'gsx$ownership.$t'}
         ],
         "columnDefs": [
           { className: "playername", "targets": [ 0 ] },
@@ -75,6 +74,7 @@ $(document).ready(function(){
           { // Date columns
             "targets": 0,
             "createdCell": function (td, cellData, rowData, row, col) {
+
               var td$ = $(td);
               var varRowData = rowData;
               var recentPerformance = rowData.gsx$recpr.$t;
@@ -280,20 +280,7 @@ $(document).ready(function(){
                 td$.css('background-color', 'red')
               }
             }
-          },
-          { // Date columns FF8700
-            "targets": 21,
-            "createdCell": function (td, cellData, rowData, row, col) {
-              var td$ = $(td);
-              var varDataCell = cellData;
-              if ( varDataCell == "KEEP" ) {
-                td$.css('background-color', 'lightgreen')
-              } else if (varDataCell == "DELETE") {
-                td$.css('background-color', 'red')
-              }
-            }
           }
-
         ]
 
     });
