@@ -101,7 +101,7 @@ $(document).ready(function(){
           { // Date columns
             "targets": 7,
             "createdCell": function (td, cellData, rowData, row, col) {
-              var td$ = $(td);
+               var td$ = $(td);
               var varDataCell = cellData;
               var time = varDataCell;
               var minutes = time.split(":");
