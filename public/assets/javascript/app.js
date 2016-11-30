@@ -5,9 +5,9 @@ $(document).ready(function(){
         // if emptdy show all the appointments
         $.get(urlNBA , function( data ) {
           //display all appointments with DATA
-        nbatable(data);
-        nbaFilterPosition();
-  });
+          nbatable(data);
+          nbaFilterPosition();
+        });
     var nbaFilterPosition = function(){
       var table = $('.tableNbaFantasy').DataTable();
       $(document).on("click",'.nbaposition', function(){
@@ -71,7 +71,7 @@ $(document).ready(function(){
         "columnDefs": [
           { className: "playername", "targets": [ 0 ] },
 
-          { // Date columns
+          { // targets suggestedplayers algorithm
             "targets": 0,
             "createdCell": function (td, cellData, rowData, row, col) {
 
@@ -98,7 +98,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns
+          { // targets 7
             "targets": 7,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -119,7 +119,7 @@ $(document).ready(function(){
               }
             }
           },
-          {
+          { // targets 9
             targets: 9,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -137,7 +137,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns
+          { // targets 11
             "targets": 11,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -155,7 +155,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns
+          { // targets 12
             "targets": 12,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -173,7 +173,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns
+          { // targets 13
             "targets": 13,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -191,7 +191,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns FF8700
+          { // targets 14
             "targets": 14,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -209,7 +209,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns FF8700
+          { // targets 16
             "targets": 16,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -227,7 +227,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns FF8700
+          { // targets 17
             "targets": 17,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -239,7 +239,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns FF8700
+          { // targets 18
             "targets": 18,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -251,7 +251,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns FF8700
+          { // targets 19
             "targets": 19,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
@@ -269,7 +269,7 @@ $(document).ready(function(){
               }
             }
           },
-          { // Date columns FF8700
+          { // targets 20
             "targets": 20,
             "createdCell": function (td, cellData, rowData, row, col) {
               var td$ = $(td);
