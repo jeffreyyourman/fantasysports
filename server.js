@@ -26,23 +26,18 @@ app.set('view engine', 'handlebars');
 
 
 var routes = require('./controllers/main_routes.js');
-var fantasydata_controller = require('./controllers/fantasydata_controller.js');
 var userdata_controller = require('./controllers/userdata_controller.js');
 var Fanduelplayers = require('./controllers/Fanduelplayers.js');
 
 
 // var nbateams = new Fanduelplayers()
-// console.log('inside server',nbateams);
 
 app.use('/', routes);
 app.use('/users', routes);
-app.use('/', fantasydata_controller);
-app.use('/NFL', fantasydata_controller);
 app.use('/users', userdata_controller);
 
 var PORT = process.env.PORT || 3000;
 
 app.listen(PORT, function() {
 	console.log("App listening on PORT: " + PORT);
-	// var FanduelPlayersList = new Fanduelplayers();
 });
