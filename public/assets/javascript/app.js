@@ -79,7 +79,7 @@ $(document).ready(function(){
               var varRowData = rowData;
               var recentPerformance = rowData.gsx$recpr.$t;
 
-              if (((rowData.gsx$recpr.$t <= 10) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t >= 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'KEEP') && (rowData.gsx$salaryadjust.$t <= 400)) {
+              if (((rowData.gsx$recpr.$t <= 10) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t >= 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'Suggested') && (rowData.gsx$salaryadjust.$t <= 400)) {
 
                 var playernames = rowData.gsx$player.$t;
                 var playerposition = rowData.gsx$position.$t;
