@@ -3,6 +3,7 @@ var session = require('express-session');
 var express = require('express');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var request = require("request");
 
 var app = express();
 
@@ -30,7 +31,7 @@ var userdata_controller = require('./controllers/userdata_controller.js');
 var Fanduelplayers = require('./controllers/Fanduelplayers.js');
 
 
-var nbateams = new Fanduelplayers()
+// var nbateams = new Fanduelplayers()
 
 app.use('/', routes);
 app.use('/users', routes);

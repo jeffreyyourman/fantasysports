@@ -15,92 +15,78 @@ CREATE TABLE Users
 );
 
 CREATE TABLE googlesheetsAPI (
+  playerId int NOT NULL,
   Player varchar(255) NOT NULL,
-  H/A varchar(255) NOT NULL,
+  HomeAway varchar(255) NOT NULL,
   Position varchar(255) NOT NULL,
   Team varchar(255) NOT NULL,
   Opp varchar(255) NOT NULL,
-  Condition varchar(255) NOT NULL,
-  Details varchar(255) NOT NULL,
-  POSID varchar(255) NOT NULL,
-  Avg Mins/L10 int
-  Proj Mins int
-  Salary int
-  Useage% int
-  PPG/L10 int
-  PPM int
-  OVP int
-  GL Adjust int,
-  Total Adjust int,
-  Proj Score int,
+  Mycondition varchar(255) NOT NULL,
+  details varchar(255) NOT NULL,
+  posid varchar(255) NOT NULL,
+  AvgMinsL10 int,
+  ProjMins int,
+  Salary int,
+  Useage int,
+  PPGL10 int,
+  PPM int,
+  OVP int,
+  GLAdjust int,
+  TotalAdjust int,
+  ProjScore int,
   GameLine int,
-  Projected Pts int,
+  ProjectedPts int,
   Value int,
-  Ownership% int (percentage),
-  Path Compare  int (percentage),
-  Expected Value int,
-  Net Value int,
-  Games Played int,
-  Salary Adjust int,
+  Ownership int,
+  PathCompare  int,
+  ExpectedValue int,
+  NetValue int,
+  GamesPlayed int,
+  SalaryAdjust int,
   RecPr int,
   Score int,
   PTsVPos int,
-  DELETE varchar(255) NOT NULL,
+  DeleteSuggested varchar(255) NOT NULL,
   CriteriaRanking int,
-  Player Count int
+  PlayerCount int,
+  PRIMARY KEY (playerId)
 );
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-37:38:20
-36.2
-12400
-31.60%
-58.35
-1.61
-0.9134
-1.13
-1.03
-113
-215
-58.93
-4.75
-75.60%
-57%
-3.23
-1.53
-6
-600
-8.25
-4.24
-29.12
-DELETE
-6
-0
+CREATE TABLE googlesheetsAPI (
+  playerId int NOT NULL,
+  Player varchar(255) NOT NULL,
+  HomeAway varchar(255) NOT NULL,
+  Position varchar(255) NOT NULL,
+  Team varchar(255) NOT NULL,
+  Opp varchar(255) NOT NULL,
+  Mycondition varchar(255) NOT NULL,
+  details varchar(255) NOT NULL,
+  posid varchar(255) NOT NULL,
+  AvgMinsL10 varchar(255) NOT NULL,
+  ProjMins varchar(255) NOT NULL,
+  Salary varchar(255) NOT NULL,
+  Useage varchar(255) NOT NULL,
+  PPGL10 varchar(255) NOT NULL,
+  PPM varchar(255) NOT NULL,
+  OVP varchar(255) NOT NULL,
+  GLAdjust varchar(255) NOT NULL,
+  TotalAdjust varchar(255) NOT NULL,
+  ProjScore varchar(255) NOT NULL,
+  GameLine varchar(255) NOT NULL,
+  ProjectedPts varchar(255) NOT NULL,
+  Value varchar(255) NOT NULL,
+  Ownership varchar(255) NOT NULL,
+  PathCompare  varchar(255) NOT NULL,
+  ExpectedValue varchar(255) NOT NULL,
+  NetValue varchar(255) NOT NULL,
+  GamesPlayed varchar(255) NOT NULL,
+  SalaryAdjust varchar(255) NOT NULL,
+  RecPr varchar(255) NOT NULL,
+  Score varchar(255) NOT NULL,
+  PTsVPos varchar(255) NOT NULL,
+  DeleteSuggested varchar(255) NOT NULL,
+  CriteriaRanking varchar(255) NOT NULL,
+  PlayerCount varchar(255) NOT NULL,
+  PRIMARY KEY (playerId)
+);
