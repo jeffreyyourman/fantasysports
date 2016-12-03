@@ -30,7 +30,7 @@ var userdata_controller = require('./controllers/userdata_controller.js');
 var Fanduelplayers = require('./controllers/Fanduelplayers.js');
 
 
-// var nbateams = new Fanduelplayers()
+var nbateams = new Fanduelplayers()
 
 app.use('/', routes);
 app.use('/users', routes);
