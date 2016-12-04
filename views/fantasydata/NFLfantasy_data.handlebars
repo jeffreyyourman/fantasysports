@@ -2,345 +2,326 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
-  <!-- <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script> -->
       <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <style media="screen">
-  td {
-    border: 1px solid black;
-    background-color:white;
-  }
-  .highlight {
-    font-weight: bold;
-    color: blue;
-  }
-  td.highlight {
-    font-weight: bold;
-    color: blue;
-  }
-  .pull-left {
-    float:left!important;
-  }
-  .dataTables_paginate {
-    float: left !important;
-  }
-  </style>
 </head>
 <body>
   <div class="container-fluid NFLTeamTable">
     <div class="row">
-      <div style='font-size:24px;' class="col-md-8">
-        <p>Jets are solid pick Jets are solid pick Jets are solid pick</p>
-        <p>Palmer will kill it Palmer will kill it Palmer will kill it </p>
-        <p>Brady Repeat? Brady Repeat? Brady Repeat?</p>
-        <p>Westbrook Trip dub alert? Westbrook Trip dub alert?</p>
-        <p>KD a bitch? yes. KD a bitch? yes. KD a bitch? yes.</p>
-        <p>Lebron a bitch? also yes. Lebron a bitch? also yes.</p>
-      </div>
-      <div style='font-size:24px;' class="col-md-4">
-        <p>Jets are solid pick</p>
-        <p>Palmer will kill it </p>
-        <p>Brady Repeat?</p>
-        <p>Westbrook Trip dub alert?</p>
-        <p>KD a bitch? yes.</p>
-        <p>Lebron a bitch? also yes.</p>
+      <div style='font-size:24px;' class="col-md-7">
+        <h2>What will go here is:</h2>
+        <button class='nflposition' type="button" data-position='QB' name="button">QB</button>
+        <button class='nflposition' type="button" data-position='RB' name="button">RB</button>
+        <button class='nflposition' type="button" data-position='WR' name="button">WR</button>
+        <button class='nflposition' type="button" data-position='TE' name="button">TE</button>
+        <button class='nflposition' type="button" data-position='K' name="button">K</button>
+        <button class='nflposition' type="button" data-position='DEF' name="button">DEF</button>
       </div>
     </div>
   </div>
   <div id='playerlist' class="container-fluid NFLtables">
-    <div class="row list">
-      <div class="col-md-2">
-        <li><a id='qbLink' href="#">Quarter Back</a></li>
-      </div>
-      <div class="col-md-2">
-        <li><a id='rbLink' href="#">Running Back</a></li>
-      </div>
-      <div class="col-md-2">
-        <li><a id='wrLink' href="#">Wide Receiver</a></li>
-      </div>
-      <div class="col-md-2">
-        <li><a id='teLink' href="#">Tight End</a></li>
-      </div>
-      <div class="col-md-2">
-        <li><a id='kLink' href="#">Kicker</a></li>
-      </div>
-      <div class="col-md-2">
-        <li><a id='defLink' href='#'>Defense</a></li>
-      </div>
-    </div>
-    <div class="row qbfantasy">
+    <div class="row nbafantasy">
       <div class="col-md-12">
         <div class="panel-body beforeResponsive">
           <div class="table-responsive">
-            <table class="table table-hover fantasyQB">
+            <!-- put images here -->
+            <table class="table table-striped table-hover tableNbaFantasy" cellpadding="0" cellspacing="0" border="0" width="100%">
               <thead>
                 <tr style='font-size: 16px;'>
-                  <th> Week	 </th>
-                  <th> Player	 </th>
-                  <th> Sal	 </th>
-                  <th> POS	 </th>
-                  <th> Team	 </th>
-                  <th> Team_Name	 </th>
-                  <th> ID	 </th>
-                  <th> Injury_Status	 </th>
-                  <th> Type_Injury	 </th>
-                  <th> RvP	 </th>
-                  <th> PlayerRank	 </th>
-                  <th> OPP_DEF_RANK	 </th>
-                  <th> FPPG	 </th>
-                  <th> PassAttempt_Game	 </th>
-                  <th> RUSHAtt_Game	 </th>
-                  <th> TotalOpp	 </th>
-                  <th> PPA	 </th>
-                  <th> DOVA	 </th>
-                  <th> Expected_Wins	 </th>
-                  <th> Path_Expectation	 </th>
-                  <th> O_U	 </th>
-                  <th> ML	 </th>
-                  <th> SL	 </th>
-                  <th> Ending_ML	 </th>
-                  <th> Line_Change	 </th>
-                  <th> Sal_Change	 </th>
-                  <th> OLScore	 </th>
-                  <th> PlayerRating	 </th>
-                  <th> CriteriaScore	 </th>
-                  <th> CritRank	 </th>
-                  <th> RecPre	 </th>
-                  <th> FPS </th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row rbfantasy">
-      <div class="col-md-12">
-        <div class="panel-body beforeResponsive">
-          <div class="table-responsive">
-            <table class="table table table-hover fantasyRB">
-              <thead>
-                <tr style='font-size: 16px;'>
-                  <th>Week</th>
                   <th>Player</th>
-                  <th>Sal</th>
-                  <th>POS</th>
+                  <th>Salary</th>
+                  <th>Position</th>
                   <th>Team</th>
-                  <th>Team_Name</th>
-                  <th>ID</th>
                   <th>Injury_Status</th>
-                  <th>Type_Injury</th>
-                  <th>Spread</th>
-                  <th>RVP</th>
-                  <th>PlayerRAnk</th>
-                  <th>PPG</th>
-                  <th>RUSHAtt_Game</th>
-                  <th>Rec_Targ</th>
-                  <th>TotalOpp</th>
-                  <th>PPA</th>
-                  <th>R_DOVA</th>
-                  <th>Expected_Wins</th>
+                  <th>RankingsVsPosition</th>
+                  <th>TotalOpportunities</th>
+                  <th>Dova</th>
                   <th>Path_Expectation</th>
-                  <th>O_U</th>
-                  <th>ML</th>
-                  <th>SL</th>
-                  <th>Ending_ML</th>
-                  <th>Line_Change</th>
-                  <th>Sal_Change</th>
-                  <th>Snap_Count</th>
-                  <th>OL_RANK</th>
-                  <th>RecPre</th>
-                  <th>PlayerRating</th>
+                  <th>Over/Under</th>
                   <th>CriteriaScore</th>
-                  <th>CritRank</th>
-                  <th>FPS</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row wrfantasy">
-      <div class="col-md-12">
-        <div class="panel-body beforeResponsive">
-          <div class="table-responsive">
-            <table class="table table table-hover fantasyWR">
-              <thead>
-                <tr style='font-size: 16px;'>
-                  <th>Week</th>
-                  <th>Player</th>
-                  <th>Sal</th>
-                  <th>POS</th>
-                  <th>Team</th>
-                  <th>Team_Name</th>
-                  <th>ID</th>
-                  <th>Injury_Status</th>
-                  <th>Type_Injury</th>
-                  <th>Spread</th>
-                  <th>QB_Score</th>
-                  <th>RvP</th>
-                  <th>PlayerRank</th>
-                  <th>PPG</th>
-                  <th>RUSHAtt_Game</th>
-                  <th>Rec_Targ</th>
-                  <th>Recs</th>
-                  <th>Total_Opp</th>
-                  <th>PPA</th>
-                  <th>P_DOVA</th>
-                  <th>Expected_Wins</th>
-                  <th>Path_Expectation</th>
-                  <th>O_U</th>
-                  <th>ML</th>
-                  <th>SL</th>
-                  <th>Ending_ML</th>
-                  <th>Line_Change</th>
-                  <th>Sal_Change</th>
-                  <th>Snap_Count</th>
-                  <th>RecPre</th>
-                  <th>PlayerRating</th>
-                  <th>CriteriaScore</th>
-                  <th>CritRank</th>
-                  <th>FPS</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row tefantasy">
-      <div class="col-md-12">
-        <div class="panel-body beforeResponsive">
-          <div class="table-responsive">
-            <table class="table table table-hover fantasyTE">
-              <thead>
-                <tr style='font-size: 16px;'>
-                  <th>Week</th>
-                  <th>Player</th>
-                  <th>Sal</th>
-                  <th>POS</th>
-                  <th>Team</th>
-                  <th>Team_Name</th>
-                  <th>ID</th>
-                  <th>Injury_Status</th>
-                  <th>Type_Injury</th>
-                  <th>Spread</th>
-                  <th>QB_Score</th>
-                  <th>RvP</th>
-                  <th>PlayerRank</th>
-                  <th>PPG</th>
-                  <th>RUSHAtt_Game</th>
-                  <th>Rec_Targ</th>
-                  <th>Recs</th>
-                  <th>Total_Opp</th>
-                  <th>PPA</th>
-                  <th>P_DOVA</th>
-                  <th>Expected_Wins</th>
-                  <th>Path_Expectation</th>
-                  <th>O_U</th>
-                  <th>ML</th>
-                  <th>SL</th>
-                  <th>Ending_ML</th>
-                  <th>Line_Change</th>
-                  <th>Sal_Change</th>
-                  <th>Snap_Count</th>
-                  <th>RecentPre</th>
-                  <th>PlayerRating</th>
-                  <th>CriteriaScore</th>
-                  <th>CritRank</th>
-                  <th>FPS</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row kfantasy">
-      <div class="col-md-12">
-        <div class="panel-body beforeResponsive">
-          <div class="table-responsive">
-            <table class="table table table-hover fantasyK">
-              <thead>
-                <tr style='font-size: 16px;'>
-                  <th>Week</th>
-                  <th>Player</th>
-                  <th>Sal</th>
-                  <th>POS</th>
-                  <th>Team</th>
-                  <th>Team_Name</th>
-                  <th>Injury_Status</th>
-                  <th>Type_Injury</th>
-                  <th>RvP</th>
-                  <th>PlayerRank</th>
-                  <th>PPG</th>
-                  <th>Total_Opp</th>
-                  <th>PPK</th>
-                  <th>Expected_Wins</th>
-                  <th>Path_Expectation</th>
-                  <th>O_U</th>
-                  <th>ML</th>
-                  <th>SL</th>
-                  <th>Ending_ML</th>
-                  <th>Line_Change</th>
-                  <th>Sal_Change</th>
-                  <th>RecPRe</th>
-                  <th>TD_Con</th>
-                  <th>PlayerRating</th>
-                  <th>CriteriaScore</th>
-                  <th>CritRank</th>
-                  <th>FPS</th>
-                </tr>
-              </thead>
-            </table>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row deffantasy">
-      <div class="col-md-12">
-        <div class="panel-body beforeResponsive">
-          <div class="table-responsive">
-            <table class="table table table-hover fantasyDEF">
-              <thead>
-                <tr style='font-size: 16px;'>
-                  <th>Week</th>
-                  <th>Player</th>
-                  <th>Sal</th>
-                  <th>POS</th>
-                  <th>Team</th>
-                  <th>Team_Name</th>
-                  <th>Opp</th>
-                  <th>PPG</th>
-                  <th>OPP_QB_Injury_Status</th>
-                  <th>Type_Injury</th>
-                  <th>OpposingQBScore</th>
-                  <th>RvP</th>
-                  <th>PlayerRank</th>
-                  <th>Yards_Allowed</th>
-                  <th>DEF_DOVA</th>
-                  <th>Opp_O_DOVA</th>
-                  <th>CombinedDOVA</th>
-                  <th>Expected_Wins</th>
-                  <th>Path_Expectation</th>
-                  <th>O_U</th>
-                  <th>ML</th>
-                  <th>SL</th>
-                  <th>Ending_ML</th>
-                  <th>Line_Change</th>
-                  <th>Sal_Change</th>
-                  <th>PlayerRating</th>
-                  <th>CriteriaScore</th>
-                  <th>CritRank</th>
+                  <th>CriteriaRanking</th>
+                  <th>PointsPerAttempt</th>
+                  <th>SnapCount</th>
+                  <th>SalaryChange</th>
                   <th>RecentPerformance</th>
-                  <th>FPS</th>
+                  <th>FantasyPointsScored</th>
+                  <th>Opponent</th>
+                  <th>PlayerCount</th>
+                  <th>LineChange</th>
                 </tr>
               </thead>
+              {{#each fantasyNFL}}
+              <tbody>
+                <td>{{Player}}</td>
+                <td>{{Sal}}</td>
+                <td>{{POS}}</td>
+                <td>{{Team}}</td>
+                <td>{{Injury_Status}}</td>
+                <td>{{RvP}}</td>
+                <td>{{TotalOpp}}</td>
+                <td>{{DOVA}}</td>
+                <td>{{Path_Expectation}}</td>
+                <td>{{O_U}}</td>
+                <td>{{CriteriaScore}}</td>
+                <td>{{CritRank}}</td>
+                <td>{{PPA}}</td>
+                <td>{{Snap_Count}}</td>
+                <td>{{Sal_Change}}</td>
+                <td>{{RecPre}}</td>
+                <td>{{FPS}}</td>
+                <td>{{Opp}}</td>
+                <td>{{PlayerCount}}</td>
+                <td>{{Line_Change}}</td>
+              </tbody>
+              {{/each}}
             </table>
           </div>
         </div>
       </div>
     </div>
   </div>
-<!-- DataTables warning: Non-table node initialisation (DIV). For more information about this error, please see http://datatables.net/tn/2 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <div class="suggestedbuttondiv">
+      <div class="suggesteddiv">
+          <button style='text-align:center;' type="button" class="btn btn-default suggestedbutton">My Suggested Players</button>
+      </div>
+  </div>
+  <div class="suggesteddivshow">
+      <div id="sizer">
+          <a class='closesuggested' href="#">x</a>
+      </div>
+      <h4 class='suggestedPlayersh4'>My Suggested Fanduel NBA Players</h4>
+      <div class="suggestedDivScroll">
+        <ul class='suggestedPlayersNBA'></ul>
+      </div>
+
+      <br>
+  </div>
+  <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Description of each column</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div style='background-color:lightgreen; height:140px;' class="col-md-2">
+            <p>Good to go</p>
+          </div>
+          <div style='background-color:yellow; height:140px;' class="col-md-2">
+            <p>Be Aware</p>
+          </div>
+          <div style='background-color:#FFBD00; height:140px;' class="col-md-3">
+            <p>Be Cautious (I would be weary. Check other categories)</p>
+          </div>
+          <div style='background-color:#FF8700; height:140px;' class="col-md-3">
+            <p>Stay Away (Really depends on other categories)</p>
+          </div>
+          <div style='background-color:red; height:140px;' class="col-md-2">
+            <p>Red Flag(Every other category must be perfect for me to use)</p>
+          </div>
+          <br>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-12">
+            <h3>How I use the table, and what columns I look at.</h3>
+            <p>You have to look at everything collectively. The columns I mostly look at are ProjMins, Useage%, OvP, ProjTeamScore, Gameline, SalaryAdjust, RecentPerformance, PtsvsPos, and CriteriaRanking. After that I find the best combo of players and throw them in a line. The key to using this table is Trust the Process and HAVE NO BIAS OPINION!</p>
+          </div>
+          <div class="col-md-12">
+
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>ProjMins</p>
+          </div>
+          <div class="col-md-9">
+            <p>ProjMins: How many minutes a player is projected to play</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>Useage%</p>
+          </div>
+          <div class="col-md-9">
+            <p>Useage%: How long a player has control of the ball per possession (Anything above 30% (varies based on position) is in the clear. It is ok to go lower if other categories are good)</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>PPG/L10</p>
+          </div>
+          <div class="col-md-9">
+            <p>PPG/L10: Average fantasy points per game for the last 10 games</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>PPM(Points per Minute)</p>
+          </div>
+          <div class="col-md-9">
+            <p>PPM(Points per Minute): How many fantasy points a player gets per minute (Anything above 1.2 is in the clear. It is ok to go lower if other categories are good)</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>OVP(Offense Vs Position)</p>
+          </div>
+          <div class="col-md-9">
+            <p>OVP(Offense Vs Position): How well the opponent defends that specific position (Anything above 1.0 is in the clear. It is ok to go lower if other categories are good)</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>ProjTeamScore</p>
+          </div>
+          <div class="col-md-9">
+            <p>ProjTeamScore: Projection of the Total team points</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>GameLine</p>
+          </div>
+          <div class="col-md-9">
+            <p>GameLine: Projection of the Total game points</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>ProjectedPts</p>
+          </div>
+          <div class="col-md-9">
+            <p>ProjectedPts: My Projection of points a specific player will score.</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>Value</p>
+          </div>
+          <div class="col-md-9">
+            <p>Value: Projected value of a specific player based on projections (Try to stay above 5.0 but it is ok to go below if other categories are good)</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>SalaryAdjust</p>
+          </div>
+          <div class="col-md-9">
+            <p>SalaryAdjust: Their last game salary compared to their current salary (Anything 400 and below is in the clear. Above 400 is a red flag. - is equivalent to a 0 which is great)</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>RecentPerformance</p>
+          </div>
+          <div class="col-md-9">
+            <p>RecentPerformance: Their last game compared to their average (Anything 10 and below is in the clear. Above 10 is a red flag. - is equivalent to a 0 which is great)</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>PtsVPos(Points vs Position)</p>
+          </div>
+          <div class="col-md-9">
+            <p>PtsVPos(Points vs Position): Points allowed by the defensive position</p>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-3">
+            <p>CriteriaRanking</p>
+          </div>
+          <div class="col-md-9">
+            <p>CriteriaRanking: The rank I rank players. 7-6 and 5 are good to go but anything below 5 is a red flag</p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- End Modal -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86407503-2', 'auto');
+  ga('send', 'pageview');
+</script>
+<script type="text/javascript">
+$('.suggesteddivshow').hide();
+$('.suggestedbutton').on('click', function() {
+    $('.suggesteddiv').hide();
+    $('.suggesteddivshow').show();
+});
+$('.closesuggested').on('click', function() {
+    $(".suggesteddivshow").hide();
+    $('.suggesteddiv').show();
+    return false;
+});
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip({
+      'selector': '',
+      'placement': 'top',
+      'container':'body'
+    })
+  });
+
+
+</script>

@@ -18,11 +18,17 @@ router.get('/', function(req, res){
 });
 
 router.get('/NFL', function (req,res){
+
+  connection.query("select * from googlesheetsapiNFL", function(err,fantasyNFL){
+    if(err) throw err;
+
+    // console.log("Clean table, ready for update");
       var hbsObject = {
-        logged_in:req.session.logged_in,
+        fantasyNFL: fantasyNFL
       }
-      res.render('fantasydata/NFLfantasy_data', hbsObject);
-});
+        res.render('fantasydata/NFLfantasy_data', hbsObject);
+      })
+  });
 
 router.get('/NBA', function (req,res){
 

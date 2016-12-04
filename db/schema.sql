@@ -14,7 +14,9 @@ CREATE TABLE Users
   date TIMESTAMP
 );
 
-CREATE TABLE googlesheetsAPI (
+=======NBA SCHEMA START =======
+
+CREATE TABLE googlesheetsAPINBA (
   playerId int NOT NULL,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,
@@ -52,7 +54,7 @@ CREATE TABLE googlesheetsAPI (
   PRIMARY KEY (playerId)
 );
 
-CREATE TABLE googlesheetsAPI (
+CREATE TABLE googlesheetsAPINBA (
   playerId int NOT NULL AUTO_INCREMENT,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,
@@ -89,3 +91,68 @@ CREATE TABLE googlesheetsAPI (
   PlayerCount varchar(255) NOT NULL,
   PRIMARY KEY (playerId)
 );
+
+=======NBA SCHEMA END =======
+
+
+
+
+
+
+=======NFL SCHEMA START =======
+
+CREATE TABLE googlesheetsAPINFL (
+  NFLplayerId int NOT NULL AUTO_INCREMENT,
+  Player varchar (255) NOT NULL,
+  Sal varchar (255) NOT NULL,
+  POS varchar (255) NOT NULL,
+  Team varchar (255) NOT NULL,
+  RvP varchar (255) NOT NULL,
+  TotalOpp varchar (255) NOT NULL,
+  DOVA varchar (255) NOT NULL,
+  Path_Expectation varchar (255) NOT NULL,
+  O_U varchar (255) NOT NULL,
+  Line_Change varchar (255) NOT NULL,
+  Sal_Change varchar (255) NOT NULL,
+  CriteriaScore varchar (255) NOT NULL,
+  CritRank varchar (255) NOT NULL,
+  PPA varchar (255) NOT NULL,
+  Snap_Count varchar (255) NOT NULL,
+  FPS varchar (255) NOT NULL,
+  Opp varchar (255) NOT NULL,
+  PlayerCount varchar (255) NOT NULL,
+  Injury_Status varchar (255) NOT NULL,
+  RecPre varchar (255) NOT NULL,
+  PRIMARY KEY (NFLplayerId)
+);
+
+CREATE TABLE googlesheetsAPINFL (
+  NFLplayerId int NOT NULL AUTO_INCREMENT,
+  Player varchar (255) NOT NULL,
+  Sal varchar (255) NOT NULL,
+  POS varchar (255) NOT NULL,
+  Team varchar (255) NOT NULL,
+  RvP varchar (255) NOT NULL,
+  TotalOpp varchar (255) NOT NULL,
+  DOVA varchar (255) NOT NULL,
+  Path_Expectation varchar (255) NOT NULL,
+  O_U varchar (255) NOT NULL,
+  Line_Change varchar (255) NOT NULL,
+  Sal_Change varchar (255) NOT NULL,
+  CriteriaScore varchar (255) NOT NULL,
+  CritRank varchar (255) NOT NULL,
+  PPA varchar (255) NOT NULL,
+  Snap_Count varchar (255) NOT NULL,
+  FPS varchar (255) NOT NULL,
+  Opp varchar (255) NOT NULL,
+  PlayerCount varchar (255) NOT NULL,
+  Injury_Status varchar (255) NOT NULL,
+  RecPre varchar (255) NOT NULL,
+  PRIMARY KEY (NFLplayerId)
+);
+
+
+
+
+
+=======NFL SCHEMA END =======
