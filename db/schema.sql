@@ -51,9 +51,9 @@ CREATE TABLE googlesheetsAPI (
   PlayerCount int,
   PRIMARY KEY (playerId)
 );
-}
 
-CREATE TABLE googlesheetsAPI (
+
+CREATE TABLE googlesheetsapi (
   playerId int NOT NULL AUTO_INCREMENT,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,

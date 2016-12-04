@@ -82,6 +82,17 @@ var orm = {
         cb(result);
       });
     },
+    searchfandueldata: function(tableInput, col, condition,  cb){
+      var queryString = 'SELECT * FROM ' + tableInput;
+      queryString = queryString + ' WHERE ';
+      queryString = queryString + col + ' like ' + '"%'+condition+'%";';
+
+      connection.query(queryString, function(err, result) {
+          if (err) throw err;
+          cb(result);
+      });
+    },
+
     findOnefandueldata: function(tableInput, condition, cb) {
         var queryString = 'SELECT * FROM ' + tableInput;
         queryString = queryString + ' WHERE ';

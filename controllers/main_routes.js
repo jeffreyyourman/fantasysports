@@ -41,4 +41,13 @@ router.get('/Contact', function(req,res){
   res.render('users/contactus');
 });
 
+router.get('/search/:id',function(req,res){
+  var sTerm = req.params.id
+
+  fanduel.searchfandueldata(sTerm, function(data){
+  console.log(data);
+  res.json([data])
+})
+})
+
 module.exports = router;

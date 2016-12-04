@@ -5,6 +5,12 @@ Here is where you setup a model for how to interface with the database.
 var orm = require('../config/orm.js');
 
 var fandueldata = {
+	searchfandueldata: function(condition,cb){
+		orm.searchfandueldata("googlesheetsapi","Player",condition,function(res){
+			cb(res);
+		});
+	},
+
 
 	findOnefandueldata: function(condition, cb) {
 	  orm.findOnefandueldata('googlesheetsapi', condition, function(res){
