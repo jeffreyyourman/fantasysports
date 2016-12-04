@@ -16,7 +16,7 @@ CREATE TABLE Users
 
 =======NBA SCHEMA START =======
 
-CREATE TABLE googlesheetsAPINBA (
+CREATE TABLE googlesheetsapi (
   playerId int NOT NULL,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,
@@ -54,7 +54,7 @@ CREATE TABLE googlesheetsAPINBA (
   PRIMARY KEY (playerId)
 );
 
-CREATE TABLE googlesheetsAPINBA (
+CREATE TABLE googlesheetsapi(
   playerId int NOT NULL AUTO_INCREMENT,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,
@@ -101,7 +101,7 @@ CREATE TABLE googlesheetsAPINBA (
 
 =======NFL SCHEMA START =======
 
-CREATE TABLE googlesheetsAPINFL (
+CREATE TABLE googlesheetsapiNFL (
   NFLplayerId int NOT NULL AUTO_INCREMENT,
   Player varchar (255) NOT NULL,
   Sal varchar (255) NOT NULL,
@@ -126,7 +126,7 @@ CREATE TABLE googlesheetsAPINFL (
   PRIMARY KEY (NFLplayerId)
 );
 
-CREATE TABLE googlesheetsAPINFL (
+CREATE TABLE googlesheetsapiNFL (
   NFLplayerId int NOT NULL AUTO_INCREMENT,
   Player varchar (255) NOT NULL,
   Sal varchar (255) NOT NULL,
