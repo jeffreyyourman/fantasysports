@@ -51,7 +51,6 @@ CREATE TABLE googlesheetsAPI (
   PlayerCount int,
   PRIMARY KEY (playerId)
 );
-}
 
 CREATE TABLE googlesheetsAPI (
   playerId int NOT NULL AUTO_INCREMENT,
