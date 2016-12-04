@@ -11,7 +11,7 @@ var urlNFL = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNFL + 
 var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
 var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
 
-
+var fanduelSports = function() {
 var fanduelNFLDB = function() {
     request(urlNFL, function(error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -39,7 +39,7 @@ var fanduelNFLDB = function() {
         }
     });
   }
-fanduelNFLDB();
+
 
 
 var fanduelNBADB = function() {
@@ -70,6 +70,8 @@ var fanduelNBADB = function() {
             }
         }
     });
+  }
+  fanduelNFLDB();
+  fanduelNBADB();
 }
-
-fanduelNBADB();
+module.exports = fanduelSports;

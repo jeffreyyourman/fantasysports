@@ -30,17 +30,11 @@ var routes = require('./controllers/main_routes.js');
 var userdata_controller = require('./controllers/userdata_controller.js');
 var Fanduelplayers = require('./controllers/Fanduelplayers.js');
 
-// var spreadsheetIDNFL = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
-// var urlNFL = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNFL + "/od6/public/values?alt=json";
-// // var nbateams = new Fanduelplayers()
-// app.get('/wishful', function(req,res){
-// 	request(urlNFL, function(error, response, body) {
-// 		if (!error && response.statusCode == 200) {
-// 			var body = JSON.parse(body)
-// 			res.json(body);
-// 		}
-// 	});
-// });
+
+app.get('/load', function(req,res){
+	var nbateams = new Fanduelplayers()
+	res.redirect('/');
+});
 
 
 
