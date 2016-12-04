@@ -31,7 +31,7 @@ router.get('/NBA', function (req,res){
 
     console.log("Clean table, ready for update");
       var hbsObject = {
-        data: fantasyNBA
+        fantasyNBA: fantasyNBA
       }
         res.render('fantasydata/NBAfantasy_data', hbsObject);
       })
