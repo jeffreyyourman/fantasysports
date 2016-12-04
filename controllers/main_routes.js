@@ -29,7 +29,7 @@ router.get('/NBA', function (req,res){
   connection.query("select * from googlesheetsapi", function(err,fantasyNBA){
     if(err) throw err;
 
-    console.log("Clean table, ready for update");
+    // console.log("Clean table, ready for update");
       var hbsObject = {
         fantasyNBA: fantasyNBA
       }
