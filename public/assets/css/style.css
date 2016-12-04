@@ -24,7 +24,7 @@ body,html{
 
 #chatmessages{
   overflow:auto;
-  background-color: #021A3A;
+  background-color: #021A3A;8
   height:300px;
   margin-left: 5%;
 }
@@ -150,10 +150,45 @@ body,html{
 
 
 /*Table stuff start*/
+
+.table > thead:first-child > tr:first-child > th:first-child {
+    position: absolute;
+    display: inline-block;
+    background-color: inherit;
+    height: 100%;
+    background-color:  #f0fcff;
+    width: 200px;
+}
+
+.table > tbody > tr > td:first-child {
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    width: 200px;
+
+}
+
+.table > thead:first-child > tr:first-child > th:nth-child(2) {
+    padding-left: 200px;
+}
+
+.table > tbody > tr > td:nth-child(2) {
+    padding-left: 50px !important;
+}
+
+
+
+#nba{
+width: 90%;
+
+}
+table{
+  width: 300px;
+}
 td {
   font-family: 'Audiowide', cursive;
-  border: 1px solid black;
-  background-color:white;
+  font-size: 12px;
+background-color: white;
 }
 .pull-left {
   float:left!important;
@@ -181,7 +216,7 @@ table.dataTable thead .sorting_desc {
 
 
 div.tooltip-inner {
-  max-width: 350px;
+
 }
 
 td.highlight {
@@ -198,6 +233,7 @@ td.highlight {
 .nbaposition {
 background-color:#021A3A;
 color:white;
+
 }
 
 .btn-group-lg>.btn, .btn-lg {
@@ -260,4 +296,55 @@ color:black;
   .chatbutton {
     font-size: 11px;
   }
+/*  table shit*/
+.table > thead:first-child > tr:first-child > th:first-child {
+    position: absolute;
+    display: inline-block;
+    background-color: inherit;
+    height: 100%;
+    background-color:  #f0fcff;
+    width: 200px;
+}
+
+.table > tbody > tr > td:first-child {
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    width: 200px;
+
+}
+
+.table > thead:first-child > tr:first-child > th:nth-child(2) {
+    padding-left: 200px;
+}
+
+.table > tbody > tr > td:nth-child(2) {
+    padding-left: 50px !important;
+}
+
+
+
+#nba{
+width: 100%;
+padding: 0px
+}
+
+.table-responsive {
+    overflow-x: auto;
+    min-height: 0.01%;
+}
+.table-bordered {
+    border: 1px solid #ecf0f1;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 21px;
+}
+td {
+  font-family: 'Audiowide', cursive;
+  font-size: 11px;
+  width: auto;
+
+}
 }
