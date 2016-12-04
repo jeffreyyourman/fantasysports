@@ -37,28 +37,20 @@ request(urlNBA, function (error, response, body) {
 }
 });
 
-// fdsafdsa
-// fdasfdsa
 var FanduelListNBA = function() {
 
-  // setInterval(function(){
-  //   if (now == 15) {
-  //     console.log(now);
-  //   }
-  // }, 60000);
-
-
 
   // setInterval(function(){
-  //   var now = new Date().getHours();
-  //   console.log('not in if statement', now);
-  //   if (now == 20) {
+  //   var now = new Date().getMinutes();
+  //   if (now == 19) {
   //     console.log(now);
   //   }
   //   if (now == 21) {
   //     console.log(now);
   //   }
-  // }, 120000);
+  // }, 6000);
 }
+
+FanduelListNBA();
 
 module.exports = FanduelListNBA;

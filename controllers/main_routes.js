@@ -3,6 +3,7 @@ var router = express.Router();
 var request = require("request");
 var cheerio = require('cheerio');
 
+var fanduel = require('../model/fanduelinfo.js');
 var user = require('../model/userdata.js');
 var connection = require('../config/connection.js');
 
@@ -24,11 +25,17 @@ router.get('/NFL', function (req,res){
 });
 
 router.get('/NBA', function (req,res){
+
+  connection.query("select * from googlesheetsAPI", function(err,fantasyNBA){
+    if(err) throw err;
+
+    console.log("Clean table, ready for update");
       var hbsObject = {
-        logged_in:req.session.logged_in,
+        data: fantasyNBA
       }
-      res.render('fantasydata/NBAfantasy_data', hbsObject);
-});
+        res.render('fantasydata/NBAfantasy_data', hbsObject);
+      })
+  });
 
 router.get('/Contact', function(req,res){
   res.render('users/contactus');

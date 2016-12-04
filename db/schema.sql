@@ -54,7 +54,7 @@ CREATE TABLE googlesheetsAPI (
 
 
 CREATE TABLE googlesheetsAPI (
-  playerId int NOT NULL,
+  playerId int NOT NULL AUTO_INCREMENT,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,
   Position varchar(255) NOT NULL,
