@@ -38,6 +38,32 @@ var fandueldata = {
 			cb(res);
 		});
 	},
+	findOnefandueldataNFL: function(condition, cb) {
+		orm.findOnefandueldataNFL('googlesheetsapiNFL', condition, function(res){
+				cb(res);
+		});
+	},
+	allfandueldataNFL: function(cb) {
+		orm.allfandueldataNFL('googlesheetsapiNFL', function(res){
+			cb(res);
+		});
+	},
+	//cols and vals are arrays
+	createfandueldataNFL: function(cols, vals, cb) {
+		orm.createfandueldataNFL('googlesheetsapiNFL', cols, vals, function(res){
+			cb(res);
+		});
+	},
+	updatefandueldataNFL: function(objColVals, condition, cb) {
+		orm.updatefandueldataNFL('googlesheetsapiNFL', objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+	deletefandueldataNFL: function(condition, cb){
+		orm.deletefandueldataNFL('googlesheetsapiNFL', condition, function(res){
+			cb(res);
+		});
+	}
 };
 
 module.exports = fandueldata;
