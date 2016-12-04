@@ -19,7 +19,7 @@ router.get('/', function(req, res){
 
 router.get('/NFL', function (req,res){
 
-  connection.query("select * from googlesheetsapiNFL", function(err,fantasyNFL){
+  connection.query("SELECT * FROM googlesheetsapiNFL ORDER BY POS DESC;", function(err,fantasyNFL){
     if(err) throw err;
 
     // console.log("Clean table, ready for update");
@@ -32,7 +32,7 @@ router.get('/NFL', function (req,res){
 
 router.get('/NBA', function (req,res){
 
-  connection.query("select * from googlesheetsapi", function(err,fantasyNBA){
+  connection.query("SELECT * FROM googlesheetsapi ORDER BY CriteriaRanking DESC;", function(err,fantasyNBA){
     if(err) throw err;
 
     // console.log("Clean table, ready for update");
