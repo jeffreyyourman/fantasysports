@@ -14,7 +14,7 @@ request(urlNBA, function (error, response, body) {
   if (!error && response.statusCode == 200) {
     var	body = JSON.parse(body)
 
-    connection.query("delete from googlesheetsAPI", function(err,fanduelData){
+    connection.query("delete from googlesheetsapi", function(err,fanduelData){
       if(err) throw err;
 
       console.log("Clean table, ready for update");
