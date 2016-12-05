@@ -150,14 +150,14 @@ body,html{
     background-color: inherit;
     height: 100%;
     background-color:  #f0fcff;
-    width: 160px;
+    width: 200px;
 }
 
 .table > tbody > tr > td:first-child {
     position: absolute;
     display: inline-block;
     background-color: white;
-    width: 160px;
+    width: 200px;
 
 }
 
@@ -310,14 +310,15 @@ color:black;
     background-color: inherit;
     height: 100%;
     background-color:  #f0fcff;
-    width: 150px;
+    width: 200px;
 }
+
 
 .table > tbody > tr > td:first-child {
     position: absolute;
     display: inline-block;
     background-color: white;
-    width: 150px;
+    width: 200px;
 
 }
 
