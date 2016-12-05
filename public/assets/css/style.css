@@ -303,14 +303,14 @@ color:black;
     background-color: inherit;
     height: 100%;
     background-color:  #f0fcff;
-    width: 160px;
+    width: 150px;
 }
 
 .table > tbody > tr > td:first-child {
     position: absolute;
     display: inline-block;
     background-color: white;
-    width: 160px;
+    width: 150px;
 
 }
 
