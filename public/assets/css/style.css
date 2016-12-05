@@ -157,14 +157,14 @@ body,html{
     background-color: inherit;
     height: 100%;
     background-color:  #f0fcff;
-    width: 200px;
+    width: 160px;
 }
 
 .table > tbody > tr > td:first-child {
     position: absolute;
     display: inline-block;
     background-color: white;
-    width: 200px;
+    width: 160px;
 
 }
 
@@ -178,10 +178,10 @@ body,html{
 
 
 
-#nba{
+/*#nba{
 width: 90%;
 
-}
+}*/
 table{
   width: 300px;
 }
@@ -345,6 +345,5 @@ td {
   font-family: 'Audiowide', cursive;
   font-size: 11px;
   width: auto;
-
-}
+  }
 }
