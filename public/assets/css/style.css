@@ -102,7 +102,7 @@ body,html{
 
 .suggestedDivScroll {
   overflow:auto;
-  height:300px;
+  height:400px;
 }
 .suggesteddivshow {
   height:450px;
@@ -340,7 +340,7 @@ color:black;
     right:5%;
   }*/
   .chatdivshow {
-    height:300px;
+    height:400px;
     right:5%;
     overflow:auto;
     background-color: #021A3A;
