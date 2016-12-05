@@ -296,10 +296,10 @@ color:black;
     height:300px;
   }*/
   .suggesteddivshow {
-    height:200px;
+    height:300px;
     left:5%;
     background-color: #021A3A;
-    width:100px;
+    width:200px;
     position: fixed;
     bottom: 0px;
   }
@@ -340,11 +340,11 @@ color:black;
     right:5%;
   }*/
   .chatdivshow {
-    height:200px;
+    height:300px;
     right:5%;
     overflow:auto;
     background-color: #021A3A;
-    width:100px;
+    width:200px;
     position: fixed;
     bottom: 0px;
   }
