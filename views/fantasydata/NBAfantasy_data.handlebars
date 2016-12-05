@@ -6,18 +6,24 @@
 </head>
 <body>
   <div class="container-fluid NFLTeamTable">
-    <div class="row">
-      <div style='font-size:24px;' class="col-md-7">
-        <h2>What will go here is:</h2>
-        <button class='nbaposition' type="button" data-position='All' name="button">All</button>
-        <button class='nbaposition' type="button" data-position='PG' name="button">PG</button>
-        <button class='nbaposition' type="button" data-position='SG' name="button">SG</button>
-        <button class='nbaposition' type="button" data-position='SF' name="button">SF</button>
-        <button class='nbaposition' type="button" data-position='PF' name="button">PF</button>
-        <button class='nbaposition' type="button" data-position='C' name="button">C</button>
-      </div>
-    </div>
+    <br>
+    <br>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
+    <br>
+    <br>
+    <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for names.." title="Type in a name">
+    <br>
+    <br>
+    <select id='mySelectedInput' onchange='myPositionFunction()'>
+      <option value="default">Filter by position</option>
+      <option value="all">All Positions</option>
+      <option value="pg">PG</option>
+      <option value="sg">SG</option>
+      <option value="sf">SF</option>
+      <option value="pf">PF</option>
+      <option value="c">C</option>
+    </select>
+
   </div>
   <div id='playerlist' class="container-fluid NBAtables">
     <div class="row nbafantasy">
@@ -25,7 +31,7 @@
         <div class="panel-body beforeResponsive">
           <div   class="table-responsive">
             <!-- put images here -->
-            <table class="table table-bordered tableNbaFantasy">
+            <table id='myTable' class="table table-bordered tableNbaFantasy">
               <thead>
                 <tr style='font-size: 12px;'>
                   <th>Player</th>
@@ -55,7 +61,7 @@
               </thead>
               <tbody>
               {{#each fantasyNBA}}
-              <tr>
+              <tr id='mytabl3'>
                 <td>{{Player}}</td>
                 <td></td>
                 <td>{{HomeAway}}</td>
@@ -295,6 +301,42 @@
   ga('send', 'pageview');
 </script>
 <script type="text/javascript">
+
+function myPositionFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mySelectedInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+function mySearchFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mySearchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
 $('.suggesteddivshow').hide();
 $('.suggestedbutton').on('click', function() {
     $('.suggesteddiv').hide();

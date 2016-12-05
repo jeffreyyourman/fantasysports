@@ -1,13 +1,5 @@
 // $(document).ready(function(){
-    // var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
-    // var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
-//       var arr = [];
-//         // if emptdy show all the appointments
-//         $.get(urlNBA , function( data ) {
-//           //display all appointments with DATA
-//           nbatable(data);
-//           nbaFilterPosition();
-//         });
+//
 //     var nbaFilterPosition = function(){
 //       var table = $('.tableNbaFantasy').DataTable();
 //       $(document).on("click",'.nbaposition', function(){
@@ -33,7 +25,6 @@
 //       var nbatable = function(data) {
 //       $(".tableNbaFantasy").dataTable().fnDestroy();
 //       var table = $('.tableNbaFantasy').DataTable({
-//             data: data.feed.entry,
 //             "dom": '<"NBAimages">fr<t>ip',
 //             "scrollY": "600px",
 //             "scrollX": true,
@@ -44,30 +35,6 @@
 //             "paging": false,
 //             "fixedColumns": true,
 //
-//             columns: [
-//               { data: 'gsx$player.$t' },
-//               { data: 'gsx$ha.$t' },
-//               { data: 'gsx$position.$t' },
-//               { data: 'gsx$team.$t' },
-//               { data: 'gsx$opp.$t' },
-//               { data: 'gsx$condition.$t' },
-//               { data: 'gsx$details.$t' },
-//               { data: 'gsx$projmins.$t' },
-//               { data: 'gsx$salary.$t' },
-//               { data: 'gsx$useage.$t' },
-//               { data: 'gsx$ppgl10.$t' },
-//               { data: 'gsx$ppm.$t' },
-//               { data: 'gsx$ovp.$t' },
-//               { data: 'gsx$projscore.$t' },
-//               { data: 'gsx$gameline.$t' },
-//               { data: 'gsx$projectedpts.$t' },
-//               { data: 'gsx$value.$t' },
-//               { data: 'gsx$salaryadjust.$t' },
-//               { data: 'gsx$recpr.$t' },
-//               { data: 'gsx$ptsvpos.$t' },
-//               { data: 'gsx$criteriaranking.$t' },
-//               { data: 'gsx$ownership.$t'}
-//         ],
 //         "columnDefs": [
 //           { className: "playername", "targets": [ 0 ] },
 //
@@ -284,6 +251,7 @@
 //         ]
 //
 //     });
-//     $("div.NBAimages").html('<button style="background-color:#021A3A; color:white;" type="button" class="btn btn-info btn-lg tableDescription" data-toggle="modal" data-target="#myModal">Table Legend</button>');
 //   }
+//   nbatable();
+//   nbaFilterPosition();
 // });
