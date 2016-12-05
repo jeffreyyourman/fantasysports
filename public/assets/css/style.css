@@ -102,7 +102,7 @@ body,html{
 
 .suggestedDivScroll {
   overflow:auto;
-  height:400px;
+  height:500px;
 }
 .suggesteddivshow {
   height:450px;
@@ -277,44 +277,16 @@ color:black;
 @media screen and (max-width: 420px) and (min-width: 320px) {
 
   /*======= Suggested button Start =======*/
-  /*.suggestedPlayersNBA {
-    font-size: 1.07em;
-    color:#edb82a;
-  }
-  .suggestedPlayersh4 {
-    text-align: center;
-    color:#edb82a;
-  }
-  .suggesteddiv {
-    bottom: 0;
-    position: fixed;
-    left:5%;
-  }
 
-  .suggestedDivScroll {
-    overflow:auto;
-    height:300px;
-  }*/
   .suggesteddivshow {
-    height:300px;
+    height:500px;
     left:5%;
     background-color: #021A3A;
     width:200px;
     position: fixed;
     bottom: 0px;
   }
-  /*#suggestedplayersbar {
-    margin-left: 5%;
-    margin-bottom:5%;
-  }
 
-  #suggestedinput {
-    border-radius: 8px;
-    height:35px;
-  }
-  #suggestedsend {
-    border-radius:8px;
-  }*/
 
   .suggestedbutton {
     font-size: 11px;
@@ -327,20 +299,9 @@ color:black;
   .chatbutton {
     font-size: 11px;
   }
-  /*#chatmessages{
-    overflow:auto;
-    background-color: #021A3A;
-    height:350px;
-    margin-left: 5%;
-  }*/
 
-  /*.chatdiv {
-    bottom: 0;
-    position: fixed;
-    right:5%;
-  }*/
   .chatdivshow {
-    height:400px;
+    height:500px;
     right:5%;
     overflow:auto;
     background-color: #021A3A;
@@ -348,18 +309,6 @@ color:black;
     position: fixed;
     bottom: 0px;
   }
-  /*#chatbar {
-    margin-left: 5%;
-    margin-bottom:5%;
-  }
-
-  #chatinput {
-    border-radius: 8px;
-    height:35px;
-  }
-  #chatsend {
-    border-radius:8px;
-  }*/
 
 
 /*======= Chat button End =======*/
