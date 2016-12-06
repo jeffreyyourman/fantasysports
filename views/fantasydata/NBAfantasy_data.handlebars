@@ -3,6 +3,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
       <!-- Latest compiled and minified CSS -->
+      <script src="/assets/javascript/app.js"></script>
+    </script>
 </head>
 <body>
   <div class="container-fluid NFLTeamTable">
@@ -11,7 +13,7 @@
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
     <br>
     <br>
-    <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for names.." title="Type in a name">
+    <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for Players" title="Type in a name">
     <br>
     <br>
     <select id='mySelectedInput' onchange='myPositionFunction()'>
@@ -28,7 +30,7 @@
     <div class="row nbafantasy">
       <div class="col-md-12" id="nba">
         <div class="panel-body beforeResponsive">
-          <div   class="table-responsive">
+          <div class="table-responsive">
             <!-- put images here -->
             <table id='myTable' class="table table-bordered tableNbaFantasy">
               <thead>
@@ -61,7 +63,7 @@
               <tbody>
               {{#each fantasyNBA}}
               <tr id='mytabl3'>
-                <td style="height:60px;">{{Player}}</td>
+                <td>{{Player}}</td>
                 <td></td>
                 <td>{{HomeAway}}</td>
                 <td>{{Position}}</td>
@@ -301,58 +303,6 @@
 </script>
 <script type="text/javascript">
 
-function myPositionFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySelectedInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[3];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-function mySearchFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySearchInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-
-$('.suggesteddivshow').hide();
-$('.suggestedbutton').on('click', function() {
-    $('.suggesteddiv').hide();
-    $('.suggesteddivshow').show();
-});
-$('.closesuggested').on('click', function() {
-    $(".suggesteddivshow").hide();
-    $('.suggesteddiv').show();
-    return false;
-});
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip({
-      'selector': '',
-      'placement': 'top',
-      'container':'body'
-    })
-  });
 
 
 </script>

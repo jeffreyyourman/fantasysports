@@ -1,4 +1,82 @@
-// $(document).ready(function(){
+$(document).ready(function(){
+  function colorCode (nthchild, string,backgroundColor, backgroundColorVal, backgroundColorValSecond) {
+    $("td").css("background-color", "white");
+    $(nthchild).each (function () {
+       var $cCell = $(this);
+       console.log($cCell.text());
+       if ($cCell.text()  > string) {
+         console.log($cCell.text());
+          $cCell.css(backgroundColor, backgroundColorVal);
+       } else {
+         $cCell.css(backgroundColor, backgroundColorValSecond)
+       }
+    });
+  }
+
+  // colorCode("td:nth-child(3)", 'H' , 'background-color', 'lightgreen', 'red');
+  colorCode("td:nth-child(10)", 5000 , 'background-color', 'lightgreen', 'red');
+
+  // var allCells = document.querySelectorAll("td");
+  // for (var i = 0; i < allCells.length; ++i) {
+  //     allCells[i].addEventListener("DOMCharacterDataModified", function () {
+  //         console.log('outside function', this.innerText);
+  //         updateColors();
+  //     });
+  // }
+});
+  // function myPositionFunction() {
+  //   var input, filter, table, tr, td, i;
+  //   input = document.getElementById("mySelectedInput");
+  //   filter = input.value.toUpperCase();
+  //   table = document.getElementById("myTable");
+  //   tr = table.getElementsByTagName("tr");
+  //   for (i = 0; i < tr.length; i++) {
+  //     td = tr[i].getElementsByTagName("td")[3];
+  //     if (td) {
+  //       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+  //         tr[i].style.display = "";
+  //       } else {
+  //         tr[i].style.display = "none";
+  //       }
+  //     }
+  //   }
+  // }
+  // function mySearchFunction() {
+  //   var input, filter, table, tr, td, i;
+  //   input = document.getElementById("mySearchInput");
+  //   filter = input.value.toUpperCase();
+  //   table = document.getElementById("myTable");
+  //   tr = table.getElementsByTagName("tr");
+  //   for (i = 0; i < tr.length; i++) {
+  //     td = tr[i].getElementsByTagName("td")[0];
+  //     if (td) {
+  //       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+  //         tr[i].style.display = "";
+  //       } else {
+  //         tr[i].style.display = "none";
+  //       }
+  //     }
+  //   }
+  // }
+
+  $('.suggesteddivshow').hide();
+  $('.suggestedbutton').on('click', function() {
+      $('.suggesteddiv').hide();
+      $('.suggesteddivshow').show();
+  });
+  $('.closesuggested').on('click', function() {
+      $(".suggesteddivshow").hide();
+      $('.suggesteddiv').show();
+      return false;
+  });
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip({
+        'selector': '',
+        'placement': 'top',
+        'container':'body'
+      })
+    });
+
 //
 //     var nbaFilterPosition = function(){
 //       var table = $('.tableNbaFantasy').DataTable();
@@ -254,4 +332,3 @@
 //   }
 //   nbatable();
 //   nbaFilterPosition();
-// });
