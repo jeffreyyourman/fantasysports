@@ -37,7 +37,7 @@ body,html{
 .chatdivshow {
   height:450px;
   right:5%;
-  overflow:auto;
+  /*overflow:auto;*/
   background-color: #021A3A;
   width:250px;
   position: fixed;
@@ -376,6 +376,13 @@ and (orientation : landscape) {
     position: fixed;
     bottom: 0px;
   }
+  #chatmessages{
+    overflow:auto;
+    background-color: #021A3A;
+    height:300px;
+    margin-left: 5%;
+  }
+
 }
 
 @media only screen    /* iphone 6 in landscape mode*/
@@ -394,12 +401,19 @@ and (orientation : landscape) {
   .chatdivshow {
     height:300px;
     right:5%;
-    overflow:auto;
+    /*overflow:auto;*/
     background-color: #021A3A;
     width:200px;
     position: fixed;
     bottom: 0px;
   }
+  #chatmessages{
+    overflow:auto;
+    background-color: #021A3A;
+    height:200px;
+    margin-left: 5%;
+  }
+
 }
 
 @media only screen /*Iphone 6+ landscape*/
@@ -417,10 +431,17 @@ and (orientation : landscape) {
   .chatdivshow {
     height:425px;
     right:5%;
-    overflow:auto;
+    /*overflow:auto;*/
     background-color: #021A3A;
     width:200px;
     position: fixed;
     bottom: 0px;
   }
+  #chatmessages{
+    overflow:auto;
+    background-color: #021A3A;
+    height:275px;
+    margin-left: 5%;
+  }
+
 }
