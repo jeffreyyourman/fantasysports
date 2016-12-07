@@ -3,28 +3,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
       <!-- Latest compiled and minified CSS -->
+      <script src="/assets/javascript/app.js"></script>
+    </script>
 </head>
 <body>
-  <div class="container-fluid NFLTeamTable">
-    <div class="row">
-      <div style='font-size:24px;' class="col-md-7">
-        <h2>What will go here is:</h2>
-        <button class='nflposition' type="button" data-position='QB' name="button">QB</button>
-        <button class='nflposition' type="button" data-position='RB' name="button">RB</button>
-        <button class='nflposition' type="button" data-position='WR' name="button">WR</button>
-        <button class='nflposition' type="button" data-position='TE' name="button">TE</button>
-        <button class='nflposition' type="button" data-position='K' name="button">K</button>
-        <button class='nflposition' type="button" data-position='DEF' name="button">DEF</button>
-      </div>
-    </div>
+  <div class="container-fluid NBATeamTable">
+    <br>
+    <br>
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
+    <br>
+    <br>
+    <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for Players" title="Type in a name">
+    <br>
+    <br>
+    <select id='mySelectedInput' onchange='myPositionFunction()'>
+      <option value="" disabled selected>Filter by position</option>
+      <option value="QB">QB</option>
+      <option value="RB">RB</option>
+      <option value="WR">WR</option>
+      <option value="TE">TE</option>
+      <option value="K">K</option>
+      <option value="Def">Def</option>
+    </select>
+
   </div>
-  <div id='playerlist' class="container-fluid NFLtables">
-    <div class="row nflfantasy">
-      <div class="col-md-12">
+  <div id='playerlist' class="container-fluid NBAtables">
+    <div class="row nbafantasy">
+      <div class="col-md-12" id="nba">
         <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <!-- put images here -->
-            <table class="table table-bordered tableNflFantasy">
+            <table id='myTable2' class=" table table-bordered">
               <thead>
                 <tr style='font-size: 16px;'>
                   <th>Player</th>
@@ -35,8 +44,6 @@
                   <th>Injury_Status</th>
                   <th>RankingsVsPosition</th>
                   <th>TotalOpportunities</th>
-                  <th>Dova</th>
-                  <th>Path_Expectation</th>
                   <th>Over/Under</th>
                   <th>CriteriaScore</th>
                   <th>CriteriaRanking</th>
@@ -46,8 +53,6 @@
                   <th>RecentPerformance</th>
                   <th>FantasyPointsScored</th>
                   <th>Opponent</th>
-                  <th>PlayerCount</th>
-                  <th>LineChange</th>
                 </tr>
               </thead>
               {{#each fantasyNFL}}
@@ -60,8 +65,6 @@
                 <td>{{Injury_Status}}</td>
                 <td>{{RvP}}</td>
                 <td>{{TotalOpp}}</td>
-                <td>{{DOVA}}</td>
-                <td>{{Path_Expectation}}</td>
                 <td>{{O_U}}</td>
                 <td>{{CriteriaScore}}</td>
                 <td>{{CritRank}}</td>
@@ -71,8 +74,6 @@
                 <td>{{RecPre}}</td>
                 <td>{{FPS}}</td>
                 <td>{{Opp}}</td>
-                <td>{{PlayerCount}}</td>
-                <td>{{Line_Change}}</td>
               </tbody>
               {{/each}}
             </table>
@@ -81,6 +82,7 @@
       </div>
     </div>
   </div>
+
 
   <div class="suggestedbuttondiv">
       <div class="suggesteddiv">
@@ -110,19 +112,19 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div style='background-color:lightgreen; height:140px;' class="col-md-2">
+          <div style='background-color: #9bdaf2; height:140px;' class="col-md-2">
             <p>Good to go</p>
           </div>
-          <div style='background-color:yellow; height:140px;' class="col-md-2">
+          <div style='background-color:#45b9e7; height:140px;' class="col-md-2">
             <p>Be Aware</p>
           </div>
-          <div style='background-color:#FFBD00; height:140px;' class="col-md-3">
+          <div style='background-color:#1a93c3; height:140px;' class="col-md-3">
             <p>Be Cautious (I would be weary. Check other categories)</p>
           </div>
-          <div style='background-color:#FF8700; height:140px;' class="col-md-3">
+          <div style='background-color:#115f7e; color:white; height:140px;' class="col-md-3">
             <p>Stay Away (Really depends on other categories)</p>
           </div>
-          <div style='background-color:red; height:140px;' class="col-md-2">
+          <div style='background-color:#0a384a; color:white; height:140px;' class="col-md-2">
             <p>Red Flag(Every other category must be perfect for me to use)</p>
           </div>
           <br>
@@ -287,23 +289,42 @@
   ga('send', 'pageview');
 </script>
 <script type="text/javascript">
-$('.suggesteddivshow').hide();
-$('.suggestedbutton').on('click', function() {
-    $('.suggesteddiv').hide();
-    $('.suggesteddivshow').show();
-});
-$('.closesuggested').on('click', function() {
-    $(".suggesteddivshow").hide();
-    $('.suggesteddiv').show();
-    return false;
-});
-  $(function () {
-    $('[data-toggle="tooltip"]').tooltip({
-      'selector': '',
-      'placement': 'top',
-      'container':'body'
-    })
-  });
+
+function myPositionFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mySelectedInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable2");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function mySearchFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mySearchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable2");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
 
 
 </script>
