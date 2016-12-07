@@ -355,6 +355,28 @@ td {
   width: auto;
   }
 }
+@media only screen /*Iphone 5 and 5s landscape*/
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+  .suggesteddivshow {
+    height:350px;
+    left:5%;
+    background-color: #021A3A;
+    width:200px;
+    position: fixed;
+    bottom: 0px;
+  }
+  .chatdivshow {
+    height:350px;
+    right:5%;
+    overflow:auto;
+    background-color: #021A3A;
+    width:200px;
+    position: fixed;
+    bottom: 0px;
+  }
+}
 
 @media only screen    /* iphone 6 in landscape mode*/
 and (min-device-width : 375px)
@@ -378,10 +400,27 @@ and (orientation : landscape) {
     position: fixed;
     bottom: 0px;
   }
+}
 
-
-
-/* STYLES GO HERE */
-
-
+@media only screen /*Iphone 6+ landscape*/
+and (min-device-width : 414px)
+and (max-device-width : 736px)
+and (orientation : landscape) {
+  .suggesteddivshow {
+    height:425px;
+    left:5%;
+    background-color: #021A3A;
+    width:200px;
+    position: fixed;
+    bottom: 0px;
+  }
+  .chatdivshow {
+    height:425px;
+    right:5%;
+    overflow:auto;
+    background-color: #021A3A;
+    width:200px;
+    position: fixed;
+    bottom: 0px;
+  }
 }
