@@ -1,4 +1,14 @@
 $(document).ready(function(){
+  $('.suggesteddivshow').hide();
+  $('.suggestedbutton').click(function() {
+      $('.suggesteddiv').hide();
+      $('.suggesteddivshow').show();
+  });
+  $('.closesuggested').click(function() {
+      $(".suggesteddivshow").hide();
+      $('.suggesteddiv').show();
+      return false;
+  });
   function colorCodeString () {
     $("td").css("background-color", "white");
     $("td:nth-child(3)").each (function () {
@@ -192,16 +202,7 @@ colorCodeString();
   //     });
   // }
 
-  $('.suggesteddivshow').hide();
-  $('.suggestedbutton').click(function() {
-      $('.suggesteddiv').hide();
-      $('.suggesteddivshow').show();
-  });
-  $('.closesuggested').click(function() {
-      $(".suggesteddivshow").hide();
-      $('.suggesteddiv').show();
-      return false;
-  });
+
     // $(function () {
     //   $('[data-toggle="tooltip"]').tooltip({
     //     'selector': '',

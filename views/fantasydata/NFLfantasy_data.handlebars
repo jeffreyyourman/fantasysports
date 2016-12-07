@@ -7,7 +7,14 @@
     </script>
 </head>
 <body>
-  <div class="container-fluid NBATeamTable">
+  <br><br>
+  <h1 style='font-size:24px; text-align:center;'>Should have NFL up and running by Friday. In the meantime please enjoy this classic DFS Hitler Video</h1>
+  <br><br>
+  <div align='center' class="centerVid">
+    <iframe align='middle' width="640" height="360" src="https://www.youtube.com/embed/d7ZDNS3GHHI" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <!-- <div class="container-fluid NBATeamTable">
     <br>
     <br>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
@@ -31,9 +38,9 @@
     <div class="row nbafantasy">
       <div class="col-md-12" id="nba">
         <div class="panel-body beforeResponsive">
-          <div class="table-responsive">
+          <div class="table-responsive"> -->
             <!-- put images here -->
-            <table id='myTable2' class=" table table-bordered">
+            <!-- <table id='myTable2' class=" table table-bordered">
               <thead>
                 <tr style='font-size: 16px;'>
                   <th>Player</th>
@@ -81,10 +88,10 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
-  <div class="suggestedbuttondiv">
+  <!-- <div class="suggestedbuttondiv">
       <div class="suggesteddiv">
           <button style='text-align:center;' type="button" class="btn btn-default suggestedbutton">My Suggested Players</button>
       </div>
@@ -99,13 +106,13 @@
       </div>
 
       <br>
-  </div>
+  </div> -->
   <!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
+<!-- <div id="myModal" class="modal fade" role="dialog"> -->
+  <!-- <div class="modal-dialog"> -->
 
     <!-- Modal content-->
-    <div class="modal-content">
+    <!-- <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Description of each column</h4>
@@ -277,7 +284,7 @@
     </div>
 
   </div>
-</div>
+</div> -->
 <!-- End Modal -->
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -290,52 +297,52 @@
 </script>
 <script type="text/javascript">
 
-$('.suggesteddivshow').hide();
-$('.suggestedbutton').click(function() {
-    $('.suggesteddiv').hide();
-    $('.suggesteddivshow').show();
-});
-$('.closesuggested').click(function() {
-    $(".suggesteddivshow").hide();
-    $('.suggesteddiv').show();
-    return false;
-});
-
-function myPositionFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySelectedInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable2");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[3];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-
-function mySearchFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySearchInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable2");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
+// $('.suggesteddivshow').hide();
+// $('.suggestedbutton').click(function() {
+//     $('.suggesteddiv').hide();
+//     $('.suggesteddivshow').show();
+// });
+// $('.closesuggested').click(function() {
+//     $(".suggesteddivshow").hide();
+//     $('.suggesteddiv').show();
+//     return false;
+// });
+//
+// function myPositionFunction() {
+//   var input, filter, table, tr, td, i;
+//   input = document.getElementById("mySelectedInput");
+//   filter = input.value.toUpperCase();
+//   table = document.getElementById("myTable2");
+//   tr = table.getElementsByTagName("tr");
+//   for (i = 0; i < tr.length; i++) {
+//     td = tr[i].getElementsByTagName("td")[3];
+//     if (td) {
+//       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//         tr[i].style.display = "";
+//       } else {
+//         tr[i].style.display = "none";
+//       }
+//     }
+//   }
+// }
+//
+// function mySearchFunction() {
+//   var input, filter, table, tr, td, i;
+//   input = document.getElementById("mySearchInput");
+//   filter = input.value.toUpperCase();
+//   table = document.getElementById("myTable2");
+//   tr = table.getElementsByTagName("tr");
+//   for (i = 0; i < tr.length; i++) {
+//     td = tr[i].getElementsByTagName("td")[0];
+//     if (td) {
+//       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//         tr[i].style.display = "";
+//       } else {
+//         tr[i].style.display = "none";
+//       }
+//     }
+//   }
+// }
 
 
 </script>
