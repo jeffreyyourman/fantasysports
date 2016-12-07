@@ -16,7 +16,8 @@ $(document).ready(function(){
        if ( $cCell.text() === 'H') {
           $cCell.css('background-color', '#9bdaf2');
        } else {
-         $cCell.css('background-color', '#115f7e')
+         $cCell.css('background-color', '#0a384a');
+         $cCell.css('color', 'white');
        }
     });
     $("td:nth-child(9)").each (function () {
