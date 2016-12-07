@@ -384,7 +384,7 @@ and (max-device-width : 667px)
 and (orientation : landscape) {
 
   .suggesteddivshow {
-    height:400px;
+    height:300px;
     left:5%;
     background-color: #021A3A;
     width:200px;
@@ -392,7 +392,7 @@ and (orientation : landscape) {
     bottom: 0px;
   }
   .chatdivshow {
-    height:400px;
+    height:300px;
     right:5%;
     overflow:auto;
     background-color: #021A3A;
