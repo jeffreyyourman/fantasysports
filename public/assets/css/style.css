@@ -360,7 +360,7 @@ and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : landscape) {
   .suggesteddivshow {
-    height:350px;
+    height:375px;
     left:5%;
     background-color: #021A3A;
     width:200px;
@@ -368,7 +368,7 @@ and (orientation : landscape) {
     bottom: 0px;
   }
   .chatdivshow {
-    height:350px;
+    height:375px;
     right:5%;
     overflow:auto;
     background-color: #021A3A;
@@ -391,7 +391,7 @@ and (max-device-width : 667px)
 and (orientation : landscape) {
 
   .suggesteddivshow {
-    height:300px;
+    height:325px;
     left:5%;
     background-color: #021A3A;
     width:200px;
@@ -399,7 +399,7 @@ and (orientation : landscape) {
     bottom: 0px;
   }
   .chatdivshow {
-    height:300px;
+    height:325px;
     right:5%;
     /*overflow:auto;*/
     background-color: #021A3A;
@@ -421,7 +421,7 @@ and (min-device-width : 414px)
 and (max-device-width : 736px)
 and (orientation : landscape) {
   .suggesteddivshow {
-    height:425px;
+    height:450px;
     left:5%;
     background-color: #021A3A;
     width:200px;
@@ -429,7 +429,7 @@ and (orientation : landscape) {
     bottom: 0px;
   }
   .chatdivshow {
-    height:425px;
+    height:450px;
     right:5%;
     /*overflow:auto;*/
     background-color: #021A3A;
