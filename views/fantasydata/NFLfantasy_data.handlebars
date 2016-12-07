@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
       <!-- Latest compiled and minified CSS -->
-      <script src="/assets/javascript/app.js"></script>
+      <script src="/assets/javascript/appNFL.js"></script>
     </script>
 </head>
 <body>
@@ -289,6 +289,17 @@
   ga('send', 'pageview');
 </script>
 <script type="text/javascript">
+
+$('.suggesteddivshow').hide();
+$('.suggestedbutton').click(function() {
+    $('.suggesteddiv').hide();
+    $('.suggesteddivshow').show();
+});
+$('.closesuggested').click(function() {
+    $(".suggesteddivshow").hide();
+    $('.suggesteddiv').show();
+    return false;
+});
 
 function myPositionFunction() {
   var input, filter, table, tr, td, i;

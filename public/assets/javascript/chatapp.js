@@ -65,26 +65,26 @@ $('#chatinput').keypress(function(e) {
 
 
 //click event for dynamically added li elements
-$(document).on('click', 'li', function() {
-  console.log('click');
-  //grabs text from li choice
-  var clickChoice = $(this).text();
-
-  //sets the choice in the current player object in firebase
-  playerRef.child('choice').set(clickChoice);
-
-  //user has chosen, so removes choices and displays what they chose
-  $('#player' + playerNum + ' ul').empty();
-  $('#player' + playerNum + 'chosen').html(clickChoice);
-
-  //increments turn. Turn goes from:
-  //1 - player 1
-  //2 - player 2
-  //3 - determine winner
-  currentTurnRef.transaction(function(turn) {
-    return turn + 1;
-  });
-});
+// $(document).on('click', 'li', function() {
+//   console.log('click');
+//   //grabs text from li choice
+//   var clickChoice = $(this).text();
+//
+//   //sets the choice in the current player object in firebase
+//   playerRef.child('choice').set(clickChoice);
+//
+//   //user has chosen, so removes choices and displays what they chose
+//   $('#player' + playerNum + ' ul').empty();
+//   $('#player' + playerNum + 'chosen').html(clickChoice);
+//
+//   //increments turn. Turn goes from:
+//   //1 - player 1
+//   //2 - player 2
+//   //3 - determine winner
+//   currentTurnRef.transaction(function(turn) {
+//     return turn + 1;
+//   });
+// });
 
 //Update chat on screen when new message detected - ordered by 'time' value
 chatData.orderByChild("time").on('child_added', function(snapshot) {

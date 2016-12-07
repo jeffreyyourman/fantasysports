@@ -192,39 +192,28 @@ colorCodeString();
   //     });
   // }
 
-
-});
-
-
   $('.suggesteddivshow').hide();
-  $('.suggestedbutton').on('click', function() {
+  $('.suggestedbutton').click(function() {
       $('.suggesteddiv').hide();
       $('.suggesteddivshow').show();
   });
-  $('.closesuggested').on('click', function() {
+  $('.closesuggested').click(function() {
       $(".suggesteddivshow").hide();
       $('.suggesteddiv').show();
       return false;
   });
-    $(function () {
-      $('[data-toggle="tooltip"]').tooltip({
-        'selector': '',
-        'placement': 'top',
-        'container':'body'
-      })
-    });
+    // $(function () {
+    //   $('[data-toggle="tooltip"]').tooltip({
+    //     'selector': '',
+    //     'placement': 'top',
+    //     'container':'body'
+    //   })
+    // });
+});
 
-//         "columnDefs": [
-//           { className: "playername", "targets": [ 0 ] },
-//
-//           { // targets suggestedplayers algorithm
-//             "targets": 0,
-//             "createdCell": function (td, cellData, rowData, row, col) {
-//
-//               var $cCell = $(td);
-//               var varRowData = rowData;
-//               var recentPerformance = rowData.gsx$recpr.$t;
-//
+
+
+
 //               if (((rowData.gsx$recpr.$t <= 10) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t >= 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'Suggested') && (rowData.gsx$salaryadjust.$t <= 400)) {
 //
 //                 var playernames = rowData.gsx$player.$t;
@@ -244,41 +233,3 @@ colorCodeString();
 //               }
 //             }
 //           },
-
-
-//           { // targets 19
-//             "targets": 19,
-//             "createdCell": function (td, cellData, rowData, row, col) {
-//               var $cCell = $(td);
-//               var varDataCell = cellData;
-              // if ( varDataCell >= 40.00 ) {
-              //   $cCell.css('background-color', 'lightgreen')
-              // } else if ((varDataCell >= 33) && (varDataCell <= 39.99)) {
-              //   $cCell.css('background-color', 'yellow')
-              // } else if ((varDataCell >= 25) && (varDataCell <= 32.99)) {
-              //   $cCell.css('background-color', '#FFBD00')
-              // } else if ((varDataCell >= 20) && (varDataCell <= 24.99)) {
-              //   $cCell.css('background-color', '#FF8700')
-              // } else if ((varDataCell >= 0) && (varDataCell <= 19.99) || (varDataCell = '-')) {
-              //   $cCell.css('background-color', 'red')
-              // }
-//             }
-//           },
-//           { // targets 20
-//             "targets": 20,
-//             "createdCell": function (td, cellData, rowData, row, col) {
-//               var $cCell = $(td);
-//               var varDataCell = cellData;
-//               if ( varDataCell >= 5 ) {
-//                 $cCell.css('background-color', 'lightgreen')
-//               } else {
-//                 $cCell.css('background-color', 'red')
-//               }
-//             }
-//           }
-//         ]
-//
-//     });
-//   }
-//   nbatable();
-//   nbaFilterPosition();
