@@ -125,19 +125,19 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div style='background-color:lightgreen; height:140px;' class="col-md-2">
+          <div style='background-color: #9bdaf2; height:140px;' class="col-md-2">
             <p>Good to go</p>
           </div>
-          <div style='background-color:yellow; height:140px;' class="col-md-2">
+          <div style='background-color:#45b9e7; height:140px;' class="col-md-2">
             <p>Be Aware</p>
           </div>
-          <div style='background-color:#FFBD00; height:140px;' class="col-md-3">
+          <div style='background-color:#1a93c3; height:140px;' class="col-md-3">
             <p>Be Cautious (I would be weary. Check other categories)</p>
           </div>
-          <div style='background-color:#FF8700; height:140px;' class="col-md-3">
+          <div style='background-color:#115f7e; color:white; height:140px;' class="col-md-3">
             <p>Stay Away (Really depends on other categories)</p>
           </div>
-          <div style='background-color:red; height:140px;' class="col-md-2">
+          <div style='background-color:#0a384a; color:white; height:140px;' class="col-md-2">
             <p>Red Flag(Every other category must be perfect for me to use)</p>
           </div>
           <br>
@@ -303,6 +303,41 @@
 </script>
 <script type="text/javascript">
 
+function myPositionFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mySelectedInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[3];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
+
+function mySearchFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("mySearchInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }
+  }
+}
 
 
 </script>
