@@ -26,7 +26,7 @@ var fanduelNFLDB = function() {
 
             for (var i = 0; i < body.feed.entry.length; i++) {
                 var myNFL = body.feed.entry[i]
-
+                
                 var turtle = [myNFL.gsx$player.$t, myNFL.gsx$sal.$t, myNFL.gsx$pos.$t, myNFL.gsx$team.$t, myNFL.gsx$rvp.$t, myNFL.gsx$totalopp.$t, myNFL.gsx$dova.$t, myNFL.gsx$pathexpectation.$t, myNFL.gsx$ou.$t, myNFL.gsx$linechange.$t, myNFL.gsx$salchange.$t, myNFL.gsx$criteriascore.$t, myNFL.gsx$critrank.$t, myNFL.gsx$ppa.$t, myNFL.gsx$snapcount.$t, myNFL.gsx$fps.$t, myNFL.gsx$opp.$t, myNFL.gsx$playercount.$t, myNFL.gsx$injurystatus.$t, myNFL.gsx$recpre.$t]
 
                 fanduel.createfandueldataNFL(['Player', 'Sal', "POS", 'Team',"RvP","TotalOpp","DOVA","Path_Expectation","O_U","Line_Change","Sal_Change","CriteriaScore","CritRank","PPA","Snap_Count","FPS","Opp","PlayerCount","Injury_Status","RecPre"

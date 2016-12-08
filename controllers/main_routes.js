@@ -19,7 +19,7 @@ router.get('/', function(req, res){
 
 router.get('/NFL', function (req,res){
 
-  connection.query("SELECT * FROM googlesheetsapiNFL ORDER BY POS DESC;", function(err,fantasyNFL){
+  connection.query("SELECT * FROM googlesheetsapiNFL ORDER BY CritRank ASC;", function(err,fantasyNFL){
     if(err) throw err;
 
     // console.log("Clean table, ready for update");

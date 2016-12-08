@@ -89,7 +89,7 @@
                 <td>{{PTsVPos}}</td>
                 <td>{{CriteriaRanking}}</td>
                 <td>{{Ownership}}</td>
-                </tr>
+              </tr>
               {{/each}}
               </tbody>
             </table>
@@ -102,7 +102,7 @@
 
   <div class="suggestedbuttondiv">
       <div class="suggesteddiv">
-          <button style='text-align:center;' type="button" class="btn btn-default suggestedbutton">My Suggested Players</button>
+          <button style='text-align:center;' type="button" class="btn btn-default suggestedbutton">My Suggested NBA Players</button>
       </div>
   </div>
   <div class="suggesteddivshow">
@@ -308,6 +308,13 @@
 <script type="text/javascript" src="/assets/tablesorter/jquery-latest.js"></script>
 <script type="text/javascript" src="/assets/tablesorter/jquery.tablesorter.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+  {
+      $("table").tablesorter();
+  }
+});
+</script>
+<script type="text/javascript">
 function myPositionFunction() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("mySelectedInput");
@@ -343,13 +350,4 @@ function mySearchFunction() {
     }
   }
 }
-$(document).ready(function(){
-  {
-      $(".tableNbaFantasy").tablesorter();
-  }
-
-
-
-
-});
 </script>
