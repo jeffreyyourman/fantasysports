@@ -21,8 +21,6 @@ router.get('/NFL', function (req,res){
 
   connection.query("SELECT * FROM googlesheetsapiNFL ORDER BY CritRank ASC;", function(err,fantasyNFL){
     if(err) throw err;
-
-    // console.log("Clean table, ready for update");
       var hbsObject = {
         fantasyNFL: fantasyNFL
       }
@@ -31,11 +29,9 @@ router.get('/NFL', function (req,res){
   });
 
 router.get('/NBA', function (req,res){
-
   connection.query("SELECT * FROM googlesheetsapi ORDER BY CriteriaRanking DESC;", function(err,fantasyNBA){
     if(err) throw err;
 
-    // console.log("Clean table, ready for update");
       var hbsObject = {
         fantasyNBA: fantasyNBA
       }
