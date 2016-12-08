@@ -126,7 +126,7 @@ $(document).ready(function(){
         } else if (($cCell.text() >= 190) && ($cCell.text() <= 194.99)) {
           $cCell.css('background-color', '#0a384a');
           $cCell.css('color', 'white');
-        } else if (($cCell.text() >= 0) && ($cCell.text() <= 194.99) || ($cCell.text() = '-')) {
+        } else if (($cCell.text() >= 0) && ($cCell.text() <= 194.99)) {
           $cCell.css('background-color', '#0a384a');
           $cCell.css('color', 'white');
         } else {
@@ -134,6 +134,26 @@ $(document).ready(function(){
           $cCell.css('color', 'white');
        }
      });
+     $("td:nth-child(18)").each (function () {
+        var $cCell = $(this);
+        var cCellParse = parseFloat($cCell.text())
+        if ( $cCell.text() >= 5 ) {
+           $cCell.css('background-color', '#9bdaf2');
+         } else if (($cCell.text() >= 4.7) && ($cCell.text() <= 4.99)) {
+           $cCell.css('background-color', '#45b9e7');
+         } else if (($cCell.text() >= 4.0) && ($cCell.text() <= 4.69)) {
+           $cCell.css('background-color', '#1a93c3');
+         } else if (($cCell.text() >= 3.8) && ($cCell.text() <= 3.99)) {
+           $cCell.css('background-color', '#0a384a');
+           $cCell.css('color', 'white');
+         } else if (($cCell.text() >= 0) && ($cCell.text() <= 3.79)) {
+           $cCell.css('background-color', '#0a384a');
+           $cCell.css('color', 'white');
+         } else {
+           $cCell.css('background-color', '#0a384a');
+           $cCell.css('color', 'white');
+        }
+      });
      $("td:nth-child(19)").each (function () {
         var $cCell = $(this);
         var cCellParse = parseFloat($cCell.text())
