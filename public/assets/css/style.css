@@ -117,8 +117,6 @@ body,html{
 }
 
 .suggestedbutton {
-  /*background-color: #021A3A;
-  color: #edb82a;*/
   background-color: #edb82a;
   color: #021A3A;
   font-size: 16px;
@@ -143,20 +141,22 @@ body,html{
 
 
 /*Table stuff start*/
-
+.header {
+  background-color: #fffbf0;
+}
 .table > thead:first-child > tr:first-child > th:first-child {
     position: absolute;
     display: inline-block;
     background-color: inherit;
     height: 96%;
-    background-color:  #f0fcff;
+    background-color: #fffbf0;
     width: 200px;
 }
 
 .table > tbody > tr > td:first-child {
     position: absolute;
     display: inline-block;
-    background-color: white;
+    /*background-color: #fffbf0;*/
     width: 200px;
 
 }
@@ -181,19 +181,13 @@ table{
 td {
   font-family: 'Audiowide', cursive;
   font-size: 12px;
-background-color: white;
+  background-color: white;
 }
 .pull-left {
   float:left!important;
 }
 .dataTables_paginate {
   float: left !important;
-}
-
-table.dataTable thead .sorting,
-table.dataTable thead .sorting_asc,
-table.dataTable thead .sorting_desc {
-    background: none;
 }
 
 ::-webkit-scrollbar {
@@ -309,7 +303,7 @@ color:black;
     display: inline-block;
     background-color: inherit;
     height: 96%;
-    background-color:  #f0fcff;
+    background-color: #fffbf0;
     width: 200px;
 }
 
@@ -317,7 +311,7 @@ color:black;
 .table > tbody > tr > td:first-child {
     position: absolute;
     display: inline-block;
-    background-color: white;
+    background-color: #fffbf0;
     width: 200px;
 
 }
@@ -351,6 +345,7 @@ padding: 0px
 }
 td {
   font-family: 'Audiowide', cursive;
+  background-color: white;
   font-size: 11px;
   width: auto;
   }
