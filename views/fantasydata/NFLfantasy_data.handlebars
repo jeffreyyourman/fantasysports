@@ -30,16 +30,17 @@
     <input type="text" id="mySearchInputNFL" onkeyup="mySearchFunctionNFL()" placeholder="Search for NFL Players" title="Type in a name">
     <br>
     <br>
-    <select id='mySelectedInputNFL' onchange='myPositionFunctionNFL()'>
-      <option value="" disabled selected>Filter by position</option>
-      <option value="QB">QB</option>
-      <option value="RB">RB</option>
-      <option value="WR">WR</option>
-      <option value="TE">TE</option>
-      <option value="K">K</option>
-      <option value="Def">Def</option>
-    </select>
-
+    <p style='font-size:24px;'>Click a Position to get started</p>
+    <br>
+      <select id='mySelectedInputNFL' name='changePosition' onchange='myPositionFunctionNFL()'>
+        <option value="" disabled selected>Filter by position</option>
+        <option value="QB">QB</option>
+        <option value="RB">RB</option>
+        <option value="WR">WR</option>
+        <option value="TE">TE</option>
+        <option value="K">K</option>
+        <option value="Def">Def</option>
+      </select>
   </div>
   <div id='playerlist' class="container-fluid NBAtables">
     <div class="row nbafantasy">
