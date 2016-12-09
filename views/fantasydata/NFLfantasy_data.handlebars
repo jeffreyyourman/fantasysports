@@ -3,7 +3,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WeAreFantasy</title>
       <!-- Latest compiled and minified CSS -->
-
+      <script src="/assets/sweetalert-master/dist/sweetalert.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="/assets/sweetalert-master/dist/sweetalert.css">
       <script src="/assets/javascript/appNFL.js"></script>
 
 </head>
@@ -45,7 +46,7 @@
       <div class="col-md-12" id="nba">
         <div class="panel-body beforeResponsive">
           <div class="table-responsive">
-            <table id='myTableNFL' class="table table-bordered tableNbaFantasy">
+            <table style='bborder-color: black;' id='myTableNFL' class="table table-bordered tableNbaFantasy">
               <thead>
                 <tr style='font-size: 12px;cursor: pointer;'>
                   <th>Player</th>
@@ -301,6 +302,14 @@ $(document).ready(function(){
   {
       $("table").tablesorter();
   }
+  setTimeout(function(){
+    swal({
+      title: "View the Table Legend",
+      text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
+      type: "warning",
+      confirmButtonText: "Ok, cool"
+    });
+  }, 10000);
 });
 </script>
 <script type="text/javascript">

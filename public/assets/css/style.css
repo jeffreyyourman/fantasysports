@@ -9,6 +9,9 @@ body,html{
 .playerfalse {
   color:#edb82a;
 }
+.table th{
+    border: white solid 1px !important;
+}
 .player0{
   background-color: lightgrey;
   color:#edb82a;
@@ -142,14 +145,14 @@ body,html{
 
 /*Table stuff start*/
 .header {
-  background-color: #fffbf0;
+  background-color: #dbdbdb;
 }
 .table > thead:first-child > tr:first-child > th:first-child {
     position: absolute;
     display: inline-block;
     background-color: inherit;
     height: 96%;
-    background-color: #fffbf0;
+    background-color: #dbdbdb;
     width: 200px;
 }
 
@@ -303,7 +306,7 @@ color:black;
     display: inline-block;
     background-color: inherit;
     height: 96%;
-    background-color: #fffbf0;
+    background-color: #dbdbdb;
     width: 200px;
 }
 
@@ -311,7 +314,7 @@ color:black;
 .table > tbody > tr > td:first-child {
     position: absolute;
     display: inline-block;
-    background-color: #fffbf0;
+    background-color: #dbdbdb;
     width: 200px;
 
 }
