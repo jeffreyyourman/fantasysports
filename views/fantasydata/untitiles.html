@@ -30,7 +30,7 @@
     <input type="text" id="mySearchInputNFL" onkeyup="mySearchFunctionNFL()" placeholder="Search for NFL Players" title="Type in a name">
     <br>
     <br>
-    <p style='font-size:30px;'>Click a Position to get started</p>
+    <p style='font-size:24px;'>Click a Position to get started</p>
     <br>
       <select id='mySelectedInputNFL' name='changePosition' onchange='myPositionFunctionNFL()'>
         <option value="" disabled selected>Filter by position</option>
@@ -71,8 +71,128 @@
                 </tr>
               </thead>
               <tbody>
-              {{#each fantasyNFL}}
-              <tr>
+              {{#each fantasyNFLQB}}
+              <tr id='QBTable'>
+                <td>{{Player}}</td>
+                <td></td>
+                <td>{{Sal}}</td>
+                <td>{{POS}}</td>
+                <td>{{Team}}</td>
+                <td>{{Opp}}</td>
+                <td>{{Injury_Status}}</td>
+                <td>{{RvP}}</td>
+                <td>{{TotalOpp}}</td>
+                <td>{{TeamValueVsPos}}</td>
+                <td>{{WinVsOpp}}</td>
+                <td>{{OU}}</td>
+                <td>{{CriteriaScore}}</td>
+                <td>{{CritRank}}</td>
+                <td>{{PPA}}</td>
+                <td>{{Snap_Count}}</td>
+                <td>{{Sal_Change}}</td>
+                <td>{{RecPre}}</td>
+              </tr>
+              {{/each}}
+              </tbody>
+              <tbody>
+              {{#each fantasyNFLRB}}
+              <tr id='RBTable'>
+                <td>{{Player}}</td>
+                <td></td>
+                <td>{{Sal}}</td>
+                <td>{{POS}}</td>
+                <td>{{Team}}</td>
+                <td>{{Opp}}</td>
+                <td>{{Injury_Status}}</td>
+                <td>{{RvP}}</td>
+                <td>{{TotalOpp}}</td>
+                <td>{{TeamValueVsPos}}</td>
+                <td>{{WinVsOpp}}</td>
+                <td>{{OU}}</td>
+                <td>{{CriteriaScore}}</td>
+                <td>{{CritRank}}</td>
+                <td>{{PPA}}</td>
+                <td>{{Snap_Count}}</td>
+                <td>{{Sal_Change}}</td>
+                <td>{{RecPre}}</td>
+              </tr>
+              {{/each}}
+              </tbody>
+              <tbody>
+              {{#each fantasyNFLWR}}
+              <tr id='WRTable'>
+                <td>{{Player}}</td>
+                <td></td>
+                <td>{{Sal}}</td>
+                <td>{{POS}}</td>
+                <td>{{Team}}</td>
+                <td>{{Opp}}</td>
+                <td>{{Injury_Status}}</td>
+                <td>{{RvP}}</td>
+                <td>{{TotalOpp}}</td>
+                <td>{{TeamValueVsPos}}</td>
+                <td>{{WinVsOpp}}</td>
+                <td>{{OU}}</td>
+                <td>{{CriteriaScore}}</td>
+                <td>{{CritRank}}</td>
+                <td>{{PPA}}</td>
+                <td>{{Snap_Count}}</td>
+                <td>{{Sal_Change}}</td>
+                <td>{{RecPre}}</td>
+              </tr>
+              {{/each}}
+              </tbody>
+              <tbody>
+              {{#each fantasyNFLTE}}
+              <tr id='TETable'>
+                <td>{{Player}}</td>
+                <td></td>
+                <td>{{Sal}}</td>
+                <td>{{POS}}</td>
+                <td>{{Team}}</td>
+                <td>{{Opp}}</td>
+                <td>{{Injury_Status}}</td>
+                <td>{{RvP}}</td>
+                <td>{{TotalOpp}}</td>
+                <td>{{TeamValueVsPos}}</td>
+                <td>{{WinVsOpp}}</td>
+                <td>{{OU}}</td>
+                <td>{{CriteriaScore}}</td>
+                <td>{{CritRank}}</td>
+                <td>{{PPA}}</td>
+                <td>{{Snap_Count}}</td>
+                <td>{{Sal_Change}}</td>
+                <td>{{RecPre}}</td>
+              </tr>
+              {{/each}}
+              </tbody>
+              <tbody>
+              {{#each fantasyNFLK}}
+              <tr id='KTable'>
+                <td>{{Player}}</td>
+                <td></td>
+                <td>{{Sal}}</td>
+                <td>{{POS}}</td>
+                <td>{{Team}}</td>
+                <td>{{Opp}}</td>
+                <td>{{Injury_Status}}</td>
+                <td>{{RvP}}</td>
+                <td>{{TotalOpp}}</td>
+                <td>{{TeamValueVsPos}}</td>
+                <td>{{WinVsOpp}}</td>
+                <td>{{OU}}</td>
+                <td>{{CriteriaScore}}</td>
+                <td>{{CritRank}}</td>
+                <td>{{PPA}}</td>
+                <td>{{Snap_Count}}</td>
+                <td>{{Sal_Change}}</td>
+                <td>{{RecPre}}</td>
+              </tr>
+              {{/each}}
+              </tbody>
+              <tbody>
+              {{#each fantasyNFLDef}}
+              <tr id='DefTable'>
                 <td>{{Player}}</td>
                 <td></td>
                 <td>{{Sal}}</td>
@@ -176,8 +296,7 @@
           <div class="col-md-8">
             <p>Description: How many minutes a player is projected to play</p>
             <br>
-            <p>What to look for: <br> QB: Anything above 35<br> RB: Anything above 15<br> WR: Anything above 6<br> TE: Anything above 5<br> K: Anything above 3
-            </p>
+            <p>What to look for: The higher number the better</p>
           </div>
         </div>
         <hr>
@@ -299,17 +418,47 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 ga('create', 'UA-86407503-2', 'auto');
 ga('send', 'pageview');
 $(document).ready(function(){
+  var qbTable = $('#QBTable');
+  var rbTable = $('#RBTable');
+  var wrTable = $('#WRTable');
+  var teTable = $('#TETable');
+  var kTable = $('#KTable');
+  var defTable = $('#DefTable');
+  rbTable.hide();
+  wrTable.hide();
+  teTable.hide();
+  kTable.hide();
+  defTable.hide();
+
+  $('#mySelectedInputNFL').change(function(){
+    var this$ = $(this).val()
+    if (this$ === 'RB') {
+      qbTable.hide();
+      wrTable.hide();
+      teTable.hide();
+      kTable.hide();
+      defTable.hide();
+      rbTable.show();
+    } else if (this$ === 'WR'){
+      qbTable.hide();
+      teTable.hide();
+      kTable.hide();
+      defTable.hide();
+      rbTable.hide();
+      wrTable.show();
+    }
+  });
   {
       $("table").tablesorter();
   }
-  setTimeout(function(){
-    swal({
-      title: "View the Table Legend",
-      text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
-      type: "warning",
-      confirmButtonText: "Ok, cool"
-    });
-  }, 10000);
+  // setTimeout(function(){
+  //   swal({
+  //     title: "View the Table Legend",
+  //     text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
+  //     type: "warning",
+  //     confirmButtonText: "Ok, cool"
+  //   });
+  // }, 10000);
 });
 function myPositionFunctionNFL() {
   var input, filter, table, tr, td, i;
@@ -346,4 +495,34 @@ function mySearchFunctionNFL() {
     }
   }
 }
+
+
+</script>
+router.get('/NFL', function (req,res){
+// "SELECT * FROM googlesheetsapiNFL where POS = 'QB' ORDER BY CritRank ASC;"
+// "SELECT * FROM googlesheetsapiNFL ORDER BY CritRank ASC;"
+connection.query("SELECT * FROM googlesheetsapiNFL where POS = 'QB' ORDER BY CritRank ASC;", function(err,fantasyNFLQB){
+  connection.query("SELECT * FROM googlesheetsapiNFL where POS = 'RB' ORDER BY CritRank ASC;", function(err,fantasyNFLRB){
+    connection.query("SELECT * FROM googlesheetsapiNFL where POS = 'WR' ORDER BY CritRank ASC;", function(err,fantasyNFLWR){
+      connection.query("SELECT * FROM googlesheetsapiNFL where POS = 'TE' ORDER BY CritRank ASC;", function(err,fantasyNFLTE){
+        connection.query("SELECT * FROM googlesheetsapiNFL where POS = 'K' ORDER BY CritRank ASC;", function(err,fantasyNFLK){
+          connection.query("SELECT * FROM googlesheetsapiNFL where POS = 'DEF' ORDER BY CritRank ASC;", function(err,fantasyNFLDef){
+            var hbsObject = {
+            fantasyNFLQB: fantasyNFLQB,
+            fantasyNFLRB: fantasyNFLRB,
+            fantasyNFLWR: fantasyNFLWR,
+            fantasyNFLTE: fantasyNFLTE,
+            fantasyNFLK: fantasyNFLK,
+            fantasyNFLDef: fantasyNFLDef,
+            }
+            res.render('fantasydata/NFLfantasy_data', hbsObject);
+            })
+          })
+        })
+      })
+    })
+  })
+});
+</script>
+
 </script>
