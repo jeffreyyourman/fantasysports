@@ -99,9 +99,9 @@ $(document).ready(function(){
        } else if (($cCell.text() >= 15) && ($cCell.text() <= 19.999)){
          $cCell.css('background-color', '#115f7e');
          $cCell.css('color', 'white');
-       } else if (($cCell.text() >= 10) && ($cCell.text() <= 14.999)){
+       } else if (($cCell.text() >= 11) && ($cCell.text() <= 14.999)){
          $cCell.css('background-color', '#1a93c3');
-       } else if (($cCell.text() >= 5) && ($cCell.text() <= 9.999)){
+       } else if (($cCell.text() >= 5) && ($cCell.text() <= 10.999)){
          $cCell.css('background-color', '#45b9e7');
        } else {
          $cCell.css('background-color', '#9bdaf2');
@@ -110,17 +110,19 @@ $(document).ready(function(){
     $("td:nth-child(15)").each (function () {
        var $cCell = $(this);
        if ( $cCell.text() >= 1.3) {
-         $cCell.css('background-color', '#0a384a');
-         $cCell.css('color', 'white');
+         $cCell.css('background-color', '#9bdaf2');
+
        } else if (($cCell.text() >= 1.0) && ($cCell.text() <= 1.299)){
-         $cCell.css('background-color', '#115f7e');
-         $cCell.css('color', 'white');
+         $cCell.css('background-color', '#45b9e7');
        } else if (($cCell.text() >= .70) && ($cCell.text() <= .999)){
          $cCell.css('background-color', '#1a93c3');
        } else if (($cCell.text() >= .40) && ($cCell.text() <= 699)){
-         $cCell.css('background-color', '#45b9e7');
+         $cCell.css('background-color', '#115f7e');
+         $cCell.css('color', 'white');
        } else {
          $cCell.css('background-color', '#9bdaf2');
+         $cCell.css('background-color', '#0a384a');
+         $cCell.css('color', 'white');
        }
     });
       $("td:nth-child(17)").each (function () {
@@ -143,15 +145,6 @@ $(document).ready(function(){
           $cCell.css('color', 'white');
         }
       });
-    // $("td:nth-child(22)").each (function () {
-    //    var $cCell = $(this);
-    //    if ( $cCell.text() >= 5) {
-    //       $cCell.css('background-color', '#9bdaf2');
-    //    } else {
-    //      $cCell.css('background-color', '#0a384a');
-    //      $cCell.css('color', 'white');
-    //    }
-    // });
   }
   colorCodeString();
 });
