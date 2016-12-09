@@ -101,7 +101,7 @@ CREATE TABLE googlesheetsapi (
 CREATE TABLE googlesheetsapiNFL (
   NFLplayerId int NOT NULL AUTO_INCREMENT,
   Player varchar (255) NOT NULL,
-  Sal varchar (255) NOT NULL,
+  Sal int,
   Injury_Status varchar (255) NOT NULL,
   POS varchar (255) NOT NULL,
   Team varchar (255) NOT NULL,
