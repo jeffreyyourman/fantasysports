@@ -9,7 +9,7 @@
 
 </head>
 <body>
-  <!-- <br><br>
+  <br><br>
   <h1 style='font-size:24px; text-align:center;'>Should have NFL up and running by Friday, In the meantime,  please enjoy this classic DFS Hitler Video.</h1>
   <br><br>
   <div class="container-fluid">
@@ -18,10 +18,10 @@
         <iframe align='middle' width="65%" height="360px" src="https://www.youtube.com/embed/d7ZDNS3GHHI" frameborder="0" allowfullscreen></iframe>
       </div>
     </div>
-  </div> -->
+  </div>
 
 
-  <div class="container-fluid NBATeamTable">
+  <!-- <div class="container-fluid NBATeamTable">
     <br>
     <br>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
@@ -286,7 +286,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 <!-- End Modal -->
 <script type="text/javascript" src="/assets/tablesorter/jquery-latest.js"></script>
 <script type="text/javascript" src="/assets/tablesorter/jquery.tablesorter.js"></script>
@@ -298,52 +298,52 @@ m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 
 ga('create', 'UA-86407503-2', 'auto');
 ga('send', 'pageview');
-$(document).ready(function(){
-  {
-      $("table").tablesorter();
-  }
-  setTimeout(function(){
-    swal({
-      title: "View the Table Legend",
-      text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
-      type: "warning",
-      confirmButtonText: "Ok, cool"
-    });
-  }, 10000);
-});
-function myPositionFunctionNFL() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySelectedInputNFL");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTableNFL");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[3];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-
-function mySearchFunctionNFL() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySearchInputNFL");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTableNFL");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
+// $(document).ready(function(){
+//   {
+//       $("table").tablesorter();
+//   }
+//   setTimeout(function(){
+//     swal({
+//       title: "View the Table Legend",
+//       text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
+//       type: "warning",
+//       confirmButtonText: "Ok, cool"
+//     });
+//   }, 10000);
+// });
+// function myPositionFunctionNFL() {
+//   var input, filter, table, tr, td, i;
+//   input = document.getElementById("mySelectedInputNFL");
+//   filter = input.value.toUpperCase();
+//   table = document.getElementById("myTableNFL");
+//   tr = table.getElementsByTagName("tr");
+//   for (i = 0; i < tr.length; i++) {
+//     td = tr[i].getElementsByTagName("td")[3];
+//     if (td) {
+//       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//         tr[i].style.display = "";
+//       } else {
+//         tr[i].style.display = "none";
+//       }
+//     }
+//   }
+// }
+//
+// function mySearchFunctionNFL() {
+//   var input, filter, table, tr, td, i;
+//   input = document.getElementById("mySearchInputNFL");
+//   filter = input.value.toUpperCase();
+//   table = document.getElementById("myTableNFL");
+//   tr = table.getElementsByTagName("tr");
+//   for (i = 0; i < tr.length; i++) {
+//     td = tr[i].getElementsByTagName("td")[0];
+//     if (td) {
+//       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+//         tr[i].style.display = "";
+//       } else {
+//         tr[i].style.display = "none";
+//       }
+//     }
+//   }
+// }
 </script>
