@@ -55,7 +55,6 @@ CREATE TABLE googlesheetsapi (
 );
 
 CREATE TABLE googlesheetsapi (
-
   playerId int NOT NULL AUTO_INCREMENT,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,
@@ -102,26 +101,27 @@ CREATE TABLE googlesheetsapiNFL (
   NFLplayerId int NOT NULL AUTO_INCREMENT,
   Player varchar (255) NOT NULL,
   Sal int,
-  Injury_Status varchar (255) NOT NULL,
   POS varchar (255) NOT NULL,
   Team varchar (255) NOT NULL,
-  Opp varchar (255) NOT NULL,
   RvP int,
-  TotalOpp int,
+  TotalOpp varchar (255) NOT NULL,
   TeamValueVsPos varchar (255) NOT NULL,
   WinVsOpp varchar (255) NOT NULL,
   OU varchar (255) NOT NULL,
   Line_Change varchar (255) NOT NULL,
   Sal_Change varchar (255) NOT NULL,
   CriteriaScore varchar (255) NOT NULL,
-  CritRank int,
+  CritRank varchar (255) NOT NULL,
   PPA varchar (255) NOT NULL,
-  SnapCount varchar (255) NOT NULL,
+  Snap_Count varchar (255) NOT NULL,
   FPS varchar (255) NOT NULL,
+  Opp varchar (255) NOT NULL,
+  PlayerCount varchar (255) NOT NULL,
+  Injury_Status varchar (255) NOT NULL,
   RecPre varchar (255) NOT NULL,
+  Ownership varchar (255) NOT NULL,
   PRIMARY KEY (NFLplayerId)
 );
-
 
 
 
