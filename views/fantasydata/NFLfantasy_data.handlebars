@@ -60,18 +60,18 @@
                   <th>Team</th>
                   <th>Opponent</th>
                   <th>Injury_Status</th>
-                  <th>RankingsVsPosition</th>
-                  <th>TotalOpportunities</th>
-                  <th>PlayersOffenseVsPosition</th>
-                  <th>WinChanceVsOpponent%</th>
-                  <th>Over/Under</th>
-                  <th>CriteriaScore</th>
-                  <th>CriteriaRanking</th>
-                  <th>PointsPerAttempt</th>
-                  <th>SnapCount</th>
-                  <th>SalaryChange</th>
-                  <th>RecentPerformance</th>
-                  <th>ProjectedOwnership</th>
+                  <th>RankingsVsPosition(high)</th>
+                  <th>TotalOpportunities(high)</th>
+                  <th>PlayersOffenseVsPosition(high)</th>
+                  <th>WinChanceVsOpponent%(high)</th>
+                  <th>Over/Under(high)</th>
+                  <th>CriteriaScore(high)</th>
+                  <th>CriteriaRanking(low)</th>
+                  <th>PointsPerAttempt(high)</th>
+                  <th>SnapCount(high)</th>
+                  <th>SalaryChange(below400)</th>
+                  <th>RecentPerformance(below10)</th>
+                  <th>ProjectedOwnership(low)</th>
                 </tr>
               </thead>
               <tbody>
@@ -321,11 +321,11 @@ $(document).ready(function(){
   setTimeout(function(){
     swal({
       title: "View the Table Legend",
-      text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
+      text: "Currently working on table color coding. That will be done by tomorrow, but for now please take a chance to look over the table legend. It will help you understand how to use this table.",
       type: "warning",
       confirmButtonText: "Ok, cool"
     });
-  }, 10000);
+  }, 3000);
 });
 function myPositionFunctionNFL() {
   var input, filter, table, tr, td, i;
