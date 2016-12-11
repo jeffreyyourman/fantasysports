@@ -82,11 +82,11 @@ body,html{
 /*Suggested players start*/
 .suggestedPlayersNBA {
   font-size: 1.07em;
-  color:#edb82a;
+  color:#5600ff;
 }
 .suggestedPlayersh4 {
   text-align: center;
-  color:#edb82a;
+  color:#5600ff;
 }
 .suggesteddiv {
   bottom: 0;
@@ -101,7 +101,7 @@ body,html{
 .suggesteddivshow {
   height:450px;
   left:5%;
-  background-color: #021A3A;
+  background-color: rgb(155, 218, 242);
   width:250px;
   position: fixed;
   bottom: 0px;
@@ -127,7 +127,7 @@ body,html{
 .closesuggested {
     margin-left: 90%;
     font-size: 18px;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     color:white;
     border-color: none;
 }
@@ -360,7 +360,7 @@ and (orientation : landscape) {
   .suggesteddivshow {
     height:375px;
     left:5%;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
@@ -369,14 +369,14 @@ and (orientation : landscape) {
     height:375px;
     right:5%;
     overflow:auto;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
   }
   #chatmessages{
     overflow:auto;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     height:300px;
     margin-left: 5%;
   }
@@ -391,7 +391,7 @@ and (orientation : landscape) {
   .suggesteddivshow {
     height:325px;
     left:5%;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
@@ -400,14 +400,14 @@ and (orientation : landscape) {
     height:325px;
     right:5%;
     /*overflow:auto;*/
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
   }
   #chatmessages{
     overflow:auto;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     height:200px;
     margin-left: 5%;
   }
@@ -421,7 +421,7 @@ and (orientation : landscape) {
   .suggesteddivshow {
     height:450px;
     left:5%;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
@@ -430,14 +430,14 @@ and (orientation : landscape) {
     height:450px;
     right:5%;
     /*overflow:auto;*/
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
   }
   #chatmessages{
     overflow:auto;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     height:275px;
     margin-left: 5%;
   }
