@@ -269,7 +269,7 @@ color:black;
   .suggesteddivshow {
     height:475px;
     left:5%;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
@@ -292,7 +292,7 @@ color:black;
     height:475px;
     right:5%;
     overflow:auto;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     width:200px;
     position: fixed;
     bottom: 0px;
