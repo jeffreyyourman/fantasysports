@@ -124,6 +124,7 @@ body,html{
   color: #021A3A;
   font-size: 16px;
 }
+
 .closesuggested {
     margin-left: 90%;
     font-size: 18px;
@@ -265,7 +266,20 @@ color:black;
 @media screen and (max-width: 420px) and (min-width: 320px) {
 
   /*======= Suggested button Start =======*/
-
+  .closechat {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
+  .closesuggested {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
   .suggesteddivshow {
     height:475px;
     left:5%;
@@ -357,6 +371,20 @@ td {
 and (min-device-width : 320px)
 and (max-device-width : 568px)
 and (orientation : landscape) {
+  .closechat {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
+  .closesuggested {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
   .suggesteddivshow {
     height:375px;
     left:5%;
@@ -387,7 +415,20 @@ and (orientation : landscape) {
 and (min-device-width : 375px)
 and (max-device-width : 667px)
 and (orientation : landscape) {
-
+  .closechat {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
+  .closesuggested {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
   .suggesteddivshow {
     height:325px;
     left:5%;
@@ -418,6 +459,20 @@ and (orientation : landscape) {
 and (min-device-width : 414px)
 and (max-device-width : 736px)
 and (orientation : landscape) {
+  .closechat {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
+  .closesuggested {
+      margin-left: 90%;
+      font-size: 18px;
+      background-color: rgb(155, 218, 242);
+      color:white;
+      border-color: none;
+  }
   .suggesteddivshow {
     height:450px;
     left:5%;
