@@ -7,17 +7,17 @@ body,html{
 }
 /*Chat stuff start*/
 .playerfalse {
-  color:#edb82a;
+  color:#5600ff;
 }
 .table th{
     border: white solid 1px !important;
 }
 .player0{
   background-color: lightgrey;
-  color:#edb82a;
+  color:black;
 }
 .player1{
-  color: #edb82a;
+  color: black;
 }
 
 #swapzone {
@@ -27,7 +27,7 @@ body,html{
 
 #chatmessages{
   overflow:auto;
-  background-color: #021A3A;
+  background-color: rgb(155, 218, 242);
   height:350px;
   margin-left: 5%;
 }
@@ -41,7 +41,7 @@ body,html{
   height:450px;
   right:5%;
   /*overflow:auto;*/
-  background-color: #021A3A;
+  background-color: rgb(155, 218, 242);
   width:250px;
   position: fixed;
   bottom: 0px;
@@ -69,7 +69,7 @@ body,html{
 .closechat {
     margin-left: 90%;
     font-size: 18px;
-    background-color: #021A3A;
+    background-color: rgb(155, 218, 242);
     color:white;
     border-color: none;
 }
