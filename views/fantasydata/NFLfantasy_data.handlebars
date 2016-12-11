@@ -47,13 +47,6 @@
         <option value="K">K</option>
         <option value="Def">Def</option>
       </select>
-      <hr>
-      <p style='font-size:30px;'>Currently working on color coding NFL table.</p>
-      <hr>
-      <p style='font-size:30px;'>If it has Low on column name it means Low numbers are best</p>
-      <hr>
-      <p style='font-size:30px;'>If it has High on column name it means High numbers are best</p>
-      <hr>
   </div>
   <div id='playerlist' class="container-fluid NBAtables">
     <div class="row nbafantasy">
@@ -270,6 +263,7 @@
             <p>Description: How many minutes a player is projected to play</p>
               <br>
             <p>What to look for: The higher number the better</p>
+            <p>Doesn't Include: Ignore Quarter Backs in this category</p>
           </div>
         </div>
         <hr>
@@ -328,14 +322,14 @@ $(document).ready(function(){
   {
       $("table").tablesorter();
   }
-  setTimeout(function(){
-    swal({
-      title: "View the Table Legend",
-      text: "Currently working on table color coding. That will be done by tomorrow, but for now please take a chance to look over the table legend. It will help you understand how to use this table.",
-      type: "warning",
-      confirmButtonText: "Ok, cool"
-    });
-  }, 3000);
+  // setTimeout(function(){
+  //   swal({
+  //     title: "View the Table Legend",
+  //     text: "Currently working on table color coding. That will be done by tomorrow, but for now please take a chance to look over the table legend. It will help you understand how to use this table.",
+  //     type: "warning",
+  //     confirmButtonText: "Ok, cool"
+  //   });
+  // }, 3000);
 });
 function myPositionFunctionNFL() {
   var input, filter, table, tr, td, i;
