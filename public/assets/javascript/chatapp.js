@@ -91,6 +91,8 @@ chatData.orderByChild("time").on('child_added', function(snapshot) {
 
   //if idNum is 0, then its a disconnect message and displays accordingly
   //if not - its a user chat message
+
+  //here is where you would put date
   if (snapshot.val().idNum === 0) {
     $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ' ' + snapshot.val().message + '</p><hr>');
   } else {
