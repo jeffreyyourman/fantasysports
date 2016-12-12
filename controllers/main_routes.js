@@ -29,7 +29,7 @@ router.get('/NFL', function (req,res){
   });
 
 router.get('/NBA', function (req,res){
-  connection.query("SELECT * FROM googlesheetsapi ORDER BY CriteriaRanking DESC;", function(err,fantasyNBA){
+  connection.query("SELECT * FROM googlesheetsapi ORDER BY ProjMins DESC, Salary DESC;", function(err,fantasyNBA){
     if(err) throw err;
 
       var hbsObject = {
