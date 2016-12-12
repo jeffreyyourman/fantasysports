@@ -157,7 +157,7 @@ $(document).ready(function(){
      $("td:nth-child(19)").each (function () {
         var $cCell = $(this);
         var cCellParse = parseFloat($cCell.text())
-        if ( $cCell.text() <= 400 ) {
+        if (( $cCell.text() <= 400 ) || ($cCell.text() === '-')) {
            $cCell.css('background-color', '#9bdaf2');
          } else {
            $cCell.css('background-color', '#0a384a');
@@ -167,7 +167,7 @@ $(document).ready(function(){
       $("td:nth-child(20)").each (function () {
          var $cCell = $(this);
          var cCellParse = parseFloat($cCell.text())
-         if ( $cCell.text() <= 10 ) {
+         if (( $cCell.text() <= 10 ) || ($cCell.text() === '-')) {
            $cCell.css('background-color', '#9bdaf2');
          } else {
            $cCell.css('background-color', '#0a384a');
