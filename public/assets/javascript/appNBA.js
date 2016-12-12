@@ -1,14 +1,14 @@
 $(document).ready(function(){
-  $('.suggesteddivshow').hide();
-  $('.suggestedbutton').click(function() {
-      $('.suggesteddiv').hide();
-      $('.suggesteddivshow').show();
-  });
-  $('.closesuggested').click(function() {
-      $(".suggesteddivshow").hide();
-      $('.suggesteddiv').show();
-      return false;
-  });
+  // $('.suggesteddivshow').hide();
+  // $('.suggestedbutton').click(function() {
+  //     $('.suggesteddiv').hide();
+  //     $('.suggesteddivshow').show();
+  // });
+  // $('.closesuggested').click(function() {
+  //     $(".suggesteddivshow").hide();
+  //     $('.suggesteddiv').show();
+  //     return false;
+  // });
   function colorCodeString () {
     $("td").css("background-color", "white");
     $("td:nth-child(3)").each (function () {
@@ -85,7 +85,7 @@ $(document).ready(function(){
        } else if (($cCell.text() >= .85) && ($cCell.text() <= .8899)) {
          $cCell.css('background-color', '#0a384a');
          $cCell.css('color', 'white');
-       } else if (($cCell.text() >= 0) && ($cCell.text() <= .8499) || ($cCell.text() = '-')) {
+       } else if (($cCell.text() >= 0) && ($cCell.text() <= .8499)) {
          $cCell.css('background-color', '#0a384a');
          $cCell.css('color', 'white');
        } else {
@@ -106,7 +106,7 @@ $(document).ready(function(){
        } else if (($cCell.text() >= 90) && ($cCell.text() <= 93.99)) {
          $cCell.css('background-color', '#0a384a');
          $cCell.css('color', 'white');
-       } else if (($cCell.text() >= 0) && ($cCell.text() <= 89.99) || (varDataCell = '-')) {
+       } else if (($cCell.text() >= 0) && ($cCell.text() <= 89.99)) {
          $cCell.css('background-color', '#0a384a');
          $cCell.css('color', 'white');
        } else {

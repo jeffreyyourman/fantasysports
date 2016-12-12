@@ -1,14 +1,14 @@
 $(document).ready(function(){
-  $('.suggesteddivshow').hide();
-  $('.suggestedbutton').click(function() {
-      $('.suggesteddiv').hide();
-      $('.suggesteddivshow').show();
-  });
-  $('.closesuggested').click(function() {
-      $(".suggesteddivshow").hide();
-      $('.suggesteddiv').show();
-      return false;
-  });
+  // $('.suggesteddivshow').hide();
+  // $('.suggestedbutton').click(function() {
+  //     $('.suggesteddiv').hide();
+  //     $('.suggesteddivshow').show();
+  // });
+  // $('.closesuggested').click(function() {
+  //     $(".suggesteddivshow").hide();
+  //     $('.suggesteddiv').show();
+  //     return false;
+  // });
   function colorCodeString () {
     $("td").css("background-color", "white");
     $("td:nth-child(8)").each (function () {
