@@ -77,22 +77,6 @@ $(document).ready(function(){
     });
     $("td:nth-child(13)").each (function () {
        var $cCell = $(this);
-       if ( $cCell.text() >= 23) {
-          $cCell.css('background-color', '#9bdaf2');
-       } else if (($cCell.text() >= 15) && ($cCell.text() <= 22.999)){
-         $cCell.css('background-color', '#45b9e7');
-       } else if (($cCell.text() >= 5) && ($cCell.text() <= 14.999)){
-         $cCell.css('background-color', '#1a93c3');
-       } else if (($cCell.text() >= 0) && ($cCell.text() <= 4.999)){
-         $cCell.css('background-color', '#115f7e');
-         $cCell.css('color', 'white');
-       } else {
-         $cCell.css('background-color', '#0a384a');
-         $cCell.css('color', 'white');
-       }
-    });
-    $("td:nth-child(14)").each (function () {
-       var $cCell = $(this);
        if ( $cCell.text() <= 8) {
           $cCell.css('background-color', '#9bdaf2');
        } else if (($cCell.text() >= 8.1) && ($cCell.text() <= 10.999)){
@@ -107,7 +91,7 @@ $(document).ready(function(){
          $cCell.css('color', 'white');
        }
     });
-    $("td:nth-child(15)").each (function () {
+    $("td:nth-child(14)").each (function () {
        var $cCell = $(this);
           if ( $cCell.text() >= 1.8) {
              $cCell.css('background-color', '#9bdaf2');
@@ -123,7 +107,7 @@ $(document).ready(function(){
             $cCell.css('color', 'white');
           }
     });
-  $("td:nth-child(16)").each (function () {
+  $("td:nth-child(15)").each (function () {
      var $cCell = $(this);
         if ( $cCell.text() >= .90) {
            $cCell.css('background-color', '#9bdaf2');
@@ -139,7 +123,7 @@ $(document).ready(function(){
           $cCell.css('color', 'white');
         }
   });
-      $("td:nth-child(17)").each (function () {
+      $("td:nth-child(16)").each (function () {
          var $cCell = $(this);
          var cCellParse = parseFloat($cCell.text())
          if ( $cCell.text() <= 400 ) {
@@ -149,7 +133,7 @@ $(document).ready(function(){
            $cCell.css('color', 'white');
          }
        });
-     $("td:nth-child(18)").each (function () {
+     $("td:nth-child(17)").each (function () {
         var $cCell = $(this);
         var cCellParse = parseFloat($cCell.text())
         if ( $cCell.text() <= 10 ) {

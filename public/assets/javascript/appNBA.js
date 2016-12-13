@@ -11,6 +11,12 @@ $(document).ready(function(){
   // });
   function colorCodeString () {
     $("td").css("background-color", "white");
+    // $("td:nth-child(1),td:nth-child(3)").each (function () {
+    //    var $cCell = $(this).text();
+    //    if (($cCell === 'James Harden') || ($cCell === 'A')) {
+    //       console.log($cCell);
+    //    }
+    // });
     $("td:nth-child(3)").each (function () {
        var $cCell = $(this);
        if ( $cCell.text() === 'H') {
@@ -194,15 +200,15 @@ $(document).ready(function(){
            $cCell.css('color', 'white');
         }
       });
-    $("td:nth-child(22)").each (function () {
-       var $cCell = $(this);
-       if ( $cCell.text() >= 5) {
-          $cCell.css('background-color', '#9bdaf2');
-       } else {
-         $cCell.css('background-color', '#0a384a');
-         $cCell.css('color', 'white');
-       }
-    });
+    // $("td:nth-child(22)").each (function () {
+    //    var $cCell = $(this);
+    //    if ( $cCell.text() >= 5) {
+    //       $cCell.css('background-color', '#9bdaf2');
+    //    } else {
+    //      $cCell.css('background-color', '#0a384a');
+    //      $cCell.css('color', 'white');
+    //    }
+    // });
   }
 colorCodeString();
 // $cCell.css('background-color', '#9bdaf2');
@@ -214,15 +220,7 @@ colorCodeString();
 // $cCell.css('background-color', '#115f7e');
 // $cCell.css('color', 'white');
 // $cCell.css('background-color', '#0a384a');
-// $cCell.css('color', 'white');
-
-  // var allCells = document.querySelectorAll("td");
-  // for (var i = 0; i < allCells.length; ++i) {
-  //     allCells[i].addEventListener("DOMCharacterDataModified", function () {
-  //         updateColors();
-  //     });
-  // }
-
+// $cCell.css('color', 'white')
 
     // $(function () {
     //   $('[data-toggle="tooltip"]').tooltip({
@@ -233,26 +231,3 @@ colorCodeString();
     // });
 
 });
-
-
-
-
-//               if (((rowData.gsx$recpr.$t <= 10) || (rowData.gsx$recpr.$t == '-')) && (rowData.gsx$projmins.$t >= 27) && (rowData.gsx$useage.$t > "15.00%") && (rowData.gsx$criteriaranking.$t >= 5) && (rowData.gsx$delete.$t == 'Suggested') && (rowData.gsx$salaryadjust.$t <= 400)) {
-//
-//                 var playernames = rowData.gsx$player.$t;
-//                 var playerposition = rowData.gsx$position.$t;
-//                 var playercondition = rowData.gsx$condition.$t;
-//                 var playerdetails = rowData.gsx$details.$t;
-//                 var suggestedPlayersNBA = $('.suggestedPlayersNBA');
-//                 if (playercondition == 'GTD') {
-//                   suggestedPlayersNBA.append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(GTD ' + playerdetails + ')' + '</li>');
-//                 }
-//                 if (playercondition == '-') {
-//                   suggestedPlayersNBA.append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(Playing)' + '</li>');
-//                 }
-//                 if (playercondition == 'O') {
-//                   suggestedPlayersNBA.append('<li>' + '(' + playerposition + ') ' + playernames + ' ' + '(OUT ' + playerdetails + ')' + '</li>');
-//                 }
-//               }
-//             }
-//           },
