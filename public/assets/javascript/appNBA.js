@@ -200,15 +200,15 @@ $(document).ready(function(){
            $cCell.css('color', 'white');
         }
       });
-    // $("td:nth-child(22)").each (function () {
-    //    var $cCell = $(this);
-    //    if ( $cCell.text() >= 5) {
-    //       $cCell.css('background-color', '#9bdaf2');
-    //    } else {
-    //      $cCell.css('background-color', '#0a384a');
-    //      $cCell.css('color', 'white');
-    //    }
-    // });
+    $("td:nth-child(22)").each (function () {
+       var $cCell = $(this);
+       if ( $cCell.text() >= 5) {
+          $cCell.css('background-color', '#9bdaf2');
+       } else {
+         $cCell.css('background-color', '#0a384a');
+         $cCell.css('color', 'white');
+       }
+    });
   }
 colorCodeString();
 // $cCell.css('background-color', '#9bdaf2');
