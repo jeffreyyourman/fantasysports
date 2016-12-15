@@ -30,14 +30,17 @@ router.get('/NFL', function (req,res){
 
 router.get('/NBA', function (req,res){
   connection.query("SELECT * FROM googlesheetsapi ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
+    connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
     if(err) throw err;
 
-      var hbsObject = {
-        fantasyNBA: fantasyNBA
-      }
-        res.render('fantasydata/NBAfantasy_data', hbsObject);
-      })
-  });
+    var hbsObject = {
+    fantasyNBA: fantasyNBA,
+    fantasyNBADate: fantasyNBADate
+    }
+    res.render('fantasydata/NBAfantasy_data', hbsObject);
+    })
+  })
+});
 
 router.get('/Contact', function(req,res){
   res.render('users/contactus');

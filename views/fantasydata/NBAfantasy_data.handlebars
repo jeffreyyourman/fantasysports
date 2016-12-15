@@ -27,11 +27,22 @@
       <option value="pf">PF</option>
       <option value="c">C</option>
     </select>
+<br><br><br><br>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-12">
+      {{#each fantasyNBADate}}
+      <p>Last updated at {{this.date}}</p>
+      {{/each}}
+    </div>
+  </div>
+</div>
 
   </div>
   <div id='playerlist' class="container-fluid NBAtables">
     <div class="row nbafantasy">
       <div class="col-md-12" id="nba">
+
         <div class="panel-body beforeResponsive">
           <div class="table-responsive">
             <!-- put images here -->
@@ -391,4 +402,14 @@ function mySearchFunction() {
     }
   }
 }
+
+// Handlebars.registerHelper('each_upto', function(ary, max, options) {
+//     if(!ary || ary.length == 0)
+//         return options.inverse(this);
+//
+//     var result = [ ];
+//     for(var i = 0; i < max && i < ary.length; ++i)
+//         result.push(options.fn(ary[i]));
+//     return result.join('');
+// });
 </script>
