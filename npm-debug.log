@@ -1,0 +1,131 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'prune' ]
+2 info using npm@3.9.5
+3 info using node@v6.2.2
+4 verbose unbuild node_modules/concat-stream
+5 verbose unbuild node_modules/moment-timezone
+6 verbose unbuild node_modules/moment
+7 verbose unbuild node_modules/typedarray
+8 verbose unbuild node_modules/base64url
+9 info lifecycle concat-stream@1.4.10~preuninstall: concat-stream@1.4.10
+10 info lifecycle moment-timezone@0.5.10~preuninstall: moment-timezone@0.5.10
+11 info lifecycle moment@2.17.1~preuninstall: moment@2.17.1
+12 info lifecycle typedarray@0.0.6~preuninstall: typedarray@0.0.6
+13 silly lifecycle concat-stream@1.4.10~preuninstall: no script for preuninstall, continuing
+14 silly lifecycle moment-timezone@0.5.10~preuninstall: no script for preuninstall, continuing
+15 silly lifecycle moment@2.17.1~preuninstall: no script for preuninstall, continuing
+16 info lifecycle base64url@1.0.6~preuninstall: base64url@1.0.6
+17 silly lifecycle typedarray@0.0.6~preuninstall: no script for preuninstall, continuing
+18 info lifecycle concat-stream@1.4.10~uninstall: concat-stream@1.4.10
+19 info lifecycle moment-timezone@0.5.10~uninstall: moment-timezone@0.5.10
+20 info lifecycle moment@2.17.1~uninstall: moment@2.17.1
+21 silly lifecycle base64url@1.0.6~preuninstall: no script for preuninstall, continuing
+22 info lifecycle typedarray@0.0.6~uninstall: typedarray@0.0.6
+23 silly lifecycle concat-stream@1.4.10~uninstall: no script for uninstall, continuing
+24 silly lifecycle moment-timezone@0.5.10~uninstall: no script for uninstall, continuing
+25 silly lifecycle moment@2.17.1~uninstall: no script for uninstall, continuing
+26 info lifecycle base64url@1.0.6~uninstall: base64url@1.0.6
+27 silly lifecycle typedarray@0.0.6~uninstall: no script for uninstall, continuing
+28 verbose unbuild rmStuff concat-stream@1.4.10 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+29 info lifecycle concat-stream@1.4.10~postuninstall: concat-stream@1.4.10
+30 verbose unbuild rmStuff moment-timezone@0.5.10 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+31 info lifecycle moment-timezone@0.5.10~postuninstall: moment-timezone@0.5.10
+32 verbose unbuild rmStuff moment@2.17.1 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+33 info lifecycle moment@2.17.1~postuninstall: moment@2.17.1
+34 silly lifecycle base64url@1.0.6~uninstall: no script for uninstall, continuing
+35 verbose unbuild rmStuff typedarray@0.0.6 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+36 info lifecycle typedarray@0.0.6~postuninstall: typedarray@0.0.6
+37 silly lifecycle concat-stream@1.4.10~postuninstall: no script for postuninstall, continuing
+38 silly lifecycle moment-timezone@0.5.10~postuninstall: no script for postuninstall, continuing
+39 silly lifecycle moment@2.17.1~postuninstall: no script for postuninstall, continuing
+40 verbose unbuild rmStuff base64url@1.0.6 from /Users/jeffyourman/Desktop/fantasysports/node_modules
+41 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url is being gently removed from base /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+42 silly lifecycle typedarray@0.0.6~postuninstall: no script for postuninstall, continuing
+43 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/concat-stream is being purged from base /Users/jeffyourman/Desktop/fantasysports
+44 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/concat-stream
+45 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/moment-timezone is being purged from base /Users/jeffyourman/Desktop/fantasysports
+46 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/moment-timezone
+47 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/moment is being purged from base /Users/jeffyourman/Desktop/fantasysports
+48 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/moment
+49 silly gentlyRm /Users/jeffyourman/Desktop/fantasysports/node_modules/typedarray is being purged from base /Users/jeffyourman/Desktop/fantasysports
+50 verbose gentlyRm don't care about contents; nuking /Users/jeffyourman/Desktop/fantasysports/node_modules/typedarray
+51 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/concat-stream
+52 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/moment-timezone
+53 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/moment
+54 silly vacuum-fs purging /Users/jeffyourman/Desktop/fantasysports/node_modules/typedarray
+55 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+56 silly gentlyRm parent.path = /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+57 silly gentlyRm parent.managed = /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url is in /Users/jeffyourman/Desktop/fantasysports
+58 silly gentlyRm target.path =  /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url
+59 silly gentlyRm target.symlink = #!/bin/sh
+59 silly gentlyRm basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+59 silly gentlyRm
+59 silly gentlyRm case `uname` in
+59 silly gentlyRm     *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+59 silly gentlyRm esac
+59 silly gentlyRm
+59 silly gentlyRm if [ -x "$basedir/node" ]; then
+59 silly gentlyRm   "$basedir/node"  "$basedir/../base64url/bin/base64url" "$@"
+59 silly gentlyRm   ret=$?
+59 silly gentlyRm else
+59 silly gentlyRm   node  "$basedir/../base64url/bin/base64url" "$@"
+59 silly gentlyRm   ret=$?
+59 silly gentlyRm fi
+59 silly gentlyRm exit $ret
+60 silly gentlyRm target.managed = false
+61 silly gentlyRm target.inParent =  false
+62 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+63 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+64 silly vacuum-fs quitting because other entries in /Users/jeffyourman/Desktop/fantasysports/node_modules
+65 verbose stack Error: Refusing to delete /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url: #!/bin/sh
+65 verbose stack basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+65 verbose stack
+65 verbose stack case `uname` in
+65 verbose stack     *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+65 verbose stack esac
+65 verbose stack
+65 verbose stack if [ -x "$basedir/node" ]; then
+65 verbose stack   "$basedir/node"  "$basedir/../base64url/bin/base64url" "$@"
+65 verbose stack   ret=$?
+65 verbose stack else
+65 verbose stack   node  "$basedir/../base64url/bin/base64url" "$@"
+65 verbose stack   ret=$?
+65 verbose stack fi
+65 verbose stack exit $ret
+65 verbose stack  symlink target is not controlled by npm /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+65 verbose stack     at clobberFail (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:162:12)
+65 verbose stack     at isSafeToRm (/usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:152:15)
+65 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:93:5
+65 verbose stack     at LOOP (/usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:7:26)
+65 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/slide/lib/chain.js:18:7
+65 verbose stack     at /usr/local/lib/node_modules/npm/lib/utils/gently-rm.js:179:14
+65 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+65 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+65 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+65 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/iferr/index.js:11:16
+66 verbose cwd /Users/jeffyourman/Desktop/fantasysports
+67 error Darwin 16.0.0
+68 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "prune"
+69 error node v6.2.2
+70 error npm  v3.9.5
+71 error path /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url
+72 error code EEXIST
+73 error Refusing to delete /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url: #!/bin/sh
+73 error basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
+73 error
+73 error case `uname` in
+73 error     *CYGWIN*) basedir=`cygpath -w "$basedir"`;;
+73 error esac
+73 error
+73 error if [ -x "$basedir/node" ]; then
+73 error   "$basedir/node"  "$basedir/../base64url/bin/base64url" "$@"
+73 error   ret=$?
+73 error else
+73 error   node  "$basedir/../base64url/bin/base64url" "$@"
+73 error   ret=$?
+73 error fi
+73 error exit $ret
+73 error  symlink target is not controlled by npm /Users/jeffyourman/Desktop/fantasysports/node_modules/base64url
+74 error File exists: /Users/jeffyourman/Desktop/fantasysports/node_modules/.bin/base64url
+75 error Move it away, and try again.
+76 verbose exit [ 1, true ]
