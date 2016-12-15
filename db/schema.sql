@@ -49,7 +49,7 @@ CREATE TABLE googlesheetsapi (
   DeleteSuggested varchar(255) NOT NULL,
   CriteriaRanking int,
   PlayerCount varchar(255) NOT NULL,
-  date TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (playerId)
 );
 
