@@ -49,7 +49,7 @@ CREATE TABLE googlesheetsapi (
   DeleteSuggested varchar(255) NOT NULL,
   CriteriaRanking int,
   PlayerCount varchar(255) NOT NULL,
-  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated varchar (255) NOT NULL,
   PRIMARY KEY (playerId)
 );
 
@@ -81,7 +81,7 @@ CREATE TABLE googlesheetsapiNFL (
   Injury_Status varchar (255) NOT NULL,
   RecPre varchar (255) NOT NULL,
   Ownership varchar (255) NOT NULL,
-  date TIMESTAMP,
+  update varchar (255) NOT NULL,
   PRIMARY KEY (NFLplayerId)
 );
 

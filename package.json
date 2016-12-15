@@ -28,6 +28,8 @@
     "moment-timezone": "^0.5.10",
     "mysql": "^2.11.1",
     "nodemon": "^1.10.2",
-    "request": "^2.76.0"
+    "request": "^2.76.0",
+    "timezone-js": "^0.4.13",
+    "tzdata": "^1.0.5"
   }
 }
