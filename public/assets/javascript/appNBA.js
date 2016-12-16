@@ -17,7 +17,7 @@ $(document).ready(function(){
     //       console.log($cCell);
     //    }
     // });
-    $("td:nth-child(3)").each (function () {
+    $("td:nth-child(4)").each (function () {
        var $cCell = $(this);
        if ( $cCell.text() === 'H') {
           $cCell.css('background-color', '#9bdaf2');
@@ -26,7 +26,7 @@ $(document).ready(function(){
          $cCell.css('color', 'white');
        }
     });
-    $("td:nth-child(9)").each (function () {
+    $("td:nth-child(10)").each (function () {
        var $cCell = $(this);
        if ( $cCell.text() >= 33) {
           $cCell.css('background-color', '#9bdaf2');
@@ -59,7 +59,7 @@ $(document).ready(function(){
 
     //    }
     // });
-    $("td:nth-child(13)").each (function () {
+    $("td:nth-child(14)").each (function () {
        var $cCell = $(this);
        var cCellParse = parseFloat($cCell.text())
        if ( $cCell.text() >= 1.3 ) {
@@ -79,7 +79,7 @@ $(document).ready(function(){
           $cCell.css('color', 'white');
        }
     });
-    $("td:nth-child(14)").each (function () {
+    $("td:nth-child(15)").each (function () {
        var $cCell = $(this);
        var cCellParse = parseFloat($cCell.text())
        if ( $cCell.text() >= 1.1 ) {
@@ -100,7 +100,7 @@ $(document).ready(function(){
        }
     });
 
-    $("td:nth-child(15)").each (function () {
+    $("td:nth-child(16)").each (function () {
        var $cCell = $(this);
        var cCellParse = parseFloat($cCell.text())
        if ( $cCell.text() >= 105 ) {
@@ -120,7 +120,7 @@ $(document).ready(function(){
          $cCell.css('color', 'white');
        }
     });
-    $("td:nth-child(16)").each (function () {
+    $("td:nth-child(17)").each (function () {
        var $cCell = $(this);
        var cCellParse = parseFloat($cCell.text())
        if ( $cCell.text() >= 210 ) {
@@ -140,7 +140,7 @@ $(document).ready(function(){
           $cCell.css('color', 'white');
        }
      });
-     $("td:nth-child(18)").each (function () {
+     $("td:nth-child(19)").each (function () {
         var $cCell = $(this);
         var cCellParse = parseFloat($cCell.text())
         if ( $cCell.text() >= 5 ) {
@@ -160,7 +160,7 @@ $(document).ready(function(){
            $cCell.css('color', 'white');
         }
       });
-     $("td:nth-child(19)").each (function () {
+     $("td:nth-child(20)").each (function () {
         var $cCell = $(this);
         var cCellParse = parseFloat($cCell.text())
         if (( $cCell.text() <= 400 ) || ($cCell.text() === '-')) {
@@ -170,7 +170,7 @@ $(document).ready(function(){
            $cCell.css('color', 'white');
          }
       });
-      $("td:nth-child(20)").each (function () {
+      $("td:nth-child(21)").each (function () {
          var $cCell = $(this);
          var cCellParse = parseFloat($cCell.text())
          if (( $cCell.text() <= 10 ) || ($cCell.text() === '-')) {
@@ -180,7 +180,7 @@ $(document).ready(function(){
            $cCell.css('color', 'white');
          }
        });
-     $("td:nth-child(21)").each (function () {
+     $("td:nth-child(22)").each (function () {
         var $cCell = $(this);
         var cCellParse = parseFloat($cCell.text())
         if ( $cCell.text() >= 40.00 ) {
@@ -200,7 +200,7 @@ $(document).ready(function(){
            $cCell.css('color', 'white');
         }
       });
-    $("td:nth-child(22)").each (function () {
+    $("td:nth-child(23)").each (function () {
        var $cCell = $(this);
        if ( $cCell.text() >= 5) {
           $cCell.css('background-color', '#9bdaf2');
