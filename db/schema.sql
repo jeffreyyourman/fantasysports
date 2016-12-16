@@ -48,6 +48,10 @@ CREATE TABLE googlesheetsapi (
   PTsVPos varchar(255) NOT NULL,
   DeleteSuggested varchar(255) NOT NULL,
   CriteriaRanking int,
+  GameTime varchar(255) NOT NULL,
+  awaygame varchar(255) NOT NULL,
+  B2BGame varchar(255) NOT NULL,
+  ThreeinFour varchar(255) NOT NULL,
   PlayerCount varchar(255) NOT NULL,
   updated varchar (255) NOT NULL,
   PRIMARY KEY (playerId)

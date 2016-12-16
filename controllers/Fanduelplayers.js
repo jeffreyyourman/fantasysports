@@ -63,17 +63,17 @@ var fanduelNBADB = function() {
             for (var i = 0; i < body.feed.entry.length; i++) {
                 var myNBA = body.feed.entry[i]
 
-                var turtle = [myNBA.gsx$player.$t, myNBA.gsx$ha.$t, myNBA.gsx$position.$t, myNBA.gsx$team.$t, myNBA.gsx$opp.$t, myNBA.gsx$condition.$t, myNBA.gsx$details.$t, myNBA.gsx$posid.$t, myNBA.gsx$avgminsl10.$t, myNBA.gsx$projmins.$t, myNBA.gsx$salary.$t, myNBA.gsx$useage.$t, myNBA.gsx$ppgl10.$t, myNBA.gsx$ppm.$t, myNBA.gsx$ovp.$t, myNBA.gsx$gladjust.$t, myNBA.gsx$totaladjust.$t, myNBA.gsx$projscore.$t, myNBA.gsx$gameline.$t, myNBA.gsx$projectedpts.$t, myNBA.gsx$value.$t, myNBA.gsx$ownership.$t, myNBA.gsx$pathcompare.$t, myNBA.gsx$expectedvalue.$t, myNBA.gsx$netvalue.$t, myNBA.gsx$gamesplayed.$t, myNBA.gsx$salaryadjust.$t, myNBA.gsx$recpr.$t, myNBA.gsx$score.$t, myNBA.gsx$ptsvpos.$t, myNBA.gsx$delete.$t, myNBA.gsx$criteriaranking.$t, myNBA.gsx$playercount.$t]
+                var turtle = [myNBA.gsx$player.$t, myNBA.gsx$ha.$t, myNBA.gsx$position.$t, myNBA.gsx$team.$t, myNBA.gsx$opp.$t, myNBA.gsx$condition.$t, myNBA.gsx$details.$t, myNBA.gsx$posid.$t, myNBA.gsx$avgminsl10.$t, myNBA.gsx$projmins.$t, myNBA.gsx$salary.$t, myNBA.gsx$useage.$t, myNBA.gsx$ppgl10.$t, myNBA.gsx$ppm.$t, myNBA.gsx$ovp.$t, myNBA.gsx$gladjust.$t, myNBA.gsx$totaladjust.$t, myNBA.gsx$projscore.$t, myNBA.gsx$gameline.$t, myNBA.gsx$projectedpts.$t, myNBA.gsx$value.$t, myNBA.gsx$ownership.$t, myNBA.gsx$pathcompare.$t, myNBA.gsx$expectedvalue.$t, myNBA.gsx$netvalue.$t, myNBA.gsx$gamesplayed.$t, myNBA.gsx$salaryadjust.$t, myNBA.gsx$recpr.$t, myNBA.gsx$score.$t, myNBA.gsx$ptsvpos.$t, myNBA.gsx$delete.$t, myNBA.gsx$criteriaranking.$t, myNBA.gsx$gametime.$t, myNBA.gsx$awaygame.$t, myNBA.gsx$b2bgame.$t, myNBA.gsx$threeinfour.$t, myNBA.gsx$playercount.$t]
 
                 var updateDate = new Date();
                 var newupdatedDate = moment.tz(updateDate, "America/New_York").format();
 
                 fanduel.createfandueldata(['Player', "HomeAway", "Position", "Team", "Opp", "Mycondition", "details", "posid", "AvgMinsL10", "ProjMins", "Salary", "Useage", "PPGL10", "PPM", "OVP", "GLAdjust", "TotalAdjust", "ProjScore", "GameLine", "ProjectedPts", "Value", "Ownership", "PathCompare", "ExpectedValue", "NetValue",
-                    "GamesPlayed", "SalaryAdjust", "RecPr", "Score", "PTsVPos", "DeleteSuggested", "CriteriaRanking", "PlayerCount", 'updated'
+                    "GamesPlayed", "SalaryAdjust", "RecPr", "Score", "PTsVPos", "DeleteSuggested", "CriteriaRanking", 'GameTime', "awaygame", "B2BGame", 'ThreeinFour', "PlayerCount", 'updated'
                 ], [turtle[0], turtle[1], turtle[2], turtle[3], turtle[4], turtle[5], turtle[6], turtle[7], turtle[8], turtle[9], turtle[10], turtle[11], turtle[12],
 
                     turtle[13], turtle[14], turtle[15], turtle[16], turtle[17], turtle[18], turtle[19], turtle[20], turtle[21], turtle[22], turtle[23], turtle[24], turtle[25], turtle[26], turtle[27], turtle[28],
-                    turtle[29], turtle[30], turtle[31], turtle[32], newupdatedDate
+                    turtle[29], turtle[30], turtle[31], turtle[32], turtle[33], turtle[34], turtle[35], turtle[36], newupdatedDate
                 ], function(nbadata) {
 
                 });
