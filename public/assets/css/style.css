@@ -234,11 +234,12 @@ color:white;
 .btn-info.focus, .btn-info:focus {
   color:white;
   background-color: #021A3A;
+
   border-color: #021A3A;
 }
 .btn-info {
   color:white;
-  background-color: #021A3A;
+  background-color: #36b9f4;
   border-color: #021A3A;
 }
 .btn-info.focus, .btn-info:focus {
