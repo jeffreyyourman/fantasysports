@@ -20,16 +20,19 @@ router.get('/', function(req, res){
 router.get('/NFL', function (req,res){
 // "SELECT * FROM googlesheetsapiNFL where POS = 'QB' ORDER BY CritRank ASC;"
   connection.query("SELECT * FROM googlesheetsapiNFL ORDER BY POS DESC, Sal DESC;", function(err,fantasyNFL){
+    connection.query("SELECT * FROM googlesheetsapiNFL limit 1;", function(err,fantasyNFLDate){
     if(err) throw err;
       var hbsObject = {
-        fantasyNFL: fantasyNFL
+      fantasyNFL: fantasyNFL,
+      fantasyNFLDate: fantasyNFLDate
       }
-        res.render('fantasydata/NFLfantasy_data', hbsObject);
-      })
-  });
+    res.render('fantasydata/NFLfantasy_data', hbsObject);
+    })
+  })
+});
 
 router.get('/NBA', function (req,res){
-  
+
   connection.query("SELECT * FROM googlesheetsapi ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
     connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
     if(err) throw err;

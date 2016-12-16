@@ -85,15 +85,7 @@ CREATE TABLE googlesheetsapiNFL (
   Injury_Status varchar (255) NOT NULL,
   RecPre varchar (255) NOT NULL,
   Ownership varchar (255) NOT NULL,
-  update varchar (255) NOT NULL,
+  updated varchar (255) NOT NULL,
   PRIMARY KEY (NFLplayerId)
 );
-
--- CREATE TABLE UpdatedTimeTable (
---   datetable int NOT NULL AUTO_INCREMENT,
---   updated varchar (255) NOT NULL,
---   PRIMARY KEY (datetable)
--- );
-
-
 =======NFL SCHEMA END =======
