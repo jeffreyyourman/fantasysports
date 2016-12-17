@@ -33,7 +33,7 @@ var Fanduelplayers = require('./controllers/Fanduelplayers.js');
 
 app.get('/load', function(req,res){
 	var nbateams = new Fanduelplayers()
-	// res.redirect('/');
+	res.redirect('/');
 });
 
 
