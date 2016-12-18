@@ -87,8 +87,12 @@ app.get("/login/facebook/return",
   });
 
   app.get('/', function(req, res){
+    var requser = req.user;
 
-    res.render('index');
+    var hbsObject = {
+      requser:requser
+    }
+    res.render('index', hbsObject);
   });
 
   app.get('/NFL', function (req,res){
@@ -125,21 +129,8 @@ app.get("/login/facebook/return",
       })
     })
   });
-
-
-// This page is available for viewing a hello message
-// app.get("/inbox",
-//   require("connect-ensure-login").ensureLoggedIn(),
-//   function(req, res) {
-//
-//     res.sendFile(path.join(__dirname, "inbox.html"));
-//
-//   });
-
 // This route is available for retrieving the information associated with the authentication method
   app.get("/willyDJ", function(req, res) {
-    // setTimeout(function(){ console.log(req.user.displayName); }, 5000);
-
     res.json(req.user);
   });
 
