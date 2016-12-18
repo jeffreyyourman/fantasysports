@@ -92,15 +92,15 @@ app.get("/login/facebook/return",
   });
 
   app.get('/NFL', function (req,res){
-    // var requser = req.user.displayName;
+    var requser = req.user;
   // "SELECT * FROM googlesheetsapiNFL where POS = 'QB' ORDER BY CritRank ASC;"
     connection.query("SELECT * FROM googlesheetsapiNFL where Player <> '' ORDER BY POS DESC, Sal DESC;", function(err,fantasyNFL){
       connection.query("SELECT * FROM googlesheetsapiNFL limit 1;", function(err,fantasyNFLDate){
       if(err) throw err;
         var hbsObject = {
         fantasyNFL: fantasyNFL,
-        fantasyNFLDate: fantasyNFLDate
-        // requser:requser
+        fantasyNFLDate: fantasyNFLDate,
+        requser:requser
         }
       res.render('fantasydata/NFLfantasy_data', hbsObject);
       })
@@ -109,7 +109,9 @@ app.get("/login/facebook/return",
 
 
   app.get('/NBA', function (req,res){
-    var requser = req.user.displayName;
+
+    var requser = req.user;
+
     connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
       connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
       if(err) throw err;
