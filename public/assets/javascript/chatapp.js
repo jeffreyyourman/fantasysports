@@ -2,6 +2,10 @@ var myDataRef = new Firebase('https://worldclassbettinghelp.firebaseio.com/');
 var chatData = new Firebase('https://worldclassbettinghelp.firebaseio.com/chat');
 var playersRef = new Firebase('https://worldclassbettinghelp.firebaseio.com/players');
 var currentTurnRef = new Firebase('https://worldclassbettinghelp.firebaseio.com/turn');
+$.ajax({url: "/willyDJ", method: "GET"})
+
+  .done(function(response) {
+    console.log(response)
 
 var username = "Guest";
 var currentPlayers = null;
@@ -11,6 +15,7 @@ var playerOneExists = false;
 var playerTwoExists = false;
 var playerOneData = null;
 var playerTwoData = null;
+
 
 //USERNAME LISTENERS
 //Start button - takes username and tries to get user in game

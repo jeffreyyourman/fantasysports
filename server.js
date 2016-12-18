@@ -123,7 +123,7 @@ app.get("/login/facebook/return",
       var hbsObject = {
       fantasyNBA: fantasyNBA,
       fantasyNBADate: fantasyNBADate,
-      requser:requser //this is the displayname. If we give it a name of guest it should work.
+      requser:requser
       }
       res.render('fantasydata/NBAfantasy_data', hbsObject);
       })

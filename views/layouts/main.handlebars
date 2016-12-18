@@ -52,14 +52,24 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse bod" id="bs-example-navbar-collapse-1">
+                        {{#if requser}}
                         <ul class="nav navbar-nav navbar-right navigate">
                             <li><a href="#">{{requser.displayName}}</a></li>
+                            <li class='navlist'><a href="/">Home</a></li>
+                            <li class='navlist'><a href="/NBA">NBA</a></li>
+                            <li class='navlist'><a href="/NFL">NFL</a></li>
+                            <li class='navlist'><a href="/Contact">Contact us</a></li>
+                        </ul>
+                        {{/if}}
+                        {{#unless requser}}
+                        <ul class="nav navbar-nav navbar-right navigate">
                             <li class='navlist'><a href="/">Home</a></li>
                             <li><a href="/login/facebook">Login</a></li>
                             <li class='navlist'><a href="/NBA">NBA</a></li>
                             <li class='navlist'><a href="/NFL">NFL</a></li>
                             <li class='navlist'><a href="/Contact">Contact us</a></li>
                         </ul>
+                        {{/unless}}
                     </div>
                     <!-- /.navbar-collapse -->
                     <div class="clearfix"></div>
