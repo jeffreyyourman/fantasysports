@@ -88,14 +88,11 @@ app.get("/login/facebook/return",
 
   app.get('/', function(req, res){
 
-    // var hbsObject = {
-    //   logged_in: req.session.logged_in,
-    //   user: user
-    // }
     res.render('index');
   });
 
   app.get('/NFL', function (req,res){
+    // var requser = req.user.displayName;
   // "SELECT * FROM googlesheetsapiNFL where POS = 'QB' ORDER BY CritRank ASC;"
     connection.query("SELECT * FROM googlesheetsapiNFL where Player <> '' ORDER BY POS DESC, Sal DESC;", function(err,fantasyNFL){
       connection.query("SELECT * FROM googlesheetsapiNFL limit 1;", function(err,fantasyNFLDate){
@@ -103,6 +100,7 @@ app.get("/login/facebook/return",
         var hbsObject = {
         fantasyNFL: fantasyNFL,
         fantasyNFLDate: fantasyNFLDate
+        // requser:requser
         }
       res.render('fantasydata/NFLfantasy_data', hbsObject);
       })
@@ -111,7 +109,7 @@ app.get("/login/facebook/return",
 
 
   app.get('/NBA', function (req,res){
-
+    var requser = req.user.displayName;
     connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
       connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
       if(err) throw err;
@@ -119,7 +117,7 @@ app.get("/login/facebook/return",
       var hbsObject = {
       fantasyNBA: fantasyNBA,
       fantasyNBADate: fantasyNBADate,
-
+      requser:requser //this is the displayname. If we give it a name of guest it should work.
       }
       res.render('fantasydata/NBAfantasy_data', hbsObject);
       })
