@@ -86,6 +86,47 @@ app.get("/login/facebook/return",
     res.redirect("/");
   });
 
+  app.get('/', function(req, res){
+
+    // var hbsObject = {
+    //   logged_in: req.session.logged_in,
+    //   user: user
+    // }
+    res.render('index');
+  });
+
+  app.get('/NFL', function (req,res){
+  // "SELECT * FROM googlesheetsapiNFL where POS = 'QB' ORDER BY CritRank ASC;"
+    connection.query("SELECT * FROM googlesheetsapiNFL where Player <> '' ORDER BY POS DESC, Sal DESC;", function(err,fantasyNFL){
+      connection.query("SELECT * FROM googlesheetsapiNFL limit 1;", function(err,fantasyNFLDate){
+      if(err) throw err;
+        var hbsObject = {
+        fantasyNFL: fantasyNFL,
+        fantasyNFLDate: fantasyNFLDate
+        }
+      res.render('fantasydata/NFLfantasy_data', hbsObject);
+      })
+    })
+  });
+
+
+  app.get('/NBA', function (req,res){
+
+    connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
+      connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
+      if(err) throw err;
+
+      var hbsObject = {
+      fantasyNBA: fantasyNBA,
+      fantasyNBADate: fantasyNBADate,
+
+      }
+      res.render('fantasydata/NBAfantasy_data', hbsObject);
+      })
+    })
+  });
+
+
 // This page is available for viewing a hello message
 // app.get("/inbox",
 //   require("connect-ensure-login").ensureLoggedIn(),
@@ -96,19 +137,16 @@ app.get("/login/facebook/return",
 //   });
 
 // This route is available for retrieving the information associated with the authentication method
-// app.get("/api/inbox",
-//   require("connect-ensure-login").ensureLoggedIn(),
-//   function(req, res) {
-//
-//     res.json(req.user);
-//
-//   });
+  app.get("/willyDJ", function(req, res) {
+    // setTimeout(function(){ console.log(req.user.displayName); }, 5000);
 
+    res.json(req.user);
+  });
 
 
 app.use('/', routes);
 app.use('/users', routes);
-app.use('/users', userdata_controller);
+// app.use('/users', userdata_controller);
 
 var PORT = process.env.PORT || 3000;
 

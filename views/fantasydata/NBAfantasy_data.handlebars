@@ -13,6 +13,7 @@
   <div class="container-fluid NBATeamTable">
     <br>
     <br>
+    <li><p>{{displayname}}</p></li>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
     <br>
     <br>
@@ -433,4 +434,11 @@ function mySearchFunction() {
     }
   }
 }
+
+$.ajax({url: "/willyDJ", method: "GET"})
+
+  .done(function(response) {
+    console.log(response)
+    $("#username").text(response.displayName);
+  })
 </script>
