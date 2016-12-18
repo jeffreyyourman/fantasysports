@@ -65,7 +65,7 @@ ul.navbar-right.navigate ul li{
 ul.navbar-right.navigate li a{
     font-family: 'Audiowide', cursive;
     font-weight: 400;
-    font-size: 1.2em;
+    font-size: 0.9em;
     color: #fff;
     padding: 20px;
 }
@@ -295,7 +295,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	a.morebtn {
 		width: 50%;
 		font-size: 0.8em;
-		padding:0.6em 0.5em; 
+		padding:0.6em 0.5em;
 	}
 	.callbacks_tabs a:after {
 		height:4px;
@@ -357,7 +357,7 @@ ul.callbacks_tabs.callbacks1_tabs {
     color: #333333;
     padding: 0;
     font-weight: 300;
-    font-size: 1.4em;  
+    font-size: 1.4em;
 }
 .lft{
     text-align: left;
@@ -554,7 +554,7 @@ ul.tab_list li a:hover {
     color: #333333;
     font-size: 2.5em;
     font-family: 'Audiowide', cursive;
-    font-weight: 400; 
+    font-weight: 400;
 }
 .tab-1.msg p{
     padding: 0;
@@ -820,7 +820,7 @@ li.grid-1_right p{
         font-size: 2.5em;
     }
     .navbar-toggle {
-        border: none !important;  
+        border: none !important;
     }
     ul.nav.navbar-nav.navbar-right.navigate {
         margin-top: 0.7em;
@@ -830,7 +830,7 @@ li.grid-1_right p{
         color: #fff;
         padding: 18px;
     }
-    
+
     ul.navbar-right.navigate li a:hover {
         padding: 18px;
     }
@@ -872,10 +872,10 @@ li.grid-1_right p{
         top: 19%;
         left: 18%;
     }
-    .chn h3 { 
+    .chn h3 {
         font-size: 1.5em;
     }
-    .chn p {   
+    .chn p {
         font-size: 1.2em;
 		margin: 0;
     }
@@ -1309,7 +1309,7 @@ li.grid-1_right p{
     }
     .contact iframe {
         height: 233px;
-    }   
+    }
 }
 @media screen and (max-width: 600px){
 	ul.resp-tabs-list li {

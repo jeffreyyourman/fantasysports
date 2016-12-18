@@ -2,6 +2,11 @@ body,html{
   height: 100%;
   background-color: #f0fcff;
 }
+
+.dropdownSports {
+  background-color:#021A3A;
+  min-width: 111px;  
+}
 .navlist {
     list-style: none;
 }
