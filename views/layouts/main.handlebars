@@ -51,12 +51,12 @@
                     </div>
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse bod" id="bs-example-navbar-collapse-1">
-                        {{#if requser}}
+                        {{!#if requser}}
                         <ul class="nav navbar-nav navbar-right navigate">
                             <li class='navlist'><a href="/">Home</a></li>
-                            <li><a href="#">Welcome, {{requser.displayName}}</a></li>
+                            <!-- <li><a href="#">Welcome, {{requser.displayName}}</a></li> -->
                             <li class="dropdown">
-                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Sports
+                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">DFS Sports
                               <span class="caret"></span></a>
                               <ul class="dropdown-menu dropdownSports">
                                   <li class='navlist'><a href="/NBA">NBA</a></li>
@@ -65,9 +65,9 @@
                             </li>
                             <li class='navlist'><a href="/Contact">Contact us</a></li>
                         </ul>
-                        {{/if}}
-                        {{#unless requser}}
-                        <ul class="nav navbar-nav navbar-right navigate">
+                        {{!/if}}
+                        {{!#unless requser}}
+                        <!-- <ul class="nav navbar-nav navbar-right navigate">
                             <li><a href="/login/facebook">Login</a></li>
                             <li class='navlist'><a href="/">Home</a></li>
                             <li class="dropdown">
@@ -79,8 +79,8 @@
                               </ul>
                             </li>
                             <li class='navlist'><a href="/Contact">Contact us</a></li>
-                        </ul>
-                        {{/unless}}
+                        </ul> -->
+                        {{!/unless}}
                     </div>
 
 

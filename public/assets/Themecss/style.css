@@ -68,13 +68,14 @@ ul.navbar-right.navigate li a{
     font-size: 0.9em;
     color: #fff;
     padding: 20px;
+    border-radius: 35px 0px 35px 0px;
 }
 ul.navbar-right.navigate li a:hover{
     text-decoration: none;
     padding: 20px;
     background: #337ab7;
-    transition: 0.5s all;
-    border-radius: 35px 0px 35px 0px;
+    /*transition: 0.5s all;*/
+    /*border-radius: 35px 0px 35px 0px;*/
     color: #fff;
 }
 /*--- slider-css --*/
