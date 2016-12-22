@@ -236,7 +236,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 		left: 13%;
 	}
 	.caption h3{
-		font-size:1.5em;
+		font-size:1.0em;
 	}
 	a.morebtn {
 		width: 30%;
@@ -256,12 +256,12 @@ ul.callbacks_tabs.callbacks1_tabs {
 	  	top: 60%;
 	 }
 	.caption p{
-		height:25px;
+		height:258px;
 		overflow:hidden;
 		margin:0.5em 0;
 	}
 	.caption h3{
-		font-size:1.4em;
+		font-size:0.9em;
 	}
 	a.morebtn {
 		width: 40%;
@@ -286,7 +286,7 @@ ul.callbacks_tabs.callbacks1_tabs {
 	  	top: 63%;
 	 }
 	.caption p{
-		height:25px;
+		height:110px;
 		overflow:hidden;
 		margin:0.2em 0;
 	}
@@ -874,7 +874,7 @@ li.grid-1_right p{
         left: 18%;
     }
     .chn h3 {
-        font-size: 1.5em;
+        font-size: 1.4em;
     }
     .chn p {
         font-size: 1.2em;
@@ -1320,7 +1320,8 @@ li.grid-1_right p{
         margin: 0;
     }
     .chn p {
-        margin-bottom: 1em;
+      font-size:1.0em;
+      margin-bottom: 1em;
     }
     a.morebtn {
         width: 26%;
@@ -1345,7 +1346,8 @@ li.grid-1_right p{
         font-size: 1.8em;
     }
     .chn p {
-        margin: 0px 0px 6px;
+      font-size:1.0em
+      margin: 0px 0px 6px;
     }
     a.morebtn {
         width: 27%;
@@ -1505,8 +1507,8 @@ li.grid-1_right p{
         font-size: 0.8em;
     }
     .chn p {
-        margin-bottom: 8px;
-        font-size: 1.1em;
+        margin-bottom: 7.5px;
+        font-size: 0.7em;
     }
     .callbacks_tabs a:after {
         height: 9px;
