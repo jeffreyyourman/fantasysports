@@ -88,7 +88,7 @@ var fanduelNBADB = function() {
         }
     });
   }
-  // fanduelNFLDB();
+  fanduelNFLDB();
   fanduelNBADB();
 }
 module.exports = fanduelSports;
