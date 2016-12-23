@@ -3,7 +3,13 @@ var chatData = new Firebase('https://worldclassbettinghelp.firebaseio.com/chat')
 var playersRef = new Firebase('https://worldclassbettinghelp.firebaseio.com/players');
 var currentTurnRef = new Firebase('https://worldclassbettinghelp.firebaseio.com/turn');
 
-var username = "Guest";
+        $.ajax({url: "/willyDJ", method: "GET"})
+
+          .always(function(response) {
+            var passportUserName = response.displayName;
+            console.log('log for inside', passportUserName);
+
+var username = passportUserName;
 var currentPlayers = null;
 var currentTurn = null;
 var playerNum = false;
@@ -275,3 +281,4 @@ function getInGame() {
     alert('Sorry, Game Full! Try Again Later!');
   }
 }
+})

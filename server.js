@@ -2,24 +2,9 @@
 // var session = require('express-session');
 var express = require('express');
 var app = express();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
-
-// console.log(io);
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
 
 // var methodOverride = require('method-override');
 //Database configuration
-var mongojs = require('mongojs');
-var databaseUrl = "chatio";
-var collections = ["chatiomessages"];
-var db = mongojs(databaseUrl, collections);
-db.on('error', function(err) {
-  console.log('Database Error:', err);
-});
-
 // var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 var request = require("request");
@@ -103,24 +88,18 @@ app.get("/login/facebook/return",
   function(req, res) {
     res.redirect("/");
   });
+  app.get('/logout', function(req, res){
+    req.logout();
+    res.redirect('/');
+  });
+
 
   app.get('/', function(req, res){
     var requser = req.user;
     var hbsObject = {
       requser:requser
     }
-    db.chatiomessages.find({}, function(err, found) {
-      if (err) {
-        console.log(err);
-      } else {
-        var hbsObject = {
-          found:found,
-          requser:requser
-        }
-      }
       res.render('index', hbsObject);
-    });
-
   });
 
   app.get('/NFL', function (req,res){
@@ -169,6 +148,6 @@ app.use('/users', routes);
 
 var PORT = process.env.PORT || 3000;
 
-http.listen(PORT, function() {
+app.listen(PORT, function() {
 	console.log("App listening on PORT: " + PORT);
 });
