@@ -55,9 +55,6 @@
                     <div class="collapse navbar-collapse bod" id="bs-example-navbar-collapse-1">
                         {{#if requser}}
                         <ul class="nav navbar-nav navbar-right navigate">
-                            <li class='navlist'><a href="/">Home</a></li>
-                            <li><a href="#">Welcome, {{requser.displayName}}</a></li>
-                            <li class='navlist'><a href="/logout">LO</a></li>
                             <li class="dropdown">
                               <a class="dropdown-toggle" data-toggle="dropdown" href="#">DFS Sports
                               <span class="caret"></span></a>
@@ -67,13 +64,21 @@
                                   <li class='navlist'><a href="/">MLB Coming Soon!</a></li>
                               </ul>
                             </li>
-                            <li class='navlist'><a href="/Contact">Contact us</a></li>
+
+                            <li class="dropdown">
+                              <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{requser.displayName}}
+                              <span class="caret"></span></a>
+                              <ul class="dropdown-menu dropdownSports">
+                                  <li class='navlist'><a href="/Profile">My Profile</a></li>
+                                  <li class='navlist'><a href="/Contact">Contact us</a></li>
+                                  <li class='navlist'><a href="/logout">Log out</a></li>
+                              </ul>
+                            </li>
                         </ul>
                         {{/if}}
                         {{#unless requser}}
                         <ul class="nav navbar-nav navbar-right navigate">
-                            <li><a href="/login/facebook">Login</a></li>
-                            <li class='navlist'><a href="/">Home</a></li>
+                            <li><a href="/login/facebook">Sign in</a></li>
                             <li class="dropdown">
                               <a class="dropdown-toggle" data-toggle="dropdown" href="#">DFS Sports
                               <span class="caret"></span></a>
@@ -133,7 +138,7 @@
 
         {{#unless requser}}
         <div id="chatbar">
-            <p><a style='color:white; font-size:18px;' href="/login/facebook">Click here to login and use the chat</a></p>
+            <p><a style='color:yellow; font-size:18px;' href="/login/facebook">Click here to Sign in and use the chat</a></p>
         </div>
         {{/unless}}
         <!-- <div id="swapzone"><input id="username" placeholder="Name"/>

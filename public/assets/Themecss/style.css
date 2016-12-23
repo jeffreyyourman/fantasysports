@@ -1648,7 +1648,7 @@ li.grid-1_right p{
     }
     .chn p {
         margin-bottom: 8px;
-        font-size: 1.1em;
+        font-size: 0.75em;
         margin-top: 0;
     }
     a.morebtn {
@@ -1715,7 +1715,7 @@ li.grid-1_right p{
         margin-bottom: 0;
     }
     .chn p {
-        font-size: 1em;
+        font-size: 0.7em;
         margin: 0px 0px 7px;
     }
     a.navbar-brand.iamg img {
