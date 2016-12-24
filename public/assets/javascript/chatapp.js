@@ -80,7 +80,7 @@ chatData.orderByChild("time").on('child_added', function(snapshot) {
   if (snapshot.val().idNum === 0) {
     $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ' ' + snapshot.val().message + '</p><hr>');
   } else {
-    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ': ' + snapshot.val().message + '</p><hr>');
+    $('#chatmessages').append('<p class=player' + snapshot.val().idNum + '><span>' + snapshot.val().name + '</span>' + ':<br><br>' + snapshot.val().message + '</p><hr>');
   }
   //keeps div scrolled to bottom on each update.
   $('#chatmessages').scrollTop($("#chatmessages")[0].scrollHeight);
