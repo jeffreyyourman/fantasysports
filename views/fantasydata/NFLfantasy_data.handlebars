@@ -28,10 +28,10 @@
         <option value="Def">Def</option>
       </select>
       <br><br><br>
-    <p style='font-size:30px;'>If it has Low on column name it means Low numbers are best</p>
+    <!-- <p style='font-size:30px;'>If it has Low on column name it means Low numbers are best</p>
     <hr>
     <p style='font-size:30px;'>If it has High on column name it means High numbers are best</p>
-  <br><br><br><br>
+  <br><br><br><br> -->
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -58,8 +58,8 @@
                   <th>Opponent</th>
                   <th>Injury_Status</th>
                   <th>RankingsVsPosition</th>
-                  <th>TotalOpportunities(high)</th>
-                  <th>PlayersOffenseVsPosition(high)</th>
+                  <th>TotalOpportunities</th>
+                  <th>PlayersOffenseVsPosition</th>
                   <th>WinChanceVsOpponent%</th>
                   <th>Over/Under</th>
                   <th>CriteriaRanking</th>
@@ -67,7 +67,7 @@
                   <th>SnapCount</th>
                   <th>SalaryChange</th>
                   <th>RecentPerformance</th>
-                  <th>ProjectedOwnership(low)</th>
+                  <th>ProjectedOwnership</th>
                 </tr>
               </thead>
               <tbody>
@@ -326,6 +326,12 @@ $(document).ready(function(){
   {
       $("table").tablesorter();
   }
+//   $.ajax({url: "/willyDJ", method: "GET"})
+//
+//     .always(function(response) {
+//       var passportUserName = response.displayName;
+//       console.log('log for inside', passportUserName);
+// });
   setTimeout(function(){
     swal({
       title: "View the Table Legend",
