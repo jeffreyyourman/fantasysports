@@ -123,6 +123,12 @@ ul.navbar-right.navigate li a:hover{
 	font-size: 1.8em;
 	text-transform: uppercase;
 }
+.caption h1{
+	color: #FFF;
+	font-weight: 700;
+	font-size: 1.8em;
+	text-transform: uppercase;
+}
 .caption p{
 	color: #FFF;
 	line-height: 1.5em;
@@ -218,6 +224,9 @@ ul.callbacks_tabs.callbacks1_tabs {
 	.caption h3{
 		font-size:1.5em;
 	}
+  .caption h1 {
+    font-size:1.5em;
+  }
 	a.morebtn {
 		width: 26%;
         padding: 12px 0px;
@@ -238,6 +247,9 @@ ul.callbacks_tabs.callbacks1_tabs {
 	.caption h3{
 		font-size:1.0em;
 	}
+  .caption h1 {
+    font-size: 1.0em;
+  }
 	a.morebtn {
 		width: 30%;
 	}
@@ -263,6 +275,10 @@ ul.callbacks_tabs.callbacks1_tabs {
 	.caption h3{
 		font-size:0.9em;
 	}
+
+  .caption h1 {
+    font-size:0.9em;
+  }
 	a.morebtn {
 		width: 40%;
 		font-size:0.8em;
@@ -293,6 +309,10 @@ ul.callbacks_tabs.callbacks1_tabs {
 	.caption h3{
 		font-size:1em;
 	}
+
+  .caption h1 {
+    font-size: 1em;
+  }
 	a.morebtn {
 		width: 50%;
 		font-size: 0.8em;
@@ -313,6 +333,13 @@ ul.callbacks_tabs.callbacks1_tabs {
     font-weight: 400;
     font-size: 2.2em;
     font-family: 'Audiowide', cursive;
+}
+
+.chn h1 {
+  color: #fff;
+  font-weight: 400;
+  font-size: 2.2em;
+  font-family: 'Audiowide', cursive;
 }
 .chn p {
     color: #fff;
@@ -801,7 +828,7 @@ li.grid-1_right p{
   text-indent: 100%;
   background: url(../images/scroll-top.png) no-repeat 0px 0px;
 }
-.chn h3,.logo a,.about-para h1,.deer-sollution h2,
+.chn h1, .chn h3,.logo a,.about-para h1,.deer-sollution h2,
 .deer-services h3,.tab-1.msg h4,.grid h4,.cpyrt p,.resp-tab-active{
     color: #edb82a;
 }
@@ -874,6 +901,9 @@ li.grid-1_right p{
         left: 18%;
     }
     .chn h3 {
+        font-size: 1.4em;
+    }
+    .chn h1 {
         font-size: 1.4em;
     }
     .chn p {
@@ -1646,6 +1676,10 @@ li.grid-1_right p{
         font-size: 1.2em;
         margin-bottom: 0;
     }
+    .chn h1 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
     .chn p {
         margin-bottom: 8px;
         font-size: 0.75em;
@@ -1711,6 +1745,10 @@ li.grid-1_right p{
         min-height: 145px;
     }
     .chn h3 {
+        font-size: 1.2em;
+        margin-bottom: 0;
+    }
+    .chn h1 {
         font-size: 1.2em;
         margin-bottom: 0;
     }
@@ -1849,6 +1887,11 @@ li.grid-1_right p{
 }
 @media screen and (max-width: 240px){
     .chn h3 {
+        font-size: 1em;
+        margin: 0em 0em;
+    }
+
+    .chn h1 {
         font-size: 1em;
         margin: 0em 0em;
     }
