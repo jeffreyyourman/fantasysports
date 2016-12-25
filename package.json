@@ -1,6 +1,9 @@
 {
   "name": "fantasysports",
   "version": "1.0.0",
+  "engines": {
+  "node": "6.2.2"
+},
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -12,7 +15,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://https://github.com/jeffreyyourman/fantasysports.git"
-  }, 
+  },
   "dependencies": {
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
