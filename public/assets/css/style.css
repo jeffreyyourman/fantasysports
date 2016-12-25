@@ -34,13 +34,20 @@ body,html{
 #swapzone {
   /*color:#edb82a;*/
 }
-
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #a9a9a9;
+    }
 
 #chatmessages{
   overflow:auto;
-  background-color: rgb(155, 218, 242);
-  height:350px;
-  margin-left: 5%;
+  height:370px;
+  background-color: #f2f2f2;
+  padding: 20px;
+
+/*  border: solid;*/
 }
 
 .chatdiv {
@@ -49,6 +56,7 @@ body,html{
   right:5%;
 }
 .chatdivshow {
+  padding-top: 10px;
   height:450px;
   right:5%;
   /*overflow:auto;*/
@@ -56,10 +64,12 @@ body,html{
   width:250px;
   position: fixed;
   bottom: 0px;
+  border: solid rgb(155, 218, 242) 1px;
 }
 #chatbar {
   margin-left: 5%;
   margin-bottom:5%;
+  font-size: 12px;
 }
 
 #chatinput {
@@ -78,11 +88,12 @@ body,html{
   font-size: 16px;
 }
 .closechat {
+    margin-bottom: 10px;
     margin-left: 90%;
     font-size: 18px;
-    background-color: rgb(155, 218, 242);
     color:white;
     border-color: none;
+    display: inline-block;
 }
 .stickbutton {
     text-align: center;
