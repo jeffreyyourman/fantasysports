@@ -58,7 +58,7 @@ app.use(require("express-session")({ secret: "keyboard cat", resave: true, saveU
 // app.use(session({secret: 'app', cookie: { maxAge: 60000}}));
 app.use(passport.initialize());
 app.use(passport.session());
-
+//
 //Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + '/public'));
 // override with POST having ?_method=DELETE
