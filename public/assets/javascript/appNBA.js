@@ -10,21 +10,27 @@ $(document).ready(function(){
   //     return false;
   // });
 
+// $(".cheatsheet").hide();
   $('.cheatsheet').click(function(){
+    $('.topvaluetable').hide();
     $('.cheatsheet').hide();
+    $('#mySelectedInput').show();
+    $('#mySearchInput').show();
+    $('.tablelegend').show();
+    $('.cheatsheettable').show();
     $('.topplays').show();
 
-  })
+  });
   //
   $('.topplays').click(function(){
-    $('.cheatsheet').show();
+    $('#mySelectedInput').hide();
+    $('#mySearchInput').hide();
+    $('.tablelegend').hide();
     $('.topplays').hide();
-
-
-    //before this is clicked the first time we are going to display html that says 'Switch to top plays'
-    //once this is clicked we are going to hide this table and show another one on top of switching the new html to say "switch to nba cheat sheet"
-
-  })
+    $('.cheatsheettable').hide();
+    $('.cheatsheet').show();
+    $('.topvaluetable').show();
+  });
   function colorCodeString () {
     $("td").css("background-color", "white");
     // $("td:nth-child(1),td:nth-child(3)").each (function () {
