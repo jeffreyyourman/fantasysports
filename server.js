@@ -137,6 +137,22 @@ app.get("/login/facebook/return",
     })
   });
 
+
+  app.get('/Advice', function(req,res){
+    var requser = req.user;
+
+    var hbsObject = {
+    requser:requser
+    }
+    res.render('fantasydata/blog', hbsObject);
+  });
+
+// This route is available for retrieving the information associated with the authentication method
+  app.get("/willyDJ", function(req, res) {
+    res.json(req.user);
+  });
+
+
   app.get('/Contact', function(req,res){
     var requser = req.user;
 
