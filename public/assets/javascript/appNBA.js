@@ -9,6 +9,22 @@ $(document).ready(function(){
   //     $('.suggesteddiv').show();
   //     return false;
   // });
+
+  $('.cheatsheet').click(function(){
+    $('.cheatsheet').hide();
+    $('.topplays').show();
+
+  })
+  //
+  $('.topplays').click(function(){
+    $('.cheatsheet').show();
+    $('.topplays').hide();
+
+
+    //before this is clicked the first time we are going to display html that says 'Switch to top plays'
+    //once this is clicked we are going to hide this table and show another one on top of switching the new html to say "switch to nba cheat sheet"
+
+  })
   function colorCodeString () {
     $("td").css("background-color", "white");
     // $("td:nth-child(1),td:nth-child(3)").each (function () {

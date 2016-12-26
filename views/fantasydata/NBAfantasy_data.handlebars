@@ -33,6 +33,12 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
+      <button type="button" class="btn btn-info btn-lg topplays">Switch Top Plays</button>
+
+      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch Cheat Sheet</button>
+      <script type="text/javascript">
+      $(".cheatsheet").hide();
+      </script>
       {{#each fantasyNBADate}}
       <p>Last updated at {{this.updated}}</p>
       {{/each}}
@@ -40,13 +46,12 @@
   </div>
 </div>
 </div>
-  <div id='playerlist' class="container-fluid NBAtables">
+  <div id='playerlist' class="container-fluid NBAtables cheatsheettable">
     <div class="row nbafantasy">
       <div class="col-md-12" id="nba">
         <div class="panel-body beforeResponsive">
           <div class="table-responsive">
-            <!-- put images here -->
-            <table id='myTable' class="table table-bordered tableNbaFantasy">
+            <table id='NBAcheatsheet' class="table table-bordered tableNbaFantasy">
               <thead>
                 <tr style='font-size: 12px;cursor: pointer;'>
                   <th>Player</th>
@@ -117,6 +122,262 @@
       </div>
     </div>
   </div>
+
+  <div class="container-fluid topvaluetable">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>Point Guards</th>
+                  <th>Salary</th>
+                  <th>Top Player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>PG</td>
+                <td>PG</td>
+                <td>PG</td>
+                <td>PG</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>Point Guards</th>
+                  <th>Salary</th>
+                  <th>Top Value Player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>PGs</td>
+                <td>PGs</td>
+                <td>PGs</td>
+                <td>PGs</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>Shooting Guard</th>
+                  <th>Salary</th>
+                  <th>Top Player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>SG</td>
+                <td>SG</td>
+                <td>SG</td>
+                <td>SG</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>Shooting Guard</th>
+                  <th>Salary</th>
+                  <th>Top Value Player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>sgs</td>
+                <td>sgs</td>
+                <td>sgs</td>
+                <td>sgs</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>SF</th>
+                  <th>Salary</th>
+                  <th>Top Player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>SF</td>
+                <td>SF</td>
+                <td>SF</td>
+                <td>SF</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>SF</th>
+                  <th>Salary</th>
+                  <th>Top Value player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>SF</td>
+                <td>SF</td>
+                <td>SF</td>
+                <td>SF</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>PF</th>
+                  <th>Salary</th>
+                  <th>Top Player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>PF</td>
+                <td>PF</td>
+                <td>PF</td>
+                <td>PF</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>Power Forward</th>
+                  <th>Salary</th>
+                  <th>Top Value player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>PFs</td>
+                <td>PFs</td>
+                <td>PFs</td>
+                <td>PFs</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>C</th>
+                  <th>Salary</th>
+                  <th>Top Player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>C</td>
+                <td>C</td>
+                <td>C</td>
+                <td>C</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="panel-body">
+          <div class="table-responsive">
+            <table class="table table-bordered ">
+              <thead>
+                <tr style='font-size: 12px;'>
+                  <th>Name</th>
+                  <th>Centers</th>
+                  <th>Salary</th>
+                  <th>Top Value player</th>
+                </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td>C's</td>
+                <td>C's</td>
+                <td>C's</td>
+                <td>C's</td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+  $(".topvaluetable").hide();
+  </script>
 
 
   <!-- <div class="suggestedbuttondiv">
