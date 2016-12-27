@@ -13,15 +13,13 @@
 </head>
 <body>
   <div class="container-fluid NBATeamTable">
+
+    <button style='margin-top:1%;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
     <br>
+
+    <input style='margin-top:1%;' type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
     <br>
-    <button type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
-    <br>
-    <br>
-    <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
-    <br>
-    <br>
-    <select id='mySelectedInput' onchange='myPositionFunction()'>
+    <select style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
       <option value="" disabled selected>Filter by position</option>
       <option value="pg">PG</option>
       <option value="sg">SG</option>
@@ -29,18 +27,18 @@
       <option value="pf">PF</option>
       <option value="c">C</option>
     </select>
-<br><br><br><br>
+
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
       <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
 
-      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to Cheat Sheet</button>
+      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to NBA Cheat Sheet</button>
       <script type="text/javascript">
       $(".cheatsheet").hide();
       </script>
       {{#each fantasyNBADate}}
-      <p>Last updated at {{this.updated}}</p>
+      <p style='margin-top:1%;' >Last updated at {{this.updated}}</p>
       {{/each}}
     </div>
   </div>
@@ -128,13 +126,14 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Point Guard Top Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
                   <th>Player</th>
                   <th>Point Guards</th>
                   <th>Salary</th>
-                  <th>Top Player</th>
+                  <th>Fantasy Point Projections</th>
                 </tr>
               </thead>
               <tbody>
@@ -154,6 +153,7 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Point Guard Top Value Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
@@ -182,13 +182,14 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Shooting Guard Top Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
                   <th>Player</th>
                   <th>Shooting Guards</th>
                   <th>Salary</th>
-                  <th>Top Player</th>
+                  <th>Fantasy Point Projections</th>
                 </tr>
               </thead>
               <tbody>
@@ -208,6 +209,7 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Shooting Guard Top Value Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
@@ -236,13 +238,14 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Small Forward Top Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
                   <th>Player</th>
                   <th>Small Forwards</th>
                   <th>Salary</th>
-                  <th>Top Player</th>
+                  <th>Fantasy Point Projections</th>
                 </tr>
               </thead>
               <tbody>
@@ -262,6 +265,7 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Small Forward Top Value Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
@@ -290,13 +294,14 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Power Forward Top Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
                   <th>Player</th>
                   <th>Power Forwards</th>
                   <th>Salary</th>
-                  <th>Top Player</th>
+                  <th>Fantasy Point Projections</th>
                 </tr>
               </thead>
               <tbody>
@@ -316,6 +321,7 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Power Forward Top Value Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
@@ -344,13 +350,14 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Center Top Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
                   <th>Player</th>
                   <th>Centers</th>
                   <th>Salary</th>
-                  <th>Top Player</th>
+                  <th>Fantasy Point Projections</th>
                 </tr>
               </thead>
               <tbody>
@@ -370,6 +377,7 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
+            <h2 style='font-size:2em; text-align:center;'>Center Top Value Players</h2>
             <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
