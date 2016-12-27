@@ -9,18 +9,43 @@ var connection = require('../config/connection.js');
 
 var moment = require('moment-timezone');
 
-
-
-
 var spreadsheetIDNFL = "1VTZtc8vRucqAHVO-7ACCMe1sm3vl5NC9DLtDuh622Jw";
 var urlNFL = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNFL + "/od6/public/values?alt=json";
+
 var spreadsheetIDNBA = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
 var urlNBA = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBA + "/od6/public/values?alt=json";
 
-var spreadsheetIDNBATopPlays = "1iC9-Db33FCOaSA8avYkrgf4uMvMiTf1xJw3m5RbyH5A";
-var urlNBATopPlays = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBATopPlays + "/od6/public/values?alt=json";
 
+// https://docs.google.com/spreadsheets/d/11T73fHMeUdNzcVHiVDjDKWsa7cLQCdF5RBbX60SYCek/pubhtml
+var spreadsheetIDNBATopPlays = "11T73fHMeUdNzcVHiVDjDKWsa7cLQCdF5RBbX60SYCek";
+var urlNBATopPlays = "https://spreadsheets.google.com/feeds/list/" + spreadsheetIDNBATopPlays + "/od6/public/values?alt=json";
 var fanduelSports = function() {
+  var NBATopPlayers = function() {
+      request(urlNBATopPlays, function(error, response, body) {
+          if (!error && response.statusCode == 200) {
+              var body = JSON.parse(body)
+              console.log(body);
+              connection.query("delete from googlesheetsapiNBATopPlays", function(err, fanduelData) {
+                  if (err) throw err;
+
+                  console.log("Clean NBA Top plays table, ready for update");
+              })
+
+              for (var i = 0; i < body.feed.entry.length; i++) {
+                  var myNBATopPlays = body.feed.entry[i];
+
+                  var turtle = [myNBATopPlays.gsx$name.$t, myNBATopPlays.gsx$pos.$t, myNBATopPlays.gsx$sal.$t,  myNBATopPlays.gsx$points.$t, myNBATopPlays.gsx$topplayervalue.$t];
+
+                  var now = new Date();
+                  var newupdatedDate = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
+
+                  fanduel.createfanduelNBATopPlays(["Player", "POS", "Sal", "ProjectedPts", "topPlayerValue","updated"
+                ], [turtle[0], turtle[1], turtle[2], turtle[3], turtle[4],newupdatedDate], function(nbatopdata) {
+                  });
+              }
+          }
+      });
+    }
 var fanduelNFLDB = function() {
     request(urlNFL, function(error, response, body) {
         if (!error && response.statusCode == 200) {
@@ -95,5 +120,6 @@ var fanduelNBADB = function() {
   }
   fanduelNFLDB();
   fanduelNBADB();
+  NBATopPlayers();
 }
 module.exports = fanduelSports;

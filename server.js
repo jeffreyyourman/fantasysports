@@ -119,23 +119,54 @@ app.get("/login/facebook/return",
   });
 
 
-  app.get('/NBA', function (req,res){
+app.get('/NBA', function (req,res){
 
-    var requser = req.user;
+var requser = req.user;
 
-    connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
-      connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
-      if(err) throw err;
+connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Top'", function(err,fantasyNBATopPGPlay){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Top'", function(err,fantasyNBATopSGPlay){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopSFPlay){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopPFPlay){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Top'", function(err,fantasyNBATopCPlay){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Value'", function(err,fantasyNBATopPGValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Value'", function(err,fantasyNBATopSGValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Value'", function(err,fantasyNBATopSFValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Value'", function(err,fantasyNBATopPFValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Value'", function(err,fantasyNBATopCValue){
 
-      var hbsObject = {
-      fantasyNBA: fantasyNBA,
-      fantasyNBADate: fantasyNBADate,
-      requser:requser
-      }
-      res.render('fantasydata/NBAfantasy_data', hbsObject);
-      })
-    })
-  });
+connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
+if(err) throw err;
+
+var hbsObject = {
+fantasyNBA: fantasyNBA,
+fantasyNBADate: fantasyNBADate,
+fantasyNBATopPGPlay: fantasyNBATopPGPlay,
+fantasyNBATopSGPlay: fantasyNBATopSGPlay,
+fantasyNBATopSFPlay: fantasyNBATopSFPlay,
+fantasyNBATopPFPlay: fantasyNBATopPFPlay,
+fantasyNBATopCPlay: fantasyNBATopCPlay,
+fantasyNBATopPGValue:fantasyNBATopPGValue,
+fantasyNBATopSGValue:fantasyNBATopSGValue,
+fantasyNBATopSFValue:fantasyNBATopSFValue,
+fantasyNBATopPFValue:fantasyNBATopPFValue,
+fantasyNBATopCValue:fantasyNBATopCValue,
+requser:requser
+}
+res.render('fantasydata/NBAfantasy_data', hbsObject);
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+})
+});
 
 
   app.get('/Advice', function(req,res){

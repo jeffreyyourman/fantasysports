@@ -33,9 +33,9 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <button type="button" class="btn btn-info btn-lg topplays">Switch Top Plays</button>
+      <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
 
-      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch Cheat Sheet</button>
+      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to Cheat Sheet</button>
       <script type="text/javascript">
       $(".cheatsheet").hide();
       </script>
@@ -89,7 +89,7 @@
                 <td>{{Player}}</td>
                 <td></td>
                 <td>{{GameTime}}</td>
-                <td>{{HomeAway}}</td>
+                <td id='HA'>{{HomeAway}}</td>
                 <td>{{Position}}</td>
                 <td>{{Team}}</td>
                 <td>{{Opp}}</td>
@@ -128,22 +128,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
+                  <th>Player</th>
                   <th>Point Guards</th>
                   <th>Salary</th>
                   <th>Top Player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopPGPlay}}
               <tr>
-                <td>PG</td>
-                <td>PG</td>
-                <td>PG</td>
-                <td>PG</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -152,22 +154,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
+                  <th>Player</th>
                   <th>Point Guards</th>
                   <th>Salary</th>
                   <th>Top Value Player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopPGValue}}
               <tr>
-                <td>PGs</td>
-                <td>PGs</td>
-                <td>PGs</td>
-                <td>PGs</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -178,22 +182,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
-                  <th>Shooting Guard</th>
+                  <th>Player</th>
+                  <th>Shooting Guards</th>
                   <th>Salary</th>
                   <th>Top Player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopSGPlay}}
               <tr>
-                <td>SG</td>
-                <td>SG</td>
-                <td>SG</td>
-                <td>SG</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -202,22 +208,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
-                  <th>Shooting Guard</th>
+                  <th>Player</th>
+                  <th>Shooting Guards</th>
                   <th>Salary</th>
                   <th>Top Value Player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopSGValue}}
               <tr>
-                <td>sgs</td>
-                <td>sgs</td>
-                <td>sgs</td>
-                <td>sgs</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -228,22 +236,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
-                  <th>SF</th>
+                  <th>Player</th>
+                  <th>Small Forwards</th>
                   <th>Salary</th>
                   <th>Top Player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopSFPlay}}
               <tr>
-                <td>SF</td>
-                <td>SF</td>
-                <td>SF</td>
-                <td>SF</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -252,22 +262,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
-                  <th>SF</th>
+                  <th>Player</th>
+                  <th>Small Forwards</th>
                   <th>Salary</th>
                   <th>Top Value player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopSFValue}}
               <tr>
-                <td>SF</td>
-                <td>SF</td>
-                <td>SF</td>
-                <td>SF</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -278,22 +290,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
-                  <th>PF</th>
+                  <th>Player</th>
+                  <th>Power Forwards</th>
                   <th>Salary</th>
                   <th>Top Player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopPFPlay}}
               <tr>
-                <td>PF</td>
-                <td>PF</td>
-                <td>PF</td>
-                <td>PF</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -302,22 +316,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
-                  <th>Power Forward</th>
+                  <th>Player</th>
+                  <th>Power Forwards</th>
                   <th>Salary</th>
                   <th>Top Value player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopPFValue}}
               <tr>
-                <td>PFs</td>
-                <td>PFs</td>
-                <td>PFs</td>
-                <td>PFs</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -328,22 +344,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
-                  <th>C</th>
+                  <th>Player</th>
+                  <th>Centers</th>
                   <th>Salary</th>
                   <th>Top Player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopCPlay}}
               <tr>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
-                <td>C</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -352,22 +370,24 @@
       <div class="col-md-6">
         <div class="panel-body">
           <div class="table-responsive">
-            <table class="table table-bordered ">
+            <table id='nbatopplayers' class="table table-bordered ">
               <thead>
                 <tr style='font-size: 12px;'>
-                  <th>Name</th>
+                  <th>Player</th>
                   <th>Centers</th>
                   <th>Salary</th>
                   <th>Top Value player</th>
                 </tr>
               </thead>
               <tbody>
+                {{#each fantasyNBATopCValue}}
               <tr>
-                <td>C's</td>
-                <td>C's</td>
-                <td>C's</td>
-                <td>C's</td>
+                <td>{{Player}}</td>
+                <td>{{POS}}</td>
+                <td>{{Sal}}</td>
+                <td>{{ProjectedPts}}</td>
               </tr>
+              {{/each}}
               </tbody>
             </table>
           </div>
@@ -686,7 +706,7 @@ function myPositionFunction() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("mySelectedInput");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
+  table = document.getElementById("NBAcheatsheet");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[4];
@@ -704,7 +724,7 @@ function mySearchFunction() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("mySearchInput");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
+  table = document.getElementById("NBAcheatsheet");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];

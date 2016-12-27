@@ -9,27 +9,34 @@ $(document).ready(function(){
   //     $('.suggesteddiv').show();
   //     return false;
   // });
+var topvaluetable = $('.topvaluetable');
+var cheatsheet = $('.cheatsheet');
+var myselectedinput = $('#mySelectedInput')
+var mysearchinput = $('#mySearchInput')
+var tablelegend = $('.tablelegend')
+var cheatsheettable = $('.cheatsheettable')
+var topplays = $('.topplays')
 
 // $(".cheatsheet").hide();
   $('.cheatsheet').click(function(){
-    $('.topvaluetable').hide();
-    $('.cheatsheet').hide();
-    $('#mySelectedInput').show();
-    $('#mySearchInput').show();
-    $('.tablelegend').show();
-    $('.cheatsheettable').show();
-    $('.topplays').show();
+    topvaluetable.hide();
+    cheatsheet.hide();
+    myselectedinput.show();
+    mysearchinput.show();
+    tablelegend.show();
+    cheatsheettable.show();
+    topplays.show();
 
   });
   //
   $('.topplays').click(function(){
-    $('#mySelectedInput').hide();
-    $('#mySearchInput').hide();
-    $('.tablelegend').hide();
-    $('.topplays').hide();
-    $('.cheatsheettable').hide();
-    $('.cheatsheet').show();
-    $('.topvaluetable').show();
+    myselectedinput.hide();
+    mysearchinput.hide();
+    tablelegend.hide();
+    topplays.hide();
+    cheatsheettable.hide();
+    cheatsheet.show();
+    topvaluetable.show();
   });
   function colorCodeString () {
     $("td").css("background-color", "white");
@@ -39,7 +46,7 @@ $(document).ready(function(){
     //       console.log($cCell);
     //    }
     // });
-    $("td:nth-child(4)").each (function () {
+    $("#HA:nth-child(4)").each (function () {
        var $cCell = $(this);
        if ( $cCell.text() === 'H') {
           $cCell.css('background-color', '#9bdaf2');

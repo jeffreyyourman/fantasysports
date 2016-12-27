@@ -88,4 +88,15 @@ CREATE TABLE googlesheetsapiNFL (
   updated varchar (255) NOT NULL,
   PRIMARY KEY (NFLplayerId)
 );
+
+CREATE TABLE googlesheetsapiNBATopPlays (
+  NBATopPlaysPlayerId int NOT NULL AUTO_INCREMENT,
+  Player varchar (255) NOT NULL,
+  POS varchar (255) NOT NULL,
+  Sal int,
+  ProjectedPts int,
+  topPlayerValue varchar (255) NOT NULL,
+  updated varchar (255) NOT NULL,
+  PRIMARY KEY (NBATopPlaysPlayerId)
+);
 =======NFL SCHEMA END =======
