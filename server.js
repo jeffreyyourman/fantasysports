@@ -129,11 +129,11 @@ connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND 
 connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopSFPlay){
 connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopPFPlay){
 connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Top'", function(err,fantasyNBATopCPlay){
-connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Value'", function(err,fantasyNBATopPGValue){
-connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Value'", function(err,fantasyNBATopSGValue){
-connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Value'", function(err,fantasyNBATopSFValue){
-connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Value'", function(err,fantasyNBATopPFValue){
-connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Value'", function(err,fantasyNBATopCValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Value' ORDER BY DESC;", function(err,fantasyNBATopPGValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Value' ORDER BY DESC;", function(err,fantasyNBATopSGValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Value' ORDER BY DESC;", function(err,fantasyNBATopSFValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Value' ORDER BY DESC;", function(err,fantasyNBATopPFValue){
+connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Value' ORDER BY DESC;", function(err,fantasyNBATopCValue){
 
 connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
 if(err) throw err;
