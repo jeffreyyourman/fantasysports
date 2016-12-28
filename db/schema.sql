@@ -13,34 +13,30 @@ CREATE TABLE Users
 );
 
 =======NBA SCHEMA START =======
-
+-- 43
 CREATE TABLE googlesheetsapi (
   playerId int NOT NULL AUTO_INCREMENT,
   Player varchar(255) NOT NULL,
   HomeAway varchar(255) NOT NULL,
   Position varchar(255) NOT NULL,
-  -- PositionDK varchar(255) NOT NULL, 
   Team varchar(255) NOT NULL,
   Opp varchar(255) NOT NULL,
   Mycondition varchar(255) NOT NULL,
   details varchar(255) NOT NULL,
   posid varchar(255) NOT NULL,
   AvgMinsL10 varchar(255) NOT NULL,
-  ProjMins varchar(255) NOT NULL,
+  ProjMins int,
   Salary int,
-  -- SalaryDK varchar(255) NOT NULL, 
   Useage varchar(255) NOT NULL,
   PPGL10 varchar(255) NOT NULL,
   PPM varchar(255) NOT NULL,
   OVP varchar(255) NOT NULL,
   GLAdjust varchar(255) NOT NULL,
   TotalAdjust varchar(255) NOT NULL,
-  ProjScore decimal,
+  ProjScore Decimal,
   GameLine varchar(255) NOT NULL,
   ProjectedPts varchar(255) NOT NULL,
-  -- ProjectedPtsDK varchar(255) NOT NULL, 
   Value varchar(255) NOT NULL,
-  -- ValueDK varchar(255) NOT NULL,  
   Ownership varchar(255) NOT NULL,
   PathCompare  varchar(255) NOT NULL,
   ExpectedValue varchar(255) NOT NULL,
@@ -57,6 +53,11 @@ CREATE TABLE googlesheetsapi (
   B2BGame varchar(255) NOT NULL,
   ThreeinFour varchar(255) NOT NULL,
   PlayerCount varchar(255) NOT NULL,
+  PPMDK varchar(255) NOT NULL,
+  ProjectedPtsDK varchar(255) NOT NULL,
+  SalaryDK int,
+  PositionDK varchar(255) NOT NULL,
+  ValueDK varchar(255) NOT NULL,
   updated varchar (255) NOT NULL,
   PRIMARY KEY (playerId)
 );
@@ -98,7 +99,7 @@ CREATE TABLE googlesheetsapiNBATopPlays (
   Player varchar (255) NOT NULL,
   POS varchar (255) NOT NULL,
   Sal int,
-  ProjectedPts decimal,
+  ProjectedPts Decimal,
   topPlayerValue varchar (255) NOT NULL,
   updated varchar (255) NOT NULL,
   PRIMARY KEY (NBATopPlaysPlayerId)
