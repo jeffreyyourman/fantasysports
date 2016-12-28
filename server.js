@@ -168,7 +168,7 @@ var requser = req.user;
   })
 });
 
-app.get('/NBA-Draftkings', function (req,res){
+app.get('/NBADraftkings', function (req,res){
 
 var requser = req.user;
 
@@ -202,7 +202,7 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
                             fantasyNBATopCValue:fantasyNBATopCValue,
                             requser:requser
                           }
-                        res.render('/fantasydata/NBAfantasy_dataDK.handlebars', hbsObject);
+                        res.render('fantasydata/NBAfantasy_dataDK.handlebars', hbsObject);
                         })
                       })
                     })
