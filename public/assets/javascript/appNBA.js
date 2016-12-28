@@ -9,6 +9,53 @@ $(document).ready(function(){
   //     $('.suggesteddiv').show();
   //     return false;
   // });
+var topvaluetable = $('.topvaluetable');
+var cheatsheet = $('.cheatsheet');
+var myselectedinput = $('#mySelectedInput')
+var mysearchinput = $('#mySearchInput')
+var tablelegend = $('.tablelegend')
+var cheatsheettable = $('.cheatsheettable')
+var topplays = $('.topplays')
+
+var switchToDk = $('#switchToDk');
+var switchToFd = $('#switchToFd');
+var draftkingsHeader = $('#draftkingsHeader');
+var draftkingsHeaderTopPlays = $('#draftkingsHeaderTopPlays');
+var fanduelHeaderTopPlays = $('#fanduelHeaderTopPlays');
+var fanduelHeader = $('#fanduelHeader');
+// $(".cheatsheet").hide();
+  $('.cheatsheet').click(function(){
+    topvaluetable.hide();
+    fanduelHeaderTopPlays.hide();
+    draftkingsHeaderTopPlays.hide();
+    cheatsheet.hide();
+    switchToDk.show();
+    switchToFd.show();
+    draftkingsHeader.show();
+    fanduelHeader.show();
+    myselectedinput.show();
+    mysearchinput.show();
+    tablelegend.show();
+    cheatsheettable.show();
+    topplays.show();
+
+  });
+  //
+  $('.topplays').click(function(){
+    myselectedinput.hide();
+    mysearchinput.hide();
+    tablelegend.hide();
+    topplays.hide();
+    cheatsheettable.hide();
+    switchToDk.hide();
+    switchToFd.hide();
+    draftkingsHeader.hide();
+    fanduelHeader.hide();
+    cheatsheet.show();
+    topvaluetable.show();
+    fanduelHeaderTopPlays.show();
+    draftkingsHeaderTopPlays.show();
+  });
   function colorCodeString () {
     $("td").css("background-color", "white");
     // $("td:nth-child(1),td:nth-child(3)").each (function () {
@@ -17,7 +64,7 @@ $(document).ready(function(){
     //       console.log($cCell);
     //    }
     // });
-    $("td:nth-child(4)").each (function () {
+    $("#HA:nth-child(4)").each (function () {
        var $cCell = $(this);
        if ( $cCell.text() === 'H') {
           $cCell.css('background-color', '#9bdaf2');

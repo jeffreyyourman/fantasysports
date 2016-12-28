@@ -3,7 +3,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="keywords" content="DFS, Daily fantasy sports, Free DFS help, free daily fantasy sports help, Fanduel, free fanduel help, free fanduel data, free Fanduel NFL help, nba, free daily fantasy sports NFL help, free, DFS help, daily fantasy sports help, fanduel help, fanduel data, Fanduel NFL help, daily fantasy sports NFL help"/>
-  <meta name="description" content="We Are Fanduel Daily fantasy Sports Sharks who will provide you with all the most up to date fantasy sports data you will ever need to build your DFS Fanduel NFL lineup!">
+  <meta name="description" content="We Are FanDuel and DraftKings Daily fantasy Sports Analysts! We will provide you with all the most up to date fantasy sports data you will ever need to build your DFS Fanduel/DraftKings NFL lineup!">
   <title>NFL DFS Analytics</title>
       <!-- Latest compiled and minified CSS -->
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
@@ -47,7 +47,7 @@
       <div class="col-md-12" id="nba">
         <div class="panel-body beforeResponsive">
           <div class="table-responsive">
-            <table style='bborder-color: black;' id='myTableNFL' class="table table-bordered tableNbaFantasy">
+            <table style='bborder-color: black;' id='NBAcheatsheet' class="table table-bordered tableNbaFantasy">
               <thead>
                 <tr style='font-size: 12px;cursor: pointer;'>
                   <th>Player</th>
@@ -345,7 +345,7 @@ function myPositionFunctionNFL() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("mySelectedInputNFL");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTableNFL");
+  table = document.getElementById("NBAcheatsheet");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[3];
@@ -363,7 +363,7 @@ function mySearchFunctionNFL() {
   var input, filter, table, tr, td, i;
   input = document.getElementById("mySearchInputNFL");
   filter = input.value.toUpperCase();
-  table = document.getElementById("myTableNFL");
+  table = document.getElementById("NBAcheatsheet");
   tr = table.getElementsByTagName("tr");
   for (i = 0; i < tr.length; i++) {
     td = tr[i].getElementsByTagName("td")[0];

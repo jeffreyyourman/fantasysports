@@ -47,9 +47,9 @@ var RotoWorld = require('./Rotoworld.js');
 //   })
 // });
 
-// router.get('/Contact', function(req,res){
-//   res.render('users/contactus');
-// });
+router.get('/Contact', function(req,res){
+  res.render('users/contactus');
+});
 
 router.get('/search/:id',function(req,res){
   var sTerm = req.params.id

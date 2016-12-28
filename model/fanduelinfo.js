@@ -63,6 +63,32 @@ var fandueldata = {
 		orm.deletefandueldataNFL('googlesheetsapiNFL', condition, function(res){
 			cb(res);
 		});
+	},
+	findOnefanduelNBATopPlays: function(condition, cb) {
+		orm.findOnefanduelNBATopPlays('googlesheetsapiNBATopPlays', condition, function(res){
+				cb(res);
+		});
+	},
+	allfanduelNBATopPlays: function(cb) {
+		orm.allfanduelNBATopPlays('googlesheetsapiNBATopPlays', function(res){
+			cb(res);
+		});
+	},
+	//cols and vals are arrays
+	createfanduelNBATopPlays: function(cols, vals, cb) {
+		orm.createfanduelNBATopPlays('googlesheetsapiNBATopPlays', cols, vals, function(res){
+			cb(res);
+		});
+	},
+	updatefanduelNBATopPlays: function(objColVals, condition, cb) {
+		orm.updatefanduelNBATopPlays('googlesheetsapiNBATopPlays', objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+	deletefanduelNBATopPlays: function(condition, cb){
+		orm.deletefanduelNBATopPlays('googlesheetsapiNBATopPlays', condition, function(res){
+			cb(res);
+		});
 	}
 };
 
