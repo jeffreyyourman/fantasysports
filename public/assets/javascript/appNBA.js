@@ -258,23 +258,4 @@ var fanduelHeader = $('#fanduelHeader');
     });
   }
 colorCodeString();
-// $cCell.css('background-color', '#9bdaf2');
-// $cCell.css('color', 'white');
-// $cCell.css('background-color', '#45b9e7');
-// $cCell.css('color', 'white');
-// $cCell.css('background-color', '#1a93c3');
-// $cCell.css('color', 'white');
-// $cCell.css('background-color', '#115f7e');
-// $cCell.css('color', 'white');
-// $cCell.css('background-color', '#0a384a');
-// $cCell.css('color', 'white')
-
-    // $(function () {
-    //   $('[data-toggle="tooltip"]').tooltip({
-    //     'selector': '',
-    //     'placement': 'top',
-    //     'container':'body'
-    //   })
-    // });
-
 });
