@@ -34,12 +34,17 @@ var fanduelSports = function() {
                   var myNBATopPlays = body.feed.entry[i];
 
                   var turtle = [myNBATopPlays.gsx$name.$t, myNBATopPlays.gsx$pos.$t, myNBATopPlays.gsx$sal.$t,  myNBATopPlays.gsx$points.$t, myNBATopPlays.gsx$topplayervalue.$t];
-
+                  // add the below line to the end of the turtle array
+                    // myNBATopPlays.gsx$value.$t
                   var now = new Date();
                   var newupdatedDate = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
 
-                  fanduel.createfanduelNBATopPlays(["Player", "POS", "Sal", "ProjectedPts", "topPlayerValue","updated"
-                ], [turtle[0], turtle[1], turtle[2], turtle[3], turtle[4],newupdatedDate], function(nbatopdata) {
+                  fanduel.createfanduelNBATopPlays(["Player", "POS", "Sal", "ProjectedPts", "topPlayerValue", "updated"
+                  // add the below line to before "updated"
+                    // "Value"
+                ], [turtle[0], turtle[1], turtle[2], turtle[3], turtle[4], newupdatedDate], function(nbatopdata) {
+                  // add the below line to before "newupdatedDate"
+                    // turtle[5],
                   });
               }
           }
