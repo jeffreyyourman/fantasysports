@@ -202,7 +202,7 @@ var requser = req.user;
 //                             fantasyNBATopCValue:fantasyNBATopCValue,
 //                             requser:requser
 //                           }
-                        res.render('fantasydata/NBAfantasy_dataDK', hbsObject);
+                        res.render('fantasydata/NBAfantasy_dataDK');
   //                       })
   //                     })
   //                   })
