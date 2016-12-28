@@ -119,7 +119,7 @@ app.get("/login/facebook/return",
   });
 
 
-app.get('/NBA', function (req,res){
+app.get('/NBAFanduel', function (req,res){
 
 var requser = req.user;
 
