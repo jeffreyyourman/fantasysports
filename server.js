@@ -202,7 +202,7 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
                             fantasyNBATopCValue:fantasyNBATopCValue,
                             requser:requser
                           }
-                        res.render('fantasydata/NBAfantasy_dataDK.handlebars', hbsObject);
+                        res.render('fantasydata/nbadk', hbsObject);
                         })
                       })
                     })
