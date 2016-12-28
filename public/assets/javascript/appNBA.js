@@ -17,10 +17,22 @@ var tablelegend = $('.tablelegend')
 var cheatsheettable = $('.cheatsheettable')
 var topplays = $('.topplays')
 
+var switchToDk = $('#switchToDk');
+var switchToFd = $('#switchToFd');
+var draftkingsHeader = $('#draftkingsHeader');
+var draftkingsHeaderTopPlays = $('#draftkingsHeaderTopPlays');
+var fanduelHeaderTopPlays = $('#fanduelHeaderTopPlays');
+var fanduelHeader = $('#fanduelHeader');
 // $(".cheatsheet").hide();
   $('.cheatsheet').click(function(){
     topvaluetable.hide();
+    fanduelHeaderTopPlays.hide();
+    draftkingsHeaderTopPlays.hide();
     cheatsheet.hide();
+    switchToDk.show();
+    switchToFd.show();
+    draftkingsHeader.show();
+    fanduelHeader.show();
     myselectedinput.show();
     mysearchinput.show();
     tablelegend.show();
@@ -35,8 +47,14 @@ var topplays = $('.topplays')
     tablelegend.hide();
     topplays.hide();
     cheatsheettable.hide();
+    switchToDk.hide();
+    switchToFd.hide();
+    draftkingsHeader.hide();
+    fanduelHeader.hide();
     cheatsheet.show();
     topvaluetable.show();
+    fanduelHeaderTopPlays.show();
+    draftkingsHeaderTopPlays.show();
   });
   function colorCodeString () {
     $("td").css("background-color", "white");
