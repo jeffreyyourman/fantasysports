@@ -6,13 +6,28 @@
   <meta name="description" content="We Are FanDuel and DraftKings Daily fantasy Sports Analysts! We will provide you with all the most up to date fantasy sports data you will ever need to build your DFS Fanduel/DraftKings NBA lineup!">
   <title>NBA DFS Analytics</title>
       <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="/assets/css/styleNBA.css">
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
       <script src="/assets/javascript/appNBA.js"></script>
+      <style media="screen">
 
+      </style>
 </head>
 <body>
-  <a id='switchToFd' href="/NBAFanduel"><button style='margin-top:1%;margin-right:1%; float:right;' type="button" class="btn btn-info btn-lg">Click for Fanduel</button></a>
+
+  <nav class="navbar navbar-default colormein">
+    <div style='background-color: #edb82a' class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand doubleNavPage" href="#">NBA</a>
+      </div>
+      <ul class="nav navbar-nav navigate colormein2">
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+      </ul>
+    </div>
+  </nav>
+  <!-- <a id='switchToFd' href="/NBAFanduel"><button style='margin-top:1%;margin-right:1%; float:right;' type="button" class="btn btn-info btn-lg">Click for Fanduel</button></a> -->
   <div class="container-fluid NBATeamTable">
     <button style='margin-top:1%;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
     <br>
@@ -712,6 +727,7 @@ ga('send', 'pageview');
 $(document).ready(function(){
   {
       $("table").tablesorter();
+      $("#chatmessages").animate({ scrollTop: $(document).height() }, 1000);
   }
   setTimeout(function(){
     swal({

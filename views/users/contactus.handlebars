@@ -59,6 +59,9 @@
 
 <script src='/assets/javascript/chatapp.js'></script>
 <script type="text/javascript">
-  var testing = $('#test').val()
-  console.log(testing);
+$(document).ready(function(){
+  {
+      $("#chatmessages").animate({ scrollTop: $(document).height() }, 1000);
+  }
+});
 </script>
