@@ -242,12 +242,6 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
     res.render('users/contactus', hbsObject);
   });
 
-// This route is available for retrieving the information associated with the authentication method
-  app.get("/willyDJ", function(req, res) {
-    res.json(req.user);
-  });
-
-
 app.use('/', routes);
 app.use('/users', routes);
 // app.use('/users', userdata_controller);

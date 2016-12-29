@@ -48,7 +48,7 @@ $('#chatsend').click(function() {
     chatData.push({
       name: username,
       message: message,
-      time: Firebase.ServerValue.TIMESTAMP,
+      time: firebase.database.ServerValue.TIMESTAMP,
       idNum: playerNum
     });
     $('#chatinput').val("");
@@ -62,7 +62,7 @@ $('#chatinput').keypress(function(e) {
     chatData.push({
       name: username,
       message: message,
-      time: Firebase.ServerValue.TIMESTAMP,
+      time: firebase.database.ServerValue.TIMESTAMP,
       idNum: playerNum
     });
     $('#chatinput').val("");
@@ -245,7 +245,7 @@ function getInGame() {
     //send disconnect message to chat with Firebase server generated timestamp and id of '0' to denote system message
     chatDataDisc.onDisconnect().set({
       name: username,
-      time: Firebase.ServerValue.TIMESTAMP,
+      time: firebase.database.ServerValue.TIMESTAMP,
       message: 'has disconnected.',
       idNum: 0
     });
