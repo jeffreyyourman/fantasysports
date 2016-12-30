@@ -15,12 +15,12 @@ var path = require("path");
 
 // Passport / Facebook Authentication Information
 passport.use(new Strategy({
-  clientID: process.env.CLIENT_ID || "1887065124846159",
-  clientSecret: process.env.CLIENT_SECRET || "aec868d09103b27bad5c85384bbe9023",
-  callbackURL: "http://www.dfsanalysts.com/login/facebook/return"
-  // clientID: process.env.CLIENT_ID || "1887065321512806",
-  // clientSecret: process.env.CLIENT_SECRET || "5678c2982556970548de43a64789bba7",
-  // callbackURL: "http://localhost:3000/login/facebook/return"
+  // clientID: process.env.CLIENT_ID || "1887065124846159",
+  // clientSecret: process.env.CLIENT_SECRET || "aec868d09103b27bad5c85384bbe9023",
+  // callbackURL: "http://www.dfsanalysts.com/login/facebook/return"
+  clientID: process.env.CLIENT_ID || "1887065321512806",
+  clientSecret: process.env.CLIENT_SECRET || "5678c2982556970548de43a64789bba7",
+  callbackURL: "http://localhost:3000/login/facebook/return"
 
 },
   function(accessToken, refreshToken, profile, cb) {
@@ -76,10 +76,16 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/main_routes.js');
 var userdata_controller = require('./controllers/userdata_controller.js');
 var Fanduelplayers = require('./controllers/Fanduelplayers.js');
+var FanduelplayersNFL = require('./controllers/FanduelplayersNFL.js');
 
 
 app.get('/load', function(req,res){
 	var nbateams = new Fanduelplayers()
+	res.redirect('/');
+});
+
+app.get('/nflload', function(req,res){
+	var NFLteams = new FanduelplayersNFL()
 	res.redirect('/');
 });
 
