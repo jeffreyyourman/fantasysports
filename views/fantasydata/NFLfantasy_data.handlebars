@@ -6,10 +6,23 @@
   <meta name="description" content="We Are FanDuel and DraftKings Daily fantasy Sports Analysts! We will provide you with all the most up to date fantasy sports data you will ever need to build your DFS Fanduel/DraftKings NFL lineup!">
   <title>NFL DFS Analytics</title>
       <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="/assets/css/styleNFL.css">
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
       <script src="/assets/javascript/appNFL.js"></script>
 </head>
 <body>
+  <nav class="navbar navbar-default colormein">
+    <div style='background-color: #edb82a' class="container-fluid">
+      <div class="navbar-header">
+        <li style='list-style-type:none;' class="navbar-brand doubleNavPage">NFL</li>
+        <!-- <a class="navbar-brand doubleNavPage" href="#">NBA</a> -->
+      </div>
+      <ul class="nav navbar-nav navigate colormein2">
+        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+        <!-- <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li> -->
+      </ul>
+    </div>
+  </nav>
   <div class="container-fluid NBATeamTable">
     <br><br>
     <p style='font-size:38px;'>Click a Position to get started</p>
@@ -36,7 +49,7 @@
     <div class="row">
       <div class="col-md-12">
         {{#each fantasyNFLDate}}
-        <p>Last updated at {{this.updated}}</p>
+        <p>Last updated on {{this.updated}}</p>
         {{/each}}
       </div>
     </div>
@@ -325,6 +338,7 @@ ga('send', 'pageview');
 $(document).ready(function(){
   {
       $("table").tablesorter();
+      $("#chatmessages").animate({ scrollTop: $(document).height() }, 1000);
   }
 //   $.ajax({url: "/willyDJ", method: "GET"})
 //
@@ -334,8 +348,8 @@ $(document).ready(function(){
 // });
   setTimeout(function(){
     swal({
-      title: "View the Table Legend",
-      text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
+      title: "View the Table Legend and NFL Updates",
+      text: "Please take a chance to look over the table legend. It will help you understand how to use this NFL Cheat Sheet. Please also take notice that for week 17, QB and RB sections may not include starting QBs & RBs as we are waiting finalized rosters. Final Rosters should be established Saturday.",
       type: "warning",
       confirmButtonText: "Ok, cool"
     });

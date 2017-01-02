@@ -1,0 +1,28 @@
+.colormein .colormein2>.active>a, .colormein .colormein2>.active>a:focus, .colormein .colormein2>.active>a:hover {
+  font-family: 'Audiowide', cursive;
+  text-decoration: none;
+  /*padding: 10px;*/
+  background: #337ab7;
+  /*transition: 0.5s all;*/
+  border-radius: 35px 0px 35px 0px;
+  /*color: #fff;*/
+}
+  ul.navbar-nav.navigate li a:hover{
+    font-family: 'Audiowide', cursive;
+    text-decoration: none;
+    /*padding: 10px;*/
+    background: #337ab7;
+    /*transition: 0.5s all;*/
+    border-radius: 35px 0px 35px 0px;
+    /*color: #fff;*/
+  }
+  .colormein .colormein2>.doubleNavLists>.doubleNavListsLink {
+    color:#021A3A;
+    font-size: 15px;
+    font-family: 'Audiowide', cursive;
+  }
+  .colormein .doubleNavPage {
+    font-family: 'Audiowide', cursive;
+    font-size:24px;
+    color:black;
+  }

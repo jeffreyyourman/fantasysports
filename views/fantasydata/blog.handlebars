@@ -1,4 +1,5 @@
 <head>
+  <link rel="stylesheet" href="/assets/css/styleNBA.css">
   <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
   <style media="screen">
     #positionStyle {
@@ -15,91 +16,134 @@
       margin-bottom:1%;
       text-align: center;
     }
+    .twitter {
+      margin-top:3.5%;
+
+    }
   </style>
 
 </head>
-<div class="container">
-  <div class="row">
-    <div class="col-md-10">
-      <img style='width:100%; height: 425px; margin-top:5%;' src="http://www.drodd.com/images14/lakers18.jpg" alt="">
-      <h3 style='text-align:center; font-size:1.3em; margin-top:2.5%;'>Sunday, December 25th</h3>
-      <h1 style='font-family: "Audiowide", cursive;text-decoration: underline; text-align:center; font-size:2.3em; margin-top:2.5%;'>Fanduel on Christmas Day Extravaganza</h1>
-      <p style='text-align:center; font-size:1.5em; margin-top:2.5%;'>Hello everybody! Welcome to DFS Analysts! This will be our first of many blogs that we publish! Our goal as DFS Analysts is to give you as much data for free as possible. We display information that many big name Daily Fantasy Sports companies charge a lot for! DFSAnalysts is a brand new website and we plan on adding a bunch of great features. The way we will structure our blogs is that we will provide you with 2 players for each position, 1 high salary and 1 low salary. We have a big slate ahead of us so lets get started!</p>
-      <br><br><br>
-    <h2 id='positionStyle'>Point Guards</h2>
-    <br>
-      <h3 id='playerNameStyle'>Russell Westbrook</h3>
-        <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
-        <br>
-      <h3 id='playerNameStyle'>Austin Rivers</h3>
-        <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
-    <hr>
-    <h2 id='positionStyle'>Shooting Guards</h2>
-    <br>
-      <h3 id='playerNameStyle'>Klay Thompson</h3>
-        <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
-        <br>
-      <h3 id='playerNameStyle'>Lou Williams</h3>
-        <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
-    <hr>
-    <h2 id='positionStyle'>Small Forwards</h2>
-    <br>
-      <h3 id='playerNameStyle'>Kevin Durant</h3>
-        <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
-        <br>
-      <h3 id='playerNameStyle'>LeBron James</h3>
-        <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
-    <hr>
-    <h2 id='positionStyle'>Power Forwards</h2>
-    <br>
-      <h3 id='playerNameStyle'>Kristaps Porzingis</h3>
-        <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
-        <br>
-      <h3 id='playerNameStyle'>Lamarcus Aldridge</h3>
-        <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
-    <hr>
-    <h2 id='positionStyle'>Centers</h2>
-    <br>
-      <h3 id='playerNameStyle'>Karl-Anthony Towns</h3>
-        <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
-        <br>
-      <h3 id='playerNameStyle'>Joakim Noah</h3>
-        <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
-    </div>
-    <div style='margin-top:4%;' class="col-md-2">
-      <div style='background-color:blue;' class="">
-        <p>ADS WILL GO HERE</p>
-        <p>ADS WILL GO HERE</p>
-        <p>ADS WILL GO HERE</p>
-        <p>ADS WILL GO HERE</p>
-        <p>ADS WILL GO HERE</p>
+<body>
+  <nav class="navbar navbar-default colormein">
+    <div style='background-color: #edb82a' class="container-fluid">
+      <div class="navbar-header">
+        <li style='list-style-type:none;' class="navbar-brand doubleNavPage">NBA</li>
+        <!-- <a class="navbar-brand doubleNavPage" href="#">NBA</a> -->
       </div>
+      <ul class="nav navbar-nav navigate colormein2">
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/Advice">NBA Article</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-9">
+        <img style='width:100%; height: 425px; margin-top:5%;' src="http://www.drodd.com/images14/lakers18.jpg" alt="">
+        <h3 style='text-align:center; font-size:1.3em; margin-top:2.5%;'>Thursday, January 5, 2016</h3>
+        <h1 style='font-family: "Audiowide", cursive;text-decoration: underline; text-align:center; font-size:2.3em; margin-top:2.5%;'>Thirsty FanDuel Thursday!</h1>
+        <p style='text-align:center; font-size:1.5em; margin-top:2.5%;'>Hello everybody! Welcome to DFS Analysts! This will be our first of many articles that we will publish! Our goal as DFS Analysts is to give you as much data for free as possible. We display information that many big name Daily Fantasy Sports companies charge a significant amount for! DFSAnalysts is a brand new website and we plan on adding a bunch of great features that will benefit everybody. The way we will structure our articles, is we will provide you with 2 players for each position, 1 high salary and 1 low salary. We have an 8 game slate ahead of us so lets get started!</p>
+        <br><br><br>
+      <h2 id='positionStyle'>Point Guards</h2>
       <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Damien Lillard</span> - Fanduel: $ DraftKings: $</h3>
+          <br>
+          <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
+          <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Jeremy Lin</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
+      <hr>
+      <h2 id='positionStyle'>Shooting Guards</h2>
+      <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>James Harden</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
+          <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>C.J. McCullum</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
+      <hr>
+      <h2 id='positionStyle'>Small Forwards</h2>
+      <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Paul George</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
+          <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Michael-Kidd Gilchrist</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
+      <hr>
+      <h2 id='positionStyle'>Power Forwards</h2>
+      <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Anthony Davis</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
+          <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Julius Randle</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
+      <hr>
+      <h2 id='positionStyle'>Centers</h2>
+      <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Brook Lopez</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>The first player I am going to choose is Russell Westbrook. I would like to start off by saying this is going to be the fastest pace game of the day with one of best players in the league going end to end. On top of this fast pace game, the wolves are one of the worst teams at guarding the PG position.</p>
+          <br>
+        <h3 style="text-align:center;"><span id='playerNameStyle'>Steven Adams</span> - Fanduel: $ DraftKings: $</h3>
+        <br>
+          <p id='playerDescription'>My cheap Point Guard position of the day goes to Austin Rivers. This pick is a crap shoot because nobody is sure if Chris Paul is going to be out or not. If Chris Paul is out that will leave a ton of minutes to Austin Rivers. This game has a total gameline of 225 points and the lakers are at the bottom of the league at defensive efficiency.</p>
+      </div>
+      <div class="col-md-3 twitter">
+        <!-- <div style='background-color:blue;' class="">
+          <p>ADS WILL GO HERE</p>
+          <p>ADS WILL GO HERE</p>
+          <p>ADS WILL GO HERE</p>
+          <p>ADS WILL GO HERE</p>
+          <p>ADS WILL GO HERE</p>
+        </div>
+        <br> -->
+          <iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/299604245&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+          <br><br>
+          <a class="twitter-timeline" data-height="600" href="https://twitter.com/DFSAnalysts">Tweets by DFSAnalysts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <br>
+
+      </div>
     </div>
   </div>
-</div>
-<br><br><br>
-<div class="chatdivshow">
-    <div id="sizer">
-        <a class='closechat' href="#">x</a>
-    </div>
-    <div id="chatmessages"><br></div>
-    <br>
-    {{#if requser}}
-    <div id="chatbar">
-        <input placeholder="Start Typing" id="chatinput" />
-        <button id='chatsend' type="button" class="btn btn-default btn-sm">Send</button>
-    </div>
-    {{/if}}
+  <br><br><br>
+  <div class="chatdivshow">
+      <div id="sizer">
+          <a class='closechat' href="#">x</a>
+      </div>
+      <div id="chatmessages"><br></div>
+      <br>
+      {{#if requser}}
+      <div id="chatbar">
+          <input placeholder="Start Typing" id="chatinput" />
+          <button id='chatsend' type="button" class="btn btn-default btn-sm">Send</button>
+      </div>
+      {{/if}}
 
-    {{#unless requser}}
-    <div id="chatbar">
-        <p><a style='color:#5600ff; font-size:18px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
-    </div>
-    {{/unless}}
-    <!-- <div id="swapzone"><input id="username" placeholder="Name"/>
-        <button id='start' type="button" class="btn btn-default">Enter Chat</button>
-    </div> -->
-</div>
+      {{#unless requser}}
+      <div id="chatbar">
+          <p><a style='color:#5600ff; font-size:18px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
+      </div>
+      {{/unless}}
+      <!-- <div id="swapzone"><input id="username" placeholder="Name"/>
+          <button id='start' type="button" class="btn btn-default">Enter Chat</button>
+      </div> -->
+  </div>
+</body>
 
 <script src='/assets/javascript/chatapp.js'></script>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86407503-2', 'auto');
+  ga('send', 'pageview');
+</script>

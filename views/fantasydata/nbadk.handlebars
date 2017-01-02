@@ -2,17 +2,32 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="keywords" content="DFS, Daily fantasy sports, Free DFS help, free daily fantasy sports help, Fanduel, free fanduel help, free fanduel data, free Fanduel NBA help, nba, free daily fantasy sports NBA help, free, DFS help, daily fantasy sports help, fanduel help, fanduel data, Fanduel NBA help, daily fantasy sports NBA help"/>
+  <meta name="keywords" content="DFS, Daily fantasy sports, Free DFS help, free daily fantasy sports help, DraftKings, free DraftKings help, free DraftKings data, free DraftKings NBA help, nba, free daily fantasy sports NBA help, free, DFS help, daily fantasy sports help, DraftKings help, DraftKings data, DraftKings NBA help, daily fantasy sports NBA help"/>
   <meta name="description" content="We Are FanDuel and DraftKings Daily fantasy Sports Analysts! We will provide you with all the most up to date fantasy sports data you will ever need to build your DFS Fanduel/DraftKings NBA lineup!">
   <title>NBA DFS Analytics</title>
       <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="/assets/css/styleNBA.css">
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
       <script src="/assets/javascript/appNBA.js"></script>
-
 </head>
 <body>
-  <a id='switchToFd' href="/NBA"><button style='margin-top:1%;margin-right:1%; float:right;' type="button" class="btn btn-info btn-lg">Click for Fanduel</button></a>
+
+  <nav class="navbar navbar-default colormein">
+    <div style='background-color: #edb82a' class="container-fluid">
+      <div class="navbar-header">
+        <li style='list-style-type:none;' class="navbar-brand doubleNavPage">NBA</li>
+        <!-- <a class="navbar-brand doubleNavPage" href="#">NBA</a> -->
+      </div>
+      <ul class="nav navbar-nav navigate colormein2">
+        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/Advice">NBA Article</a></li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- <a id='switchToFd' href="/NBAFanduel"><button style='margin-top:1%;margin-right:1%; float:right;' type="button" class="btn btn-info btn-lg">Click for Fanduel</button></a> -->
   <div class="container-fluid NBATeamTable">
     <button style='margin-top:1%;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
     <br>
@@ -36,13 +51,13 @@
       <script type="text/javascript">
       $(".cheatsheet").hide();
       </script>
-      <h1 id='draftkingsHeader' style='font-size:2em; text-align:center;'>DraftKings NBA Cheat Sheet</h1>
-      <h1 id='draftkingsHeaderTopPlays' style='font-size:2em; text-align:center;'>DraftKings NBA Top Plays</h1>
+      <h1 id='draftkingsHeader' style='font-size:2em; text-align:center;'><u>DraftKings NBA Cheat Sheet</u></h1>
+      <h1 id='draftkingsHeaderTopPlays' style='font-size:2em; text-align:center;'><u>DraftKings NBA Top Plays</u></h1>
       <script type="text/javascript">
       $("#draftkingsHeaderTopPlays").hide();
       </script>
       {{#each fantasyNBADate}}
-      <p style='margin-top:1%;' >Last updated at {{this.updated}}</p>
+      <p style='margin-top:1%;' >Last updated on {{this.updated}}</p>
       {{/each}}
     </div>
   </div>
@@ -147,6 +162,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -174,6 +190,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -203,6 +220,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -230,6 +248,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -259,6 +278,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -286,6 +306,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -315,6 +336,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -342,6 +364,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -371,6 +394,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -398,6 +422,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
               </tbody>
@@ -702,11 +727,12 @@ ga('send', 'pageview');
 $(document).ready(function(){
   {
       $("table").tablesorter();
+      $("#chatmessages").animate({ scrollTop: $(document).height() }, 1000);
   }
   setTimeout(function(){
     swal({
       title: "View the Table Legend",
-      text: "Please take a chance to look over the table legend. It will help you understand how to use this table.",
+      text: "Please take a chance to look over the table legend. It will help you understand how to use this NBA DraftKings Cheat Sheet.",
       type: "warning",
       confirmButtonText: "Ok, cool"
     });

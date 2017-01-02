@@ -1,4 +1,4 @@
-// var cookieParser = require('cookie-parser');
+var cookieParser = require('cookie-parser');
 // var session = require('express-session');
 var express = require('express');
 var app = express();
@@ -15,9 +15,13 @@ var path = require("path");
 
 // Passport / Facebook Authentication Information
 passport.use(new Strategy({
-  clientID: process.env.CLIENT_ID || "1887065124846159",
-  clientSecret: process.env.CLIENT_SECRET || "aec868d09103b27bad5c85384bbe9023",
-  callbackURL: "http://www.dfsanalysts.com/login/facebook/return"
+  // clientID: process.env.CLIENT_ID || "1887065124846159",
+  // clientSecret: process.env.CLIENT_SECRET || "aec868d09103b27bad5c85384bbe9023",
+  // callbackURL: "http://www.dfsanalysts.com/login/facebook/return"
+  clientID: process.env.CLIENT_ID || "1887065321512806",
+  clientSecret: process.env.CLIENT_SECRET || "5678c2982556970548de43a64789bba7",
+  callbackURL: "http://localhost:3000/login/facebook/return"
+
 },
   function(accessToken, refreshToken, profile, cb) {
     // In this example, the user"s Facebook profile is supplied as the user
@@ -72,10 +76,16 @@ app.set('view engine', 'handlebars');
 var routes = require('./controllers/main_routes.js');
 var userdata_controller = require('./controllers/userdata_controller.js');
 var Fanduelplayers = require('./controllers/Fanduelplayers.js');
+var FanduelplayersNFL = require('./controllers/FanduelplayersNFL.js');
 
 
 app.get('/load', function(req,res){
 	var nbateams = new Fanduelplayers()
+	res.redirect('/');
+});
+
+app.get('/nflload', function(req,res){
+	var NFLteams = new FanduelplayersNFL()
 	res.redirect('/');
 });
 
@@ -119,7 +129,7 @@ app.get("/login/facebook/return",
   });
 
 
-app.get('/NBA', function (req,res){
+app.get('/NBAFanduel', function (req,res){
 
 var requser = req.user;
 
@@ -168,7 +178,7 @@ var requser = req.user;
   })
 });
 
-app.get('/NBA-Draftkings', function (req,res){
+app.get('/NBADraftkings', function (req,res){
 
 var requser = req.user;
 
@@ -202,7 +212,7 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
                             fantasyNBATopCValue:fantasyNBATopCValue,
                             requser:requser
                           }
-                        res.render('fantasydata/NBAfantasy_dataDK', hbsObject);
+                        res.render('fantasydata/nbadk', hbsObject);
                         })
                       })
                     })
@@ -241,12 +251,6 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
     }
     res.render('users/contactus', hbsObject);
   });
-
-// This route is available for retrieving the information associated with the authentication method
-  app.get("/willyDJ", function(req, res) {
-    res.json(req.user);
-  });
-
 
 app.use('/', routes);
 app.use('/users', routes);
