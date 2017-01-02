@@ -101,6 +101,7 @@ CREATE TABLE googlesheetsapiNBATopPlays (
   Sal int,
   ProjectedPts Decimal,
   topPlayerValue varchar (255) NOT NULL,
+  Site varchar (255) NOT NULL,
   Value varchar (255) NOT NULL,
   updated varchar (255) NOT NULL,
   PRIMARY KEY (NBATopPlaysPlayerId)
