@@ -235,6 +235,7 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
     requser:requser
     }
     res.render('fantasydata/blog', hbsObject);
+    // res.render('fantasydata/nextBlogPage', hbsObject);
   });
 
 // This route is available for retrieving the information associated with the authentication method
