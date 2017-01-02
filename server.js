@@ -134,16 +134,16 @@ app.get('/NBAFanduel', function (req,res){
 var requser = req.user;
 
   connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
-    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Top'", function(err,fantasyNBATopPGPlay){
-      connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Top'", function(err,fantasyNBATopSGPlay){
-        connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopSFPlay){
-          connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopPFPlay){
-            connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Top'", function(err,fantasyNBATopCPlay){
-              connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopPGValue){
-                connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopSGValue){
-                  connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopSFValue){
-                    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopPFValue){
-                      connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopCValue){
+    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Top' AND Site='FD'", function(err,fantasyNBATopPGPlay){
+      connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Top' AND Site='FD'", function(err,fantasyNBATopSGPlay){
+        connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Top' AND Site='FD'", function(err,fantasyNBATopSFPlay){
+          connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Top' AND Site='FD'", function(err,fantasyNBATopPFPlay){
+            connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Top' AND Site='FD'", function(err,fantasyNBATopCPlay){
+              connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Value' AND Site='FD' ORDER BY PlayerRanking;", function(err,fantasyNBATopPGValue){
+                connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Value' AND Site='FD' ORDER BY PlayerRanking;", function(err,fantasyNBATopSGValue){
+                  connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Value' AND Site='FD' ORDER BY PlayerRanking;", function(err,fantasyNBATopSFValue){
+                    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Value' AND Site='FD' ORDER BY PlayerRanking;", function(err,fantasyNBATopPFValue){
+                      connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Value' AND Site='FD' ORDER BY PlayerRanking;", function(err,fantasyNBATopCValue){
 
                         connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
                           if(err) throw err;
@@ -183,16 +183,16 @@ app.get('/NBADraftkings', function (req,res){
 var requser = req.user;
 
 connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY ProjMins DESC, Salary DESC, CriteriaRanking DESC;", function(err,fantasyNBA){
-  connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Top'", function(err,fantasyNBATopPGPlay){
-    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Top'", function(err,fantasyNBATopSGPlay){
-      connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopSFPlay){
-        connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Top'", function(err,fantasyNBATopPFPlay){
-          connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Top'", function(err,fantasyNBATopCPlay){
-            connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PG' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopPGValue){
-              connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SG' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopSGValue){
-                connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'SF' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopSFValue){
-                  connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'PF' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopPFValue){
-                    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Value' ORDER BY ProjectedPts DESC;", function(err,fantasyNBATopCValue){
+  connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%PG%' AND topPlayerValue = 'Top' AND Site='DK' ORDER BY ProjectedPts DESC", function(err,fantasyNBATopPGPlay){
+    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%SG%' AND topPlayerValue = 'Top' AND Site='DK' ORDER BY ProjectedPts DESC", function(err,fantasyNBATopSGPlay){
+      connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%SF%' AND topPlayerValue = 'Top' AND Site='DK' ORDER BY ProjectedPts DESC", function(err,fantasyNBATopSFPlay){
+        connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%PF%' AND topPlayerValue = 'Top' AND Site='DK' ORDER BY ProjectedPts DESC", function(err,fantasyNBATopPFPlay){
+          connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%C%' AND topPlayerValue = 'Top' AND Site='DK' ORDER BY ProjectedPts DESC", function(err,fantasyNBATopCPlay){
+            connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%PG%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopPGValue){
+              connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%SG%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopSGValue){
+                connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%SF%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopSFValue){
+                  connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%PF%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopPFValue){
+                    connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS like '%C%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopCValue){
 
                       connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
                         if(err) throw err;
