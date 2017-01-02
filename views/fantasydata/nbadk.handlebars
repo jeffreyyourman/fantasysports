@@ -51,15 +51,16 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
+
+      <h1 id='draftkingsHeader' style='font-size:2.3em; text-align:center;'><u>DraftKings NBA Cheat Sheet</u></h1>
+      <h1 id='draftkingsHeaderTopPlays' style='font-size:2.3em; text-align:center;'><u>DraftKings NBA Top Plays</u></h1>
+      <script type="text/javascript">
+      $("#draftkingsHeaderTopPlays").hide();
+      </script>
       <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
       <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to NBA Cheat Sheet</button>
       <script type="text/javascript">
       $(".cheatsheet").hide();
-      </script>
-      <h1 id='draftkingsHeader' style='font-size:2em; text-align:center;'><u>DraftKings NBA Cheat Sheet</u></h1>
-      <h1 id='draftkingsHeaderTopPlays' style='font-size:2em; text-align:center;'><u>DraftKings NBA Top Plays</u></h1>
-      <script type="text/javascript">
-      $("#draftkingsHeaderTopPlays").hide();
       </script>
       {{#each fantasyNBADate}}
       <p style='margin-top:1%;' >Last updated on {{this.updated}}</p>
