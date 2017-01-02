@@ -340,20 +340,6 @@ $(document).ready(function(){
       $("table").tablesorter();
       $("#chatmessages").animate({ scrollTop: $(document).height() }, 1000);
   }
-//   $.ajax({url: "/willyDJ", method: "GET"})
-//
-//     .always(function(response) {
-//       var passportUserName = response.displayName;
-//       console.log('log for inside', passportUserName);
-// });
-  setTimeout(function(){
-    swal({
-      title: "View the Table Legend and NFL Updates",
-      text: "Please take a chance to look over the table legend. It will help you understand how to use this NFL Cheat Sheet. Please also take notice that for week 17, QB and RB sections may not include starting QBs & RBs as we are waiting finalized rosters. Final Rosters should be established Saturday.",
-      type: "warning",
-      confirmButtonText: "Ok, cool"
-    });
-  }, 10000);
 });
 function myPositionFunctionNFL() {
   var input, filter, table, tr, td, i;
@@ -391,3 +377,27 @@ function mySearchFunctionNFL() {
   }
 }
 </script>
+{{#if requser}}
+<script type="text/javascript">
+setTimeout(function(){
+  swal({
+    title: "Donations are always welcome :)",
+    text: "Our goal is to continue to give free data to all daily fantasy sports users! As this takes a lot of our time any donations are appreciated! Our paypal is dailyfantasysportsanalysts@gmail.com ",
+    type: "success",
+    confirmButtonText: "Ok, cool"
+  });
+}, 360000);
+</script>
+{{/if}}
+{{#unless requser}}
+<script type="text/javascript">
+setTimeout(function(){
+  swal({
+    title: "View the Table Legend",
+    text: "Please take a chance to look over the table legend. It will help you understand how to use this NBA FanDuel Cheat Sheet.",
+    type: "warning",
+    confirmButtonText: "Ok, cool"
+  });
+}, 10000);
+</script>
+{{/unless}}

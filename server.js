@@ -228,7 +228,7 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
 });
 
 
-  app.get('/Advice', function(req,res){
+  app.get('/NBAAdvice', function(req,res){
     var requser = req.user;
 
     var hbsObject = {
