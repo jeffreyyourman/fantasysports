@@ -20,41 +20,49 @@
         <!-- <a class="navbar-brand doubleNavPage" href="#">NBA</a> -->
       </div>
       <ul class="nav navbar-nav navigate colormein2">
-        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/Advice">NBA Article</a></li>
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAAdvice">NBA Article</a></li>
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAPodcast">NBA Podcast</a></li>
       </ul>
     </div>
   </nav>
-  
-  <!-- <a id='switchToFd' href="/NBAFanduel"><button style='margin-top:1%;margin-right:1%; float:right;' type="button" class="btn btn-info btn-lg">Click for Fanduel</button></a> -->
-  <div class="container-fluid NBATeamTable">
-    <button style='margin-top:1%;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
-    <br>
 
-    <input style='margin-top:1%;' type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
-    <br>
-    <select style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
-      <option value="" disabled selected>Filter by position</option>
-      <option value="PG">PG</option>
-      <option value="SG">SG</option>
-      <option value="SF">SF</option>
-      <option value="PF">PF</option>
-      <option value="C">C</option>
-    </select>
+  <div class="container-fluid NBATeamTable">
+    <div class="row">
+      <div class="col-md-6">
+        <button style='margin-top:1%;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
+        <br>
+
+        <input style='margin-top:1%;' type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
+        <br>
+        <select style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
+          <option value="" disabled selected>Filter by position</option>
+          <option value="PG">PG</option>
+          <option value="SG">SG</option>
+          <option value="SF">SF</option>
+          <option value="PF">PF</option>
+          <option value="C">C</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+          <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/299604245&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+          <br><br>
+      </div>
+    </div>
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-12">
-      <!-- <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button> -->
 
+      <h2 id='draftkingsHeader' style='font-size:2.3em; text-align:center;'><u>DraftKings NBA Cheat Sheet</u></h2>
+      <h2 id='draftkingsHeaderTopPlays' style='font-size:2.3em; text-align:center;'><u>DraftKings NBA Top Plays</u></h2>
+      <script type="text/javascript">
+      $("#draftkingsHeaderTopPlays").hide();
+      </script>
+      <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
       <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to NBA Cheat Sheet</button>
       <script type="text/javascript">
       $(".cheatsheet").hide();
-      </script>
-      <h1 id='draftkingsHeader' style='font-size:2em; text-align:center;'><u>DraftKings NBA Cheat Sheet</u></h1>
-      <h1 id='draftkingsHeaderTopPlays' style='font-size:2em; text-align:center;'><u>DraftKings NBA Top Plays</u></h1>
-      <script type="text/javascript">
-      $("#draftkingsHeaderTopPlays").hide();
       </script>
       {{#each fantasyNBADate}}
       <p style='margin-top:1%;' >Last updated on {{this.updated}}</p>
@@ -153,6 +161,7 @@
                   <th>Point Guards</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -162,7 +171,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
-                <!-- <td>Value Goes here</td> -->
+                <td>{{PlayerValue}}</td>
               </tr>
               {{/each}}
               </tbody>
@@ -181,6 +190,7 @@
                   <th>Point Guards</th>
                   <th>Salary</th>
                   <th>Fantasy Points Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -190,7 +200,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
-                <!-- <td>Value Goes here</td> -->
+                <td>{{PlayerValue}}</td>
               </tr>
               {{/each}}
               </tbody>
@@ -211,6 +221,7 @@
                   <th>Shooting Guards</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -220,7 +231,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
-                <!-- <td>Value Goes here</td> -->
+                <td>{{PlayerValue}}</td>
               </tr>
               {{/each}}
               </tbody>
@@ -239,6 +250,7 @@
                   <th>Shooting Guards</th>
                   <th>Salary</th>
                   <th>Fantasy Points Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -248,7 +260,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
-                <!-- <td>Value Goes here</td> -->
+                <td>{{PlayerValue}}</td>
               </tr>
               {{/each}}
               </tbody>
@@ -269,6 +281,7 @@
                   <th>Small Forwards</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -278,6 +291,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <td>{{PlayerValue}}</td>
                 <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
@@ -297,6 +311,7 @@
                   <th>Small Forwards</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -306,6 +321,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <td>{{PlayerValue}}</td>
                 <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
@@ -327,6 +343,7 @@
                   <th>Power Forwards</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -336,6 +353,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <td>{{PlayerValue}}</td>
                 <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
@@ -355,6 +373,7 @@
                   <th>Power Forwards</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -364,6 +383,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <td>{{PlayerValue}}</td>
                 <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
@@ -385,6 +405,7 @@
                   <th>Centers</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -394,6 +415,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <td>{{PlayerValue}}</td>
                 <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
@@ -413,6 +435,7 @@
                   <th>Centers</th>
                   <th>Salary</th>
                   <th>Fantasy Point Projections</th>
+                  <th>Fantasy Player Value</th>
                 </tr>
               </thead>
               <tbody>
@@ -422,6 +445,7 @@
                 <td>{{POS}}</td>
                 <td>{{Sal}}</td>
                 <td>{{ProjectedPts}}</td>
+                <td>{{PlayerValue}}</td>
                 <!-- <td>Value Goes here</td> -->
               </tr>
               {{/each}}
@@ -729,14 +753,6 @@ $(document).ready(function(){
       $("table").tablesorter();
       $("#chatmessages").animate({ scrollTop: $(document).height() }, 1000);
   }
-  setTimeout(function(){
-    swal({
-      title: "View the Table Legend",
-      text: "Please take a chance to look over the table legend. It will help you understand how to use this NBA DraftKings Cheat Sheet.",
-      type: "warning",
-      confirmButtonText: "Ok, cool"
-    });
-  }, 10000);
 });
 </script>
 <script type="text/javascript">
@@ -776,3 +792,28 @@ function mySearchFunction() {
   }
 }
 </script>
+{{#if requser}}
+<script type="text/javascript">
+setTimeout(function(){
+  swal({
+    title: "Donations are always welcome :)",
+    text: "Our goal is to continue to give free data to all daily fantasy sports users! As this takes a lot of our time any donations are appreciated! Our paypal is dailyfantasysportsanalysts@gmail.com ",
+    type: "success",
+    confirmButtonText: "Ok, cool"
+  });
+}, 360000);
+</script>
+{{/if}}
+{{#unless requser}}
+<script type="text/javascript">
+setTimeout(function(){
+  swal({
+    title: "View the Table Legend",
+    text: "Please take a chance to look over the table legend. It will help you understand how to use this NBA FanDuel Cheat Sheet.<br><br> Please login if you would like to stop seeing these alerts",
+    html: true,
+    type: "warning",
+    confirmButtonText: "Ok, cool"
+  });
+}, 10000);
+</script>
+{{/unless}}
