@@ -9,6 +9,17 @@
       <link rel="stylesheet" href="/assets/css/styleNFL.css">
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
       <script src="/assets/javascript/appNFL.js"></script>
+
+      <style media="screen">
+        .highlight {
+          background-color:blue;
+          color:white;
+        }
+        .purple {
+          background-color:pink;
+          color:white;
+        }
+      </style>
 </head>
 <body>
   <nav class="navbar navbar-default colormein">
@@ -57,7 +68,9 @@
 </select>
 <br><br>
 {{#each fantasyNFLTeams}}
-  <button onclick="teamFunc(this)" id='hello' type="button" name="button">{{this.Team}}</button>
+
+  <button onclick="teamFuncHide(this)" onclick="teamFuncShow(this)" id='hello' type="button" name="button">{{this.Team}}</button>
+  <!-- <button onclick="teamFuncShow(this)" id='hello' type="button" name="button">{{this.Team}}</button> -->
 {{/each}}
     <!-- <input class="search" placeholder="Search" />
   <button class="sort" data-sort="number">
@@ -141,40 +154,45 @@
 
 <script type="text/javascript">
 
-var teamFunc = function(boo){
+var teamFuncHide = function(boo){
+
 // $('#hello').click(function(){
 //   console.log(this);
 // });
-var btnTeamText = $(boo).text()
-var myteamtext = $('#MyTeam').text();
-
-// console.log('outside if',myteamtext);
+  var btnTeam = $(boo);
+  var btnTeamText = $(boo).text();
 
   var myteam = $('tr');
-// console.log(myteam[1])
+  // console.log(myteam[1])
 
-for (var i = 0; i < myteam.length; i++) {
-
-
-  if (myteam[i].cells[4].innerText == btnTeamText) {
+  for (var i = 0; i < myteam.length; i++) {
+    if (myteam[i].cells[4].innerText == btnTeamText) {
     // console.log('fuck off spurs');
 
-$(myteam[i]).hide()   //fdsa fdsaffdafs
 
+      $(btnTeam).addClass("highlight");
+      $(myteam[i]).hide()
+      // $(btnTeam).removeClass("highlight");
+      // e.stopPropagation();
+    // if ($(btnTeam).hasClass('highlight')) {
+    //   $(btnTeam).removeClass('highlight');
+    // //   // $(myteam[i]).show()
+    // }
 
     // console.log(myteam[i]);
-      // myteam.hide()
+    // myteam.hide()
+    }
+    $(".highlight").click(function(){
+      if ($(btnTeam).hasClass("highlight")) {
+        $(myteam[i]).show()
+        $(btnTeam).removeClass("highlight");
+      }
+    });
   }
+
 }
-}
 
 
-
-  var options = {
-  valueNames: [ 'name', 'born' ]
-};
-
-var userList = new List('users', options);
 </script>
 
 
