@@ -9,6 +9,17 @@
       <link rel="stylesheet" href="/assets/css/styleNFL.css">
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
       <script src="/assets/javascript/appNFL.js"></script>
+
+      <style media="screen">
+        .highlight {
+          background-color:blue;
+          color:white;
+        }
+        .purple {
+          background-color:pink;
+          color:white;
+        }
+      </style>
 </head>
 <body>
   <nav class="navbar navbar-default colormein">
@@ -19,7 +30,7 @@
       </div>
       <ul class="nav navbar-nav navigate colormein2">
         <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
-        <!-- <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li> -->
+        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
       </ul>
     </div>
   </nav>
@@ -29,22 +40,43 @@
     <hr>
     <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
     <br><br>
-    <input type="text" id="mySearchInputNFL" onkeyup="mySearchFunctionNFL()" placeholder="Search for NFL Players" title="Type in a name">
+    <!-- <input type="text" id="mySearchInputNFL" onkeyup="mySearchFunctionNFL()" placeholder="Search for NFL Players" title="Type in a name"> -->
     <br><br>
-      <select id='mySelectedInputNFL' name='changePosition' onchange='myPositionFunctionNFL()'>
-        <option value="" disabled selected>Filter by position</option>
-        <option value="QB">QB</option>
-        <option value="RB">RB</option>
-        <option value="WR">WR</option>
-        <option value="TE">TE</option>
-        <option value="K">K</option>
-        <option value="Def">Def</option>
-      </select>
+
       <br><br><br>
     <!-- <p style='font-size:30px;'>If it has Low on column name it means Low numbers are best</p>
     <hr>
     <p style='font-size:30px;'>If it has High on column name it means High numbers are best</p>
   <br><br><br><br> -->
+
+  <div id="users">
+
+
+  <input class="search" placeholder="Search for NFL Players" />
+  <button class="sort" data-sort="name">
+    Sort by name
+  </button>
+<br>
+<select id='mySelectedInputNFL' name='changePosition' onchange='myPositionFunctionNFL()'>
+  <option value="" disabled selected>Filter by position</option>
+  <option value="QB">QB</option>
+  <option value="RB">RB</option>
+  <option value="WR">WR</option>
+  <option value="TE">TE</option>
+  <option value="K">K</option>
+  <option value="Def">Def</option>
+</select>
+<br><br>
+{{#each fantasyNFLTeams}}
+
+  <button onclick="teamFuncHide(this)" onclick="teamFuncShow(this)" id='hello' type="button" name="button">{{this.Team}}</button>
+  <!-- <button onclick="teamFuncShow(this)" id='hello' type="button" name="button">{{this.Team}}</button> -->
+{{/each}}
+    <!-- <input class="search" placeholder="Search" />
+  <button class="sort" data-sort="number">
+    Sort by number
+  </button> -->
+
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
@@ -54,7 +86,8 @@
       </div>
     </div>
   </div>
-</div>
+
+
   <div id='playerlist' class="container-fluid NBAtables">
     <div class="row nbafantasy">
       <div class="col-md-12" id="nba">
@@ -83,14 +116,14 @@
                   <th>ProjectedOwnership</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody class="list">
               {{#each fantasyNFL}}
               <tr>
-                <td>{{Player}}</td>
+                <td class="name">{{Player}}</td>
                 <td></td>
                 <td>{{Sal}}</td>
                 <td>{{POS}}</td>
-                <td>{{Team}}</td>
+                <td id='MyTeam'>{{Team}}</td>
                 <td>{{Opp}}</td>
                 <td>{{Injury_Status}}</td>
                 <td>{{RvP}}</td>
@@ -113,6 +146,54 @@
       </div>
     </div>
   </div>
+</div>
+
+</div>
+<script src="http://listjs.com/assets/javascripts/list.min.js"></script>
+
+
+<script type="text/javascript">
+
+var teamFuncHide = function(boo){
+
+// $('#hello').click(function(){
+//   console.log(this);
+// });
+  var btnTeam = $(boo);
+  var btnTeamText = $(boo).text();
+
+  var myteam = $('tr');
+  // console.log(myteam[1])
+
+  for (var i = 0; i < myteam.length; i++) {
+    if (myteam[i].cells[4].innerText == btnTeamText) {
+    // console.log('fuck off spurs');
+
+
+      $(btnTeam).addClass("highlight");
+      $(myteam[i]).hide()
+      // $(btnTeam).removeClass("highlight");
+      // e.stopPropagation();
+    // if ($(btnTeam).hasClass('highlight')) {
+    //   $(btnTeam).removeClass('highlight');
+    // //   // $(myteam[i]).show()
+    // }
+
+    // console.log(myteam[i]);
+    // myteam.hide()
+    }
+    $(".highlight").click(function(){
+      if ($(btnTeam).hasClass("highlight")) {
+        $(myteam[i]).show()
+        $(btnTeam).removeClass("highlight");
+      }
+    });
+  }
+
+}
+
+
+</script>
 
 
   <!-- <div class="suggestedbuttondiv">
@@ -317,7 +398,7 @@
 
     {{#unless requser}}
     <div id="chatbar">
-        <p><a style='color:#5600ff; font-size:18px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
+        <p><a style='color:#5600ff; font-size:12px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
     </div>
     {{/unless}}
     <!-- <div id="swapzone"><input id="username" placeholder="Name"/>
@@ -379,26 +460,26 @@ function mySearchFunctionNFL() {
 </script>
 {{#if requser}}
 <script type="text/javascript">
-setTimeout(function(){
-  swal({
-    title: "Donations are always welcome :)",
-    text: "Our goal is to continue to give free data to all daily fantasy sports users! As this takes a lot of our time any donations are appreciated! Our paypal is dailyfantasysportsanalysts@gmail.com ",
-    type: "success",
-    confirmButtonText: "Ok, cool"
-  });
-}, 360000);
+// setTimeout(function(){
+//   swal({
+//     title: "Donations are always welcome :)",
+//     text: "Our goal is to continue to give free data to all daily fantasy sports users! As this takes a lot of our time any donations are appreciated! Our paypal is dailyfantasysportsanalysts@gmail.com ",
+//     type: "success",
+//     confirmButtonText: "Ok, cool"
+//   });
+// }, 360000);
 </script>
 {{/if}}
 {{#unless requser}}
 <script type="text/javascript">
-setTimeout(function(){
-  swal({
-    title: "View the Table Legend",
-    text: "Please take a chance to look over the table legend. It will help you understand how to use this NBA FanDuel Cheat Sheet.<br><br> Please login if you would like to stop seeing these alerts",
-    html: true,
-    type: "warning",
-    confirmButtonText: "Ok, cool"
-  });
-}, 10000);
+// setTimeout(function(){
+//   swal({
+//     title: "View the Table Legend",
+//     text: "Please take a chance to look over the table legend. It will help you understand how to use this NBA FanDuel Cheat Sheet.<br><br> Please login if you would like to stop seeing these alerts",
+//     html: true,
+//     type: "warning",
+//     confirmButtonText: "Ok, cool"
+//   });
+// }, 10000);
 </script>
 {{/unless}}
