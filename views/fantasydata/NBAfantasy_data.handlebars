@@ -14,16 +14,26 @@
       <script src="/assets/javascript/appNBA.js"></script>
       <style media="screen">
           .highlight {
-              background-color: rgb(69, 185, 231);
-              color: rgb(255, 0, 0);
+              opacity: 0.2;
           }
 
-          .test {
+          .btn-default {
+            width:10%;
+            border:1px solid #edb82a;
+            background-color: #edb82a;
+            margin-bottom:0.5%;
+          }
+          .btn-default:hover {
+            opacity: 0.5;
+            background-color: #edb82a;
+          }
+
+          /*.test {
               width:10%;
-              border:1px solid #9bdaf2;
+              border:1px solid #edb82a;
               background-color:rgba(155, 218, 242, 0.2);
               margin-bottom:0.5%;
-          }
+          }*/
       </style>
 </head>
 <body>
@@ -71,7 +81,7 @@
 
                         {{#each fantasyNBATeams}}
 
-                            <button style='' class='test' type="button" name="button">{{this.Team}}</button>
+                            <button class='test btn-default' type="button" name="button">{{this.Team}}</button>
                         {{/each}}
                         <br><br>
                     </div>
