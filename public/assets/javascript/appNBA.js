@@ -126,14 +126,14 @@ var fanduelHeader = $('#fanduelHeader');
        var cCellParse = parseFloat($cCell.text())
        if ( $cCell.text() >= 1.1 ) {
          $cCell.css('background-color', '#9bdaf2');
-       } else if (($cCell.text() >= .97) && ($cCell.text() <= 1.099)) {
+       } else if (($cCell.text() >= .97) && ($cCell.text() < 1.1)) {
          $cCell.css('background-color', '#45b9e7');
-       } else if (($cCell.text() >= .89) && ($cCell.text() <= .9699)) {
+       } else if (($cCell.text() >= .89) && ($cCell.text() < .97)) {
          $cCell.css('background-color', '#1a93c3');
-       } else if (($cCell.text() >= .85) && ($cCell.text() <= .8899)) {
+       } else if (($cCell.text() >= .85) && ($cCell.text() < .89)) {
          $cCell.css('background-color', '#0a384a');
          $cCell.css('color', 'white');
-       } else if (($cCell.text() >= 0) && ($cCell.text() <= .8499)) {
+       } else if (($cCell.text() >= 0) && ($cCell.text() < .85)) {
          $cCell.css('background-color', '#0a384a');
          $cCell.css('color', 'white');
        } else {
