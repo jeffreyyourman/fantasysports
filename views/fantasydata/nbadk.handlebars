@@ -70,7 +70,7 @@
                         <br><br>
                         {{#each fantasyNBATeams}}
 
-                            <button class='test btn-default' type="button" name="button">{{this.Team}}</button>
+                            <button class='test btn-default' type="button" name="button"><span style='color:white;'>x</span> {{this.Team}}</button>
                         {{/each}}
                         <br><br>
                     </div>
@@ -198,7 +198,7 @@
                     $(btnTeam).addClass('highlight');
                 }
                 for (var i = 0; i < myteam.length; i++) {
-                    if (myteam[i].cells[5].innerText == btnTeamText) {
+                    if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
 
                         $(myteam[i]).toggle();
                     }

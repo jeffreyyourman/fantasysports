@@ -8,7 +8,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
       <!-- Latest compiled and minified CSS -->
       <link rel="stylesheet" href="/assets/css/styleNBA.css">
-      <link rel="stylesheet" href="/css/master.css">
+      <!-- <link rel="stylesheet" href="/css/master.css"> -->
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
       <script src="/assets/javascript/appNBA.js"></script>
@@ -81,7 +81,7 @@
 
                         {{#each fantasyNBATeams}}
 
-                            <button class='test btn-default' type="button" name="button">{{this.Team}}</button>
+                            <button class='test btn-default' type="button" name="button"><span style='color:white;'>x</span> {{this.Team}}</button>
                         {{/each}}
                         <br><br>
                     </div>
@@ -212,7 +212,6 @@
 
             var btnTeam = $(this);
             var btnTeamText = $(this).text();
-            console.log(btnTeamText);
             var myteam = $('tr');
             if ($(btnTeam).hasClass('highlight')) {
                 $(btnTeam).removeClass('highlight');
@@ -220,7 +219,7 @@
                 $(btnTeam).addClass('highlight');
             }
             for (var i = 0; i < myteam.length; i++) {
-                if (myteam[i].cells[5].innerText == btnTeamText) {
+                if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
 
                     $(myteam[i]).toggle();
                 }
