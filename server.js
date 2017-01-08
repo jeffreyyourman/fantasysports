@@ -84,7 +84,7 @@ app.get('/load', function(req,res){
 	res.redirect('/');
 });
 
-app.get('/nflload', function(req,res){
+app.get('/loadnfl', function(req,res){
 	var NFLteams = new FanduelplayersNFL()
 	res.redirect('/');
 });
@@ -149,24 +149,27 @@ var requser = req.user;
                       connection.query("SELECT * FROM googlesheetsapiNBATopPlays where POS = 'C' AND topPlayerValue = 'Value' AND Site='FD' ORDER BY PlayerRanking;", function(err,fantasyNBATopCValue){
 
                         connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
-                          if(err) throw err;
+                          connection.query("SELECT DISTINCT Team FROM googlesheetsapi Where Team <> '' order by Team;", function(err,fantasyNBATeams){
+                            if(err) throw err;
 
-                          var hbsObject = {
-                            fantasyNBA: fantasyNBA,
-                            fantasyNBADate: fantasyNBADate,
-                            fantasyNBATopPGPlay: fantasyNBATopPGPlay,
-                            fantasyNBATopSGPlay: fantasyNBATopSGPlay,
-                            fantasyNBATopSFPlay: fantasyNBATopSFPlay,
-                            fantasyNBATopPFPlay: fantasyNBATopPFPlay,
-                            fantasyNBATopCPlay: fantasyNBATopCPlay,
-                            fantasyNBATopPGValue:fantasyNBATopPGValue,
-                            fantasyNBATopSGValue:fantasyNBATopSGValue,
-                            fantasyNBATopSFValue:fantasyNBATopSFValue,
-                            fantasyNBATopPFValue:fantasyNBATopPFValue,
-                            fantasyNBATopCValue:fantasyNBATopCValue,
-                            requser:requser
-                          }
-                        res.render('fantasydata/NBAfantasy_data', hbsObject);
+                            var hbsObject = {
+                              fantasyNBA: fantasyNBA,
+                              fantasyNBADate: fantasyNBADate,
+                              fantasyNBATopPGPlay: fantasyNBATopPGPlay,
+                              fantasyNBATopSGPlay: fantasyNBATopSGPlay,
+                              fantasyNBATopSFPlay: fantasyNBATopSFPlay,
+                              fantasyNBATopPFPlay: fantasyNBATopPFPlay,
+                              fantasyNBATopCPlay: fantasyNBATopCPlay,
+                              fantasyNBATopPGValue: fantasyNBATopPGValue,
+                              fantasyNBATopSGValue: fantasyNBATopSGValue,
+                              fantasyNBATopSFValue: fantasyNBATopSFValue,
+                              fantasyNBATopPFValue: fantasyNBATopPFValue,
+                              fantasyNBATopCValue: fantasyNBATopCValue,
+                              fantasyNBATeams: fantasyNBATeams,
+                              requser:requser
+                            }
+                          res.render('fantasydata/NBAfantasy_data', hbsObject);
+                          })
                         })
                       })
                     })
@@ -196,26 +199,29 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
                 connection.query("SELECT DISTINCT Player, POS, Sal, ProjectedPts, PlayerValue FROM googlesheetsapiNBATopPlays where POS like '%SF%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopSFValue){
                   connection.query("SELECT DISTINCT Player, POS, Sal, ProjectedPts, PlayerValue FROM googlesheetsapiNBATopPlays where POS like '%PF%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopPFValue){
                     connection.query("SELECT DISTINCT Player, POS, Sal, ProjectedPts, PlayerValue FROM googlesheetsapiNBATopPlays where POS like '%C%' AND topPlayerValue = 'Value' AND Site='DK' ORDER BY PlayerRanking;", function(err,fantasyNBATopCValue){
+                        connection.query("SELECT DISTINCT Team FROM googlesheetsapi Where Team <> '' order by Team;", function(err,fantasyNBATeams){
 
-                      connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
-                        if(err) throw err;
+                        connection.query("SELECT * FROM googlesheetsapi limit 1;", function(err,fantasyNBADate){
+                          if(err) throw err;
 
-                          var hbsObject = {
-                            fantasyNBA: fantasyNBA,
-                            fantasyNBADate: fantasyNBADate,
-                            fantasyNBATopPGPlay: fantasyNBATopPGPlay,
-                            fantasyNBATopSGPlay: fantasyNBATopSGPlay,
-                            fantasyNBATopSFPlay: fantasyNBATopSFPlay,
-                            fantasyNBATopPFPlay: fantasyNBATopPFPlay,
-                            fantasyNBATopCPlay: fantasyNBATopCPlay,
-                            fantasyNBATopPGValue:fantasyNBATopPGValue,
-                            fantasyNBATopSGValue:fantasyNBATopSGValue,
-                            fantasyNBATopSFValue:fantasyNBATopSFValue,
-                            fantasyNBATopPFValue:fantasyNBATopPFValue,
-                            fantasyNBATopCValue:fantasyNBATopCValue,
-                            requser:requser
-                          }
-                        res.render('fantasydata/nbadk', hbsObject);
+                            var hbsObject = {
+                              fantasyNBA: fantasyNBA,
+                              fantasyNBADate: fantasyNBADate,
+                              fantasyNBATopPGPlay: fantasyNBATopPGPlay,
+                              fantasyNBATopSGPlay: fantasyNBATopSGPlay,
+                              fantasyNBATopSFPlay: fantasyNBATopSFPlay,
+                              fantasyNBATopPFPlay: fantasyNBATopPFPlay,
+                              fantasyNBATopCPlay: fantasyNBATopCPlay,
+                              fantasyNBATopPGValue: fantasyNBATopPGValue,
+                              fantasyNBATopSGValue: fantasyNBATopSGValue,
+                              fantasyNBATopSFValue: fantasyNBATopSFValue,
+                              fantasyNBATopPFValue: fantasyNBATopPFValue,
+                              fantasyNBATopCValue: fantasyNBATopCValue,
+                              fantasyNBATeams: fantasyNBATeams,
+                              requser:requser
+                            }
+                          res.render('fantasydata/nbadk', hbsObject);
+                          })
                         })
                       })
                     })

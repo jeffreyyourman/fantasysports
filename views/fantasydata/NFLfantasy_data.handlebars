@@ -20,12 +20,8 @@
     .test {
         width:10%;
         border:1px solid #9bdaf2;
-        background-color:rgba(155, 218, 242, 0.2); 
+        background-color:rgba(155, 218, 242, 0.2);
         margin-bottom:0.5%;
-    }
-    .purple {
-        background-color: pink;
-        color: white;
     }
 </style>
 </head>
@@ -86,15 +82,11 @@
             </div>
             <br>
 
-            <!-- <input class="search" placeholder="Search" />
-  <button class="sort" data-sort="number">
-    Sort by number
-  </button> -->
 
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 id='fanduelHeader' style='font-size:2.3em; text-align:center;'><u>FanDuel NBA Cheat Sheet</u></h2>
+                        <h2 id='fanduelHeader' style='font-size:2.3em; text-align:center;'><u>FanDuel NFL Cheat Sheet</u></h2>
                         {{#each fantasyNFLDate}}
                             <p>Last updated on {{this.updated}}</p>
                         {{/each}}
@@ -108,7 +100,7 @@
                     <div class="col-md-12" id="nba">
                         <div class="panel-body beforeResponsive">
                             <div class="table-responsive">
-                                <table style='bborder-color: black;' id='NBAcheatsheet' class="table table-bordered tableNbaFantasy">
+                                <table id='NBAcheatsheet' class="table table-bordered tableNbaFantasy">
                                     <thead>
                                         <tr style='font-size: 12px;cursor: pointer;'>
                                             <th>Player</th>
@@ -447,24 +439,6 @@
             tr = table.getElementsByTagName("tr");
             for (i = 0; i < tr.length; i++) {
                 td = tr[i].getElementsByTagName("td")[3];
-                if (td) {
-                    if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-                        tr[i].style.display = "";
-                    } else {
-                        tr[i].style.display = "none";
-                    }
-                }
-            }
-        }
-
-        function mySearchFunctionNFL() {
-            var input, filter, table, tr, td, i;
-            input = document.getElementById("mySearchInputNFL");
-            filter = input.value.toUpperCase();
-            table = document.getElementById("NBAcheatsheet");
-            tr = table.getElementsByTagName("tr");
-            for (i = 0; i < tr.length; i++) {
-                td = tr[i].getElementsByTagName("td")[0];
                 if (td) {
                     if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
                         tr[i].style.display = "";

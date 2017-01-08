@@ -11,8 +11,7 @@ $(document).ready(function(){
   // });
 var topvaluetable = $('.topvaluetable');
 var cheatsheet = $('.cheatsheet');
-var myselectedinput = $('#mySelectedInput')
-var mysearchinput = $('#mySearchInput')
+var hidemebitch = $('.hidemebitch');
 var tablelegend = $('.tablelegend')
 var cheatsheettable = $('.cheatsheettable')
 var topplays = $('.topplays')
@@ -23,7 +22,6 @@ var draftkingsHeader = $('#draftkingsHeader');
 var draftkingsHeaderTopPlays = $('#draftkingsHeaderTopPlays');
 var fanduelHeaderTopPlays = $('#fanduelHeaderTopPlays');
 var fanduelHeader = $('#fanduelHeader');
-// $(".cheatsheet").hide();
   $('.cheatsheet').click(function(){
     topvaluetable.hide();
     fanduelHeaderTopPlays.hide();
@@ -33,17 +31,13 @@ var fanduelHeader = $('#fanduelHeader');
     switchToFd.show();
     draftkingsHeader.show();
     fanduelHeader.show();
-    myselectedinput.show();
-    mysearchinput.show();
+    hidemebitch.show();
     tablelegend.show();
     cheatsheettable.show();
     topplays.show();
-
   });
-  //
+  
   $('.topplays').click(function(){
-    myselectedinput.hide();
-    mysearchinput.hide();
     tablelegend.hide();
     topplays.hide();
     cheatsheettable.hide();
@@ -51,6 +45,7 @@ var fanduelHeader = $('#fanduelHeader');
     switchToFd.hide();
     draftkingsHeader.hide();
     fanduelHeader.hide();
+    hidemebitch.hide();
     cheatsheet.show();
     topvaluetable.show();
     fanduelHeaderTopPlays.show();

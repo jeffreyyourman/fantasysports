@@ -12,6 +12,19 @@
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
       <script src="/assets/javascript/appNBA.js"></script>
+      <style media="screen">
+          .highlight {
+              background-color: rgb(69, 185, 231);
+              color: rgb(255, 0, 0);
+          }
+
+          .test {
+              width:10%;
+              border:1px solid #9bdaf2;
+              background-color:rgba(155, 218, 242, 0.2);
+              margin-bottom:0.5%;
+          }
+      </style>
 </head>
 <body>
   <nav class="navbar navbar-default colormein">
@@ -28,131 +41,184 @@
       </ul>
     </div>
   </nav>
-  <!-- <a id='switchToDk' href="/NBADraftkings"><button style='margin-top:1%;margin-right:1%; float:right;' type="button" class="btn btn-info btn-lg">Click for DraftKings</button></a> -->
   <div class="container-fluid NBATeamTable">
-    <div class="row">
-      <div class="col-md-6">
-        <button style='margin-top:1%;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
-        <br>
 
-        <input style='margin-top:1%;' type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
-        <br>
-        <select style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
-          <option value="" disabled selected>Filter by position</option>
-          <option value="pg">PG</option>
-          <option value="sg">SG</option>
-          <option value="sf">SF</option>
-          <option value="pf">PF</option>
-          <option value="c">C</option>
-        </select>
-      </div>
-      <div class="col-md-6">
-          <!-- <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/299604245&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe> -->
-          <br><br>
-      </div>
-    </div>
+        <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Table Legend</button>
+        <br><br>
+
+        <div id="users">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div style='background-color:white;' class="col-md-5 hidemebitch">
+                        <br>
+                        <input class="search" placeholder="Search for NBA Players" />
+                        <button class="sort" data-sort="name">
+                            Sort by name
+                        </button>
+                        <br>
+                        <br>
+                        <select style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
+                          <option value="" disabled selected>Filter by position</option>
+                          <option value="pg">PG</option>
+                          <option value="sg">SG</option>
+                          <option value="sf">SF</option>
+                          <option value="pf">PF</option>
+                          <option value="c">C</option>
+                        </select>
+                        <br>
+                        <br>
+
+                        {{#each fantasyNBATeams}}
+
+                            <button style='' class='test' type="button" name="button">{{this.Team}}</button>
+                        {{/each}}
+                        <br><br>
+                    </div>
+                    <div class="col-md-7">
+                        <iframe width="100%" height="100" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/299604245&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+                        <!-- <br><br> -->
+                    </div>
+                </div>
+            </div>
+            <br>
 
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-md-12">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                      <h2 id='fanduelHeader' style='font-size:2.3em; text-align:center;'><u>FanDuel NBA Cheat Sheet</u></h2>
+                      <h2 id='fanduelHeaderTopPlays' style='font-size:2.3em; text-align:center;'><u>FanDuel NBA Top Plays</u></h2>
+                      <br>
+                      <script type="text/javascript">
+                      $("#fanduelHeaderTopPlays").hide();
+                      </script>
 
-      <h2 id='fanduelHeader' style='font-size:2.3em; text-align:center;'><u>FanDuel NBA Cheat Sheet</u></h2>
-      <h2 id='fanduelHeaderTopPlays' style='font-size:2.3em; text-align:center;'><u>FanDuel NBA Top Plays</u></h2>
-      <br>
-      <script type="text/javascript">
-      $("#fanduelHeaderTopPlays").hide();
-      </script>
+                      <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
 
-      <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
+                      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to NBA Cheat Sheet</button>
+                      <script type="text/javascript">
+                      $(".cheatsheet").hide();
+                      </script>
+                      {{#each fantasyNBADate}}
+                      <p style='margin-top:1%;' >Last updated on {{this.updated}}</p>
+                      {{/each}}
+                    </div>
+                </div>
+            </div>
 
-      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to NBA Cheat Sheet</button>
-      <script type="text/javascript">
-      $(".cheatsheet").hide();
-      </script>
-      {{#each fantasyNBADate}}
-      <p style='margin-top:1%;' >Last updated on {{this.updated}}</p>
-      {{/each}}
-    </div>
-  </div>
-</div>
-</div>
-  <div id='playerlist' class="container-fluid NBAtables cheatsheettable">
-    <div class="row nbafantasy">
-      <div class="col-md-12" id="nba">
-        <div class="panel-body beforeResponsive">
-          <div class="table-responsive">
-            <table id='NBAcheatsheet' class="table table-bordered tableNbaFantasy">
-              <thead>
-                <tr style='font-size: 12px;cursor: pointer;'>
-                  <th>Player</th>
-                  <th></th>
-                  <th>GameTime</th>
-                  <th>H/A</th>
-                  <th>Position</th>
-                  <th>Team</th>
-                  <th>Opp</th>
-                  <th>Condition</th>
-                  <th>Details</th>
-                  <th>ProjMins</th>
-                  <th>Salary</th>
-                  <th>Usage%</th>
-                  <th>PPG/L10</th>
-                  <th>PPM</th>
-                  <th>OVP</th>
-                  <th>ProjTeamScore</th>
-                  <th>GameLine</th>
-                  <th>ProjectedPts</th>
-                  <th>Value</th>
-                  <th>SalaryAdjust</th>
-                  <th>RecentPerformance</th>
-                  <th>PTsVPos</th>
-                  <th>CriteriaRanking</th>
-                  <th>3rdConsecutiveAwayGame</th>
-                  <th>B2BGame</th>
-                  <th>3rdGamein4thNight</th>
-                  <th>ProjectedOwnership</th>
-                </tr>
-              </thead>
-              <tbody>
-              {{#each fantasyNBA}}
-              <tr>
-                <td>{{Player}}</td>
-                <td></td>
-                <td>{{GameTime}}</td>
-                <td id='HA'>{{HomeAway}}</td>
-                <td>{{Position}}</td>
-                <td>{{Team}}</td>
-                <td>{{Opp}}</td>
-                <td>{{Mycondition}}</td>
-                <td>{{details}}</td>
-                <td>{{ProjMins}}</td>
-                <td>{{Salary}}</td>
-                <td>{{Useage}}</td>
-                <td>{{PPGL10}}</td>
-                <td>{{PPM}}</td>
-                <td>{{OVP}}</td>
-                <td>{{ProjScore}}</td>
-                <td>{{GameLine}}</td>
-                <td>{{ProjectedPts}}</td>
-                <td>{{Value}}</td>
-                <td>{{SalaryAdjust}}</td>
-                <td>{{RecPr}}</td>
-                <td>{{PTsVPos}}</td>
-                <td>{{CriteriaRanking}}</td>
-                <td>{{awaygame}}</td>
-                <td>{{B2BGame}}</td>
-                <td>{{ThreeinFour}}</td>
-                <td>{{Ownership}}</td>
-              </tr>
-              {{/each}}
-              </tbody>
-            </table>
-          </div>
+
+            <div id='playerlist' class="container-fluid NBAtables">
+                <div class="row nbafantasy">
+                    <div class="col-md-12" id="nba">
+                        <div class="panel-body beforeResponsive">
+                            <div class="table-responsive">
+                                <table id='NBAcheatsheet' class="table table-bordered tableNbaFantasy">
+                      <thead>
+                        <tr style='font-size: 12px;cursor: pointer;'>
+                          <th>Player</th>
+                          <th></th>
+                          <th>GameTime</th>
+                          <th>H/A</th>
+                          <th>Position</th>
+                          <th>Team</th>
+                          <th>Opp</th>
+                          <th>Condition</th>
+                          <th>Details</th>
+                          <th>ProjMins</th>
+                          <th>Salary</th>
+                          <th>Usage%</th>
+                          <th>PPG/L10</th>
+                          <th>PPM</th>
+                          <th>OVP</th>
+                          <th>ProjTeamScore</th>
+                          <th>GameLine</th>
+                          <th>ProjectedPts</th>
+                          <th>Value</th>
+                          <th>SalaryAdjust</th>
+                          <th>RecentPerformance</th>
+                          <th>PTsVPos</th>
+                          <th>CriteriaRanking</th>
+                          <th>3rdConsecutiveAwayGame</th>
+                          <th>B2BGame</th>
+                          <th>3rdGamein4thNight</th>
+                          <th>ProjectedOwnership</th>
+                        </tr>
+                      </thead>
+                      <tbody class='list'>
+                      {{#each fantasyNBA}}
+                      <tr>
+                        <td class="name">{{Player}}</td>
+                        <td></td>
+                        <td>{{GameTime}}</td>
+                        <td id='HA'>{{HomeAway}}</td>
+                        <td>{{Position}}</td>
+                        <td>{{Team}}</td>
+                        <td>{{Opp}}</td>
+                        <td>{{Mycondition}}</td>
+                        <td>{{details}}</td>
+                        <td>{{ProjMins}}</td>
+                        <td>{{Salary}}</td>
+                        <td>{{Useage}}</td>
+                        <td>{{PPGL10}}</td>
+                        <td>{{PPM}}</td>
+                        <td>{{OVP}}</td>
+                        <td>{{ProjScore}}</td>
+                        <td>{{GameLine}}</td>
+                        <td>{{ProjectedPts}}</td>
+                        <td>{{Value}}</td>
+                        <td>{{SalaryAdjust}}</td>
+                        <td>{{RecPr}}</td>
+                        <td>{{PTsVPos}}</td>
+                        <td>{{CriteriaRanking}}</td>
+                        <td>{{awaygame}}</td>
+                        <td>{{B2BGame}}</td>
+                        <td>{{ThreeinFour}}</td>
+                        <td>{{Ownership}}</td>
+                      </tr>
+                      {{/each}}
+                      </tbody>
+                    </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
     </div>
-  </div>
+  <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
+
+
+  <script type="text/javascript">
+
+
+      var options = {
+      valueNames: [ 'name', 'born' ]
+    };
+
+    var userList = new List('users', options);
+
+      $(document).on('click', '.test', function() {
+
+          var btnTeam = $(this);
+          var btnTeamText = $(this).text();
+
+            console.log(btnTeamText);
+          var myteam = $('tr');
+          if ($(btnTeam).hasClass('highlight')) {
+              $(btnTeam).removeClass('highlight');
+          } else {
+              $(btnTeam).addClass('highlight');
+          }
+          for (var i = 0; i < myteam.length; i++) {
+              if (myteam[i].cells[5].innerText == btnTeamText) {
+
+                  $(myteam[i]).toggle();
+              }
+          }
+      });
+  </script>
 
   <div class="container-fluid topvaluetable">
     <div class="row">
@@ -794,7 +860,7 @@ function mySearchFunction() {
   }
 }
 </script>
-{{#if requser}}
+<!-- {{#if requser}}
 <script type="text/javascript">
 setTimeout(function(){
   swal({
@@ -818,4 +884,4 @@ setTimeout(function(){
   });
 }, 10000);
 </script>
-{{/unless}}
+{{/unless}} -->
