@@ -15,7 +15,7 @@ var hidemebitch = $('.hidemebitch');
 var tablelegend = $('.tablelegend')
 var cheatsheettable = $('.cheatsheettable')
 var topplays = $('.topplays')
-
+var users = $('#users');
 var switchToDk = $('#switchToDk');
 var switchToFd = $('#switchToFd');
 var draftkingsHeader = $('#draftkingsHeader');
@@ -36,7 +36,7 @@ var fanduelHeader = $('#fanduelHeader');
     cheatsheettable.show();
     topplays.show();
   });
-  
+
   $('.topplays').click(function(){
     tablelegend.hide();
     topplays.hide();
