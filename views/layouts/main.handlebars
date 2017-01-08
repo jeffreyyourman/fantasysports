@@ -22,6 +22,8 @@
 
     <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
     <link href="/assets/Themecss/style.css" rel="stylesheet" type="text/css">
+    <link href="/assets/bootstrapsocial/bootstrap-social.css" rel="stylesheet" type="text/css">
+
     <!--custom-css-->
     <!--fonts-->
     <link href="http://fonts.googleapis.com/css?family=Audiowide" rel="stylesheet" type="text/css">
@@ -41,7 +43,29 @@
         enable_page_level_ads: true
       });
     </script>
-    
+    <style media="screen">
+
+    ul.navbar-right.navigate .fbloginLI .fbloginA {
+        font-family: none;
+        font-weight: 400;
+        font-size: 0.75em;
+        color: #fff;
+        padding: 20px;
+        border-radius: 0px;
+    }
+    .btn-social>:first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 25px;
+    line-height: 50px;
+    font-size: 2.5em;
+    text-align: center;
+    border-right: 0px solid rgba(0,0,0,0.2);
+}
+
+    </style>
 </head>
 <body>
     <div class="header" id="home">
@@ -97,7 +121,11 @@
                             <li class='navlist'><a href="https://www.facebook.com/DFSAnalytics/" target="_blank"><i class="fa fa-facebook" style="font-size:30px;color:#3b5998"></i></a></li>
                             <li class='navlist'><a href="https://twitter.com/dfsanalysts" target="_blank"><i class="fa fa-twitter" style="font-size:30px;color:#1dcaff"></i></a></li>
                             <li class='navlist'><a href="https://www.instagram.com/dfsanalysts/" target="_blank"><img style='width:30px;' src="/assets/images/instagramIcon.png" alt=""></a></li>
-                            <li><a href="/login/facebook">Login with fb</a></li>
+                            <li class='fbloginLI'> <a href="/login/facebook" class="btn btn-block btn-social btn-facebook fbloginA">
+                                <span class="fa fa-facebook"></span> Sign in with Facebook
+                              </a>
+                            </li>
+                            <!-- <li><a href="/login/facebook">Login with fb</a></li> -->
                             <li class="dropdown">
                               <a class="dropdown-toggle" data-toggle="dropdown" href="#">DFS Sports
                               <span class="caret"></span></a>
