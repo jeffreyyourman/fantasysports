@@ -81,7 +81,7 @@
 
                         {{#each fantasyNBATeams}}
 
-                            <button class='test btn-default' type="button" name="button"><span style='color:white;'>x</span> {{this.Team}}</button>
+                            <button class='test btn-default' type="button" name="button">{{this.Team}}</button>
                         {{/each}}
                         <br><br>
                     </div>
@@ -208,25 +208,24 @@
 
     var userList = new List('users', options);
 
-      $(document).on('click', '.test', function() {
+    $(document).on('click', '.test', function() {
 
-          var btnTeam = $(this);
-          var btnTeamText = $(this).text();
-
+            var btnTeam = $(this);
+            var btnTeamText = $(this).text();
             console.log(btnTeamText);
-          var myteam = $('tr');
-          if ($(btnTeam).hasClass('highlight')) {
-              $(btnTeam).removeClass('highlight');
-          } else {
-              $(btnTeam).addClass('highlight');
-          }
-          for (var i = 0; i < myteam.length; i++) {
-              if (myteam[i].cells[5].innerText == btnTeamText) {
+            var myteam = $('tr');
+            if ($(btnTeam).hasClass('highlight')) {
+                $(btnTeam).removeClass('highlight');
+            } else {
+                $(btnTeam).addClass('highlight');
+            }
+            for (var i = 0; i < myteam.length; i++) {
+                if (myteam[i].cells[5].innerText == btnTeamText) {
 
-                  $(myteam[i]).toggle();
-              }
-          }
-      });
+                    $(myteam[i]).toggle();
+                }
+            }
+        });
   </script>
 
   <div class="container-fluid topvaluetable">
@@ -851,23 +850,6 @@ function myPositionFunction() {
   }
 }
 
-function mySearchFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySearchInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("NBAcheatsheet");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
 </script>
 {{#if requser}}
 <script type="text/javascript">
