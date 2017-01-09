@@ -62,19 +62,18 @@
                 <div class="row">
                     <div style='background-color:white;' class="col-md-5 hidemebitch">
                       <br><p><u>Table Filters</u></p><br>
-                        <input class="search" placeholder="Search for NBA Players" />
-                        <button class="sort" data-sort="name">
-                            Sort by name
-                        </button>
+                        <input class="search" data-sort="name" placeholder="Search for NBA Players" />
                         <br>
-                        <br>
-                        <select style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
+                        <!-- <input class="search" data-sort="position" placeholder="Search for pos Players" /> -->
+                        <!-- <input class="search" placeholder="Search pos: write pg or PG etc etc" /> -->
+
+                        <select class='search' data-sort="position" style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' oonchange='myPositionFunction()'>
                           <option value="" disabled selected>Filter by position</option>
-                          <option value="pg">PG</option>
-                          <option value="sg">SG</option>
-                          <option value="sf">SF</option>
-                          <option value="pf">PF</option>
-                          <option value="c">C</option>
+                          <option value="PG">PG</option>
+                          <option value="SG">SG</option>
+                          <option value="SF">SF</option>
+                          <option value="PF">PF</option>
+                          <option value="C">C</option>
                         </select>
                         <br>
                         <br>
@@ -161,7 +160,7 @@
                         <td></td>
                         <td>{{GameTime}}</td>
                         <td id='HA'>{{HomeAway}}</td>
-                        <td>{{Position}}</td>
+                        <td class='position'>{{Position}}</td>
                         <td>{{Team}}</td>
                         <td>{{Opp}}</td>
                         <td>{{Mycondition}}</td>
@@ -201,12 +200,22 @@
 
   <script type="text/javascript">
 
-
       var options = {
-      valueNames: [ 'name', 'born' ]
+      valueNames: [ 'name', 'position' ]
     };
 
     var userList = new List('users', options);
+    $('#mySelectedInput').change(function () {
+      var selection = this.value;
+      console.log(selection);
+      if (selection) {
+          userList.filter(function(item) {
+              return (item.values().position == selection);
+          });
+      } else {
+          userList.filter();
+      }
+    });
 
     $(document).on('click', '.test', function() {
 
@@ -222,9 +231,31 @@
                 if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
 
                     $(myteam[i]).toggle();
+
+
                 }
             }
         });
+    // function myPositionFunction() {
+    //   var input, filter, table, tr, td, i;
+    //   input = document.getElementById("mySelectedInput");
+    //   filter = input.value.toUpperCase();
+    //   table = document.getElementById("NBAcheatsheet");
+    //   tr = table.getElementsByTagName("tr");
+    //   for (i = 0; i < tr.length; i++) {
+    //     td = tr[i].getElementsByTagName("td")[4];
+    //     if (td) {
+    //       if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+    //         tr[i].style.display = "";
+    //       } else {
+    //         tr[i].style.display = "none";
+    //       }
+    //     }
+    //   }
+    // }
+
+
+
   </script>
 
   <div class="container-fluid topvaluetable">
@@ -831,23 +862,7 @@ $(document).ready(function(){
 });
 </script>
 <script type="text/javascript">
-function myPositionFunction() {
-  var input, filter, table, tr, td, i;
-  input = document.getElementById("mySelectedInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("NBAcheatsheet");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[4];
-    if (td) {
-      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
+
 
 </script>
 {{#if requser}}
