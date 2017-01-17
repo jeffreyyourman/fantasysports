@@ -62,7 +62,7 @@
                 <div class="row">
                     <div style='background-color:white;' class="col-md-5 hidemebitch">
                       <br><p><u>Table Filters</u></p><br>
-                        <input class="search" data-sort="name" placeholder="Search for NBA Players" />
+                        <input style='margin-top:1%;' type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
                         <br>
                         <!-- <input class="search" placeholder="Search pos: write pg or PG etc etc" /> -->
 
@@ -192,69 +192,7 @@
                 </div>
             </div>
         </div>
-
     </div>
-  <script src="http://listjs.com/assets/javascripts/list.min.js"></script>
-
-
-  <script type="text/javascript">
-  $(document).on('click', '.test', function() {
-
-          var btnTeam = $(this);
-          var btnTeamText = $(this).text();
-          var myteam = $('tr');
-          if ($(btnTeam).hasClass('highlight')) {
-              $(btnTeam).removeClass('highlight');
-          } else {
-              $(btnTeam).addClass('highlight');
-          }
-          for (var i = 0; i < myteam.length; i++) {
-              if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
-
-                  $(myteam[i]).toggle();
-
-
-              }
-          }
-      });
-      var options = {
-      valueNames: [ 'name', 'position' ]
-    };
-
-    var userList = new List('users', options);
-    // $('#mySelectedInput').change(function () {
-    //   var selection = this.value;
-    //   console.log(selection);
-    //   if (selection) {
-    //       userList.filter(function(item) {
-    //           return (item.values().position == selection);
-    //       });
-    //   } else {
-    //       userList.filter();
-    //   }
-    // });
-    function myPositionFunction() {
-      var input, filter, table, tr, td, i;
-      input = document.getElementById("mySelectedInput");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("NBAcheatsheet");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[4];
-        if (td) {
-          if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }
-      }
-    }
-
-
-
-  </script>
-
   <div class="container-fluid topvaluetable">
     <div class="row">
       <div class="col-md-6">
@@ -857,11 +795,72 @@ $(document).ready(function(){
       $("#chatmessages").animate({ scrollTop: $(document).height() }, 1000);
   }
 });
-</script>
-<script type="text/javascript">
+
+function mySearchFunction() {
+    var input, filter, table, tr, td, i;
+    input = document.getElementById("mySearchInput");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("NBAcheatsheet");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+            if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+}
+    function myPositionFunction() {
+        var input, filter, table, tr, td, i;
+        input = document.getElementById("mySelectedInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("NBAcheatsheet");
+        tr = table.getElementsByTagName("tr");
 
 
+
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[4];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+    $(document).on('click', '.test', function() {
+
+            var btnTeam = $(this);
+            var btnTeamText = $(this).text();
+            var myteam = $('tr');
+            if ($(btnTeam).hasClass('highlight')) {
+                $(btnTeam).removeClass('highlight');
+                for (var i = 0; i < myteam.length; i++) {
+                    if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
+
+                        $(myteam[i]).show();
+
+
+                    }
+                }
+            } else {
+                $(btnTeam).addClass('highlight');
+                for (var i = 0; i < myteam.length; i++) {
+                    if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
+
+                        $(myteam[i]).hide();
+                    }
+                }
+            }
+          });
+
 </script>
+
 {{#if requser}}
 <script type="text/javascript">
 setTimeout(function(){
