@@ -1,3 +1,6 @@
+.navbar-brand {
+  padding:5px 15px;
+}
 .colormein .colormein2>.active>a, .colormein .colormein2>.active>a:focus, .colormein .colormein2>.active>a:hover {
   font-family: 'Audiowide', cursive;
   text-decoration: none;
@@ -18,11 +21,11 @@
   }
   .colormein .colormein2>.doubleNavLists>.doubleNavListsLink {
     color:#021A3A;
-    font-size: 15px;
+    font-size: 12px;
     font-family: 'Audiowide', cursive;
   }
   .colormein .doubleNavPage {
     font-family: 'Audiowide', cursive;
-    font-size:24px;
+    font-size:22px;
     color:black;
   }
