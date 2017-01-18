@@ -272,6 +272,15 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
     res.render('users/contactus', hbsObject);
   });
 
+  app.get('/Comparison', function(req,res){
+    var requser = req.user;
+
+    var hbsObject = {
+    requser:requser
+    }
+    res.render('fantasydata/comparison', hbsObject);
+  });
+
 app.use('/', routes);
 app.use('/users', routes);
 // app.use('/users', userdata_controller);
