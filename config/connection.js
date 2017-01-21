@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL){
   });
 }
 
-// var connection = mysql.createConnection({
+// connection = mysql.createConnection({
 //   port: 3306,
 //   host: 'localhost',
 //   user: 'root',
