@@ -108,3 +108,58 @@ CREATE TABLE googlesheetsapiNBATopPlays (
   PRIMARY KEY (NBATopPlaysPlayerId)
 );
 =======NFL SCHEMA END =======
+
+
+
+
+
+
+CREATE TABLE googlesheetsapi (
+  playerId int NOT NULL AUTO_INCREMENT,
+  Player varchar(255) NOT NULL,
+  HomeAway varchar(255) NOT NULL,
+  Position varchar(255) NOT NULL,
+  Team varchar(255) NOT NULL,
+  Opp varchar(255) NOT NULL,
+  Mycondition varchar(255) NOT NULL,
+  details varchar(255) NOT NULL,
+  posid varchar(255) NOT NULL,
+  AvgMinsL10 varchar(255) NOT NULL,
+  ProjMins float(10,2),
+  Salary int,
+  Useage varchar(255) NOT NULL,
+  PPGL10 varchar(255) NOT NULL,
+  PPM float(10,3),
+  OVP float(10,3),
+  GLAdjust varchar(255) NOT NULL,
+  TotalAdjust varchar(255) NOT NULL,
+  -- ProjScore Decimal,
+  ProjScore varchar(255) NOT NULL
+  GameLine varchar(255) NOT NULL,
+  ProjectedPts float(10,3),
+  Value float(10,3),
+  Ownership varchar(255) NOT NULL,
+  PathCompare  varchar(255) NOT NULL,
+  ExpectedValue varchar(255) NOT NULL,
+  NetValue varchar(255) NOT NULL,
+  GamesPlayed varchar(255) NOT NULL,
+  SalaryAdjust varchar(255) NOT NULL,
+  RecPr varchar(255) NOT NULL,
+  Score varchar(255) NOT NULL,
+  PTsVPos varchar(255) NOT NULL,
+  -- PTsVPos float(10,3),
+  DeleteSuggested varchar(255) NOT NULL,
+  CriteriaRanking int,
+  GameTime varchar(255) NOT NULL,
+  awaygame varchar(255) NOT NULL,
+  B2BGame varchar(255) NOT NULL,
+  ThreeinFour varchar(255) NOT NULL,
+  PlayerCount varchar(255) NOT NULL,
+  PPMDK varchar(255) NOT NULL,
+  ProjectedPtsDK float(10,3),
+  SalaryDK int,
+  PositionDK varchar(255) NOT NULL,
+  ValueDK float(10,3),
+  updated varchar (255) NOT NULL,
+  PRIMARY KEY (playerId)
+);
