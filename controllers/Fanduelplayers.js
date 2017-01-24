@@ -74,13 +74,13 @@ var fanduelNBADB = function() {
                 // var value = myNBA.gsx$value.$t;
                 var salaryadjust = myNBA.gsx$salaryadjust.$t;
                 var recpr = myNBA.gsx$recpr.$t;
-                var ptsvspos = myNBA.gsx$ptsvpos.$t;
+                // var ptsvspos = myNBA.gsx$ptsvpos.$t;
                 var criteriaranking = myNBA.gsx$criteriaranking.$t;
                 var score = myNBA.gsx$score.$t;
 
 
 
-                
+
                 var projmins = parseFloat(myNBA.gsx$projmins.$t);
                 var ovp = parseFloat(myNBA.gsx$ovp.$t);
                 var ppm = parseFloat(myNBA.gsx$ppm.$t);
@@ -90,12 +90,12 @@ var fanduelNBADB = function() {
                 var value = parseFloat(myNBA.gsx$value.$t);
                 // var salaryadjust = parseFloat(myNBA.gsx$salaryadjust.$t);
                 // var recpr = parseFloat(myNBA.gsx$recpr.$t);
-                // var ptsvspos = parseFloat(myNBA.gsx$ptsvpos.$t);
+                var ptsvspos = parseFloat(myNBA.gsx$ptsvpos.$t);
                 // var criteriaranking = parseFloat(myNBA.gsx$criteriaranking.$t);
                 // var score = parseFloat(myNBA.gsx$score.$t);
                 var mybool = false;
 
-                if ((isNaN(projmins) == mybool) && (isNaN(ovp) == mybool) && (isNaN(ppm) == mybool) && (isNaN(projectedpts) == mybool) && (isNaN(value) == mybool)) {
+                if ((isNaN(projmins) == mybool) && (isNaN(ovp) == mybool) && (isNaN(ppm) == mybool) && (isNaN(projectedpts) == mybool) && (isNaN(value) == mybool) && (isNaN(ptsvspos) == mybool)) {
                   //bla bla
                 } else {
                   projmins = 0;
@@ -103,6 +103,7 @@ var fanduelNBADB = function() {
                   ppm = 0;
                   projectedpts = 0;
                   value = 0;
+                  ptsvspos = 0;
                 }
 
                 var turtle = [myNBA.gsx$player.$t, myNBA.gsx$ha.$t, myNBA.gsx$position.$t, myNBA.gsx$team.$t, myNBA.gsx$opp.$t, myNBA.gsx$condition.$t, myNBA.gsx$details.$t, myNBA.gsx$posid.$t, myNBA.gsx$avgminsl10.$t, projmins, myNBA.gsx$salary.$t, myNBA.gsx$useage.$t, myNBA.gsx$ppgl10.$t, ppm, ovp, myNBA.gsx$gladjust.$t, myNBA.gsx$totaladjust.$t, projscore, gameline, projectedpts, value, myNBA.gsx$ownership.$t, myNBA.gsx$pathcompare.$t, myNBA.gsx$expectedvalue.$t, myNBA.gsx$netvalue.$t, myNBA.gsx$gamesplayed.$t, salaryadjust, recpr, score, ptsvspos, myNBA.gsx$delete.$t, criteriaranking, myNBA.gsx$gametime.$t, myNBA.gsx$awaygame.$t, myNBA.gsx$b2bgame.$t, myNBA.gsx$threeinfour.$t, myNBA.gsx$playercount.$t,myNBA.gsx$dkppm.$t, myNBA.gsx$dkproj.$t, myNBA.gsx$dksal.$t, myNBA.gsx$dkpos.$t, myNBA.gsx$dkvalue.$t ]
