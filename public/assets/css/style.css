@@ -6,8 +6,8 @@ body,html{
 .dropdownSports {
   background-color:#021A3A;
   min-width: 111px;
-  border-bottom-left-radius: 25px;
-  border-bottom-right-radius: 25px;
+  /*border-bottom-left-radius: 25px;*/
+  /*border-bottom-right-radius: 25px;*/
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
