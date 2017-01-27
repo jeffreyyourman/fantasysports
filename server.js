@@ -77,6 +77,7 @@ var routes = require('./controllers/main_routes.js');
 var userdata_controller = require('./controllers/userdata_controller.js');
 var Fanduelplayers = require('./controllers/Fanduelplayers.js');
 var FanduelplayersNFL = require('./controllers/FanduelplayersNFL.js');
+var lineupbuilder = require('./controllers/lineupbuilder.js')
 
 
 app.get('/load', function(req,res){
@@ -279,6 +280,10 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
     requser:requser
     }
     res.render('fantasydata/comparison', hbsObject);
+  });
+
+  app.get('/test', function(req,res){
+    // var lineupbuildertest = new lineupbuilder();
   });
 
 app.use('/', routes);
