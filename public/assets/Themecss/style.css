@@ -68,7 +68,7 @@ ul.navbar-right.navigate li a{
     font-size: 0.9em;
     color: #fff;
     padding: 20px;
-    border-radius: 35px 0px 35px 0px;
+    /*border-radius: 35px 0px 35px 0px;*/
 }
 ul.navbar-right.navigate li a:hover{
     text-decoration: none;
