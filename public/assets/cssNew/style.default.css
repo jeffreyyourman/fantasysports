@@ -1657,12 +1657,12 @@ body {
   background-color: ;
 }
 a {
-  color: #ff7473;
+  color: #ff0;
   text-decoration: none;
 }
 a:hover,
 a:focus {
-  color: #ff2826;
+  color: #ff0;
   text-decoration: underline;
 }
 a:focus {
