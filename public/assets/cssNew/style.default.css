@@ -27,9 +27,313 @@ header {
 }
 section {
   position: relative;
-  padding-top: 90px;
+  padding-top: 30px;
   padding-bottom: 90px;
 }
+/*color and nav bar overwrights*/
+.navbar.navbar-default.navbar-fixed-top{
+  background-color: #464E58;
+
+}.footer__copyright{
+  background-color: #464E58 !important;
+  color: white;
+}.navbar-default .navbar-nav > li > a {
+    color: white;
+}.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #edb82a;
+}.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    background-color: transparent;
+    color: #edb82a;
+}.navbar ul.nav > li.active > a, .navbar ul.nav > li.open > a {
+    text-decoration: none !important;
+    border-top-color: white;
+}#red{
+  color: #edb82a;
+}#blue{
+  color: #021A3A;
+}
+.nav{
+    font-size: 16px;
+
+}
+.closechat:hover {
+  color: #edb82a;
+}
+.name1{
+    font-size: 25px;
+    margin-top: 18.5px;
+    /*margin-left: -25px;*/
+}.text-page.section-inverse.background-secondary{
+background-color: #edb82a;
+}.navbar ul.nav > li > a:hover {
+    border-top-color: #edb82a;
+}
+/*Chat stuff start*/
+.playerfalse {
+  color:black;
+}
+#nbatopplayers th{
+    border: white solid 1px !important;
+}
+
+#NBAcheatsheet th{
+    border: white solid 1px !important;
+}
+.player0{
+  background-color: lightgrey;
+  color:black;
+}
+.player1{
+  color: black;
+}
+
+#swapzone {
+  /*color:#edb82a;*/
+}
+    hr {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        border: 0;
+        border-top: 1px solid #a9a9a9;
+    }
+
+#chatmessages{
+  overflow:auto;
+  height:325px;
+  background-color: white;
+  padding: 20px;
+
+/*  border: solid;*/
+}
+
+.chatdiv {
+  bottom: 0;
+  position: fixed;
+  right:5%;
+}
+.chatdivshow {
+  padding-top: 10px;
+  height:450px;
+  right:5%;
+  /*overflow:auto;*/
+  background-color: #515B66;
+  width:250px;
+  position: fixed;
+  bottom: 0px;
+  border: solid #515B66 1px;
+}
+#chatbar {
+  color: #edb82a !important;
+  margin-left: 3%;
+  margin-bottom:3%;
+  font-size: 12px;
+}
+
+#chatinput {
+  border-radius: 8px;
+  height:35px;
+}
+#chatsend {
+  border-radius:8px;
+}
+
+.chatbutton {
+  /*background-color: #021A3A;
+  color: #edb82a;*/
+  background-color: #edb82a;
+  color: white;
+  font-weight: bold !important;
+  font-size: 14px !important;
+  border: none;
+
+}
+.closechat {
+    margin-bottom: 10px;
+    margin-left: 90%;
+    font-size: 18px;
+    color:white;
+    border-color: none;
+    display: inline-block;
+}
+.stickbutton {
+    text-align: center;
+}
+
+/*Chat stuff end*/
+/*Suggested players start*/
+.suggestedPlayersNBA {
+  font-size: 1.07em;
+  color:#edb82a;
+}
+.suggestedPlayersh4 {
+  text-align: center;
+  color:#edb82a;
+}
+.suggesteddiv {
+  bottom: 0;
+  position: fixed;
+  left:5%;
+}
+
+.suggestedDivScroll {
+  overflow:auto;
+  height:500px;
+}
+.suggesteddivshow {
+  height:450px;
+  left:5%;
+  background-color: rgb(155, 218, 242);
+  width:250px;
+  position: fixed;
+  bottom: 0px;
+}
+#suggestedplayersbar {
+  margin-left: 5%;
+  margin-bottom:5%;
+}
+
+#suggestedinput {
+  border-radius: 8px;
+  height:35px;
+}
+#suggestedsend {
+  border-radius:8px;
+}
+
+.suggestedbutton {
+  background-color: #edb82a;
+  color: #021A3A;
+  font-size: 16px;
+}
+
+.closesuggested {
+    margin-left: 90%;
+    font-size: 18px;
+    background-color: rgb(155, 218, 242);
+    color:white;
+    border-color: none;
+}
+.stickbutton {
+    text-align: center;
+}
+
+/*Suggested players end*/
+/*Table stuff start*/
+.header {
+  background-color: #dbdbdb;
+}
+#NBAcheatsheet > thead:first-child > tr:first-child > th:first-child {
+    position: absolute;
+    display: inline-block;
+    background-color: inherit;
+    height: 96%;
+    background-color: #dbdbdb;
+    width: 200px;
+}
+
+#NBAcheatsheet > tbody > tr > td:first-child {
+    position: absolute;
+    display: inline-block;
+    /*background-color: #fffbf0;*/
+    width: 200px;
+
+}
+
+#NBAcheatsheet > thead:first-child > tr:first-child > th:nth-child(2) {
+    padding-left: 190.5px;
+}
+
+#NBAcheatsheet > tbody > tr > td:nth-child(2) {
+    padding-left: 50px !important;
+}
+
+
+.hidemebitch {
+  margin-top:5%;
+  padding:1%;
+  border: solid 1px #C0C0C0;
+}
+/*#nba{
+width: 90%;
+
+}*/
+table{
+  width: 300px;
+}
+td {
+  font-size: 12px;
+  background-color: white;
+}
+.pull-left {
+  float:left!important;
+}
+.dataTables_paginate {
+  float: left !important;
+}
+
+::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 4px;
+  height:4px;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: rgba(0,0,0,.5);
+  -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+
+div.tooltip-inner {
+
+}
+
+td.highlight {
+  font-weight: bold;
+  color: blue;
+}
+.infoicon {
+  color:#021A3A;
+}
+
+.NFLtables {
+  list-style: none;
+}
+.nbaposition {
+background-color:#021A3A;
+color:white;
+
+}
+
+.btn-group-lg>.btn, .btn-lg {
+  padding: 5px 10px;
+  font-size: 16px;
+}
+.btn-info.focus, .btn-info:focus {
+  color:white;
+  background-color: #021A3A;
+
+  border-color: #021A3A;
+}
+.btn-info {
+  color:white;
+  background-color: #021A3A;
+  border-color: #021A3A;
+}
+.btn-info.focus, .btn-info:focus {
+  color:white;
+  background-color: #021A3A;
+  border-color: #021A3A;
+}
+.btn-info:hover {
+  background-color: #edb82a;
+  color:white;
+}
+.tableDescription {
+  background-color: #021A3A;
+  color:white;
+}
+
+/*Table stuff end*/
 section.background-gray-lighter {
   background: #cdcdcd;
 }
@@ -275,8 +579,8 @@ fieldset[disabled] .btn-white.active {
   height: 60px;
   line-height: 60px;
   border-radius: 30px;
-  border: solid 1px #ff7473;
-  color: #ff7473;
+  border: solid 1px #021A3A;
+  color: #021A3A;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
@@ -289,8 +593,8 @@ fieldset[disabled] .btn-white.active {
   color: #746ea9;
 }
 .icon.brand-terciary {
-  border-color: #41a6ca;
-  color: #41a6ca;
+  border-color: #021A3A;
+  color: #021A3A;
 }
 .icon.brand-four {
   border-color: #34314c;
@@ -306,6 +610,12 @@ INTRO
 .text-intro {
   text-align: center;
   color: #ffffff;
+  /*background: url(../img/sportimg/footballfield1.jpg);*/
+ /* background-image: -webkit-linear-gradient(left, color-stop(#ff7473 0%), color-stop(#46426f 60%));*/
+  background-image: url(../images/sports1.png);
+  /*background-image: url(http://www.sawyoo.com/postpic/2009/05/basketball-court-wood_97196.jpg);*/
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff7473', endColorstr='#ff46426f', GradientType=1);
 }
 .text-intro h1 {
   font-weight: 700;
@@ -322,21 +632,40 @@ INTRO
   color:black;
 }
 .text-intro span {
-  color: #41a6ca;
+  color: #edb82a;
 }
 @media (min-width: 1200px) {
   .text-intro {
-    background: url(../img/sportimg/footballfield1.jpg);
-    /*background-image: -webkit-linear-gradient(left, color-stop(#ff7473 0%), color-stop(#46426f 60%));*/
-    /*background-image: linear-gradient(to right, #ff7473 0%, #46426f 60%);*/
+    /*background: url(../img/sportimg/footballfield1.jpg);*/
+   /* background-image: -webkit-linear-gradient(left, color-stop(#ff7473 0%), color-stop(#46426f 60%));*/
+    background-image: url(../images/sports1.png);
+    /*background-image: url(http://www.sawyoo.com/postpic/2009/05/basketball-court-wood_97196.jpg);*/
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff7473', endColorstr='#ff46426f', GradientType=1);
+    height:400px;
   }
 }
-@media (max-width: 1199px) {
+@media (min-width:476px) and (max-width: 1199px) {
   .text-intro {
-    background: url(../img/sportimg/footballfield1.jpg);
-    /*background: #46426f;*/
+    /*background: url(../img/sportimg/footballfield1.jpg);*/
+   /* background-image: -webkit-linear-gradient(left, color-stop(#ff7473 0%), color-stop(#46426f 60%));*/
+    background-image: url(../images/sports1.png);
+    /*background-image: url(http://www.sawyoo.com/postpic/2009/05/basketball-court-wood_97196.jpg);*/
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff7473', endColorstr='#ff46426f', GradientType=1);
+    height:475px;
+  }
+}
+
+@media (min-width:400px) and (max-width: 475px) {
+  .text-intro {
+    /*background: url(../img/sportimg/footballfield1.jpg);*/
+   /* background-image: -webkit-linear-gradient(left, color-stop(#ff7473 0%), color-stop(#46426f 60%));*/
+    background-image: url(../images/sports1.png);
+    /*background-image: url(http://www.sawyoo.com/postpic/2009/05/basketball-court-wood_97196.jpg);*/
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff7473', endColorstr='#ff46426f', GradientType=1);
+    height:600px;
   }
 }
 /*
@@ -370,7 +699,7 @@ SERVICES / INTEGRATIONS
   width: 100px;
   height: 1px;
   margin: 20px auto 20px;
-  background: #ff7473;
+  background: #021A3A;
 }
 .services p {
   font-size: 14px;
@@ -481,7 +810,7 @@ a:active {
 .owl-theme .owl-controls .owl-page.active span,
 .owl-carousel .owl-controls.clickable .owl-page:hover span,
 .owl-theme .owl-controls.clickable .owl-page:hover span {
-  background: #ff7473;
+  background: #021A3A;
 }
 .owl-carousel .owl-controls .owl-buttons,
 .owl-theme .owl-controls .owl-buttons {
@@ -553,14 +882,14 @@ a:active {
   height: 30px;
   line-height: 30px;
   border-radius: 15px;
-  color: #41a6ca;
+  color: #021A3A;
   font-size: 40px;
   float: left;
   text-align: center;
 }
 .testimonials .item .testimonial .name-picture {
   float: right;
-  width: 80%;
+  /*width: 80%;*/
   text-align: right;
 }
 .testimonials .item .testimonial .name-picture h5 {
@@ -575,8 +904,7 @@ a:active {
 }
 .testimonials .item .testimonial .name-picture img {
   float: right;
-  width: 60px;
-  border-radius: 30px;
+  width: 100%;
   margin-left: 10px;
 }
 .box-simple {
@@ -848,7 +1176,7 @@ NAVBAR
 .navbar-toggle {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #41a6ca;
+  color: #021A3A;
 }
 ul.dropdown-menu li a {
   -webkit-transition: all 0.2s ease-out;
@@ -1206,7 +1534,7 @@ STYLE SWITCHER FOR DEMO
   border-bottom-color: transparent;
 }
 .navbar-default .navbar-brand {
-  color: #41a6ca;
+  color: #021A3A;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -1244,7 +1572,7 @@ STYLE SWITCHER FOR DEMO
   background-color: transparent;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #41a6ca;
+  background-color: #021A3A;
 }
 .navbar-default .navbar-collapse {
   border-color: transparent;
@@ -1257,7 +1585,7 @@ STYLE SWITCHER FOR DEMO
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #41a6ca;
+    color: #021A3A;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -1278,7 +1606,7 @@ STYLE SWITCHER FOR DEMO
   }
 }
 .navbar-default .navbar-link {
-  color: #41a6ca;
+  color: #021A3A;
 }
 .navbar-default .navbar-link:hover {
   color: #ffa7a6;
@@ -1326,7 +1654,7 @@ body {
   font-size: 16px;
   line-height: 1.55;
   color: #000000;
-  background-color: #ffffff;
+  background-color: ;
 }
 a {
   color: #ff7473;

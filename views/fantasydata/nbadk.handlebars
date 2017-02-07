@@ -11,67 +11,81 @@
     <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
     <script src="/assets/javascript/appNBA.js"></script>
     <style media="screen">
-    .highlight {
-        opacity: 0.2;
-    }
 
-    .test {
-      width:20%;
-      border:1px solid #edb82a;
-      background-color: #edb82a;
-      margin-bottom:0.5%;
-    }
-    .test:hover {
-      opacity: 0.5;
-      background-color: #edb82a;
-    }
 
     </style>
 </head>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <li style='list-style-type:none;' class="navbar-brand doubleNavPage">NBA</li>
-                <!-- <a class="navbar-brand doubleNavPage" href="#">NBA</a> -->
-            </div>
-            <ul class="nav navbar-nav navigate">
-                <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
-                <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
-                <!-- <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAAdvice">NBA Blog</a></li> -->
-                <!-- <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAPodcast">NBA Podcast</a></li> -->
-                <li class='doubleNavLists'><a class='doubleNavListsLink' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="header" id="home">
+  <!--js-->
+  <!-- <script src="/assets/ThemeJS/bootstrap.min.js"></script> -->
+  <!--js-->
+  <div class="banner">
+      <div style='padding-right:0px;padding-left:0px;' class="container-fluid">
+          <nav class="navbar navbar-default bg mainnav">
+              <!-- <div class="logo">
+                  <a href="/">DFS<span>Analysts</span></a>
+              </div> -->
+              <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed mod" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar wt"></span>
+                      <span class="icon-bar wt"></span>
+                      <span class="icon-bar wt"></span>
+                  </button>
+              </div>
+              <!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse bod bottomnavbar" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav navbar-left navigate ulNav">
+                      <li class='liNav navlist headernba'><a class='aNav mainnav' href="/NBAFanduel">NBA</a></li>
+                      <li class='liNav navlist awayfromhead'><a class='aNav' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+                      <li class='liNav navlist active'><a class='aNav' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+                      <li class='liNav navlist'><a href="/NBAAdvice">NBA Blog</a></li>
+                      <li class='liNav navlist'><a class='aNav' href="/NBAPodcast">NBA Podcast</a></li>
+                      <li class='liNav navlist'><a class='aNav' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
+                  </ul>
+              </div>
+
+
+              <!-- <div class="clearfix"></div>
+          </nav>
+          <script type="text/javascript" src="/assets/ThemeJS/move-top.js"></script>
+          <script type="text/javascript" src="/assets/ThemeJS/easing.js"></script>
+          <script type="text/javascript">
+              jQuery(document).ready(function($) {
+                  $(".scroll").click(function(event) {
+                      event.preventDefault();
+                      $('html,body').animate({
+                          scrollTop: $(this.hash).offset().top
+                      }, 1000);
+                  });
+              });
+          </script>
+          <div class="clear"></div> -->
+      </div>
+  </div>
+</div>
     <div class="container-fluid NBATeamTable">
 
-        <button type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
-        <br>
-        <br>
         <div id="users">
             <div class="container-fluid">
                 <div class="row">
-                    <div style='background-color:white;' class="col-md-5 hidemebitch">
-                        <br><p><u>Table Filters</u></p><br>
-                        <input style='margin-top:1%;' type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
-                        <!-- <button class="sort" data-sort="name">
-                            Sort by name
-                        </button> -->
-                        <br><br>
-                        <select style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
-                            <option value="" disabled selected>Filter by position</option>
-                            <option value="pg">PG</option>
-                            <option value="sg">SG</option>
-                            <option value="sf">SF</option>
-                            <option value="pf">PF</option>
-                            <option value="c">C</option>
-                        </select>
-                        <br><br>
-                        {{!#each fantasyNBATeams}}
+                    <div class="col-md-5 hidemebitch">
+                      <button style='float:right;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
+                      <p style='font-size:1.5em;margin-bottom:0px;'><em>Table Filters</em></p>
+                      <br>
+                        <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
+                        <br>
+                        <br>
+                        <!-- <input class="search" placeholder="Search pos: write pg or PG etc etc" /> -->
 
-                            <!-- <button class='test btn-default' type="button" name="button"><span style='color:white;'>x</span> {{this.Team}}</button> -->
-                        {{!/each}}
-                        <!-- <br><br> -->
+                        <select class='search' data-sort="position" style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
+                          <option value="" disabled selected>Filter by position</option>
+                          <option value="PG">PG</option>
+                          <option value="SG">SG</option>
+                          <option value="SF">SF</option>
+                          <option value="PF">PF</option>
+                          <option value="C">C</option>
+                        </select>
                     </div>
                     <div class="col-md-7">
                         <!-- <iframe width="100%" height="400" scrolling="no" frameborder="no" -->
@@ -83,20 +97,22 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
+                      <h2 id='fanduelHeader' style='font-size:2.3em; text-align:center;'><u>FanDuel NBA Cheat Sheet</u></h2>
+                      <h2 id='fanduelHeaderTopPlays' style='font-size:2.3em; text-align:center;'><u>FanDuel NBA Top Plays</u></h2>
+                      <br>
+                      <script type="text/javascript">
+                      $("#fanduelHeaderTopPlays").hide();
+                      </script>
 
-                        <h2 id='draftkingsHeader' style='font-size:2.3em; text-align:center;'><u>DraftKings NBA Cheat Sheet</u></h2>
-                        <h2 id='draftkingsHeaderTopPlays' style='font-size:2.3em; text-align:center;'><u>DraftKings NBA Top Plays</u></h2>
-                        <script type="text/javascript">
-                            $("#draftkingsHeaderTopPlays").hide();
-                        </script>
-                        <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
-                        <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to NBA Cheat Sheet</button>
-                        <script type="text/javascript">
-                            $(".cheatsheet").hide();
-                        </script>
-                        {{#each fantasyNBADate}}
-                            <p style='margin-top:1%;'>Last updated on {{this.updated}}</p>
-                        {{/each}}
+                      <button type="button" class="btn btn-info btn-lg topplays">Switch to Top Plays</button>
+
+                      <button type="button" class="btn btn-info btn-lg cheatsheet">Switch to NBA Cheat Sheet</button>
+                      <script type="text/javascript">
+                      $(".cheatsheet").hide();
+                      </script>
+                      {{#each fantasyNBADate}}
+                      <p style='margin-top:1%;' >Last updated on {{this.updated}}</p>
+                      {{/each}}
                     </div>
                 </div>
             </div>
@@ -132,8 +148,8 @@
                                             <th>PTsVPos</th>
                                             <th>CriteriaRanking</th>
                                             <th>3rdConsecutiveAwayGame</th>
-                                            <th>AwayB2BGame</th>
-                                            <th>Away3rdGamein4thNight</th>
+                                            <th>B2BGame</th>
+                                            <th>3rdGamein4thNight</th>
                                             <th>ProjectedOwnership</th>
                                         </tr>
                                     </thead>
@@ -202,8 +218,6 @@
                 table = document.getElementById("NBAcheatsheet");
                 tr = table.getElementsByTagName("tr");
 
-
-
                 for (i = 0; i < tr.length; i++) {
                     td = tr[i].getElementsByTagName("td")[4];
                     if (td) {
@@ -215,27 +229,6 @@
                     }
                 }
             }
-            $(document).on('click', '.test', function() {
-              var btnTeam = $(this);
-              var btnTeamText = $(this).text();
-              var myteam = $('tr');
-              if ($(btnTeam).hasClass('highlight')) {
-                  $(btnTeam).removeClass('highlight');
-                  for (var i = 0; i < myteam.length; i++) {
-                      if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
-                          $(myteam[i]).show();
-                      }
-                  }
-              } else {
-                  $(btnTeam).addClass('highlight');
-                  for (var i = 0; i < myteam.length; i++) {
-                      if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
-
-                          $(myteam[i]).hide();
-                      }
-                  }
-              }
-            });
         </script>
         <div class="container-fluid topvaluetable">
             <div class="row">
@@ -821,7 +814,7 @@
 
             {{#unless requser}}
                 <div id="chatbar">
-                    <p><a style='color:#5600ff; font-size:18px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
+                    <p><a style='color:#edb82a; font-size:18px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
                 </div>
             {{/unless}}
             <!-- <div id="swapzone"><input id="username" placeholder="Name"/>
@@ -833,20 +826,13 @@
         <script type="text/javascript" src="/assets/tablesorter/jquery.tablesorter.js"></script>
 
         <script type="text/javascript">
-            (function(i, s, o, g, r, a, m) {
-                i['GoogleAnalyticsObject'] = r;
-                i[r] = i[r] || function() {
-                    (i[r].q = i[r].q || []).push(arguments)
-                }, i[r].l = 1 * new Date();
-                a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-                a.async = 1;
-                a.src = g;
-                m.parentNode.insertBefore(a, m)
-            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-            ga('create', 'UA-86407503-2', 'auto');
-            ga('send', 'pageview');
+        ga('create', 'UA-86407503-2', 'auto');
+        ga('send', 'pageview');
             $(document).ready(function() {
                 {
                     $("table").tablesorter();

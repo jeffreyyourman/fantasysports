@@ -289,8 +289,8 @@ fieldset[disabled] .btn-white.active {
   color: #746ea9;
 }
 .icon.brand-terciary {
-  border-color: #41a6ca;
-  color: #41a6ca;
+  border-color: #0080FF;
+  color: #0080FF;
 }
 .icon.brand-four {
   border-color: #34314c;
@@ -550,7 +550,7 @@ a:active {
   height: 30px;
   line-height: 30px;
   border-radius: 15px;
-  color: #41a6ca;
+  color: #0080FF;
   font-size: 40px;
   float: left;
   text-align: center;
@@ -845,7 +845,7 @@ NAVBAR
 .navbar-toggle {
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: #41a6ca;
+  color: #0080FF;
 }
 ul.dropdown-menu li a {
   -webkit-transition: all 0.2s ease-out;
@@ -1203,7 +1203,7 @@ STYLE SWITCHER FOR DEMO
   border-bottom-color: transparent;
 }
 .navbar-default .navbar-brand {
-  color: #41a6ca;
+  color: #0080FF;
 }
 .navbar-default .navbar-brand:hover,
 .navbar-default .navbar-brand:focus {
@@ -1214,7 +1214,7 @@ STYLE SWITCHER FOR DEMO
   color: #777777;
 }
 .navbar-default .navbar-nav > li > a {
-  color: #41a6ca;
+  color: #0080FF;
 }
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
@@ -1241,7 +1241,7 @@ STYLE SWITCHER FOR DEMO
   background-color: transparent;
 }
 .navbar-default .navbar-toggle .icon-bar {
-  background-color: #41a6ca;
+  background-color: #0080FF;
 }
 .navbar-default .navbar-collapse {
   border-color: transparent;
@@ -1254,7 +1254,7 @@ STYLE SWITCHER FOR DEMO
 }
 @media (max-width: 767px) {
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #41a6ca;
+    color: #0080FF;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
   .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
@@ -1275,7 +1275,7 @@ STYLE SWITCHER FOR DEMO
   }
 }
 .navbar-default .navbar-link {
-  color: #41a6ca;
+  color: #0080FF;
 }
 .navbar-default .navbar-link:hover {
   color: #ffa7a6;

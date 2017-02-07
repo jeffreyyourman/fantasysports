@@ -10,72 +10,92 @@
       <link rel="stylesheet" href="/assets/css/styleNBA.css">
       <script src="https://cdn.firebase.com/js/client/2.4.1/firebase.js"></script>
 
-      <script src="/assets/javascript/appNBA.js"></script>
-      <style media="screen">
-          .highlight {
-              opacity: 0.2;
-          }
-
-          .test {
-            width:20%;
-            border:1px solid #edb82a;
-            background-color: #edb82a;
-            margin-bottom:0.5%;
-          }
-          .test:hover {
-            opacity: 0.5;
-            background-color: #edb82a;
-          }
-      </style>
 </head>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <ul class="nav navbar-nav navigate">
-          <li style='list-style-type:none;' class="navbar-brand doubleNavPage">NBA</li>
-        </ul>
-      </div>
-      <ul class="nav navbar-nav navigate">
-        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
-        <!-- <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAAdvice">NBA Blog</a></li> -->
-        <!-- <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAPodcast">NBA Podcast</a></li> -->
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
+  <!-- <nav class="navbar navbar-default">
+    <div class="container-fluid crazy">
+      <ul class="nav navbar-nav navigate ulNav">
+        <li class='liNav navlist'><a class='aNav' href="/NBAFanduel">NBA</a></li>
+        <li class='liNav navlist active'><a class='aNav' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+        <li class='liNav navlist'><a class='aNav' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+        <li><a href="/NBAAdvice">NBA Blog</a></li>
+        <li class='liNav navlist'><a class='aNav' href="/NBAPodcast">NBA Podcast</a></li>
+        <li class='liNav navlist'><a class='aNav' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
       </ul>
     </div>
-  </nav>
-  <div class="container-fluid NBATeamTable">
+  </nav> -->
+  <div class="header" id="home">
+      <!--js-->
+      <!-- <script src="/assets/ThemeJS/bootstrap.min.js"></script> -->
+      <!--js-->
+      <div class="banner">
+          <div style='padding-right:0px;padding-left:0px;' class="container-fluid">
+              <nav class="navbar navbar-default bg mainnav">
+                  <!-- <div class="logo">
+                      <a href="/">DFS<span>Analysts</span></a>
+                  </div> -->
+                  <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed mod" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar wt"></span>
+                          <span class="icon-bar wt"></span>
+                          <span class="icon-bar wt"></span>
+                      </button>
+                  </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                  <div class="collapse navbar-collapse bod bottomnavbar" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-left navigate ulNav">
+                          <li class='liNav navlist headernba'><a class='aNav mainnav' href="/NBAFanduel">NBA</a></li>
+                          <li class='liNav navlist awayfromhead active'><a class='aNav' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+                          <li class='liNav navlist'><a class='aNav' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+                          <li class='liNav navlist'><a href="/NBAAdvice">NBA Blog</a></li>
+                          <li class='liNav navlist'><a class='aNav' href="/NBAPodcast">NBA Podcast</a></li>
+                          <li class='liNav navlist'><a class='aNav' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
+                      </ul>
+                  </div>
 
-        <button type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
-        <br><br>
+
+                  <!-- <div class="clearfix"></div>
+              </nav>
+              <script type="text/javascript" src="/assets/ThemeJS/move-top.js"></script>
+              <script type="text/javascript" src="/assets/ThemeJS/easing.js"></script>
+              <script type="text/javascript">
+                  jQuery(document).ready(function($) {
+                      $(".scroll").click(function(event) {
+                          event.preventDefault();
+                          $('html,body').animate({
+                              scrollTop: $(this.hash).offset().top
+                          }, 1000);
+                      });
+                  });
+              </script>
+              <div class="clear"></div> -->
+          </div>
+      </div>
+  </div>
+
+  <div class="container-fluid NBATeamTable">
 
         <div id="users">
 
             <div class="container-fluid">
                 <div class="row">
-                    <div style='background-color:white;' class="col-md-5 hidemebitch">
-                      <br><p><u>Table Filters</u></p><br>
-                        <input style='margin-top:1%;' type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
-                        <br><br>
-                        <!-- <input class="search" placeholder="Search pos: write pg or PG etc etc" /> -->
+                  <div class="col-md-5 hidemebitch">
+                    <button style='float:right;' type="button" class="btn btn-info btn-lg tablelegend" data-toggle="modal" data-target="#myModal">Table Legend</button>
+                    <p style='font-size:1.5em;margin-bottom:0px;'><em>Table Filters</em></p>
+                    <br>
+                      <input type="text" id="mySearchInput" onkeyup="mySearchFunction()" placeholder="Search for NBA Players" title="Type in a name">
+                      <br>
+                      <br>
 
-                        <select class='search' data-sort="position" style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
-                          <option value="" disabled selected>Filter by position</option>
-                          <option value="PG">PG</option>
-                          <option value="SG">SG</option>
-                          <option value="SF">SF</option>
-                          <option value="PF">PF</option>
-                          <option value="C">C</option>
-                        </select>
-                        <br>
-                        <br>
-
-                        {{!#each fantasyNBATeams}}
-
-                            <!-- <button class='test btn-default' data-filter='{{this.Team}}' type="button" name="button"><span style='color:white;'>x</span> {{!this.Team}}</button> -->
-                        {{!/each}}
-                        <!-- <br><br> -->
-                    </div>
+                      <select class='search' data-sort="position" style='margin-top:1%;margin-bottom:5%;' id='mySelectedInput' onchange='myPositionFunction()'>
+                        <option value="" disabled selected>Filter by position</option>
+                        <option value="PG">PG</option>
+                        <option value="SG">SG</option>
+                        <option value="SF">SF</option>
+                        <option value="PF">PF</option>
+                        <option value="C">C</option>
+                      </select>
+                  </div>
                     <div class="col-md-7">
                         <!-- <iframe width="100%" height="200" scrolling="no" frameborder="no" -->
                         <!-- <iframe width="100%" height="200" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303857611&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe> -->
@@ -83,8 +103,6 @@
                 </div>
             </div>
             <br>
-
-
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-md-12">
@@ -141,15 +159,15 @@
                           <th>PTsVPos</th>
                           <th>CriteriaRanking</th>
                           <th>3rdConsecutiveAwayGame</th>
-                          <th>AwayB2BGame</th>
-                          <th>Away3rdGamein4thNight</th>
+                          <th>B2BGame</th>
+                          <th>3rdGamein4thNight</th>
                           <th>ProjectedOwnership</th>
                         </tr>
                       </thead>
                       <tbody class='list'>
                       {{#each fantasyNBA}}
                       <tr>
-                        <td class="name">{{Player}}</td>
+                        <td class="tdname">{{Player}}</td>
                         <td></td>
                         <td>{{GameTime}}</td>
                         <td id='HA'>{{HomeAway}}</td>
@@ -188,10 +206,6 @@
         </div>
     </div>
     <script type="text/javascript">
-    // $(document).on('click', '.test', function(){
-    //   console.log($(this).attr("data-filter"));
-    // });
-
     function mySearchFunction() {
         var input, filter, table, tr, td, i;
         input = document.getElementById("mySearchInput");
@@ -216,8 +230,6 @@
         table = document.getElementById("NBAcheatsheet");
         tr = table.getElementsByTagName("tr");
 
-
-
         for (i = 0; i < tr.length; i++) {
             td = tr[i].getElementsByTagName("td")[4];
             if (td) {
@@ -229,27 +241,6 @@
             }
         }
     }
-    $(document).on('click', '.test', function() {
-      var btnTeam = $(this);
-      var btnTeamText = $(this).text();
-      var myteam = $('tr');
-      if ($(btnTeam).hasClass('highlight')) {
-          $(btnTeam).removeClass('highlight');
-          for (var i = 0; i < myteam.length; i++) {
-              if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
-                  $(myteam[i]).show();
-              }
-          }
-      } else {
-          $(btnTeam).addClass('highlight');
-          for (var i = 0; i < myteam.length; i++) {
-              if ('x ' + myteam[i].cells[5].innerText == btnTeamText) {
-
-                  $(myteam[i]).hide();
-              }
-          }
-      }
-    });
     </script>
   <div class="container-fluid topvaluetable">
     <div class="row">
@@ -826,7 +817,7 @@
 
     {{#unless requser}}
     <div id="chatbar">
-        <p><a style='color:#5600ff; font-size:12px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
+        <p><a style='color:#edb82a; font-size:12px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
     </div>
     {{/unless}}
     <!-- <div id="swapzone"><input id="username" placeholder="Name"/>
@@ -835,6 +826,7 @@
 </div>
 
 <script src='/assets/javascript/chatapp.js'></script>
+<script src="/assets/javascript/appNBA.js"></script>
 <script type="text/javascript" src="/assets/tablesorter/jquery-latest.js"></script>
 <script type="text/javascript" src="/assets/tablesorter/jquery.tablesorter.js"></script>
 

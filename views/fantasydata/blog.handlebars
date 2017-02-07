@@ -30,6 +30,7 @@
       padding:50px;
       padding-top: 0px;
     }.art{
+       margin-top: 2%;
        max-width: 1060px;
        background-color: white;
        border: solid #ddd 1px;
@@ -122,20 +123,55 @@
   </style>
 
 </head>
-  <nav class="navbar navbar-default colormein" style="margin-top:-10px; border:none;">
-    <div style='background-color: #edb82a' class="container-fluid">
-      <div class="navbar-header">
-        <li style='list-style-type:none;' class="navbar-brand doubleNavPage">NBA</li>
-      </div>
-      <ul class="nav navbar-nav navigate colormein2">
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
-        <li class='doubleNavLists active'><a class='doubleNavListsLink' href="/NBAAdvice">NBA Article</a></li>
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/NBAPodcast">NBA Podcast</a></li>
-        <li class='doubleNavLists'><a class='doubleNavListsLink' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
-      </ul>
+<div class="header" id="home">
+    <!--js-->
+    <!-- <script src="/assets/ThemeJS/bootstrap.min.js"></script> -->
+    <!--js-->
+    <div class="banner">
+        <div style='padding-right:0px;padding-left:0px;' class="container-fluid">
+            <nav class="navbar navbar-default bg mainnav">
+                <!-- <div class="logo">
+                    <a href="/">DFS<span>Analysts</span></a>
+                </div> -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed mod" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar wt"></span>
+                        <span class="icon-bar wt"></span>
+                        <span class="icon-bar wt"></span>
+                    </button>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse bod bottomnavbar" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-left navigate ulNav">
+                        <li class='liNav navlist headernba'><a class='aNav mainnav' href="/NBAFanduel">NBA</a></li>
+                        <li class='liNav navlist awayfromhead'><a class='aNav' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
+                        <li class='liNav navlist'><a class='aNav' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
+                        <li class='liNav navlist active'><a href="/NBAAdvice">NBA Blog</a></li>
+                        <li class='liNav navlist'><a class='aNav' href="/NBAPodcast">NBA Podcast</a></li>
+                        <li class='liNav navlist'><a class='aNav' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
+                    </ul>
+                </div>
+
+
+                <!-- <div class="clearfix"></div>
+            </nav>
+            <script type="text/javascript" src="/assets/ThemeJS/move-top.js"></script>
+            <script type="text/javascript" src="/assets/ThemeJS/easing.js"></script>
+            <script type="text/javascript">
+                jQuery(document).ready(function($) {
+                    $(".scroll").click(function(event) {
+                        event.preventDefault();
+                        $('html,body').animate({
+                            scrollTop: $(this.hash).offset().top
+                        }, 1000);
+                    });
+                });
+            </script>
+            <div class="clear"></div> -->
+        </div>
     </div>
-  </nav>
+</div>
 
   <div class="container">
     <div class="row">
@@ -231,7 +267,7 @@
 
       {{#unless requser}}
       <div id="chatbar">
-          <p><a style='color:#5600ff; font-size:18px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
+          <p><a style='color:#edb82a; font-size:18px;' href="/login/facebook">Click here to Login with fb and use the chat</a></p>
       </div>
       {{/unless}}
       <!-- <div id="swapzone"><input id="username" placeholder="Name"/>
@@ -241,11 +277,11 @@
 
 <script src='/assets/javascript/chatapp.js'></script>
 <script type="text/javascript">
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-86407503-2', 'auto');
-  ga('send', 'pageview');
+ga('create', 'UA-86407503-2', 'auto');
+ga('send', 'pageview');
 </script>

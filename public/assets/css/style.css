@@ -1,13 +1,13 @@
 body,html{
   height: 100%;
-  background-color: #f0fcff;
+  /*background-color: #f0fcff;*/
 }
 
 .dropdownSports {
   background-color:#021A3A;
   min-width: 111px;
-  /*border-bottom-left-radius: 25px;*/
-  /*border-bottom-right-radius: 25px;*/
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover {
@@ -47,7 +47,7 @@ body,html{
 
 #chatmessages{
   overflow:auto;
-  height:370px;
+  height:325px;
   background-color: #f2f2f2;
   padding: 20px;
 
@@ -87,7 +87,7 @@ body,html{
 .chatbutton {
   /*background-color: #021A3A;
   color: #edb82a;*/
-  background-color: #edb82a;
+  background-color: #0080FF;
   color: #021A3A;
   font-size: 16px;
 }
@@ -108,11 +108,11 @@ body,html{
 /*Suggested players start*/
 .suggestedPlayersNBA {
   font-size: 1.07em;
-  color:#5600ff;
+  color:#FF6347;
 }
 .suggestedPlayersh4 {
   text-align: center;
-  color:#5600ff;
+  color:#FF6347;
 }
 .suggesteddiv {
   bottom: 0;

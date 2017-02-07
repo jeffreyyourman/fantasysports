@@ -1,24 +1,50 @@
-.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-    color: #fff;
-    background-color: #021a3a;
+.mainnav {
+    /*background-color: #021A3A;*/
+    /*https://media.licdn.com/mpr/mpr/p/1/005/0a3/3c9/203d1eb.jpg*/
+    /*http://www.duncanflooringspecialist.com/wp-content/uploads/2014/11/sports-_-entertainment-1.jpg (3)*/
+    background-image: url(https://media.licdn.com/mpr/mpr/p/1/005/0a3/3c9/203d1eb.jpg);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffff7473', endColorstr='#ff46426f', GradientType=1);
 }
-.navbar-default .navbar-nav>li>a {
+.headernba {
+    font-size:30px;
+    color: #edb82a;
+    /*background-color: #9bdaf2;*/
+}
+.mainnav .ulNav>.active>a, .mainnav .ulNav>.active>a:focus, .mainnav .ulNav>.active>a:hover {
+    color: #edb82a;
+    background-color: rgba(0, 0, 0, 0.09);
+}
+/*.mainnav .ulNav>.active>a, .mainnav .ulNav>.active>a:focus, .mainnav .ulNav>.active>a:hover {
     color: #021a3a;
-}
-
-.navbar-default .navbar-nav>li>a:hover {
+    background-color: rgba(0, 0, 0, 0.09);
+}*/
+.mainnav .ulNav>li>a {
     color: white;
-    background-color: #021a3a;
 }
 
-.navbar-default .navbar-brand:hover {
-    font-size:34px;
-    color: black;
-    background-color: #8cd4f5;
+.mainnav .ulNav>li>a:hover {
+    color: #edb82a;
+    background-color: rgba(0, 0, 0, 0.09);
 }
 
-.navbar-default .navbar-brand {
+.mainnav .navbar-brand:hover {
+    font-size:34px;
+    color: #edb82a;
+    background-color: rgba(0, 0, 0, 0.09);
+}
+
+.mainnav .navbar-brand {
     font-size:34px;
     color: black;
-    background-color: #8cd4f5;
+    /*background-color: #8cd4f5;*/
 }
+
+/*.tnav .navbar .container { height: 28px; }*/
+/*Work with Bootstrap 3.3.4*/
+.ulNav > .liNav > .mainnav {
+    color: #edb82a;
+}
+/*.ulNav > .liNav > .mainnav {
+    color: #021a3a;
+}*/
