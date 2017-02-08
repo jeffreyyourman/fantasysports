@@ -161,21 +161,15 @@
     <div class="row">
       <div class="art">
         <h1>DFS Analysts Free Fanduel Lineup!</h1>
-        <h6 style='text-align:center;'>These lineups will change up until lock!</h6>
-        <h6 style='text-align:center;'>Best to refresh 15 minutes prior</h6>
+        <h6 style='text-align:center;'>These lineups are subject to change!</h6>
+        <h6 style='text-align:center;'>It is best to refresh 15 minutes prior to lock to get best results!</h6>
       </div>
       <div class="col-md-3">
-        <!-- what will go here is live projections -->
-        <div sstyle='margin-top:1%;' class="twitter">
-          <a class="twitter-timeline" data-height="1000"  href="https://twitter.com/search?q=%23nba%20%23dfs" data-widget-id="815819115772411904">Tweets about #nba #dfs</a>
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        <div class="twitter">
+            <a class="twitter-timeline" data-height="1000" href="https://twitter.com/DFSAnalysts">Tweets by DFSAnalysts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
       </div>
       <div class="col-md-6 stuff">
-      <!-- <iframe width="100%" height="400" scrolling="no" frameborder="no" -->
-      {{#each fantasyNBADate}}
-        <h6>Last updated on {{this.updated}}</h6>
-      {{/each}}
         {{#each lineupbuilderQuery1}}
 
         <p class='pForLineup'>PG: {{this.PG1}}</p>
@@ -199,10 +193,11 @@
       {{/each}}
     </div>
       <div class="col-md-3">
-        <div class="twitter">
-            <a class="twitter-timeline" data-height="1000" href="https://twitter.com/DFSAnalysts">Tweets by DFSAnalysts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <!-- what will go here is live projections -->
+        <div sstyle='margin-top:1%;' class="twitter">
+          <a class="twitter-timeline" data-height="1000"  href="https://twitter.com/search?q=%23nba%20%23dfs" data-widget-id="815819115772411904">Tweets about #nba #dfs</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
-
       </div>
     </div>
   </div>
