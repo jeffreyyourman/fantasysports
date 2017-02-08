@@ -153,3 +153,25 @@ var linebuilderexport = function() {
   lineupbuilderQuery();
 }
 module.exports = linebuilderexport;
+
+
+// {{#each lineupbuilderQuery1}}
+// <p class='pForLineup'>PG: {{this.PG1}}</p>
+// <p class='pForLineup'>PG: {{this.PG2}}</p>
+// <p class='pForLineup'>SG: {{this.SG1}}</p>
+// <p class='pForLineup'>SG: {{this.SG2}}</p>
+// <p class='pForLineup'>SF: {{this.SF1}}</p>
+// <p class='pForLineup'>SF: {{this.SF2}}</p>
+// <p class='pForLineup'>PF: {{this.PF1}}</p>
+// <p class='pForLineup'>PF: {{this.PF2}}</p>
+// <p class='pForLineup'>C: {{this.C}}</p>
+// <p class='pForLineup'>Total_Fantasy_PointsProjected: {{this.Total_Fantasy_PointsProjected}}</p>
+// <p class='pForLineup'>Salary: {{this.Sal}}</p>
+// <p class='pForLineup'>Projected_Mins: {{this.Projected_Mins}}</p>
+// <p class='pForLineup'>Value: {{this.Value}}</p>
+// <p class='pForLineup'>Useage: {{this.Useage}}</p>
+// <p class='pForLineup'>OVP: {{this.OVP}}</p>
+// <p class='pForLineup'>Avg_Total_Game_Score: {{this.Avg_Total_Game_Score}}</p>
+// <p class='pForLineup'>TotalProjScore: {{this.TotalProjScore}}</p>
+// <p class='pForLineup'>PointsVsPosition: {{this.PointsVsPosition}}</p>
+// {{/each}}

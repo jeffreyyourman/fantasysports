@@ -1,4 +1,4 @@
-  "drop table LINEUP; drop table GFY; drop table PG1; drop table PG2; drop table SG1; drop table SG2; drop table SF1; drop table SF2; drop table PF1; drop table PF2; drop table C;" 
+  "drop table LINEUP; drop table GFY; drop table PG1; drop table PG2; drop table SG1; drop table SG2; drop table SF1; drop table SF2; drop table PF1; drop table PF2; drop table C;"
 "create temporary table GFY
 as
 SELECT *
