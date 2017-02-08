@@ -147,48 +147,61 @@
                         <li class='liNav navlist headernba'><a class='aNav mainnav' href="/NBAFanduel">NBA</a></li>
                         <li class='liNav navlist awayfromhead'><a class='aNav' href="/NBAFanduel">FanDuel Cheat Sheet</a></li>
                         <li class='liNav navlist'><a class='aNav' href="/NBADraftkings">DraftKings Cheat Sheet</a></li>
-                        <li class='liNav navlist'><a class='aNav' href="/FanduelLineup">DFSAnalysts Fanduel Lineup</a></li>
+                        <li class='liNav navlist active'><a class='aNav' href="/FanduelLineup">DFSAnalysts Fanduel Lineup</a></li>
                         <!-- <li class='liNav navlist'><a href="/NBAAdvice">NBA Blog</a></li> -->
-                        <!-- <li class='liNav navlist active'><a class='aNav' href="/NBAPodcast">NBA Podcast</a></li> -->
+                        <!-- <li class='liNav navlist'><a class='aNav' href="/NBAPodcast">NBA Podcast</a></li> -->
                         <li class='liNav navlist'><a class='aNav' href="/Comparison">Fanduel Player ProjVsScore Comparison</a></li>
                     </ul>
                 </div>
-
-
-                <!-- <div class="clearfix"></div>
-            </nav>
-            <script type="text/javascript" src="/assets/ThemeJS/move-top.js"></script>
-            <script type="text/javascript" src="/assets/ThemeJS/easing.js"></script>
-            <script type="text/javascript">
-                jQuery(document).ready(function($) {
-                    $(".scroll").click(function(event) {
-                        event.preventDefault();
-                        $('html,body').animate({
-                            scrollTop: $(this.hash).offset().top
-                        }, 1000);
-                    });
-                });
-            </script>
-            <div class="clear"></div> -->
         </div>
     </div>
 </div>
 
   <div class="container">
     <div class="row">
-      <div class="art"><h1>DFS Analysts Saturday Night Live!</h1></div>
-        <div class="col-md-8 stuff">
-        <!-- <iframe width="100%" height="400" scrolling="no" frameborder="no" -->
-        <iframe width="100%" height="400" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/303857611&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+      <div class="art">
+        <h1>DFS Analysts Free Fanduel Lineup!</h1>
+        <h6 style='text-align:center;'>These lineups will change up until lock!</h6>
+        <h6 style='text-align:center;'>Best to refresh 15 minutes prior</h6>
+      </div>
+      <div class="col-md-3">
+        <!-- what will go here is live projections -->
+        <div sstyle='margin-top:1%;' class="twitter">
+          <a class="twitter-timeline" data-height="1000"  href="https://twitter.com/search?q=%23nba%20%23dfs" data-widget-id="815819115772411904">Tweets about #nba #dfs</a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
         </div>
+      </div>
+      <div class="col-md-6 stuff">
+      <!-- <iframe width="100%" height="400" scrolling="no" frameborder="no" -->
+      {{#each fantasyNBADate}}
+        <h6>Last updated on {{this.updated}}</h6>
+      {{/each}}
+        {{#each lineupbuilderQuery1}}
+
+        <p class='pForLineup'>PG: {{this.PG1}}</p>
+        <p class='pForLineup'>PG: {{this.PG2}}</p>
+        <p class='pForLineup'>SG: {{this.SG1}}</p>
+        <p class='pForLineup'>SG: {{this.SG2}}</p>
+        <p class='pForLineup'>SF: {{this.SF1}}</p>
+        <p class='pForLineup'>SF: {{this.SF2}}</p>
+        <p class='pForLineup'>PF: {{this.PF1}}</p>
+        <p class='pForLineup'>PF: {{this.PF2}}</p>
+        <p class='pForLineup'>C: {{this.C}}</p>
+        <p class='pForLineup'>Total_Fantasy_PointsProjected: {{this.Total_Fantasy_PointsProjected}}</p>
+        <p class='pForLineup'>Salary: {{this.Sal}}</p>
+        <p class='pForLineup'>Projected_Mins: {{this.Projected_Mins}}</p>
+        <p class='pForLineup'>Value: {{this.Value}}</p>
+        <p class='pForLineup'>Useage: {{this.Useage}}</p>
+        <p class='pForLineup'>OVP: {{this.OVP}}</p>
+        <p class='pForLineup'>Avg_Total_Game_Score: {{this.Avg_Total_Game_Score}}</p>
+        <p class='pForLineup'>TotalProjScore: {{this.TotalProjScore}}</p>
+        <p class='pForLineup'>PointsVsPosition: {{this.PointsVsPosition}}</p>
+      {{/each}}
+    </div>
       <div class="col-md-3">
         <div class="twitter">
             <a class="twitter-timeline" data-height="1000" href="https://twitter.com/DFSAnalysts">Tweets by DFSAnalysts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
         </div>
-          <div style='margin-top:1%;' class="twitter">
-            <a class="twitter-timeline" data-height="1000"  href="https://twitter.com/search?q=%23nba%20%23dfs" data-widget-id="815819115772411904">Tweets about #nba #dfs</a>
-            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-          </div>
 
       </div>
     </div>
