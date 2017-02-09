@@ -166,11 +166,6 @@
         <h6 style='text-align:center;'>I will be using the lineup that is made 15 minutes prior to lock on twitter!</h6>
         <h6 style='text-align:center;'>You will be taking a risk for any lineup you use more than an hour before lock!</h6>
       </div>
-      <div class="col-md-3">
-        <div class="twitter">
-            <a class="twitter-timeline" data-height="1000" href="https://twitter.com/DFSAnalysts">Tweets by DFSAnalysts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-        </div>
-      </div>
       <div class="col-md-6 stuff">
 
 <!--
@@ -184,27 +179,32 @@
         <p class='pForLineup'>PF: Kristaps Porzingis</p>
         <p class='pForLineup'>C: DeAndre Jordan</p> -->
 
-        {{!#each lineupbuilderQuery1}}
-        <!-- <p class='pForLineup'>PG: {{!this.PG1}}</p>
-        <p class='pForLineup'>PG: {{!this.PG2}}</p>
-        <p class='pForLineup'>SG: {{!this.SG1}}</p>
-        <p class='pForLineup'>SG: {{!this.SG2}}</p>
-        <p class='pForLineup'>SF: {{!this.SF1}}</p>
-        <p class='pForLineup'>SF: {{!this.SF2}}</p>
-        <p class='pForLineup'>PF: {{!this.PF1}}</p>
-        <p class='pForLineup'>PF: {{!this.PF2}}</p>
-        <p class='pForLineup'>C: {{!this.C}}</p>
-        <p class='pForLineup'>Total_Fantasy_PointsProjected: {{this.Total_Fantasy_PointsProjected}}</p>
-        <p class='pForLineup'>Salary: {{!.Sal}}</p>
-        <p class='pForLineup'>Projected_Mins: {{!.Projected_Mins}}</p>
-        <p class='pForLineup'>Value: {{!.Value}}</p>
-        <p class='pForLineup'>Useage: {{!.Useage}}</p>
-        <p class='pForLineup'>OVP: {{!.OVP}}</p>
-        <p class='pForLineup'>Avg_Total_Game_Score: {{!.Avg_Total_Game_Score}}</p>
-        <p class='pForLineup'>TotalProjScore: {{!.TotalProjScore}}</p>
-        <p class='pForLineup'>PointsVsPosition: {{!.PointsVsPosition}}</p> -->
-      {{!/each}}
+        {{#each lineupbuilderQuery1}}
+        <p class='pForLineup'>PG: {{this.PG1}}</p>
+        <p class='pForLineup'>PG: {{this.PG2}}</p>
+        <p class='pForLineup'>SG: {{this.SG1}}</p>
+        <p class='pForLineup'>SG: {{this.SG2}}</p>
+        <p class='pForLineup'>SF: {{this.SF1}}</p>
+        <p class='pForLineup'>SF: {{this.SF2}}</p>
+        <p class='pForLineup'>PF: {{this.PF1}}</p>
+        <p class='pForLineup'>PF: {{this.PF2}}</p>
+        <p class='pForLineup'>C: {{this.C}}</p>
+        <p class='pForLineup'>Total Fantasy Points Projected: {{this.Total_Fantasy_PointsProjected}}</p>
+        <p class='pForLineup'>Salary: {{this.Sal}}</p>
+        <p class='pForLineup'>Average Projected Mins: {{this.Projected_Mins}}</p>
+        <p class='pForLineup'>Average Value: {{this.Value}}</p>
+        <p class='pForLineup'>Average Useage: {{this.Useage}}</p>
+        <p class='pForLineup'>Average OVP: {{this.OVP}}</p>
+        <p class='pForLineup'>Average Total Game Score: {{this.Avg_Total_Game_Score}}</p>
+        <p class='pForLineup'>Average Total Team Score: {{this.TotalProjScore}}</p>
+        <p class='pForLineup'>Average PointsVsPosition: {{this.PointsVsPosition}}</p>
+      {{/each}}
     </div>
+      <div class="col-md-3">
+        <div class="twitter">
+            <a class="twitter-timeline" data-height="1000" href="https://twitter.com/DFSAnalysts">Tweets by DFSAnalysts</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+        </div>
+      </div>
       <div class="col-md-3">
         <!-- what will go here is live projections -->
         <div sstyle='margin-top:1%;' class="twitter">

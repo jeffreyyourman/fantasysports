@@ -247,17 +247,18 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
   });
   app.get('/FanduelLineup', function(req,res){
     var requser = req.user;
-    // var nbabuilderquery = new lineupbuilder()
-    // var lineupbuilderQuery = "select * from LINEUP ORDER BY Total_Fantasy_PointsProjected desc limit 1;";
-    //   connection.query(lineupbuilderQuery, function(err, lineupbuilderQuery1) {
-    //     if (err) throw err;
-    //     console.log('===============');
-    //     console.log(lineupbuilderQuery1);
+    var nbabuilderquery = new lineupbuilder()
+    var lineupbuilderQuery = "select * from LINEUP ORDER BY Total_Fantasy_PointsProjected desc limit 1;";
+      connection.query(lineupbuilderQuery, function(err, lineupbuilderQuery1) {
+        if (err) throw err;
+        console.log('===============');
+        console.log(lineupbuilderQuery1);
           var hbsObject = {
-          requser:requser
-          // lineupbuilderQuery1: lineupbuilderQuery1
+          requser:requser,
+          lineupbuilderQuery1: lineupbuilderQuery1
           }
           res.render('fantasydata/lineupbuilder', hbsObject);
+        });
       });
 
   app.get('/NBAPodcast', function(req,res){
