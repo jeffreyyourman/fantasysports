@@ -278,7 +278,7 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
 
 
 
-  app.get('/tryme', function(req,res){
+  app.get('/loadlineup', function(req,res){
     var nbabuilderquery = new lineupbuilder()
     res.redirect('/NBAFanduel');
   });
