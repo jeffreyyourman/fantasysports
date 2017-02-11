@@ -47,131 +47,140 @@ var linebuilderexport = function() {
     var lineupbuilderQuery = "create temporary table LINEUP as SELECT PG1.Player as 'PG1', PG2.Player as 'PG2', SG1.Player as 'SG1', SG2.Player as 'SG2', SF1.Player as 'SF1', SF2.Player as 'SF2', PF1.Player as 'PF1', PF2.Player as 'PF2', C.Player as 'C', (PG1.ProjectedPts + PG2.ProjectedPts + SG1.ProjectedPts + SG2.ProjectedPts + SF1.ProjectedPts + SF2.ProjectedPts + PF1.ProjectedPts + PF2.ProjectedPts + C.ProjectedPts) as 'Total_Fantasy_PointsProjected', (PG1.Salary + PG2.Salary + SG1.Salary + SG2.Salary + SF1.Salary + SF2.Salary + PF1.Salary + PF2.Salary + C.Salary) as 'Sal', (PG1.ProjMins + PG2.ProjMins + SG1.ProjMins + SG2.ProjMins + SF1.ProjMins + SF2.ProjMins + PF1.ProjMins + PF2.ProjMins + C.ProjMins)/9 as 'Projected_Mins', (PG1.Value + PG2.Value + SG1.Value + SG2.Value + SF1.Value + SF2.Value + PF1.Value + PF2.Value + C.Value)/9 as 'Value', (PG1.Useage + PG2.Useage + SG1.Useage + SG2.Useage + SF1.Useage + SF2.Useage + PF1.Useage + PF2.Useage + C.Useage)/9 as 'Useage', (PG1.OVP + PG2.OVP + SG1.OVP + SG2.OVP + SF1.OVP + SF2.OVP + PF1.OVP + PF2.OVP + C.OVP)/9 as 'OVP', (PG1.GameLine + PG2.GameLine + SG1.GameLine + SG2.GameLine + SF1.GameLine + SF2.GameLine + PF1.GameLine + PF2.GameLine + C.GameLine)/9 as 'Avg_Total_Game_Score', (PG1.CriteriaRanking + PG2.CriteriaRanking + SG1.CriteriaRanking + SG2.CriteriaRanking + SF1.CriteriaRanking + SF2.CriteriaRanking + PF1.CriteriaRanking + PF2.CriteriaRanking + C.CriteriaRanking) as 'CriteriaRanking', (PG1.ProjScore + PG2.ProjScore + SG1.ProjScore + SG2.ProjScore + SF1.ProjScore + SF2.ProjScore + PF1.ProjScore + PF2.ProjScore + C.ProjScore)/9 as 'TotalProjScore', (PG1.PTsVPos + PG2.PTsVPos + SG1.PTsVPos + SG2.PTsVPos + SF1.PTsVPos + SF2.PTsVPos + PF1.PTsVPos + PF2.PTsVPos + C.PTsVPos)/9 as 'PointsVsPosition' FROM PG1, PG2, SG1, SG2, SF1, SF2, PF1, PF2, C WHERE PG1.Salary >= PG2.Salary AND SG1.Salary >= SG2.Salary AND SF1.Salary >= SF2.Salary AND PF1.Salary >= PF2.Salary  AND PG1.Player <> PG2.Player AND SG1.Player <> SG2.player AND SF1.Player <> SF2.Player AND PF1.Player <> PF2.Player AND (SELECT(PG1.Salary + PG2.Salary + SG1.Salary + SG2.Salary + SF1.Salary + SF2.Salary + PF1.Salary + PF2.Salary + C.Salary)) BETWEEN 59600 AND 60000 AND (SELECT(PG1.Useage + PG2.Useage + SG1.Useage + SG2.Useage + SF1.Useage + SF2.Useage + PF1.Useage + PF2.Useage + C.Useage)/9) >= .23 AND (SELECT(PG1.ProjMins + PG2.ProjMins + SG1.ProjMins + SG2.ProjMins + SF1.ProjMins + SF2.ProjMins + PF1.ProjMins + PF2.ProjMins + C.ProjMins)/9)  >= 31 AND (SELECT(PG1.CriteriaRanking + PG2.CriteriaRanking + SG1.CriteriaRanking + SG2.CriteriaRanking + SF1.CriteriaRanking + SF2.CriteriaRanking + PF1.CriteriaRanking + PF2.CriteriaRanking + C.CriteriaRanking)) BETWEEN 5 AND 56 AND (SELECT(PG1.ProjScore + PG2.ProjScore + SG1.ProjScore + SG2.ProjScore + SF1.ProjScore + SF2.ProjScore + PF1.ProjScore +PF2.ProjScore + C.ProjScore)/9) >= 103 AND (SELECT(PG1.PTsVPos + PG2.PTsVPos + SG1.PTsVPos + SG2.PTsVPos + SF1.PTsVPos + SF2.PTsVPos + PF1.PTsVPos +PF2.PTsVPos + C.PTsVPos)/9) >= 22 AND (SELECT(PG1.ProjectedPts + PG2.ProjectedPts + SG1.ProjectedPts + SG2.ProjectedPts + SF1.ProjectedPts + SF2.ProjectedPts + PF1.ProjectedPts + PF2.ProjectedPts + C.ProjectedPts)) >= 240 GROUP BY PG1.ProjectedPts , PG2.ProjectedPts , SG1.ProjectedPts , SG2.ProjectedPts , SF1.ProjectedPts , SF2.ProjectedPts , PF1.ProjectedPts , PF2.ProjectedPts , C.ProjectedPts, PG1.CriteriaRanking , PG2.CriteriaRanking , SG1.CriteriaRanking , SG2.CriteriaRanking , SF1.CriteriaRanking , SF2.CriteriaRanking , PF1.CriteriaRanking , PF2.CriteriaRanking , C.CriteriaRanking, PG1.Salary , PG2.Salary , SG1.Salary , SG2.Salary , SF1.Salary , SF2.Salary , PF1.Salary , PF2.Salary , C.Salary, PG1.Player, PG2.Player, SG1.Player, SG2.Player, SF1.Player, SF2.Player, PF1.Player, PF2.Player, C.Player, PG1.ProjectedPts , PG2.ProjectedPts , SG1.ProjectedPts , SG2.ProjectedPts , SF1.ProjectedPts , SF2.ProjectedPts , PF1.ProjectedPts , PF2.ProjectedPts , C.ProjectedPts, PG1.Useage , PG2.Useage , SG1.Useage , SG2.Useage , SF1.Useage , SF2.Useage , PF1.Useage , PF2.Useage , C.Useage, PG1.ProjMins , PG2.ProjMins , SG1.ProjMins , SG2.ProjMins , SF1.ProjMins , SF2.ProjMins , PF1.ProjMins , PF2.ProjMins , C.ProjMins, PG1.Value , PG2.Value , SG1.Value , SG2.Value , SF1.Value , SF2.Value , PF1.Value , PF2.Value , C.Value, PG1.Useage , PG2.Useage , SG1.Useage , SG2.Useage , SF1.Useage , SF2.Useage , PF1.Useage , PF2.Useage , C.Useage, PG1.OVP , PG2.OVP , SG1.OVP , SG2.OVP , SF1.OVP , SF2.OVP , PF1.OVP , PF2.OVP , C.OVP, PG1.GameLine , PG2.GameLine , SG1.GameLine , SG2.GameLine , SF1.GameLine , SF2.GameLine , PF1.GameLine , PF2.GameLine , C.GameLine, PG1.ProjScore ,PG2.ProjScore , SG1.ProjScore , SG2.ProjScore , SF1.ProjScore , SF2.ProjScore , PF1.ProjScore , PF2.ProjScore , C.ProjScore, PG1.PTsVPos ,PG2.PTsVPos , SG1.PTsVPos , SG2.PTsVPos , SF1.PTsVPos , SF2.PTsVPos , PF1.PTsVPos , PF2.PTsVPos , C.PTsVPos, PG1.Team , PG2.Team , SG1.Team , SG2.Team , SF1.Team , SF2.Team , PF1.Team , PF2.Team , C.Team ORDER BY Projected_Mins DESC, CriteriaRanking, Useage, Total_Fantasy_PointsProjected DESC, TotalProjScore DESC;"
     connection.query(dropAllTablesGFY, function(err, dropAllTablesGFYQuery) {
         if (err) throw err;
-        console.log(dropAllTablesGFYQuery);
+
     })
     connection.query(dropAllTablesLineup, function(err, dropAllTablesLineupQuery) {
         if (err) throw err;
-        console.log(dropAllTablesLineupQuery);
+
     })
     connection.query(dropAllTablesPG1, function(err, dropAllTablesPG1Query) {
         if (err) throw err;
-        console.log(dropAllTablesPG1Query);
+
     })
     connection.query(dropAllTablesPG2, function(err, dropAllTablesPG2Query) {
         if (err) throw err;
-        console.log(dropAllTablesPG2Query);
+
     })
     connection.query(dropAllTablesSG1, function(err, dropAllTablesSG1Query) {
         if (err) throw err;
-        console.log(dropAllTablesSG1Query);
+
     })
     connection.query(dropAllTablesSG2, function(err, dropAllTablesSG2Query) {
         if (err) throw err;
-        console.log(dropAllTablesSG2Query);
+
     })
     connection.query(dropAllTablesSF1, function(err, dropAllTablesSF1Query) {
         if (err) throw err;
-        console.log(dropAllTablesSF1Query);
+
     })
     connection.query(dropAllTablesSF2, function(err, dropAllTablesSF2Query) {
         if (err) throw err;
-        console.log(dropAllTablesSF2Query);
+
     })
     connection.query(dropAllTablesPF1, function(err, dropAllTablesPF1Query) {
         if (err) throw err;
-        console.log(dropAllTablesPF1Query);
+
     })
     connection.query(dropAllTablesPF2, function(err, dropAllTablesPF2Query) {
         if (err) throw err;
-        console.log(dropAllTablesPF2Query);
+
     })
     connection.query(dropAllTablesC, function(err, dropAllTablesCQuery) {
         if (err) throw err;
-        console.log(dropAllTablesCQuery);
+
     })
     connection.query(createGFY, function(err, fanduelbuilder1) {
         if (err) throw err;
-        console.log(fanduelbuilder1);
+
     })
     connection.query(temptablePG1, function(err, fanduelbuilder) {
         if (err) throw err;
-        console.log(fanduelbuilder);
+
     })
     connection.query(temptablePG2, function(err, fanduelbuilderPG2) {
         if (err) throw err;
 
-        console.log(fanduelbuilderPG2);
+
     })
     connection.query(temptableSG1, function(err, fanduelbuilderSG1) {
         if (err) throw err;
 
-        console.log(fanduelbuilderSG1);
+
     })
     connection.query(temptableSG2, function(err, fanduelbuilderSG2) {
         if (err) throw err;
 
-        console.log(fanduelbuilderSG2);
+
     })
     connection.query(temptableSF1, function(err, fanduelbuilderSF1) {
         if (err) throw err;
 
-        console.log(fanduelbuilderSF1);
+
     })
     connection.query(temptableSF2, function(err, fanduelbuilderSF2) {
         if (err) throw err;
 
-        console.log(fanduelbuilderSF2);
+
     })
     connection.query(tembtablePF1, function(err, fanduelbuilderPF1) {
         if (err) throw err;
 
-        console.log(fanduelbuilderPF1);
+
     })
     connection.query(tembtablePF2, function(err, fanduelbuilderPF2) {
         if (err) throw err;
 
-        console.log(fanduelbuilderPF2);
+
     })
     connection.query(temptableC, function(err, fanduelbuilderC) {
         if (err) throw err;
 
-        console.log(fanduelbuilderC);
+
     })
 
     connection.query(lineupbuilderQuery, function(err, lineupbuilderQuery1) {
         if (err) throw err;
 
-        console.log(lineupbuilderQuery1);
+
     })
     var lineupbuilderQuery = "select * from LINEUP ORDER BY Total_Fantasy_PointsProjected desc limit 1;";
     connection.query(lineupbuilderQuery, function(err, lineupbuilderQuery1) {
         if (err) throw err;
-        console.log('===============');
-        console.log(lineupbuilderQuery1);
+        console.log('==============');
+        // console.log(lineupbuilderQuery1);
+        var PointGuard1 = lineupbuilderQuery1[0].PG1;
+        var PointGuard2 = lineupbuilderQuery1[0].PG2;
+        var ShootingGuard1 = lineupbuilderQuery1[0].SG1;
+        var ShootingGuard2 = lineupbuilderQuery1[0].SG2;
+        var SmallForward1 = lineupbuilderQuery1[0].SF1;
+        var SmallForward2 = lineupbuilderQuery1[0].SF2;
+        var PowerForward1 = lineupbuilderQuery1[0].PF1;
+        var PowerForward2 = lineupbuilderQuery1[0].PF2;
+        var Center = lineupbuilderQuery1[0].C;
+        var totalFPProjected = lineupbuilderQuery1[0].Total_Fantasy_PointsProjected;
+        var Salary = lineupbuilderQuery1[0].Sal;
+        var ProjectedMins = lineupbuilderQuery1[0].Projected_Mins;
+        var Value = lineupbuilderQuery1[0].Value;
+        var Useage = lineupbuilderQuery1[0].Useage;
+        var OffenseVsPos = lineupbuilderQuery1[0].OVP;
+        var AvgTotalGameScore = lineupbuilderQuery1[0].Avg_Total_Game_Score;
+        var CriteriaRank = lineupbuilderQuery1[0].CriteriaRanking;
+        var TotalGameScore = lineupbuilderQuery1[0].TotalProjScore;
+        var PVsP = lineupbuilderQuery1[0].PointsVsPosition;
+
+        var now = new Date();
+        var newupdatedDate = dateFormat(now, "dddd, mmmm dS, yyyy, h:MM:ss TT")
+        fanduel.createfanduellineup(['PG1','PG2','SG1','SG2','SF1','SF2','PF1','PF2','C','Total_Fantasy_PointsProjected','Sal','Projected_Mins','Value','Useage','OVP','Avg_Total_Game_Score','CriteriaRanking','TotalProjScore','PointsVsPosition', "updated"
+        // add the below line to before "updated"
+          // "Site"
+          // "Value"
+      ], [PointGuard1, PointGuard2, ShootingGuard1, ShootingGuard2, SmallForward1, SmallForward2, PowerForward1, PowerForward2, Center, totalFPProjected, Salary, ProjectedMins, Value, Useage, OffenseVsPos, AvgTotalGameScore, CriteriaRank, TotalGameScore, PVsP, newupdatedDate], function(fanduellineup) {
+        // add the below line to before "newupdatedDate"
+        console.log(fanduellineup);
+
+        });
     })
   }
   lineupbuilderQuery();
 }
 module.exports = linebuilderexport;
-
-
-// {{#each lineupbuilderQuery1}}
-// <p class='pForLineup'>PG: {{this.PG1}}</p>
-// <p class='pForLineup'>PG: {{this.PG2}}</p>
-// <p class='pForLineup'>SG: {{this.SG1}}</p>
-// <p class='pForLineup'>SG: {{this.SG2}}</p>
-// <p class='pForLineup'>SF: {{this.SF1}}</p>
-// <p class='pForLineup'>SF: {{this.SF2}}</p>
-// <p class='pForLineup'>PF: {{this.PF1}}</p>
-// <p class='pForLineup'>PF: {{this.PF2}}</p>
-// <p class='pForLineup'>C: {{this.C}}</p>
-// <p class='pForLineup'>Total_Fantasy_PointsProjected: {{this.Total_Fantasy_PointsProjected}}</p>
-// <p class='pForLineup'>Salary: {{this.Sal}}</p>
-// <p class='pForLineup'>Projected_Mins: {{this.Projected_Mins}}</p>
-// <p class='pForLineup'>Value: {{this.Value}}</p>
-// <p class='pForLineup'>Useage: {{this.Useage}}</p>
-// <p class='pForLineup'>OVP: {{this.OVP}}</p>
-// <p class='pForLineup'>Avg_Total_Game_Score: {{this.Avg_Total_Game_Score}}</p>
-// <p class='pForLineup'>TotalProjScore: {{this.TotalProjScore}}</p>
-// <p class='pForLineup'>PointsVsPosition: {{this.PointsVsPosition}}</p>
-// {{/each}}

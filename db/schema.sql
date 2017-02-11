@@ -161,3 +161,28 @@ CREATE TABLE googlesheetsapi (
   updated varchar (255) NOT NULL,
   PRIMARY KEY (playerId)
 );
+
+CREATE TABLE fanduellineup (
+  fanduellineupID int NOT NULL AUTO_INCREMENT,
+  PG1 varchar(255) NOT NULL,
+  PG2 varchar(255) NOT NULL,
+  SG1 varchar(255) NOT NULL,
+  SG2 varchar(255) NOT NULL,
+  SF1 varchar(255) NOT NULL,
+  SF2 varchar(255) NOT NULL,
+  PF1 varchar(255) NOT NULL,
+  PF2 varchar(255) NOT NULL,
+  C varchar(255) NOT NULL,
+  Total_Fantasy_PointsProjected varchar(255) NOT NULL,
+  Sal varchar(255) NOT NULL,
+  Projected_Mins varchar(255) NOT NULL,
+  Value varchar(255) NOT NULL,
+  Useage varchar(255) NOT NULL,
+  OVP varchar(255) NOT NULL,
+  Avg_Total_Game_Score varchar(255) NOT NULL,
+  CriteriaRanking varchar(255) NOT NULL,
+  TotalProjScore varchar(255) NOT NULL,
+  PointsVsPosition varchar(255) NOT NULL,
+  updated varchar (255) NOT NULL,
+  PRIMARY KEY (fanduellineupID)
+);

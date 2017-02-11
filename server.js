@@ -247,8 +247,8 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
   });
   app.get('/FanduelLineup', function(req,res){
     var requser = req.user;
-    var nbabuilderquery = new lineupbuilder()
-    var lineupbuilderQuery = "select * from LINEUP ORDER BY Total_Fantasy_PointsProjected desc limit 1;";
+
+    var lineupbuilderQuery = "select * from fanduellineup";
       connection.query(lineupbuilderQuery, function(err, lineupbuilderQuery1) {
         if (err) throw err;
         console.log('===============');
@@ -278,15 +278,10 @@ connection.query("SELECT * FROM googlesheetsapi where Player <> '' ORDER BY Proj
 
 
 
-  // app.get('/tryme', function(req,res){
-  //   var nbabuilderquery = new lineupbuilder()
-  //   var lineupbuilderQuery = "select * from LINEUP ORDER BY Total_Fantasy_PointsProjected desc limit 1;";
-  //   connection.query(lineupbuilderQuery, function(err, lineupbuilderQuery1) {
-  //       if (err) throw err;
-  //       console.log('===============');
-  //       console.log(lineupbuilderQuery1);
-  //   })
-  // });
+  app.get('/tryme', function(req,res){
+    var nbabuilderquery = new lineupbuilder()
+    res.redirect('/NBAFanduel');
+  });
   app.get('/Contact', function(req,res){
     var requser = req.user;
 

@@ -65,7 +65,6 @@ var fanduelNBADB = function() {
 
             for (var i = 0; i < body.feed.entry.length; i++) {
                 var myNBA = body.feed.entry[i]
-                console.log(myNBA);
                 // var projmins = myNBA.gsx$projmins.$t;
                 // var ovp = myNBA.gsx$ovp.$t;
                 // var ppm = myNBA.gsx$ppm.$t;

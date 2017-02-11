@@ -38,6 +38,40 @@ var fandueldata = {
 			cb(res);
 		});
 	},
+	// start
+	searchfandueldata: function(condition,cb){
+		orm.searchfandueldata("fanduellineup","Player",condition,function(res){
+			cb(res);
+		});
+	},
+
+	findOnefanduellineup: function(condition, cb) {
+		orm.findOnefanduellineup('fanduellineup', condition, function(res){
+				cb(res);
+		});
+	},
+	allfanduellineup: function(cb) {
+		orm.allfanduellineup('fanduellineup', function(res){
+			cb(res);
+		});
+	},
+	//cols and vals are arrays
+	createfanduellineup: function(cols, vals, cb) {
+		orm.createfanduellineup('fanduellineup', cols, vals, function(res){
+			cb(res);
+		});
+	},
+	updatefanduellineup: function(objColVals, condition, cb) {
+		orm.updatefanduellineup('fanduellineup', objColVals, condition, function(res){
+			cb(res);
+		});
+	},
+	deletefanduellineup: function(condition, cb){
+		orm.deletefanduellineup('fanduellineup', condition, function(res){
+			cb(res);
+		});
+	},
+	// end
 	findOnefandueldataNFL: function(condition, cb) {
 		orm.findOnefandueldataNFL('googlesheetsapiNFL', condition, function(res){
 				cb(res);
