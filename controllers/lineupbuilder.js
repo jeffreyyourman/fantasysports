@@ -22,8 +22,7 @@ var linebuilderexport = function() {
     var dropAllTablesPF1 = 'DROP TABLE IF EXISTS PF1;';
     var dropAllTablesPF2 = 'DROP TABLE IF EXISTS PF2;';
     var dropAllTablesC = 'DROP TABLE IF EXISTS C;';
-
-    var dropAllTables = "DROP TABLE IF EXISTS LINEUP; DROP TABLE IF EXISTS GFY; DROP TABLE IF EXISTS PG1; DROP TABLE IF EXISTS PG2; DROP TABLE IF EXISTS SG1; DROP TABLE IF EXISTS SG2; DROP TABLE IF EXISTS SF1; DROP TABLE IF EXISTS SF2; DROP TABLE IF EXISTS PF1; DROP TABLE IF EXISTS PF2; DROP TABLE IF EXISTS C;";
+    
     var createGFY = "create temporary table GFY as SELECT * FROM googlesheetsapi WHERE Player <> '' AND SalaryAdjust BETWEEN -580 AND 800 AND RecPr < 25 AND ProjMins >= 21 AND Useage >= .1;";
 
     var temptablePG1 = "create temporary table PG1 as SELECT * FROM GFY WHERE Position = 'PG' AND CriteriaRanking >=4 AND Salary >= 6200 ORDER BY Salary DESC, ProjMins DESC, Useage DESC LIMIT 6;"
