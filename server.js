@@ -4,7 +4,7 @@ var cookieParser = require('cookie-parser');
 // var session = require('express-session');
 var express = require('express');
 var app = express();
-const keys = require("./keys.js");
+// const keys = require("./keys.js");
 // var methodOverride = require('method-override');
 //Database configuration
 // var bodyParser = require('body-parser');
