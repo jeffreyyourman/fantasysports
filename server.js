@@ -1,8 +1,10 @@
+// URL Blocked: This redirect failed because the redirect URI is not whitelisted in the app’s Client OAuth Settings. Make sure Client and Web OAuth Login are on and add all your app domains as Valid OAuth Redirect URIs.
+
 var cookieParser = require('cookie-parser');
 // var session = require('express-session');
 var express = require('express');
 var app = express();
-
+const keys = require("./keys.js");
 // var methodOverride = require('method-override');
 //Database configuration
 // var bodyParser = require('body-parser');
@@ -15,11 +17,11 @@ var path = require("path");
 
 // Passport / Facebook Authentication Information
 passport.use(new Strategy({
-  clientID: process.env.CLIENT_ID || "1887065124846159",
-  clientSecret: process.env.CLIENT_SECRET || "aec868d09103b27bad5c85384bbe9023",
-  callbackURL: "http://www.dfsanalysts.herokuapp.com/login/facebook/return"
-  // clientID: process.env.CLIENT_ID || "1887065321512806",
-  // clientSecret: process.env.CLIENT_SECRET || "5678c2982556970548de43a64789bba7",
+  clientID: process.env.CLIENT_ID || keys.clientId,
+  clientSecret: process.env.CLIENT_SECRET || keys.clientSecret,
+  callbackURL: "https://www.dfsanalysts.herokuapp.com/login/facebook/return",
+  // clientID: process.env.CLIENT_ID || keys.localClientId ,
+  // clientSecret: process.env.CLIENT_SECRET || keys.localClientSecret,
   // callbackURL: "http://localhost:3000/login/facebook/return"
 
 },
