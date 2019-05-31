@@ -19,7 +19,7 @@ var path = require("path");
 passport.use(new Strategy({
   clientID: process.env.CLIENT_ID || "408732649970689",
   clientSecret: process.env.CLIENT_SECRET || "7bdae4fb8fd3ce8041fe52d0910e9e95",
-  callbackURL: "https://www.dfsanalysts.herokuapp.com/login/facebook/return"
+  callbackURL: "https://dfsanalysts.herokuapp.com/login/facebook/return"
   // clientID: process.env.CLIENT_ID || "1887065321512806",
   // clientSecret: process.env.CLIENT_SECRET || "5678c2982556970548de43a64789bba7",
   // callbackURL: "http://localhost:3000/login/facebook/return"
